@@ -114,12 +114,12 @@ namespace UltraStarDeluxeEditor {
             // titleColumn
             // 
             this.titleColumn.Text = "Title";
-            this.titleColumn.Width = 238;
+            this.titleColumn.Width = 211;
             // 
             // artistColumn
             // 
             this.artistColumn.Text = "Artist";
-            this.artistColumn.Width = 124;
+            this.artistColumn.Width = 150;
             // 
             // textBox1
             // 
@@ -598,6 +598,9 @@ namespace UltraStarDeluxeEditor {
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UltraStar Deluxe Editor";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Shown += new System.EventHandler(this.MainForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.coverPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yearNumericUpDown)).EndInit();
             this.songInfoGroupBox.ResumeLayout(false);
