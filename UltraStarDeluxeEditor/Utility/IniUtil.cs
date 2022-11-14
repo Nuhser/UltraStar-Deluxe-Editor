@@ -2,7 +2,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 
 namespace UltraStarDeluxeEditor.Utility {
-    public class IniUtil {
+    public static class IniUtil {
         [DllImport("kernel32", CharSet = CharSet.Unicode)]
         private static extern long WritePrivateProfileString(string section, string key, string value, string filePath);
 
