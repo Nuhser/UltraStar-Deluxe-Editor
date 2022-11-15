@@ -4,7 +4,10 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using UltraStarDeluxeEditor.Config;
 using UltraStarDeluxeEditor.Properties;
+using UltraStarDeluxeEditor.UltraStarDeluxe;
+using UltraStarDeluxeEditor.Utility;
 
 namespace UltraStarDeluxeEditor {
     public partial class MainForm : Form {
@@ -13,7 +16,7 @@ namespace UltraStarDeluxeEditor {
 
         public MainForm() {
             InitializeComponent();
-            
+
             // set ranges for NumericUpDowns
             bpmNumericUpDown.Minimum = decimal.One;
             bpmNumericUpDown.Maximum = decimal.MaxValue;

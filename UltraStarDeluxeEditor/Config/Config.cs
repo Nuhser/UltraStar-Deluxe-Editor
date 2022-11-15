@@ -1,4 +1,4 @@
-namespace UltraStarDeluxeEditor {
+namespace UltraStarDeluxeEditor.Config {
     public class Config {
         public Config() {
             UsdPath = "";

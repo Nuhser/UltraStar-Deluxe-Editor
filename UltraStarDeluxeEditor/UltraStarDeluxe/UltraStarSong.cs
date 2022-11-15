@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Linq;
 
-namespace UltraStarDeluxeEditor {
+namespace UltraStarDeluxeEditor.UltraStarDeluxe {
     public class UltraStarSong {
         private const string TITLE_KEY = "#TITLE:";
         private const string ARTIST_KEY = "#ARTIST:";

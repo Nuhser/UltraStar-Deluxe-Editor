@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 using UltraStarDeluxeEditor.Properties;
 using UltraStarDeluxeEditor.Utility;
 
-namespace UltraStarDeluxeEditor {
+namespace UltraStarDeluxeEditor.Config {
     public static class ConfigService {
         private const string CONFIG_PATH = ".\\config.xml";
         private const string USD_CONFIG_PATH = "\\config.ini";
@@ -31,7 +31,7 @@ namespace UltraStarDeluxeEditor {
 
             try {
                 using (Stream fileStream = new FileStream(CONFIG_PATH, FileMode.Open)) {
-                    return (Config)serializer.Deserialize(fileStream);
+                    return (Config) serializer.Deserialize(fileStream);
                 }
             }
             catch (Exception exception) {
@@ -80,6 +80,7 @@ namespace UltraStarDeluxeEditor {
             while (IniUtil.KeyExists("Directories", "SongDir" + i, _config.UsdPath + USD_CONFIG_PATH)) {
                 songDirectories.Add(IniUtil.Read("Directories", "SongDir" + i,
                     _config.UsdPath + USD_CONFIG_PATH));
+
                 i++;
             }
 
