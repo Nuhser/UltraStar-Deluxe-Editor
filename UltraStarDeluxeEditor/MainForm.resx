@@ -735,6 +735,38 @@
         SAmx/tmO3vA9pdI/7XX/QCUxKFQAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="videoPlayButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAoVJREFUaEPt
+        mE2KE1EUhYMhJJEIJoMIGajJUCQ4V7DmmqAr0B1078CsoHUHOnGsO7B3oDvQqSPFDbTnC1642lVl/bxX
+        eQ05cKii6Uqdr1J13q30jkpUz+Sv8oX8Q34r35WvhF7LBM/zK/mmnKy48nnBvflGkgV5I1vQd/xByuRz
+        2UNgbrEXclLyQQnuxbfzTfYQOCmQMgDTSzkP5JNcdExnqgKAuP938k/ZQ2BAHsgHUVUAUxnIQaq3LoCJ
+        oDz0HsAMSGeN1RTABMhH2QPgzqq3LYCJY/1nmQE5kaMpFICJz/giewgcrXpDA5iKqheQkOeJBmA6lYuq
+        N8j5YgOgsur9ILeq3i4ATID42cu78RrSJYCpbA2pXb2HADAxfvjzm2utIYcEMHHePJDP8n8hUgAw5Y3v
+        fBulz0ZKACbWEN9YVHGhUgRA/lWXWatQR4AIYmbi3rdcV+YW4qrbb1NmnoXkH2LOy2zkg2Om2qRrlIUs
+        LzhXndkp2YWMW4LZx4c2Vw5u6hKAYEXBmY2SHeYIzmzjm8VMRTYKbooNwPtwXnDOG+R8sQDo8n8rETPr
+        BL1QoQH4jKLgzDjBFQqAY4sqsXQlbau2ADyAvNf60LhWl7dRU4CyLqcSowc31QIYj8fPh8PhmXZ9YHPj
+        Lm+jqgBc0fcK/0vbi36/74OfTyaTx7vd7pr295rNZvc2m8311Wp1O8syjn3K35fL5R222+32BtsQqgJw
+        qRIHg8E+uJxNp9NH2vbm8/ktAT5hH63X6/vaENy812KxePhnN4jKAP4KPhqN7P++y1EqsYn8D008lAiQ
+        vEqM1uVt5F/ditxZJTYV4fKC46SDe/nfZLji3FqdV+JR6avX+w1vEYeaQaFv5QAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="mp3PlayButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAoVJREFUaEPt
+        mE2KE1EUhYMhJJEIJoMIGajJUCQ4V7DmmqAr0B1078CsoHUHOnGsO7B3oDvQqSPFDbTnC1642lVl/bxX
+        eQ05cKii6Uqdr1J13q30jkpUz+Sv8oX8Q34r35WvhF7LBM/zK/mmnKy48nnBvflGkgV5I1vQd/xByuRz
+        2UNgbrEXclLyQQnuxbfzTfYQOCmQMgDTSzkP5JNcdExnqgKAuP938k/ZQ2BAHsgHUVUAUxnIQaq3LoCJ
+        oDz0HsAMSGeN1RTABMhH2QPgzqq3LYCJY/1nmQE5kaMpFICJz/giewgcrXpDA5iKqheQkOeJBmA6lYuq
+        N8j5YgOgsur9ILeq3i4ATID42cu78RrSJYCpbA2pXb2HADAxfvjzm2utIYcEMHHePJDP8n8hUgAw5Y3v
+        fBulz0ZKACbWEN9YVHGhUgRA/lWXWatQR4AIYmbi3rdcV+YW4qrbb1NmnoXkH2LOy2zkg2Om2qRrlIUs
+        LzhXndkp2YWMW4LZx4c2Vw5u6hKAYEXBmY2SHeYIzmzjm8VMRTYKbooNwPtwXnDOG+R8sQDo8n8rETPr
+        BL1QoQH4jKLgzDjBFQqAY4sqsXQlbau2ADyAvNf60LhWl7dRU4CyLqcSowc31QIYj8fPh8PhmXZ9YHPj
+        Lm+jqgBc0fcK/0vbi36/74OfTyaTx7vd7pr295rNZvc2m8311Wp1O8syjn3K35fL5R222+32BtsQqgJw
+        qRIHg8E+uJxNp9NH2vbm8/ktAT5hH63X6/vaENy812KxePhnN4jKAP4KPhqN7P++y1EqsYn8D008lAiQ
+        vEqM1uVt5F/ditxZJTYV4fKC46SDe/nfZLji3FqdV+JR6avX+w1vEYeaQaFv5QAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="mp3EditButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAqdJREFUaEPt
