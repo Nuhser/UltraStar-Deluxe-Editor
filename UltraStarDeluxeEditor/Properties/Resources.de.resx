@@ -38,4 +38,28 @@ Bitte wähle einen anderen.</value>
     <data name="downloadCoverImageFromUrl" xml:space="preserve">
         <value>Cover-Bild von URL herunterladen</value>
     </data>
+    <data name="unsavedChangesMessage" xml:space="preserve">
+        <value>Du hast ungespeicherte Änderungen. Willst du alles speichern bevor du das Programm schließt?</value>
+    </data>
+    <data name="unsavedChangesCaption" xml:space="preserve">
+        <value>Ungespeicherte Änderungen</value>
+    </data>
+    <data name="reloadSongsMessage" xml:space="preserve">
+        <value>Bist du sicher, dass du die Songs aus den Songordnern neu laden willst? Alle ungespeicherten Änderungen gehen dabei verloren.</value>
+    </data>
+    <data name="reloadSongsCaption" xml:space="preserve">
+        <value>Songs neu laden</value>
+    </data>
+    <data name="coverDownloadSuccessfulMessage" xml:space="preserve">
+        <value>Cover erfolgreich heruntergeladen.</value>
+    </data>
+    <data name="successCaption" xml:space="preserve">
+        <value>Erfolg</value>
+    </data>
+    <data name="coverDownloadErrorMessage" xml:space="preserve">
+        <value>Etwas ist während dem Herunterladen des neuen Covers schiefgelaufen. Stelle sicher, dass die URL zu einem Bild im JPG- oder PNG-Format führt.</value>
+    </data>
+    <data name="coverDownloadErrorCaption" xml:space="preserve">
+        <value>Fehler während Cover Download</value>
+    </data>
 </root>

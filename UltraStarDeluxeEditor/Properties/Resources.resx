@@ -143,4 +143,28 @@ Please select another one.</value>
     <data name="downloadCoverImageFromUrl" xml:space="preserve">
         <value>Download Cover Image from URL</value>
     </data>
+    <data name="unsavedChangesMessage" xml:space="preserve">
+        <value>You have unsaved changes. Do you want to save all changes before closing?</value>
+    </data>
+    <data name="unsavedChangesCaption" xml:space="preserve">
+        <value>Unsaved Changes</value>
+    </data>
+    <data name="reloadSongsMessage" xml:space="preserve">
+        <value>Are you sure that you want to reload all songs from the song directories? Unsaved changes will be lost.</value>
+    </data>
+    <data name="reloadSongsCaption" xml:space="preserve">
+        <value>Reload Songs</value>
+    </data>
+    <data name="coverDownloadSuccessfulMessage" xml:space="preserve">
+        <value>Cover successfully downloaded.</value>
+    </data>
+    <data name="successCaption" xml:space="preserve">
+        <value>Success</value>
+    </data>
+    <data name="coverDownloadErrorMessage" xml:space="preserve">
+        <value>Something went wrong while downloading the new cover image. Make sure that the URL leads to an image in JPG or PNG format.</value>
+    </data>
+    <data name="coverDownloadErrorCaption" xml:space="preserve">
+        <value>Error during Cover Download</value>
+    </data>
 </root>

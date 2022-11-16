@@ -245,8 +245,8 @@ namespace UltraStarDeluxeEditor {
 
             if (IsDirty()) {
                 var result =
-                    MessageBox.Show("You have unsaved changes. Do you want to save all changes before closing?",
-                        "Unsaved Changes", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                    MessageBox.Show(Resources.unsavedChangesMessage,
+                        Resources.unsavedChangesCaption, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
 
                 switch (result) {
                     case DialogResult.Yes:
@@ -349,8 +349,9 @@ namespace UltraStarDeluxeEditor {
             }
 
             if (MessageBox.Show(
-                    "Are you sure that you want to reload all songs from the song directories? Unsaved changes will be lost.",
-                    "Reload Songs", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) {
+                    Resources.reloadSongsMessage,
+                    Resources.reloadSongsCaption, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) ==
+                DialogResult.Yes) {
                 InitSongListView();
             }
         }
@@ -364,7 +365,8 @@ namespace UltraStarDeluxeEditor {
                     }
 
                     UpdateSongDetailUi();
-                    MessageBox.Show("Download successful", "Juhu", MessageBoxButtons.OK);
+                    MessageBox.Show(Resources.coverDownloadSuccessfulMessage, Resources.successCaption,
+                        MessageBoxButtons.OK);
                 }
             }
         }

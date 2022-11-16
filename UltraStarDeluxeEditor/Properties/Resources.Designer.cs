@@ -60,6 +60,33 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error during Cover Download.
+        /// </summary>
+        internal static string coverDownloadErrorCaption {
+            get {
+                return ResourceManager.GetString("coverDownloadErrorCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Something went wrong while downloading the new cover image. Make sure that the URL leads to an image in JPG or PNG format..
+        /// </summary>
+        internal static string coverDownloadErrorMessage {
+            get {
+                return ResourceManager.GetString("coverDownloadErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cover successfully downloaded..
+        /// </summary>
+        internal static string coverDownloadSuccessfulMessage {
+            get {
+                return ResourceManager.GetString("coverDownloadSuccessfulMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Download Cover Image from URL.
         /// </summary>
         internal static string downloadCoverImageFromUrl {
@@ -107,6 +134,24 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reload Songs.
+        /// </summary>
+        internal static string reloadSongsCaption {
+            get {
+                return ResourceManager.GetString("reloadSongsCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure that you want to reload all songs from the song directories? Unsaved changes will be lost..
+        /// </summary>
+        internal static string reloadSongsMessage {
+            get {
+                return ResourceManager.GetString("reloadSongsMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Songlist Initialization Done.
         /// </summary>
         internal static string songListInitializationDoneCaption {
@@ -121,6 +166,33 @@ namespace UltraStarDeluxeEditor.Properties {
         internal static string songListInitializationDoneMessage {
             get {
                 return ResourceManager.GetString("songListInitializationDoneMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Success.
+        /// </summary>
+        internal static string successCaption {
+            get {
+                return ResourceManager.GetString("successCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unsaved Changes.
+        /// </summary>
+        internal static string unsavedChangesCaption {
+            get {
+                return ResourceManager.GetString("unsavedChangesCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have unsaved changes. Do you want to save all changes before closing?.
+        /// </summary>
+        internal static string unsavedChangesMessage {
+            get {
+                return ResourceManager.GetString("unsavedChangesMessage", resourceCulture);
             }
         }
     }

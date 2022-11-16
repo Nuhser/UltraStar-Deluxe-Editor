@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using UltraStarDeluxeEditor.Properties;
 using UltraStarDeluxeEditor.Utility;
 
 namespace UltraStarDeluxeEditor.UltraStarDeluxe {
@@ -251,8 +252,8 @@ namespace UltraStarDeluxeEditor.UltraStarDeluxe {
                 }
 
                 if (MessageBox.Show(
-                        "Something went wrong while downloading the new cover image. Make sure that the URL leads to an image in JPG or PNG format.",
-                        "Error during Cover Download", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) !=
+                        Resources.coverDownloadErrorMessage,
+                        Resources.coverDownloadErrorCaption, MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) !=
                     DialogResult.Retry) {
                     if (!string.IsNullOrWhiteSpace(Cover) && keepBackup) {
                         File.Move(GetCoverPath() + ".backup", GetCoverPath());
