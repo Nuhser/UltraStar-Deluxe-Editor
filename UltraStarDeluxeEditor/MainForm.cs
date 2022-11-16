@@ -1,6 +1,5 @@
 using System;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -15,7 +14,6 @@ namespace UltraStarDeluxeEditor {
         private const string FORM_TITLE = "UltraStar Deluxe Editor";
         private const string DEFAULT_IMAGE_LOCATION = "..\\..\\assets\\DefaultCover.jpg";
 
-        private readonly Image _defaultCoverImage;
         private UltraStarSong _selectedSong;
 
         public MainForm() {
@@ -34,8 +32,6 @@ namespace UltraStarDeluxeEditor {
 
             saveToolStripMenuItem.Enabled = false;
             saveAllToolStripMenuItem.Enabled = false;
-
-            _defaultCoverImage = new Bitmap(DEFAULT_IMAGE_LOCATION);
 
             SetSongDetailUiEnabled(false);
         }
