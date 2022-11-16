@@ -26,13 +26,17 @@ namespace UltraStarDeluxeEditor {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] { "Test", "Foo" }, -1);
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reloadSongsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.songListView = new System.Windows.Forms.ListView();
             this.titleColumn = new System.Windows.Forms.ColumnHeader();
             this.artistColumn = new System.Windows.Forms.ColumnHeader();
+            this.fileColumn = new System.Windows.Forms.ColumnHeader();
             this.titleTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.coverPictureBox = new System.Windows.Forms.PictureBox();
@@ -48,6 +52,8 @@ namespace UltraStarDeluxeEditor {
             this.editionTextBox = new System.Windows.Forms.TextBox();
             this.editionLabel = new System.Windows.Forms.Label();
             this.songInfoGroupBox = new System.Windows.Forms.GroupBox();
+            this.coverDownloadButton = new System.Windows.Forms.Button();
+            this.yearTextBox = new System.Windows.Forms.TextBox();
             this.songSettingsGroupBox = new System.Windows.Forms.GroupBox();
             this.duetCheckBox = new System.Windows.Forms.CheckBox();
             this.videoGapLabel = new System.Windows.Forms.Label();
@@ -76,7 +82,7 @@ namespace UltraStarDeluxeEditor {
             this.player1TextBox = new System.Windows.Forms.TextBox();
             this.player2TextTab = new System.Windows.Forms.TabPage();
             this.player2TextBox = new System.Windows.Forms.TextBox();
-            this.yearTextBox = new System.Windows.Forms.TextBox();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.mainMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.coverPictureBox)).BeginInit();
             this.songInfoGroupBox.SuspendLayout();
@@ -96,26 +102,51 @@ namespace UltraStarDeluxeEditor {
             this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.fileToolStripMenuItem });
             this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.mainMenuStrip.Name = "mainMenuStrip";
-            this.mainMenuStrip.Size = new System.Drawing.Size(1123, 24);
+            this.mainMenuStrip.Size = new System.Drawing.Size(1445, 24);
             this.mainMenuStrip.TabIndex = 0;
             this.mainMenuStrip.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.reloadSongsToolStripMenuItem, this.saveToolStripMenuItem, this.saveAllToolStripMenuItem });
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&File";
             // 
+            // reloadSongsToolStripMenuItem
+            // 
+            this.reloadSongsToolStripMenuItem.Name = "reloadSongsToolStripMenuItem";
+            this.reloadSongsToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.reloadSongsToolStripMenuItem.Text = "Reload Songs";
+            this.reloadSongsToolStripMenuItem.Click += new System.EventHandler(this.reloadSongsToolStripMenuItem_Click);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // saveAllToolStripMenuItem
+            // 
+            this.saveAllToolStripMenuItem.Name = "saveAllToolStripMenuItem";
+            this.saveAllToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys) (((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) | System.Windows.Forms.Keys.S)));
+            this.saveAllToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.saveAllToolStripMenuItem.Text = "Save All";
+            this.saveAllToolStripMenuItem.Click += new System.EventHandler(this.saveAllToolStripMenuItem_Click);
+            // 
             // songListView
             // 
-            this.songListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { this.titleColumn, this.artistColumn });
+            this.songListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { this.titleColumn, this.artistColumn, this.fileColumn });
+            this.songListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.songListView.FullRowSelect = true;
             this.songListView.GridLines = true;
-            this.songListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] { listViewItem1 });
             this.songListView.Location = new System.Drawing.Point(12, 27);
             this.songListView.MultiSelect = false;
             this.songListView.Name = "songListView";
-            this.songListView.Size = new System.Drawing.Size(369, 849);
+            this.songListView.ShowItemToolTips = true;
+            this.songListView.Size = new System.Drawing.Size(691, 849);
             this.songListView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.songListView.TabIndex = 1;
             this.songListView.TabStop = false;
@@ -126,12 +157,17 @@ namespace UltraStarDeluxeEditor {
             // titleColumn
             // 
             this.titleColumn.Text = "Title";
-            this.titleColumn.Width = 211;
+            this.titleColumn.Width = 259;
             // 
             // artistColumn
             // 
             this.artistColumn.Text = "Artist";
-            this.artistColumn.Width = 150;
+            this.artistColumn.Width = 216;
+            // 
+            // fileColumn
+            // 
+            this.fileColumn.Text = "File";
+            this.fileColumn.Width = 266;
             // 
             // titleTextBox
             // 
@@ -140,6 +176,7 @@ namespace UltraStarDeluxeEditor {
             this.titleTextBox.Name = "titleTextBox";
             this.titleTextBox.Size = new System.Drawing.Size(452, 26);
             this.titleTextBox.TabIndex = 0;
+            this.titleTextBox.TextChanged += new System.EventHandler(this.detailControl_ValueChanged);
             // 
             // label1
             // 
@@ -170,6 +207,7 @@ namespace UltraStarDeluxeEditor {
             this.artistTextBox.Name = "artistTextBox";
             this.artistTextBox.Size = new System.Drawing.Size(452, 26);
             this.artistTextBox.TabIndex = 1;
+            this.artistTextBox.TextChanged += new System.EventHandler(this.detailControl_ValueChanged);
             // 
             // artistLabel
             // 
@@ -189,7 +227,7 @@ namespace UltraStarDeluxeEditor {
             this.deleteCoverButton.Location = new System.Drawing.Point(686, 180);
             this.deleteCoverButton.Name = "deleteCoverButton";
             this.deleteCoverButton.Size = new System.Drawing.Size(32, 32);
-            this.deleteCoverButton.TabIndex = 5;
+            this.deleteCoverButton.TabIndex = 16;
             this.deleteCoverButton.TabStop = false;
             this.deleteCoverButton.UseVisualStyleBackColor = true;
             // 
@@ -201,7 +239,7 @@ namespace UltraStarDeluxeEditor {
             this.editCoverButton.Location = new System.Drawing.Point(648, 180);
             this.editCoverButton.Name = "editCoverButton";
             this.editCoverButton.Size = new System.Drawing.Size(32, 32);
-            this.editCoverButton.TabIndex = 5;
+            this.editCoverButton.TabIndex = 15;
             this.editCoverButton.TabStop = false;
             this.editCoverButton.UseVisualStyleBackColor = true;
             // 
@@ -222,6 +260,7 @@ namespace UltraStarDeluxeEditor {
             this.languageTextBox.Name = "languageTextBox";
             this.languageTextBox.Size = new System.Drawing.Size(452, 26);
             this.languageTextBox.TabIndex = 3;
+            this.languageTextBox.TextChanged += new System.EventHandler(this.detailControl_ValueChanged);
             // 
             // languageLabel
             // 
@@ -240,6 +279,7 @@ namespace UltraStarDeluxeEditor {
             this.genreTextBox.Name = "genreTextBox";
             this.genreTextBox.Size = new System.Drawing.Size(452, 26);
             this.genreTextBox.TabIndex = 4;
+            this.genreTextBox.TextChanged += new System.EventHandler(this.detailControl_ValueChanged);
             // 
             // genreLabel
             // 
@@ -258,6 +298,7 @@ namespace UltraStarDeluxeEditor {
             this.editionTextBox.Name = "editionTextBox";
             this.editionTextBox.Size = new System.Drawing.Size(452, 26);
             this.editionTextBox.TabIndex = 5;
+            this.editionTextBox.TextChanged += new System.EventHandler(this.detailControl_ValueChanged);
             // 
             // editionLabel
             // 
@@ -272,6 +313,7 @@ namespace UltraStarDeluxeEditor {
             // songInfoGroupBox
             // 
             this.songInfoGroupBox.Controls.Add(this.titleTextBox);
+            this.songInfoGroupBox.Controls.Add(this.coverDownloadButton);
             this.songInfoGroupBox.Controls.Add(this.editCoverButton);
             this.songInfoGroupBox.Controls.Add(this.deleteCoverButton);
             this.songInfoGroupBox.Controls.Add(this.yearTextBox);
@@ -287,12 +329,34 @@ namespace UltraStarDeluxeEditor {
             this.songInfoGroupBox.Controls.Add(this.languageLabel);
             this.songInfoGroupBox.Controls.Add(this.yearLabel);
             this.songInfoGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.songInfoGroupBox.Location = new System.Drawing.Point(387, 27);
+            this.songInfoGroupBox.Location = new System.Drawing.Point(709, 27);
             this.songInfoGroupBox.Name = "songInfoGroupBox";
             this.songInfoGroupBox.Size = new System.Drawing.Size(724, 218);
             this.songInfoGroupBox.TabIndex = 6;
             this.songInfoGroupBox.TabStop = false;
             this.songInfoGroupBox.Text = "Song Info";
+            // 
+            // coverDownloadButton
+            // 
+            this.coverDownloadButton.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("coverDownloadButton.BackgroundImage")));
+            this.coverDownloadButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.coverDownloadButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.coverDownloadButton.Location = new System.Drawing.Point(610, 180);
+            this.coverDownloadButton.Name = "coverDownloadButton";
+            this.coverDownloadButton.Size = new System.Drawing.Size(32, 32);
+            this.coverDownloadButton.TabIndex = 14;
+            this.coverDownloadButton.TabStop = false;
+            this.coverDownloadButton.UseVisualStyleBackColor = true;
+            this.coverDownloadButton.Click += new System.EventHandler(this.coverDownloadButton_Click);
+            // 
+            // yearTextBox
+            // 
+            this.yearTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.yearTextBox.Location = new System.Drawing.Point(100, 88);
+            this.yearTextBox.Name = "yearTextBox";
+            this.yearTextBox.Size = new System.Drawing.Size(452, 26);
+            this.yearTextBox.TabIndex = 2;
+            this.yearTextBox.TextChanged += new System.EventHandler(this.detailControl_ValueChanged);
             // 
             // songSettingsGroupBox
             // 
@@ -308,7 +372,7 @@ namespace UltraStarDeluxeEditor {
             this.songSettingsGroupBox.Controls.Add(this.gapNumericUpDown);
             this.songSettingsGroupBox.Controls.Add(this.duetSinger1Label);
             this.songSettingsGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.songSettingsGroupBox.Location = new System.Drawing.Point(387, 251);
+            this.songSettingsGroupBox.Location = new System.Drawing.Point(709, 251);
             this.songSettingsGroupBox.Name = "songSettingsGroupBox";
             this.songSettingsGroupBox.Size = new System.Drawing.Size(724, 121);
             this.songSettingsGroupBox.TabIndex = 7;
@@ -322,7 +386,7 @@ namespace UltraStarDeluxeEditor {
             this.duetCheckBox.Name = "duetCheckBox";
             this.duetCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.duetCheckBox.Size = new System.Drawing.Size(104, 24);
-            this.duetCheckBox.TabIndex = 4;
+            this.duetCheckBox.TabIndex = 9;
             this.duetCheckBox.Text = "Is Duet";
             this.duetCheckBox.UseVisualStyleBackColor = true;
             this.duetCheckBox.CheckedChanged += new System.EventHandler(this.duetCheckBox_CheckedChanged);
@@ -363,7 +427,8 @@ namespace UltraStarDeluxeEditor {
             this.duetSinger2TextBox.Location = new System.Drawing.Point(266, 86);
             this.duetSinger2TextBox.Name = "duetSinger2TextBox";
             this.duetSinger2TextBox.Size = new System.Drawing.Size(452, 26);
-            this.duetSinger2TextBox.TabIndex = 1;
+            this.duetSinger2TextBox.TabIndex = 11;
+            this.duetSinger2TextBox.TextChanged += new System.EventHandler(this.detailControl_ValueChanged);
             // 
             // duetSinger1TextBox
             // 
@@ -371,17 +436,20 @@ namespace UltraStarDeluxeEditor {
             this.duetSinger1TextBox.Location = new System.Drawing.Point(266, 54);
             this.duetSinger1TextBox.Name = "duetSinger1TextBox";
             this.duetSinger1TextBox.Size = new System.Drawing.Size(452, 26);
-            this.duetSinger1TextBox.TabIndex = 1;
+            this.duetSinger1TextBox.TabIndex = 10;
+            this.duetSinger1TextBox.TextChanged += new System.EventHandler(this.detailControl_ValueChanged);
             // 
             // videoGapNumericUpDown
             // 
+            this.videoGapNumericUpDown.DecimalPlaces = 2;
             this.videoGapNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.videoGapNumericUpDown.Increment = new decimal(new int[] { 5, 0, 0, 65536 });
             this.videoGapNumericUpDown.Location = new System.Drawing.Point(610, 22);
             this.videoGapNumericUpDown.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             this.videoGapNumericUpDown.Name = "videoGapNumericUpDown";
             this.videoGapNumericUpDown.Size = new System.Drawing.Size(108, 26);
-            this.videoGapNumericUpDown.TabIndex = 2;
-            this.videoGapNumericUpDown.ThousandsSeparator = true;
+            this.videoGapNumericUpDown.TabIndex = 8;
+            this.videoGapNumericUpDown.ValueChanged += new System.EventHandler(this.detailControl_ValueChanged);
             // 
             // bpmNumericUpDown
             // 
@@ -393,9 +461,9 @@ namespace UltraStarDeluxeEditor {
             this.bpmNumericUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             this.bpmNumericUpDown.Name = "bpmNumericUpDown";
             this.bpmNumericUpDown.Size = new System.Drawing.Size(108, 26);
-            this.bpmNumericUpDown.TabIndex = 2;
-            this.bpmNumericUpDown.ThousandsSeparator = true;
-            this.bpmNumericUpDown.Value = new decimal(new int[] { 300, 0, 0, 0 });
+            this.bpmNumericUpDown.TabIndex = 7;
+            this.bpmNumericUpDown.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            this.bpmNumericUpDown.ValueChanged += new System.EventHandler(this.detailControl_ValueChanged);
             // 
             // duetSinger2Label
             // 
@@ -416,8 +484,8 @@ namespace UltraStarDeluxeEditor {
             this.gapNumericUpDown.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             this.gapNumericUpDown.Name = "gapNumericUpDown";
             this.gapNumericUpDown.Size = new System.Drawing.Size(108, 26);
-            this.gapNumericUpDown.TabIndex = 2;
-            this.gapNumericUpDown.ThousandsSeparator = true;
+            this.gapNumericUpDown.TabIndex = 6;
+            this.gapNumericUpDown.ValueChanged += new System.EventHandler(this.detailControl_ValueChanged);
             // 
             // duetSinger1Label
             // 
@@ -442,7 +510,7 @@ namespace UltraStarDeluxeEditor {
             this.songFilesGroupBox.Controls.Add(this.mp3DeleteButton);
             this.songFilesGroupBox.Controls.Add(this.mp3Label);
             this.songFilesGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.songFilesGroupBox.Location = new System.Drawing.Point(387, 378);
+            this.songFilesGroupBox.Location = new System.Drawing.Point(709, 378);
             this.songFilesGroupBox.Name = "songFilesGroupBox";
             this.songFilesGroupBox.Size = new System.Drawing.Size(724, 100);
             this.songFilesGroupBox.TabIndex = 8;
@@ -457,6 +525,7 @@ namespace UltraStarDeluxeEditor {
             this.videoTextBox.Name = "videoTextBox";
             this.videoTextBox.Size = new System.Drawing.Size(504, 26);
             this.videoTextBox.TabIndex = 0;
+            this.videoTextBox.TextChanged += new System.EventHandler(this.detailControl_ValueChanged);
             // 
             // mp3TextBox
             // 
@@ -466,6 +535,7 @@ namespace UltraStarDeluxeEditor {
             this.mp3TextBox.Name = "mp3TextBox";
             this.mp3TextBox.Size = new System.Drawing.Size(504, 26);
             this.mp3TextBox.TabIndex = 0;
+            this.mp3TextBox.TextChanged += new System.EventHandler(this.detailControl_ValueChanged);
             // 
             // videoEditButton
             // 
@@ -566,11 +636,12 @@ namespace UltraStarDeluxeEditor {
             this.textTabControl.Controls.Add(this.player1TextTab);
             this.textTabControl.Controls.Add(this.player2TextTab);
             this.textTabControl.Enabled = false;
-            this.textTabControl.Location = new System.Drawing.Point(387, 484);
+            this.textTabControl.Location = new System.Drawing.Point(709, 484);
             this.textTabControl.Name = "textTabControl";
             this.textTabControl.SelectedIndex = 0;
             this.textTabControl.Size = new System.Drawing.Size(718, 392);
             this.textTabControl.TabIndex = 9;
+            this.textTabControl.TabStop = false;
             this.textTabControl.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.textTabControl_Selecting);
             // 
             // player1TextTab
@@ -586,12 +657,14 @@ namespace UltraStarDeluxeEditor {
             // 
             // player1TextBox
             // 
+            this.player1TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.player1TextBox.Location = new System.Drawing.Point(6, 6);
             this.player1TextBox.Multiline = true;
             this.player1TextBox.Name = "player1TextBox";
             this.player1TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.player1TextBox.Size = new System.Drawing.Size(698, 354);
-            this.player1TextBox.TabIndex = 0;
+            this.player1TextBox.TabIndex = 12;
+            this.player1TextBox.TextChanged += new System.EventHandler(this.detailControl_ValueChanged);
             // 
             // player2TextTab
             // 
@@ -606,26 +679,27 @@ namespace UltraStarDeluxeEditor {
             // 
             // player2TextBox
             // 
+            this.player2TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.player2TextBox.Location = new System.Drawing.Point(6, 6);
             this.player2TextBox.Multiline = true;
             this.player2TextBox.Name = "player2TextBox";
             this.player2TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.player2TextBox.Size = new System.Drawing.Size(698, 354);
-            this.player2TextBox.TabIndex = 1;
+            this.player2TextBox.TabIndex = 13;
+            this.player2TextBox.TextChanged += new System.EventHandler(this.detailControl_ValueChanged);
             // 
-            // yearTextBox
+            // toolTip
             // 
-            this.yearTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.yearTextBox.Location = new System.Drawing.Point(100, 88);
-            this.yearTextBox.Name = "yearTextBox";
-            this.yearTextBox.Size = new System.Drawing.Size(452, 26);
-            this.yearTextBox.TabIndex = 1;
+            this.toolTip.AutoPopDelay = 5000;
+            this.toolTip.InitialDelay = 500;
+            this.toolTip.ReshowDelay = 500;
+            this.toolTip.ShowAlways = true;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1123, 888);
+            this.ClientSize = new System.Drawing.Size(1445, 888);
             this.Controls.Add(this.textTabControl);
             this.Controls.Add(this.songFilesGroupBox);
             this.Controls.Add(this.songSettingsGroupBox);
@@ -661,6 +735,17 @@ namespace UltraStarDeluxeEditor {
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.ColumnHeader fileColumn;
+
+        private System.Windows.Forms.ToolTip toolTip;
+
+        private System.Windows.Forms.Button coverDownloadButton;
+
+        private System.Windows.Forms.ToolStripMenuItem reloadSongsToolStripMenuItem;
+
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveAllToolStripMenuItem;
 
         private System.Windows.Forms.TextBox yearTextBox;
 

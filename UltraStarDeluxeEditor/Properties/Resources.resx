@@ -140,4 +140,7 @@ Please select another one.</value>
     <data name="songListInitializationDoneCaption" xml:space="preserve">
         <value>Songlist Initialization Done</value>
     </data>
+    <data name="downloadCoverImageFromUrl" xml:space="preserve">
+        <value>Download Cover Image from URL</value>
+    </data>
 </root>

@@ -60,6 +60,15 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Download Cover Image from URL.
+        /// </summary>
+        internal static string downloadCoverImageFromUrl {
+            get {
+                return ResourceManager.GetString("downloadCoverImageFromUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No UltraStar Directory.
         /// </summary>
         internal static string noUSDPathConfiguredCaption {

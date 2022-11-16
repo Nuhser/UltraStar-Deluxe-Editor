@@ -35,4 +35,7 @@ Bitte wähle einen anderen.</value>
     <data name="songListInitializationDoneCaption" xml:space="preserve">
         <value>Songlisten Initialisierung Beendet</value>
     </data>
+    <data name="downloadCoverImageFromUrl" xml:space="preserve">
+        <value>Cover-Bild von URL herunterladen</value>
+    </data>
 </root>
