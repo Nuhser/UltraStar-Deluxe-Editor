@@ -228,15 +228,20 @@ namespace UltraStarDeluxeEditor.UltraStarDeluxe {
         }
 
         public bool IsValid() {
-            return !string.IsNullOrEmpty(FilePath) && !string.IsNullOrEmpty(Title) &&
-                   !string.IsNullOrEmpty(Artist) &&
-                   BPM >= 1 && Gap >= 0 &&
-                   !string.IsNullOrEmpty(MP3) &&
-                   !string.IsNullOrEmpty(SongText.Item1);
+            return !string.IsNullOrEmpty(FilePath) && !string.IsNullOrEmpty(Title) && !string.IsNullOrEmpty(Artist) &&
+                   BPM >= 1 && Gap >= 0 && HasMp3() && !string.IsNullOrEmpty(SongText.Item1);
         }
 
         public bool HasCover() {
             return !string.IsNullOrWhiteSpace(Cover);
+        }
+
+        public bool HasMp3() {
+            return !string.IsNullOrWhiteSpace(MP3);
+        }
+
+        public bool HasVideo() {
+            return !string.IsNullOrWhiteSpace(Video);
         }
 
         public string GetSongDirectory() {

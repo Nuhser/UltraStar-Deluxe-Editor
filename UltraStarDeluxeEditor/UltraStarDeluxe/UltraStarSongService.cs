@@ -57,6 +57,18 @@ namespace UltraStarDeluxeEditor.UltraStarDeluxe {
             }
         }
 
+        public static void OpenMp3(UltraStarSong song) {
+            if (song != null && song.HasMp3()) {
+                Process.Start(song.GetMp3Path());
+            }
+        }
+
+        public static void OpenVideo(UltraStarSong song) {
+            if (song != null && song.HasVideo()) {
+                Process.Start(song.GetVideoPath());
+            }
+        }
+
         public static void SearchWithGoogle(UltraStarSong song) {
             if (song != null) {
                 Process.Start(

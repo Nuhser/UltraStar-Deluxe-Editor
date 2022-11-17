@@ -1,5 +1,4 @@
 using System;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -63,7 +62,6 @@ namespace UltraStarDeluxeEditor {
                          .SelectMany(songDirectory => Directory.GetFiles(songDirectory, "*.txt"))) {
                 UltraStarSong song;
 
-
                 try {
                     song = UltraStarSong.ParseSongFile(songFile);
                 }
@@ -80,7 +78,7 @@ namespace UltraStarDeluxeEditor {
                 songsFound++;
             }
 
-            UpdateSongDetailUi();
+            UpdateUi();
 
             MessageBox.Show(string.Format(Resources.songListInitializationDoneMessage, songsFound),
                 Resources.songListInitializationDoneCaption,
@@ -94,8 +92,11 @@ namespace UltraStarDeluxeEditor {
             textTabControl.Enabled = enabled;
         }
 
-        private void UpdateSongDetailUi() {
-            if (_selectedSong != null) {
+        private void UpdateUi() {
+            var songSelected = (_selectedSong != null);
+            
+            // fill/clear song details
+            if (songSelected) {
                 titleTextBox.Text = _selectedSong.Title;
                 artistTextBox.Text = _selectedSong.Artist;
                 genreTextBox.Text = _selectedSong.Genre;
@@ -111,9 +112,9 @@ namespace UltraStarDeluxeEditor {
                 duetSinger2TextBox.Text = _selectedSong.DuetSingerP2;
 
                 mp3TextBox.Text = _selectedSong.MP3;
-                mp3PlayButton.Enabled = !string.IsNullOrEmpty(_selectedSong.MP3);
+                mp3PlayButton.Enabled = _selectedSong.HasMp3();
                 videoTextBox.Text = _selectedSong.Video;
-                videoPlayButton.Enabled = !string.IsNullOrEmpty(_selectedSong.Video);
+                videoPlayButton.Enabled = _selectedSong.HasVideo();
 
                 coverPictureBox.ImageLocation = _selectedSong.Cover != null
                     ? _selectedSong.GetCoverPath()
@@ -129,12 +130,6 @@ namespace UltraStarDeluxeEditor {
                 duetSinger2Label.Enabled = _selectedSong.IsDuet;
                 duetSinger2TextBox.Enabled = _selectedSong.IsDuet;
                 player2TextTab.Enabled = _selectedSong.IsDuet;
-
-                if (_selectedSong.IsDirty) {
-                    saveToolStripMenuItem.Enabled = true;
-                }
-
-                webSearchToolStripMenuItem.Enabled = true;
             }
             else {
                 titleTextBox.Text = "";
@@ -157,13 +152,14 @@ namespace UltraStarDeluxeEditor {
 
                 player1TextBox.Text = "";
                 player2TextBox.Text = "";
-
-                saveToolStripMenuItem.Enabled = false;
-                webSearchToolStripMenuItem.Enabled = false;
             }
 
+            // enable/disable menu items
+            saveToolStripMenuItem.Enabled = songSelected && _selectedSong.IsDirty;
+            webSearchToolStripMenuItem.Enabled = songSelected;
+
             UpdateFormTitle();
-            SetSongDetailUiEnabled(_selectedSong != null);
+            SetSongDetailUiEnabled(songSelected);
         }
 
         private void UpdateFormTitle() {
@@ -172,7 +168,7 @@ namespace UltraStarDeluxeEditor {
             saveAllToolStripMenuItem.Enabled = isDirty;
         }
 
-        public void WriteDetailUiToSong(UltraStarSong song) {
+        private void WriteDetailUiToSong(UltraStarSong song) {
             song.Title = titleTextBox.Text;
             song.Artist = artistTextBox.Text;
             song.Genre = genreTextBox.Text;
@@ -208,7 +204,7 @@ namespace UltraStarDeluxeEditor {
             }
 
             if (updateUi) {
-                UpdateSongDetailUi();
+                UpdateUi();
             }
         }
 
@@ -225,7 +221,7 @@ namespace UltraStarDeluxeEditor {
                 }
             }
 
-            UpdateSongDetailUi();
+            UpdateUi();
         }
 
         private void MainForm_Load(object sender, EventArgs e) {
@@ -294,14 +290,11 @@ namespace UltraStarDeluxeEditor {
         }
 
         private void songListView_SelectedIndexChanged(object sender, EventArgs e) {
-            if (songListView.SelectedItems.Count > 0) {
-                _selectedSong = ((SongListViewItem) songListView.SelectedItems[0]).UltraStarSong;
-                saveToolStripMenuItem.Enabled = _selectedSong.IsDirty;
-                UpdateSongDetailUi();
-            }
-            else {
-                SetSongDetailUiEnabled(false);
-            }
+            _selectedSong = songListView.SelectedItems.Count > 0
+                ? ((SongListViewItem) songListView.SelectedItems[0]).UltraStarSong
+                : null;
+
+            UpdateUi();
         }
 
         private void duetCheckBox_CheckedChanged(object sender, EventArgs e) {
@@ -310,19 +303,15 @@ namespace UltraStarDeluxeEditor {
             }
 
             detailControl_ValueChanged(sender, e);
-            UpdateSongDetailUi();
+            UpdateUi();
         }
 
         private void mp3PlayButton_Click(object sender, EventArgs e) {
-            if (_selectedSong != null) {
-                Process.Start(_selectedSong.GetMp3Path());
-            }
+            UltraStarSongService.OpenMp3(_selectedSong);
         }
 
         private void videoPlayButton_Click(object sender, EventArgs e) {
-            if (_selectedSong != null) {
-                Process.Start(_selectedSong.GetVideoPath());
-            }
+            UltraStarSongService.OpenVideo(_selectedSong);
         }
 
         /**
@@ -367,7 +356,7 @@ namespace UltraStarDeluxeEditor {
                     ((SongListViewItem) songListView.SelectedItems[0]).SetDirty(true);
                 }
 
-                UpdateSongDetailUi();
+                UpdateUi();
                 MessageBox.Show(Resources.coverDownloadSuccessfulMessage, Resources.successCaption,
                     MessageBoxButtons.OK);
             }
