@@ -236,6 +236,10 @@ namespace UltraStarDeluxeEditor.UltraStarDeluxe {
                    !string.IsNullOrEmpty(SongText.Item1);
         }
 
+        public bool HasCover() {
+            return !string.IsNullOrWhiteSpace(Cover);
+        }
+
         public bool ChangeCoverWithUrl(string newCoverUrl, bool keepBackup = true) {
             if (!string.IsNullOrWhiteSpace(Cover) && keepBackup) {
                 File.Move(GetCoverPath(), GetCoverPath() + ".backup");
