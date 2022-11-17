@@ -173,4 +173,10 @@ Please select another one.</value>
     <data name="urlInputCaption" xml:space="preserve">
         <value>Enter URL</value>
     </data>
+    <data name="coverDownloadOverwriteMessage" xml:space="preserve">
+        <value>Are you sure that you want to download a new cover image? This will delete the old one after saving.</value>
+    </data>
+    <data name="coverDownloadOverwriteCaption" xml:space="preserve">
+        <value>Overwrite Cover</value>
+    </data>
 </root>

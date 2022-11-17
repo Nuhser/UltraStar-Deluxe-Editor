@@ -3,9 +3,6 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Windows.Forms;
-using UltraStarDeluxeEditor.Properties;
-using UltraStarDeluxeEditor.Utility;
 
 namespace UltraStarDeluxeEditor.UltraStarDeluxe {
     public class UltraStarSong {
@@ -240,39 +237,6 @@ namespace UltraStarDeluxeEditor.UltraStarDeluxe {
 
         public bool HasCover() {
             return !string.IsNullOrWhiteSpace(Cover);
-        }
-
-        public bool ChangeCoverWithUrl(string newCoverUrl, bool keepBackup = true) {
-            if (!string.IsNullOrWhiteSpace(Cover) && keepBackup) {
-                File.Move(GetCoverPath(), GetCoverPath() + ".backup");
-            }
-
-            string imageLocation;
-            while (true) {
-                imageLocation = WebUtil.DownloadImageFromUrl(newCoverUrl,
-                    GetSongDirectory() + "\\" +
-                    Path.GetFileNameWithoutExtension(FilePath));
-
-                if (!string.IsNullOrWhiteSpace(imageLocation)) {
-                    break;
-                }
-
-                if (MessageBox.Show(
-                        Resources.coverDownloadErrorMessage,
-                        Resources.coverDownloadErrorCaption, MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) !=
-                    DialogResult.Retry) {
-                    if (!string.IsNullOrWhiteSpace(Cover) && keepBackup) {
-                        File.Move(GetCoverPath() + ".backup", GetCoverPath());
-                    }
-
-                    return false;
-                }
-            }
-
-            OldCover = GetCoverPath();
-            Cover = Path.GetFileName(imageLocation);
-
-            return true;
         }
 
         public string GetSongDirectory() {

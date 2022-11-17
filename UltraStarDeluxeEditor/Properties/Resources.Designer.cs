@@ -78,6 +78,24 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Overwrite Cover.
+        /// </summary>
+        internal static string coverDownloadOverwriteCaption {
+            get {
+                return ResourceManager.GetString("coverDownloadOverwriteCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure that you want to download a new cover image? This will delete the old one after saving..
+        /// </summary>
+        internal static string coverDownloadOverwriteMessage {
+            get {
+                return ResourceManager.GetString("coverDownloadOverwriteMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cover successfully downloaded..
         /// </summary>
         internal static string coverDownloadSuccessfulMessage {
