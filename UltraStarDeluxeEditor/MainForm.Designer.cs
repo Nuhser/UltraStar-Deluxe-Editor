@@ -33,6 +33,12 @@ namespace UltraStarDeluxeEditor {
             this.reloadSongsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.songToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.webSearchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.googleSearchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.discogsSearchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.songListView = new System.Windows.Forms.ListView();
             this.titleColumn = new System.Windows.Forms.ColumnHeader();
             this.artistColumn = new System.Windows.Forms.ColumnHeader();
@@ -99,7 +105,7 @@ namespace UltraStarDeluxeEditor {
             // mainMenuStrip
             // 
             this.mainMenuStrip.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.fileToolStripMenuItem });
+            this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.fileToolStripMenuItem, this.songToolStripMenuItem });
             this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.mainMenuStrip.Name = "mainMenuStrip";
             this.mainMenuStrip.Size = new System.Drawing.Size(1445, 24);
@@ -108,7 +114,7 @@ namespace UltraStarDeluxeEditor {
             // 
             // fileToolStripMenuItem
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.reloadSongsToolStripMenuItem, this.saveToolStripMenuItem, this.saveAllToolStripMenuItem });
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.reloadSongsToolStripMenuItem, this.saveToolStripMenuItem, this.saveAllToolStripMenuItem, this.toolStripSeparator1, this.closeToolStripMenuItem });
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&File";
@@ -135,6 +141,46 @@ namespace UltraStarDeluxeEditor {
             this.saveAllToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.saveAllToolStripMenuItem.Text = "Save All";
             this.saveAllToolStripMenuItem.Click += new System.EventHandler(this.saveAllToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(184, 6);
+            // 
+            // closeToolStripMenuItem
+            // 
+            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.closeToolStripMenuItem.Text = "Close";
+            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
+            // 
+            // songToolStripMenuItem
+            // 
+            this.songToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.webSearchToolStripMenuItem });
+            this.songToolStripMenuItem.Name = "songToolStripMenuItem";
+            this.songToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            this.songToolStripMenuItem.Text = "Song";
+            // 
+            // webSearchToolStripMenuItem
+            // 
+            this.webSearchToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.googleSearchToolStripMenuItem, this.discogsSearchToolStripMenuItem });
+            this.webSearchToolStripMenuItem.Name = "webSearchToolStripMenuItem";
+            this.webSearchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.webSearchToolStripMenuItem.Text = "Web Search";
+            // 
+            // googleSearchToolStripMenuItem
+            // 
+            this.googleSearchToolStripMenuItem.Name = "googleSearchToolStripMenuItem";
+            this.googleSearchToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.googleSearchToolStripMenuItem.Text = "Search with Google";
+            this.googleSearchToolStripMenuItem.Click += new System.EventHandler(this.googleSearchToolStripMenuItem_Click);
+            // 
+            // discogsSearchToolStripMenuItem
+            // 
+            this.discogsSearchToolStripMenuItem.Name = "discogsSearchToolStripMenuItem";
+            this.discogsSearchToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.discogsSearchToolStripMenuItem.Text = "Search on Discogs";
+            this.discogsSearchToolStripMenuItem.Click += new System.EventHandler(this.discogsSearchToolStripMenuItem_Click);
             // 
             // songListView
             // 
@@ -199,6 +245,7 @@ namespace UltraStarDeluxeEditor {
             this.coverPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.coverPictureBox.TabIndex = 4;
             this.coverPictureBox.TabStop = false;
+            this.coverPictureBox.DoubleClick += new System.EventHandler(this.coverPictureBox_DoubleClick);
             // 
             // artistTextBox
             // 
@@ -735,6 +782,14 @@ namespace UltraStarDeluxeEditor {
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
+
+        private System.Windows.Forms.ToolStripMenuItem songToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem webSearchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem googleSearchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem discogsSearchToolStripMenuItem;
 
         private System.Windows.Forms.ColumnHeader fileColumn;
 

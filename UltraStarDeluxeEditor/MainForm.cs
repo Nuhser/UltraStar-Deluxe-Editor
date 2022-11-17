@@ -32,6 +32,7 @@ namespace UltraStarDeluxeEditor {
 
             saveToolStripMenuItem.Enabled = false;
             saveAllToolStripMenuItem.Enabled = false;
+            webSearchToolStripMenuItem.Enabled = false;
 
             SetSongDetailUiEnabled(false);
         }
@@ -132,6 +133,8 @@ namespace UltraStarDeluxeEditor {
                 if (_selectedSong.IsDirty) {
                     saveToolStripMenuItem.Enabled = true;
                 }
+
+                webSearchToolStripMenuItem.Enabled = true;
             }
             else {
                 titleTextBox.Text = "";
@@ -156,6 +159,7 @@ namespace UltraStarDeluxeEditor {
                 player2TextBox.Text = "";
 
                 saveToolStripMenuItem.Enabled = false;
+                webSearchToolStripMenuItem.Enabled = false;
             }
 
             UpdateFormTitle();
@@ -369,6 +373,22 @@ namespace UltraStarDeluxeEditor {
                         MessageBoxButtons.OK);
                 }
             }
+        }
+
+        private void coverPictureBox_DoubleClick(object sender, EventArgs e) {
+            UltraStarSongService.OpenCoverImage(_selectedSong);
+        }
+
+        private void googleSearchToolStripMenuItem_Click(object sender, EventArgs e) {
+            UltraStarSongService.SearchWithGoogle(_selectedSong);
+        }
+
+        private void discogsSearchToolStripMenuItem_Click(object sender, EventArgs e) {
+            UltraStarSongService.SearchOnDiscogs(_selectedSong);
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e) {
+            Close();
         }
     }
 }
