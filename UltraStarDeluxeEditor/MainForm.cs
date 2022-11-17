@@ -358,7 +358,7 @@ namespace UltraStarDeluxeEditor {
 
         private void coverDownloadButton_Click(object sender, EventArgs e) {
             if (_selectedSong != null) {
-                var coverUrl = Interaction.InputBox("Please enter the URL of the ", "Caption");
+                var coverUrl = Interaction.InputBox(Resources.coverDownloadUrlInputMessage, Resources.urlInputCaption);
                 if (!string.IsNullOrWhiteSpace(coverUrl) && _selectedSong.ChangeCoverWithUrl(coverUrl)) {
                     if (!_selectedSong.IsDirty) {
                         ((SongListViewItem) songListView.SelectedItems[0]).SetDirty(true);

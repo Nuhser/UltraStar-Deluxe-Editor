@@ -87,6 +87,15 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please enter the URL of the image you want to download as the new cover..
+        /// </summary>
+        internal static string coverDownloadUrlInputMessage {
+            get {
+                return ResourceManager.GetString("coverDownloadUrlInputMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Download Cover Image from URL.
         /// </summary>
         internal static string downloadCoverImageFromUrl {
@@ -193,6 +202,15 @@ namespace UltraStarDeluxeEditor.Properties {
         internal static string unsavedChangesMessage {
             get {
                 return ResourceManager.GetString("unsavedChangesMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter URL.
+        /// </summary>
+        internal static string urlInputCaption {
+            get {
+                return ResourceManager.GetString("urlInputCaption", resourceCulture);
             }
         }
     }

@@ -167,4 +167,10 @@ Please select another one.</value>
     <data name="coverDownloadErrorCaption" xml:space="preserve">
         <value>Error during Cover Download</value>
     </data>
+    <data name="coverDownloadUrlInputMessage" xml:space="preserve">
+        <value>Please enter the URL of the image you want to download as the new cover.</value>
+    </data>
+    <data name="urlInputCaption" xml:space="preserve">
+        <value>Enter URL</value>
+    </data>
 </root>
