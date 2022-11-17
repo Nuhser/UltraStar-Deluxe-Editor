@@ -147,12 +147,14 @@ namespace UltraStarDeluxeEditor.UltraStarDeluxe {
                 return song;
             }
 
-            throw new UltraStarSongNotValidException($"The file with path '{filePath}' is no valid UltraStar song!");
+            throw new UltraStarSongNotValidException($"The file with path '{filePath}' is no valid UltraStar song!",
+                song);
         }
 
         public void SaveSongToFile() {
             if (!IsValid()) {
-                throw new UltraStarSongNotValidException("The song you're trying to save is no valid UltraStar song!");
+                throw new UltraStarSongNotValidException("The song you're trying to save is no valid UltraStar song!",
+                    this);
             }
 
             if (!IsDirty) {
