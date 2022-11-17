@@ -89,6 +89,10 @@ namespace UltraStarDeluxeEditor {
             this.player2TextTab = new System.Windows.Forms.TabPage();
             this.player2TextBox = new System.Windows.Forms.TextBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.openCoverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openMP3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openVideoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.mainMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.coverPictureBox)).BeginInit();
             this.songInfoGroupBox.SuspendLayout();
@@ -156,7 +160,7 @@ namespace UltraStarDeluxeEditor {
             // 
             // songToolStripMenuItem
             // 
-            this.songToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.webSearchToolStripMenuItem });
+            this.songToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.openCoverToolStripMenuItem, this.openMP3ToolStripMenuItem, this.openVideoToolStripMenuItem, this.toolStripSeparator2, this.webSearchToolStripMenuItem });
             this.songToolStripMenuItem.Name = "songToolStripMenuItem";
             this.songToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.songToolStripMenuItem.Text = "Song";
@@ -277,6 +281,7 @@ namespace UltraStarDeluxeEditor {
             this.deleteCoverButton.TabIndex = 16;
             this.deleteCoverButton.TabStop = false;
             this.deleteCoverButton.UseVisualStyleBackColor = true;
+            this.deleteCoverButton.Click += new System.EventHandler(this.deleteCoverButton_Click);
             // 
             // editCoverButton
             // 
@@ -742,6 +747,32 @@ namespace UltraStarDeluxeEditor {
             this.toolTip.ReshowDelay = 500;
             this.toolTip.ShowAlways = true;
             // 
+            // openCoverToolStripMenuItem
+            // 
+            this.openCoverToolStripMenuItem.Name = "openCoverToolStripMenuItem";
+            this.openCoverToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openCoverToolStripMenuItem.Text = "Open Cover";
+            this.openCoverToolStripMenuItem.Click += new System.EventHandler(this.coverPictureBox_DoubleClick);
+            // 
+            // openMP3ToolStripMenuItem
+            // 
+            this.openMP3ToolStripMenuItem.Name = "openMP3ToolStripMenuItem";
+            this.openMP3ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openMP3ToolStripMenuItem.Text = "Open MP3";
+            this.openMP3ToolStripMenuItem.Click += new System.EventHandler(this.mp3PlayButton_Click);
+            // 
+            // openVideoToolStripMenuItem
+            // 
+            this.openVideoToolStripMenuItem.Name = "openVideoToolStripMenuItem";
+            this.openVideoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openVideoToolStripMenuItem.Text = "Open Video";
+            this.openVideoToolStripMenuItem.Click += new System.EventHandler(this.videoPlayButton_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -782,6 +813,12 @@ namespace UltraStarDeluxeEditor {
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+
+        private System.Windows.Forms.ToolStripMenuItem openCoverToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openMP3ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openVideoToolStripMenuItem;
 
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;

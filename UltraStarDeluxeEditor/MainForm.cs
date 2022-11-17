@@ -29,8 +29,12 @@ namespace UltraStarDeluxeEditor {
             // add tool tips
             toolTip.SetToolTip(coverDownloadButton, Resources.downloadCoverImageFromUrl);
 
+            // disable menu items
             saveToolStripMenuItem.Enabled = false;
             saveAllToolStripMenuItem.Enabled = false;
+            openCoverToolStripMenuItem.Enabled = false;
+            openMP3ToolStripMenuItem.Enabled = false;
+            openVideoToolStripMenuItem.Enabled = false;
             webSearchToolStripMenuItem.Enabled = false;
 
             SetSongDetailUiEnabled(false);
@@ -93,8 +97,8 @@ namespace UltraStarDeluxeEditor {
         }
 
         private void UpdateUi() {
-            var songSelected = (_selectedSong != null);
-            
+            var songSelected = _selectedSong != null;
+
             // fill/clear song details
             if (songSelected) {
                 titleTextBox.Text = _selectedSong.Title;
@@ -156,6 +160,9 @@ namespace UltraStarDeluxeEditor {
 
             // enable/disable menu items
             saveToolStripMenuItem.Enabled = songSelected && _selectedSong.IsDirty;
+            openCoverToolStripMenuItem.Enabled = songSelected && _selectedSong.HasCover();
+            openMP3ToolStripMenuItem.Enabled = songSelected && _selectedSong.HasMp3();
+            openVideoToolStripMenuItem.Enabled = songSelected && _selectedSong.HasVideo();
             webSearchToolStripMenuItem.Enabled = songSelected;
 
             UpdateFormTitle();
