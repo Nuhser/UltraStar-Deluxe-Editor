@@ -216,12 +216,20 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Something went wrong while reloading{0}!
-        ///Make sure the TXT-file of the song still exists..
+        ///   Looks up a localized string similar to An unexpected error occured while reloading{0}!.
         /// </summary>
         internal static string reloadSongErrorMessage {
             get {
                 return ResourceManager.GetString("reloadSongErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The song couldn&apos;t be reloaded due to the file ({0}) not existing..
+        /// </summary>
+        internal static string reloadSongFileNotFoundErrorMessage {
+            get {
+                return ResourceManager.GetString("reloadSongFileNotFoundErrorMessage", resourceCulture);
             }
         }
         
@@ -232,6 +240,16 @@ namespace UltraStarDeluxeEditor.Properties {
         internal static string reloadSongMessage {
             get {
                 return ResourceManager.GetString("reloadSongMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The song couldn&apos;t be reloaded du to the song file ({0}) not being valid.
+        ///The file needs to contain at least a song title, an artist, a BPM of at least 1, a gap value of 0 or higher and a song text at least one player..
+        /// </summary>
+        internal static string reloadSongNotValidErrorMessage {
+            get {
+                return ResourceManager.GetString("reloadSongNotValidErrorMessage", resourceCulture);
             }
         }
         
@@ -277,6 +295,16 @@ namespace UltraStarDeluxeEditor.Properties {
         internal static string songListInitializationDoneMessage {
             get {
                 return ResourceManager.GetString("songListInitializationDoneMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} invalid song files where found:
+        ///{1}.
+        /// </summary>
+        internal static string songListInitializationErrorsMessage {
+            get {
+                return ResourceManager.GetString("songListInitializationErrorsMessage", resourceCulture);
             }
         }
         

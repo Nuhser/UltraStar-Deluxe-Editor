@@ -97,11 +97,20 @@ namespace UltraStarDeluxeEditor.UltraStarDeluxe {
             return true;
         }
 
-        public static UltraStarSong LoadSongFromFile(string filePath) {
-            if (!File.Exists(filePath)) {
-                return null;
-            }
+        public static UltraStarSong LoadSongFromFile(UltraStarSong song) {
+            return song != null ? LoadSongFromFile(song.FilePath) : null;
+        }
 
+        /// <summary>
+        ///     Loads a UltraStar song from an appropriate TXT-file and returns it.
+        /// </summary>
+        /// <param name="filePath">Absolute path of the song's TXT-file</param>
+        /// <returns>The song contained inside the file as UltraStarSong</returns>
+        /// <exception cref="UltraStarSongNotValidException">
+        ///     The loaded song isn't valid. Valid songs need a file path, title,
+        ///     artist, BPM above 1, a gap value of 0 or higher and a song text for at least one player.
+        /// </exception>
+        public static UltraStarSong LoadSongFromFile(string filePath) {
             var song = new UltraStarSong(filePath);
 
             var writeToPlayer1Text = true;
@@ -188,10 +197,6 @@ namespace UltraStarDeluxeEditor.UltraStarDeluxe {
 
             throw new UltraStarSongNotValidException($"The file with path '{filePath}' is no valid UltraStar song!",
                 song);
-        }
-
-        public static UltraStarSong LoadSongFromFile(UltraStarSong song) {
-            return song != null ? LoadSongFromFile(song.FilePath) : null;
         }
 
         public static void OpenCoverImage(UltraStarSong song) {

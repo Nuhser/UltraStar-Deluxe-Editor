@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -56,6 +57,7 @@ namespace UltraStarDeluxeEditor {
             _selectedSong = null;
 
             var songsFound = 0;
+            var invalidSongs = new List<string>();
 
             var songDirectories = ConfigService.GetSongDirectories();
             foreach (var songFile in songDirectories.Where(songDirectory => Directory.Exists(songDirectory))
@@ -66,6 +68,7 @@ namespace UltraStarDeluxeEditor {
                     song = UltraStarSongService.LoadSongFromFile(songFile);
                 }
                 catch (UltraStarSongNotValidException) {
+                    invalidSongs.Add(songFile);
                     continue;
                 }
 
@@ -80,7 +83,11 @@ namespace UltraStarDeluxeEditor {
 
             UpdateUi();
 
-            MessageBox.Show(string.Format(Resources.songListInitializationDoneMessage, songsFound),
+            MessageBox.Show(
+                string.Format(Resources.songListInitializationDoneMessage, songsFound) + (invalidSongs.Any()
+                    ? "\n\n" + string.Format(Resources.songListInitializationErrorsMessage, invalidSongs.Count,
+                        string.Join("\n", invalidSongs.Select(s => "  \u2022 " + s).ToList()))
+                    : ""),
                 Resources.songListInitializationDoneCaption,
                 MessageBoxButtons.OK);
         }
@@ -355,23 +362,45 @@ namespace UltraStarDeluxeEditor {
             if (MessageBox.Show(
                     Resources.reloadSongMessage,
                     Resources.reloadSongCaption, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) {
+                bool loop;
                 do {
-                    if ((_selectedSong = UltraStarSongService.LoadSongFromFile(_selectedSong)) != null) {
-                        ((SongListViewItem) songListView.SelectedItems[0]).UltraStarSong = _selectedSong;
-                        ((SongListViewItem) songListView.SelectedItems[0]).SetDirty(false);
-                        saveToolStripMenuItem.Enabled = false;
-                        UpdateFormTitle();
-                        UpdateUi();
+                    try {
+                        UltraStarSong song;
+                        if ((song = UltraStarSongService.LoadSongFromFile(_selectedSong)) != null) {
+                            _selectedSong = song;
+                            ((SongListViewItem) songListView.SelectedItems[0]).UltraStarSong = _selectedSong;
+                            ((SongListViewItem) songListView.SelectedItems[0]).SetDirty(false);
+                            saveToolStripMenuItem.Enabled = false;
+                            UpdateFormTitle();
+                            UpdateUi();
 
-                        MessageBox.Show(string.Format(Resources.reloadSongSuccessMessage, _selectedSong.Title),
-                            Resources.successCaption);
+                            MessageBox.Show(string.Format(Resources.reloadSongSuccessMessage, _selectedSong.Title),
+                                Resources.successCaption);
 
-                        break;
+                            break;
+                        }
+
+                        loop = MessageBox.Show(
+                                   string.Format(Resources.reloadSongErrorMessage,
+                                       _selectedSong != null ? " \"" + _selectedSong.Title + "\"" : ""),
+                                   Resources.errorCaption, MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) ==
+                               DialogResult.Retry;
                     }
-                } while (MessageBox.Show(
-                             string.Format(Resources.reloadSongErrorMessage, (_selectedSong != null ? " \"" + _selectedSong.Title + "\"" : "")),
-                             Resources.errorCaption, MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) ==
-                         DialogResult.Retry);
+                    catch (FileNotFoundException) {
+                        loop = MessageBox.Show(
+                                   string.Format(Resources.reloadSongFileNotFoundErrorMessage,
+                                       _selectedSong.FilePath),
+                                   Resources.errorCaption, MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) ==
+                               DialogResult.Retry;
+                    }
+                    catch (UltraStarSongNotValidException) {
+                        loop = MessageBox.Show(
+                                   string.Format(Resources.reloadSongNotValidErrorMessage,
+                                       _selectedSong.FilePath),
+                                   Resources.errorCaption, MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) ==
+                               DialogResult.Retry;
+                    }
+                } while (loop);
             }
         }
 

@@ -91,8 +91,7 @@ Dies löscht beim nächsten Speichern ebenfalls die Bild-Datei.</value>
         <value>Song neu laden</value>
     </data>
     <data name="reloadSongErrorMessage" xml:space="preserve">
-        <value>Während des Ladens ist ein Fehler aufgetreten.
-Stelle sicher, dass die TXT-Datei noch existiert.</value>
+        <value>Während des Ladens des Songs{0} ist ein unerwarteter Fehler aufgetreten!</value>
     </data>
     <data name="errorCaption" xml:space="preserve">
         <value>Fehler</value>
@@ -104,5 +103,16 @@ Ungespeicherte Änderungen gehen dabei verloren.</value>
     </data>
     <data name="reloadSongSuccessMessage" xml:space="preserve">
         <value>"{0}" wurde erfolgreich geladen.</value>
+    </data>
+    <data name="songListInitializationErrorsMessage" xml:space="preserve">
+        <value>Es wurden {0} ungültige Dateien gefunden:
+{1}</value>
+    </data>
+    <data name="reloadSongFileNotFoundErrorMessage" xml:space="preserve">
+        <value>Der Song konnte nicht neu geladen werden, da die Datei ({0}) nicht existiert.</value>
+    </data>
+    <data name="reloadSongNotValidErrorMessage" xml:space="preserve">
+        <value>Der Song konnte nicht neu geladen werden, da die Datei ({0}) ungültig ist.
+Die Datei muss mindestens einen Songtitel, einen Künstler, BPM von mindestens 1, einen Gap-Wert von 0 oder mehr und Songtexte für mindestens einen Spieler enthalten.</value>
     </data>
 </root>

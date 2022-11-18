@@ -203,10 +203,20 @@ Unsaved changes will be lost.</value>
         <value>"{0}" was reloaded successfully.</value>
     </data>
     <data name="reloadSongErrorMessage" xml:space="preserve">
-        <value>Something went wrong while reloading{0}!
-Make sure the TXT-file of the song still exists.</value>
+        <value>An unexpected error occured while reloading{0}!</value>
     </data>
     <data name="errorCaption" xml:space="preserve">
         <value>Error</value>
+    </data>
+    <data name="songListInitializationErrorsMessage" xml:space="preserve">
+        <value>{0} invalid song files where found:
+{1}</value>
+    </data>
+    <data name="reloadSongFileNotFoundErrorMessage" xml:space="preserve">
+        <value>The song couldn't be reloaded due to the file ({0}) not existing.</value>
+    </data>
+    <data name="reloadSongNotValidErrorMessage" xml:space="preserve">
+        <value>The song couldn't be reloaded du to the song file ({0}) not being valid.
+The file needs to contain at least a song title, an artist, a BPM of at least 1, a gap value of 0 or higher and a song text at least one player.</value>
     </data>
 </root>
