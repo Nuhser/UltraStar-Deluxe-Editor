@@ -63,7 +63,7 @@ namespace UltraStarDeluxeEditor {
                 UltraStarSong song;
 
                 try {
-                    song = UltraStarSong.ParseSongFile(songFile);
+                    song = UltraStarSongService.LoadSongFromFile(songFile);
                 }
                 catch (UltraStarSongNotValidException) {
                     continue;
@@ -351,6 +351,30 @@ namespace UltraStarDeluxeEditor {
             }
         }
 
+        private void reloadSongToolStripMenuItem_Click(object sender, EventArgs e) {
+            if (MessageBox.Show(
+                    Resources.reloadSongMessage,
+                    Resources.reloadSongCaption, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) {
+                do {
+                    if ((_selectedSong = UltraStarSongService.LoadSongFromFile(_selectedSong)) != null) {
+                        ((SongListViewItem) songListView.SelectedItems[0]).UltraStarSong = _selectedSong;
+                        ((SongListViewItem) songListView.SelectedItems[0]).SetDirty(false);
+                        saveToolStripMenuItem.Enabled = false;
+                        UpdateFormTitle();
+                        UpdateUi();
+
+                        MessageBox.Show(string.Format(Resources.reloadSongSuccessMessage, _selectedSong.Title),
+                            Resources.successCaption);
+
+                        break;
+                    }
+                } while (MessageBox.Show(
+                             string.Format(Resources.reloadSongErrorMessage, (_selectedSong != null ? " \"" + _selectedSong.Title + "\"" : "")),
+                             Resources.errorCaption, MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) ==
+                         DialogResult.Retry);
+            }
+        }
+
         private void reloadSongsToolStripMenuItem_Click(object sender, EventArgs e) {
             var config = ConfigService.Config;
             if (string.IsNullOrEmpty(config.UsdPath)) {
@@ -373,7 +397,7 @@ namespace UltraStarDeluxeEditor {
                 }
 
                 UpdateUi();
-                MessageBox.Show(Resources.coverDownloadSuccessfulMessage, Resources.successCaption,
+                MessageBox.Show(Resources.coverDownloadSuccessMessage, Resources.successCaption,
                     MessageBoxButtons.OK);
             }
         }
@@ -397,7 +421,8 @@ namespace UltraStarDeluxeEditor {
         private void deleteCoverButton_Click(object sender, EventArgs e) {
             if (MessageBox.Show(
                     Resources.coverDeleteMessage,
-                    Resources.coverDeleteCaption, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) {
+                    Resources.coverDeleteCaption, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) ==
+                DialogResult.Yes) {
                 if (UltraStarSongService.DeleteCoverImage(_selectedSong)) {
                     if (!_selectedSong.IsDirty) {
                         ((SongListViewItem) songListView.SelectedItems[0]).SetDirty(true);

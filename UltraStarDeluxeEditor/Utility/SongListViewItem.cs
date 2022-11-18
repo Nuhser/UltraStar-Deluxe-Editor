@@ -8,7 +8,7 @@ namespace UltraStarDeluxeEditor.Utility {
             UltraStarSong = song;
         }
 
-        public UltraStarSong UltraStarSong { get; }
+        public UltraStarSong UltraStarSong { get; set; }
 
         public void SetDirty(bool isDirty) {
             UltraStarSong.IsDirty = isDirty;

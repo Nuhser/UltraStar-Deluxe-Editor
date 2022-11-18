@@ -144,9 +144,9 @@ namespace UltraStarDeluxeEditor.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Cover successfully downloaded..
         /// </summary>
-        internal static string coverDownloadSuccessfulMessage {
+        internal static string coverDownloadSuccessMessage {
             get {
-                return ResourceManager.GetString("coverDownloadSuccessfulMessage", resourceCulture);
+                return ResourceManager.GetString("coverDownloadSuccessMessage", resourceCulture);
             }
         }
         
@@ -156,6 +156,15 @@ namespace UltraStarDeluxeEditor.Properties {
         internal static string coverDownloadUrlInputMessage {
             get {
                 return ResourceManager.GetString("coverDownloadUrlInputMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        internal static string errorCaption {
+            get {
+                return ResourceManager.GetString("errorCaption", resourceCulture);
             }
         }
         
@@ -198,6 +207,35 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reload Song.
+        /// </summary>
+        internal static string reloadSongCaption {
+            get {
+                return ResourceManager.GetString("reloadSongCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Something went wrong while reloading{0}!
+        ///Make sure the TXT-file of the song still exists..
+        /// </summary>
+        internal static string reloadSongErrorMessage {
+            get {
+                return ResourceManager.GetString("reloadSongErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure that you want to reload the selected song?
+        ///Unsaved changes will be lost..
+        /// </summary>
+        internal static string reloadSongMessage {
+            get {
+                return ResourceManager.GetString("reloadSongMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reload Songs.
         /// </summary>
         internal static string reloadSongsCaption {
@@ -212,6 +250,15 @@ namespace UltraStarDeluxeEditor.Properties {
         internal static string reloadSongsMessage {
             get {
                 return ResourceManager.GetString("reloadSongsMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;{0}&quot; was reloaded successfully..
+        /// </summary>
+        internal static string reloadSongSuccessMessage {
+            get {
+                return ResourceManager.GetString("reloadSongSuccessMessage", resourceCulture);
             }
         }
         

@@ -50,7 +50,7 @@ Bitte wähle einen anderen.</value>
     <data name="reloadSongsCaption" xml:space="preserve">
         <value>Songs neu laden</value>
     </data>
-    <data name="coverDownloadSuccessfulMessage" xml:space="preserve">
+    <data name="coverDownloadSuccessMessage" xml:space="preserve">
         <value>Cover erfolgreich heruntergeladen.</value>
     </data>
     <data name="successCaption" xml:space="preserve">
@@ -86,5 +86,23 @@ Bitte wähle einen anderen.</value>
     <data name="coverDeleteMessage" xml:space="preserve">
         <value>Bist du sicher, dass du das Cover-Bild löschen willst?
 Dies löscht beim nächsten Speichern ebenfalls die Bild-Datei.</value>
+    </data>
+    <data name="reloadSongCaption" xml:space="preserve">
+        <value>Song neu laden</value>
+    </data>
+    <data name="reloadSongErrorMessage" xml:space="preserve">
+        <value>Während des Ladens ist ein Fehler aufgetreten.
+Stelle sicher, dass die TXT-Datei noch existiert.</value>
+    </data>
+    <data name="errorCaption" xml:space="preserve">
+        <value>Fehler</value>
+    </data>
+    <data name="reloadSongMessage" xml:space="preserve">
+        <value>Bist du sicher, dass du den Song neu laden willst?
+
+Ungespeicherte Änderungen gehen dabei verloren.</value>
+    </data>
+    <data name="reloadSongSuccessMessage" xml:space="preserve">
+        <value>"{0}" wurde erfolgreich geladen.</value>
     </data>
 </root>

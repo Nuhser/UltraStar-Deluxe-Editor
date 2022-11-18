@@ -155,7 +155,7 @@ Please select another one.</value>
     <data name="reloadSongsCaption" xml:space="preserve">
         <value>Reload Songs</value>
     </data>
-    <data name="coverDownloadSuccessfulMessage" xml:space="preserve">
+    <data name="coverDownloadSuccessMessage" xml:space="preserve">
         <value>Cover successfully downloaded.</value>
     </data>
     <data name="successCaption" xml:space="preserve">
@@ -191,5 +191,22 @@ This will also delete the image file from your drive.</value>
     </data>
     <data name="coverDeleteErrorCaption" xml:space="preserve">
         <value>Cover Deletion Error</value>
+    </data>
+    <data name="reloadSongMessage" xml:space="preserve">
+        <value>Are you sure that you want to reload the selected song?
+Unsaved changes will be lost.</value>
+    </data>
+    <data name="reloadSongCaption" xml:space="preserve">
+        <value>Reload Song</value>
+    </data>
+    <data name="reloadSongSuccessMessage" xml:space="preserve">
+        <value>"{0}" was reloaded successfully.</value>
+    </data>
+    <data name="reloadSongErrorMessage" xml:space="preserve">
+        <value>Something went wrong while reloading{0}!
+Make sure the TXT-file of the song still exists.</value>
+    </data>
+    <data name="errorCaption" xml:space="preserve">
+        <value>Error</value>
     </data>
 </root>

@@ -2,7 +2,6 @@ using System;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Text;
 
 namespace UltraStarDeluxeEditor.UltraStarDeluxe {
     public class UltraStarSong {
@@ -21,7 +20,7 @@ namespace UltraStarDeluxeEditor.UltraStarDeluxe {
         private const string COVER_KEY = "#COVER:";
         private const string VIDEO_KEY = "#VIDEO:";
 
-        private UltraStarSong(string filePath) {
+        public UltraStarSong(string filePath) {
             IsDirty = false;
             FilePath = filePath;
             SongText = new Tuple<string, string>("", "");
@@ -58,95 +57,6 @@ namespace UltraStarDeluxeEditor.UltraStarDeluxe {
         public string Cover { get; set; }
         public string Video { get; set; }
         public Tuple<string, string> SongText { get; set; }
-
-        public static UltraStarSong ParseSongFile(string filePath) {
-            var song = new UltraStarSong(filePath);
-
-            var writeToPlayer1Text = true;
-            var player1StringBuilder = new StringBuilder();
-            var player2StringBuilder = new StringBuilder();
-
-            using (var fileStream = new FileStream(filePath, FileMode.Open))
-            using (var streamReader = new StreamReader(fileStream)) {
-                string line;
-                while ((line = streamReader.ReadLine()) != null) {
-                    switch (line) {
-                        case "P1":
-                        case "E":
-                            continue;
-                        case "P2":
-                            writeToPlayer1Text = false;
-                            continue;
-                    }
-
-                    if (line.StartsWith("#")) {
-                        if (line.StartsWith(TITLE_KEY)) {
-                            song.Title = line.Replace(TITLE_KEY, "");
-                        }
-                        else if (line.StartsWith(ARTIST_KEY)) {
-                            song.Artist = line.Replace(ARTIST_KEY, "");
-                        }
-                        else if (line.StartsWith(GENRE_KEY)) {
-                            song.Genre = line.Replace(GENRE_KEY, "");
-                        }
-                        else if (line.StartsWith(YEAR_KEY)) {
-                            song.Year = line.Replace(YEAR_KEY, "");
-                        }
-                        else if (line.StartsWith(LANGUAGE_KEY)) {
-                            song.Language = line.Replace(LANGUAGE_KEY, "");
-                        }
-                        else if (line.StartsWith(EDITION_KEY)) {
-                            song.Edition = line.Replace(EDITION_KEY, "");
-                        }
-                        else if (line.StartsWith(BPM_KEY)) {
-                            song.BPM = Convert.ToDecimal(line.Replace(BPM_KEY, ""), new CultureInfo("en-US"));
-                        }
-                        else if (line.StartsWith(GAP_KEY)) {
-                            song.Gap = Convert.ToDecimal(line.Replace(GAP_KEY, ""), new CultureInfo("en-US"));
-                        }
-                        else if (line.StartsWith(VIDEO_GAP_KEY)) {
-                            song.VideoGap =
-                                Convert.ToDecimal(line.Replace(VIDEO_GAP_KEY, ""), new CultureInfo("en-US"));
-                        }
-                        else if (line.StartsWith(DUET_SINGER_P1_KEY)) {
-                            song.DuetSingerP1 = line.Replace(DUET_SINGER_P1_KEY, "");
-                        }
-                        else if (line.StartsWith(DUET_SINGER_P2_KEY)) {
-                            song.DuetSingerP2 = line.Replace(DUET_SINGER_P2_KEY, "");
-                        }
-                        else if (line.StartsWith(MP3_KEY)) {
-                            song.MP3 = line.Replace(MP3_KEY, "");
-                        }
-                        else if (line.StartsWith(COVER_KEY)) {
-                            song.Cover = line.Replace(COVER_KEY, "");
-                        }
-                        else if (line.StartsWith(VIDEO_KEY)) {
-                            song.Video = line.Replace(VIDEO_KEY, "");
-                        }
-                    }
-                    else {
-                        if (writeToPlayer1Text) {
-                            player1StringBuilder.AppendLine(line);
-                        }
-                        else {
-                            player2StringBuilder.AppendLine(line);
-                        }
-                    }
-                }
-            }
-
-            song.SongText = new Tuple<string, string>(player1StringBuilder.ToString().Trim(),
-                player2StringBuilder.ToString().Trim());
-
-            song.IsDuet = !string.IsNullOrEmpty(song.SongText.Item2);
-
-            if (song.IsValid()) {
-                return song;
-            }
-
-            throw new UltraStarSongNotValidException($"The file with path '{filePath}' is no valid UltraStar song!",
-                song);
-        }
 
         public void SaveSongToFile() {
             if (!IsValid()) {
