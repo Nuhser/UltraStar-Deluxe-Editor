@@ -20,6 +20,7 @@ namespace UltraStarDeluxeEditor.UltraStarDeluxe {
 
                 if (keepBackup) {
                     File.Move(song.GetCoverPath(), song.GetCoverPath() + ".backup");
+                    song.OldCover = song.GetCoverPath();
                 }
             }
 
@@ -45,9 +46,36 @@ namespace UltraStarDeluxeEditor.UltraStarDeluxe {
                 }
             }
 
-            song.OldCover = song.GetCoverPath();
             song.Cover = Path.GetFileName(imageLocation);
+            return true;
+        }
 
+        /// <summary>
+        ///     This method can be used to delete the cover image of an UltraStar song. If a backup is saved the cover will be
+        ///     unlinked first from the song and deleted when the user saves the song the next time.
+        /// </summary>
+        /// <param name="song">The UltraStar song which cover should be deleted</param>
+        /// <param name="keepBackup">Specifies if the cover should be kept as a backup until the song is saved</param>
+        /// <returns>
+        ///     <c>true</c> if the old cover was successfully deleted/unlinked or if there was no old cover
+        ///     <br />
+        ///     <c>false</c> if the song is <c>null</c> or if another error occured during deletion
+        /// </returns>
+        public static bool DeleteCoverImage(UltraStarSong song, bool keepBackup = true) {
+            if (song == null) {
+                return false;
+            }
+
+            if (!song.HasCover()) {
+                return true;
+            }
+
+            if (keepBackup) {
+                File.Move(song.GetCoverPath(), song.GetCoverPath() + ".backup");
+                song.OldCover = song.GetCoverPath();
+            }
+
+            song.Cover = null;
             return true;
         }
 
@@ -60,6 +88,12 @@ namespace UltraStarDeluxeEditor.UltraStarDeluxe {
         public static void OpenMp3(UltraStarSong song) {
             if (song != null && song.HasMp3()) {
                 Process.Start(song.GetMp3Path());
+            }
+        }
+
+        public static void OpenTxt(UltraStarSong song) {
+            if (song != null) {
+                Process.Start(song.FilePath);
             }
         }
 

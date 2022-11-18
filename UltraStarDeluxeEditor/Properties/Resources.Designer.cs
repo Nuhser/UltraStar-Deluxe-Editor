@@ -60,7 +60,44 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Error during Cover Download.
+        ///   Looks up a localized string similar to Delete Cover Image.
+        /// </summary>
+        internal static string coverDeleteCaption {
+            get {
+                return ResourceManager.GetString("coverDeleteCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cover Deletion Error.
+        /// </summary>
+        internal static string coverDeleteErrorCaption {
+            get {
+                return ResourceManager.GetString("coverDeleteErrorCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An error occured while deleting the cover image..
+        /// </summary>
+        internal static string coverDeleteErrorMessage {
+            get {
+                return ResourceManager.GetString("coverDeleteErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure that you want to delete the cover image?
+        ///This will also delete the image file from your drive..
+        /// </summary>
+        internal static string coverDeleteMessage {
+            get {
+                return ResourceManager.GetString("coverDeleteMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cover Download Error.
         /// </summary>
         internal static string coverDownloadErrorCaption {
             get {
@@ -74,6 +111,15 @@ namespace UltraStarDeluxeEditor.Properties {
         internal static string coverDownloadErrorMessage {
             get {
                 return ResourceManager.GetString("coverDownloadErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download Cover Image from URL.
+        /// </summary>
+        internal static string coverDownloadFromUrl {
+            get {
+                return ResourceManager.GetString("coverDownloadFromUrl", resourceCulture);
             }
         }
         
@@ -110,15 +156,6 @@ namespace UltraStarDeluxeEditor.Properties {
         internal static string coverDownloadUrlInputMessage {
             get {
                 return ResourceManager.GetString("coverDownloadUrlInputMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Download Cover Image from URL.
-        /// </summary>
-        internal static string downloadCoverImageFromUrl {
-            get {
-                return ResourceManager.GetString("downloadCoverImageFromUrl", resourceCulture);
             }
         }
         

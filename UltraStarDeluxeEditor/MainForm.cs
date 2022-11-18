@@ -27,15 +27,8 @@ namespace UltraStarDeluxeEditor {
             videoGapNumericUpDown.Maximum = decimal.MaxValue;
 
             // add tool tips
-            toolTip.SetToolTip(coverDownloadButton, Resources.downloadCoverImageFromUrl);
-
-            // disable menu items
-            saveToolStripMenuItem.Enabled = false;
-            saveAllToolStripMenuItem.Enabled = false;
-            openCoverToolStripMenuItem.Enabled = false;
-            openMP3ToolStripMenuItem.Enabled = false;
-            openVideoToolStripMenuItem.Enabled = false;
-            webSearchToolStripMenuItem.Enabled = false;
+            toolTip.SetToolTip(coverDownloadButton, Resources.coverDownloadFromUrl);
+            toolTip.SetToolTip(deleteCoverButton, Resources.coverDeleteCaption);
 
             SetSongDetailUiEnabled(false);
         }
@@ -50,7 +43,10 @@ namespace UltraStarDeluxeEditor {
                 foreach (SongListViewItem listViewItem in songListView.Items) {
                     var song = listViewItem.UltraStarSong;
                     if (!string.IsNullOrWhiteSpace(song.OldCover)) {
-                        File.Delete(song.GetCoverPath());
+                        if (song.HasCover()) {
+                            File.Delete(song.GetCoverPath());
+                        }
+
                         File.Move(song.OldCover + ".backup", song.OldCover);
                     }
                 }
@@ -158,9 +154,18 @@ namespace UltraStarDeluxeEditor {
                 player2TextBox.Text = "";
             }
 
+            // enable/disable buttons
+            deleteCoverButton.Enabled = songSelected && _selectedSong.HasCover();
+
             // enable/disable menu items
             saveToolStripMenuItem.Enabled = songSelected && _selectedSong.IsDirty;
+            openSongTxtToolStripMenuItem.Enabled = songSelected;
+            reloadSongToolStripMenuItem.Enabled = songSelected;
+            coverToolStripMenuItem.Enabled = songSelected;
             openCoverToolStripMenuItem.Enabled = songSelected && _selectedSong.HasCover();
+            chooseCoverImageToolStripMenuItem.Enabled = songSelected;
+            downloadCoverFromURLToolStripMenuItem.Enabled = songSelected;
+            deleteCoverToolStripMenuItem.Enabled = songSelected && _selectedSong.HasCover();
             openMP3ToolStripMenuItem.Enabled = songSelected && _selectedSong.HasMp3();
             openVideoToolStripMenuItem.Enabled = songSelected && _selectedSong.HasVideo();
             webSearchToolStripMenuItem.Enabled = songSelected;
@@ -267,7 +272,10 @@ namespace UltraStarDeluxeEditor {
                 foreach (SongListViewItem listViewItem in songListView.Items) {
                     var song = listViewItem.UltraStarSong;
                     if (!string.IsNullOrWhiteSpace(song.OldCover)) {
-                        File.Delete(song.GetCoverPath());
+                        if (song.HasCover()) {
+                            File.Delete(song.GetCoverPath());
+                        }
+
                         File.Move(song.OldCover + ".backup", song.OldCover);
                     }
                 }
@@ -321,10 +329,11 @@ namespace UltraStarDeluxeEditor {
             UltraStarSongService.OpenVideo(_selectedSong);
         }
 
-        /**
-         * Cancels the tab switching process if the tab is disabled.
-         * Used for disabling the second players text tab if the song isn't a duet.
-         */
+        /// <summary>
+        ///     Cancels the tab switching process if the tab is disabled.
+        ///     <br />
+        ///     Used for disabling the second players text tab if the song isn't a duet.
+        /// </summary>
         private void textTabControl_Selecting(object sender, TabControlCancelEventArgs e) {
             if (!e.TabPage.Enabled) {
                 e.Cancel = true;
@@ -383,6 +392,28 @@ namespace UltraStarDeluxeEditor {
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e) {
             Close();
+        }
+
+        private void deleteCoverButton_Click(object sender, EventArgs e) {
+            if (MessageBox.Show(
+                    Resources.coverDeleteMessage,
+                    Resources.coverDeleteCaption, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) {
+                if (UltraStarSongService.DeleteCoverImage(_selectedSong)) {
+                    if (!_selectedSong.IsDirty) {
+                        ((SongListViewItem) songListView.SelectedItems[0]).SetDirty(true);
+                    }
+
+                    UpdateUi();
+                }
+                else {
+                    MessageBox.Show(Resources.coverDeleteErrorMessage, Resources.coverDeleteErrorCaption,
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void openSongTxtToolStripMenuItem_Click(object sender, EventArgs e) {
+            UltraStarSongService.OpenTxt(_selectedSong);
         }
     }
 }

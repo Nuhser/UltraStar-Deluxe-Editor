@@ -35,7 +35,7 @@ Bitte wähle einen anderen.</value>
     <data name="songListInitializationDoneCaption" xml:space="preserve">
         <value>Songlisten Initialisierung Beendet</value>
     </data>
-    <data name="downloadCoverImageFromUrl" xml:space="preserve">
+    <data name="coverDownloadFromUrl" xml:space="preserve">
         <value>Cover-Bild von URL herunterladen</value>
     </data>
     <data name="unsavedChangesMessage" xml:space="preserve">
@@ -73,5 +73,18 @@ Bitte wähle einen anderen.</value>
     </data>
     <data name="coverDownloadOverwriteMessage" xml:space="preserve">
         <value>Bist du sicher, dass du ein neues Cover-Bild herunterladen willst? Das würde das alte Bild beim Speichern löschen.</value>
+    </data>
+    <data name="coverDeleteCaption" xml:space="preserve">
+        <value>Cover-Bild löschen</value>
+    </data>
+    <data name="coverDeleteErrorCaption" xml:space="preserve">
+        <value>Fehler während Cover löschen</value>
+    </data>
+    <data name="coverDeleteErrorMessage" xml:space="preserve">
+        <value>Während des Löschens des Cover-Bildes ist ein Fehler aufgetreten.</value>
+    </data>
+    <data name="coverDeleteMessage" xml:space="preserve">
+        <value>Bist du sicher, dass du das Cover-Bild löschen willst?
+Dies löscht beim nächsten Speichern ebenfalls die Bild-Datei.</value>
     </data>
 </root>
