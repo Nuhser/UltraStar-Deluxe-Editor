@@ -169,20 +169,20 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to JPG or PNG|*.jpg;*.jpeg;*.png.
-        /// </summary>
-        internal static string coverSelectFileFilter {
-            get {
-                return ResourceManager.GetString("coverSelectFileFilter", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         internal static string errorCaption {
             get {
                 return ResourceManager.GetString("errorCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You need to save the song before exporting it. Do you want to do this now?.
+        /// </summary>
+        internal static string exportSongSaveFirstMessage {
+            get {
+                return ResourceManager.GetString("exportSongSaveFirstMessage", resourceCulture);
             }
         }
         
@@ -196,11 +196,38 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to JPG or PNG|*.jpg;*.jpeg;*.png.
+        /// </summary>
+        internal static string imageFileFilter {
+            get {
+                return ResourceManager.GetString("imageFileFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The MP3 file doesn&apos;t exist..
         /// </summary>
         internal static string mp3FileNotExistsWarningIcon {
             get {
                 return ResourceManager.GetString("mp3FileNotExistsWarningIcon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Overwrite File.
+        /// </summary>
+        internal static string overwriteFileCaption {
+            get {
+                return ResourceManager.GetString("overwriteFileCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This file already exists. Do you want to overwrite it?.
+        /// </summary>
+        internal static string overwriteFileMessage {
+            get {
+                return ResourceManager.GetString("overwriteFileMessage", resourceCulture);
             }
         }
         
@@ -279,6 +306,15 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Save Song.
+        /// </summary>
+        internal static string saveSongCaption {
+            get {
+                return ResourceManager.GetString("saveSongCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Songlist Initialization Done.
         /// </summary>
         internal static string songListInitializationDoneCaption {
@@ -312,6 +348,15 @@ namespace UltraStarDeluxeEditor.Properties {
         internal static string successCaption {
             get {
                 return ResourceManager.GetString("successCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Text File|*.txt.
+        /// </summary>
+        internal static string textFileFilter {
+            get {
+                return ResourceManager.GetString("textFileFilter", resourceCulture);
             }
         }
         

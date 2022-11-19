@@ -228,10 +228,25 @@ The file needs to contain at least a song title, an artist, a BPM of at least 1,
     <data name="coverSelectFileCaption" xml:space="preserve">
         <value>Select Cover Image</value>
     </data>
-    <data name="coverSelectFileFilter" xml:space="preserve">
+    <data name="imageFileFilter" xml:space="preserve">
         <value>JPG or PNG|*.jpg;*.jpeg;*.png</value>
     </data>
     <data name="findUsdFolderDescription" xml:space="preserve">
         <value>Choose the folder of your UltraStar Deluxe installation.</value>
+    </data>
+    <data name="saveSongCaption" xml:space="preserve">
+        <value>Save Song</value>
+    </data>
+    <data name="textFileFilter" xml:space="preserve">
+        <value>Text File|*.txt</value>
+    </data>
+    <data name="exportSongSaveFirstMessage" xml:space="preserve">
+        <value>You need to save the song before exporting it. Do you want to do this now?</value>
+    </data>
+    <data name="overwriteFileCaption" xml:space="preserve">
+        <value>Overwrite File</value>
+    </data>
+    <data name="overwriteFileMessage" xml:space="preserve">
+        <value>This file already exists. Do you want to overwrite it?</value>
     </data>
 </root>

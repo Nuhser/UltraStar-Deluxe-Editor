@@ -182,6 +182,7 @@ namespace UltraStarDeluxeEditor {
             openMP3ToolStripMenuItem.Enabled = songSelected && _selectedSong.HasMp3();
             openVideoToolStripMenuItem.Enabled = songSelected && _selectedSong.HasVideo();
             webSearchToolStripMenuItem.Enabled = songSelected;
+            exportSongTxtToolStripMenuItem.Enabled = songSelected;
 
             UpdateFormTitle();
             SetSongDetailUiEnabled(songSelected);
@@ -470,7 +471,7 @@ namespace UltraStarDeluxeEditor {
         private void editCoverButton_Click(object sender, EventArgs e) {
             var openFileDialog = new OpenFileDialog();
             openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
-            openFileDialog.Filter = Resources.coverSelectFileFilter;
+            openFileDialog.Filter = Resources.imageFileFilter;
             openFileDialog.Title = Resources.coverSelectFileCaption;
 
             if (openFileDialog.ShowDialog() == DialogResult.OK) {
@@ -531,6 +532,32 @@ namespace UltraStarDeluxeEditor {
             var config = ConfigService.Config;
             if (config.IsValidUsdPath()) {
                 Process.Start(Path.Combine(config.UsdPath, Config.USD_EXE_NAME));
+            }
+        }
+
+        private void importSongTxtToolStripMenuItem_Click(object sender, EventArgs e) {
+            throw new NotImplementedException();
+        }
+
+        private void exportSongTxtToolStripMenuItem_Click(object sender, EventArgs e) {
+            // ask to save song if dirty
+            if (_selectedSong != null && _selectedSong.IsDirty) {
+                if (MessageBox.Show(Resources.exportSongSaveFirstMessage, Resources.saveSongCaption,
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
+                    SaveSelectedSongFile();
+                }
+                else {
+                    return;
+                }
+            }
+
+            var saveFileDialog = new SaveFileDialog();
+            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            saveFileDialog.Filter = Resources.textFileFilter;
+            saveFileDialog.Title = "";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK) {
+                UltraStarSongService.ExportSong(_selectedSong, saveFileDialog.FileName);
             }
         }
     }

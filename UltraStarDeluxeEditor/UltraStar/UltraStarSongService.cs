@@ -82,6 +82,12 @@ namespace UltraStarDeluxeEditor.UltraStar {
             return true;
         }
 
+        /// <summary>
+        /// </summary>
+        /// <param name="song"></param>
+        /// <param name="imageLocation"></param>
+        /// <param name="keepBackup"></param>
+        /// <returns></returns>
         public static bool ChangeCoverFromFile(UltraStarSong song, string imageLocation, bool keepBackup = true) {
             if (song == null || string.IsNullOrWhiteSpace(imageLocation) || !File.Exists(imageLocation)) {
                 return false;
@@ -134,6 +140,21 @@ namespace UltraStarDeluxeEditor.UltraStar {
             }
 
             song.Cover = null;
+            return true;
+        }
+
+        public static bool ExportSong(UltraStarSong song, string filePath, bool openAfterExport = true) {
+            if (song == null || string.IsNullOrWhiteSpace(filePath)) {
+                return false;
+            }
+
+            File.Copy(song.FilePath, filePath, true);
+
+            if (openAfterExport) {
+                var argument = "/e, /select, \"" + filePath + "\"";
+                Process.Start("explorer.exe", argument);
+            }
+
             return true;
         }
 
@@ -268,9 +289,11 @@ namespace UltraStarDeluxeEditor.UltraStar {
         ///     Opens the song directory of an given <see cref="UltraStarSong" />.
         /// </summary>
         /// <param name="song">The <see cref="UltraStarSong" /> that's song directory you want to open.</param>
+        /// <seealso cref="UltraStarSong.GetSongDirectory" />
         public static void OpenSongDirectory(UltraStarSong song) {
             if (song != null) {
-                Process.Start(song.GetSongDirectory());
+                var argument = "/e, /select, \"" + song.FilePath + "\"";
+                Process.Start("explorer.exe", argument);
             }
         }
 

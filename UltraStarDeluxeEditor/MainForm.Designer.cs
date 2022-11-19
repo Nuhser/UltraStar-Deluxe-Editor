@@ -53,6 +53,8 @@ namespace UltraStarDeluxeEditor {
             this.discogsSearchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startUltraStarDeluxeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importSongTxtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportSongTxtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.songListView = new System.Windows.Forms.ListView();
             this.titleColumn = new System.Windows.Forms.ColumnHeader();
             this.artistColumn = new System.Windows.Forms.ColumnHeader();
@@ -294,7 +296,7 @@ namespace UltraStarDeluxeEditor {
             // 
             // toolsToolStripMenuItem
             // 
-            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.startUltraStarDeluxeToolStripMenuItem });
+            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.startUltraStarDeluxeToolStripMenuItem, this.importSongTxtToolStripMenuItem, this.exportSongTxtToolStripMenuItem });
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
@@ -305,6 +307,21 @@ namespace UltraStarDeluxeEditor {
             this.startUltraStarDeluxeToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.startUltraStarDeluxeToolStripMenuItem.Text = "Start UltraStar Deluxe";
             this.startUltraStarDeluxeToolStripMenuItem.Click += new System.EventHandler(this.startUltraStarDeluxeToolStripMenuItem_Click);
+            // 
+            // importSongTxtToolStripMenuItem
+            // 
+            this.importSongTxtToolStripMenuItem.Name = "importSongTxtToolStripMenuItem";
+            this.importSongTxtToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.importSongTxtToolStripMenuItem.Text = "Import Song-TXT";
+            this.importSongTxtToolStripMenuItem.Click += new System.EventHandler(this.importSongTxtToolStripMenuItem_Click);
+            // 
+            // exportSongTxtToolStripMenuItem
+            // 
+            this.exportSongTxtToolStripMenuItem.Enabled = false;
+            this.exportSongTxtToolStripMenuItem.Name = "exportSongTxtToolStripMenuItem";
+            this.exportSongTxtToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.exportSongTxtToolStripMenuItem.Text = "Export Song-TXT";
+            this.exportSongTxtToolStripMenuItem.Click += new System.EventHandler(this.exportSongTxtToolStripMenuItem_Click);
             // 
             // songListView
             // 
@@ -921,6 +938,9 @@ namespace UltraStarDeluxeEditor {
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.ToolStripMenuItem importSongTxtToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportSongTxtToolStripMenuItem;
 
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem startUltraStarDeluxeToolStripMenuItem;
