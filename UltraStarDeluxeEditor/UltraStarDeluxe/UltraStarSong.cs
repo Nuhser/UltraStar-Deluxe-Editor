@@ -20,22 +20,18 @@ namespace UltraStarDeluxeEditor.UltraStarDeluxe {
         private const string COVER_KEY = "#COVER:";
         private const string VIDEO_KEY = "#VIDEO:";
 
+        /// <summary>
+        ///     This constructor creates a minimal <see cref="UltraStarSong" /> containing only <see cref="FilePath" />, the empty
+        ///     <see cref="SongText" /> and <see cref="IsDirty" /> set to <c>false</c>.
+        ///     <br />
+        ///     This song is not valid as specified in <see cref="IsValid" />.
+        /// </summary>
+        /// <param name="filePath">The path of the TXT file containing the song</param>
+        /// <seealso cref="IsValid" />
         public UltraStarSong(string filePath) {
             IsDirty = false;
             FilePath = filePath;
             SongText = new Tuple<string, string>("", "");
-        }
-
-        private UltraStarSong(string filePath, string title, string artist, decimal bpm, decimal gap, string mp3,
-            string songText) {
-            IsDirty = false;
-            FilePath = filePath;
-            Title = title;
-            Artist = artist;
-            BPM = bpm;
-            Gap = gap;
-            MP3 = mp3;
-            SongText = new Tuple<string, string>(songText, "");
         }
 
         public bool IsDirty { get; set; }
@@ -137,6 +133,14 @@ namespace UltraStarDeluxeEditor.UltraStarDeluxe {
             }
         }
 
+        /// <summary>
+        ///     Checks if the <see cref="UltraStarSong" /> is valid.
+        ///     <br />
+        ///     Valid songs need to contain at least a <see cref="FilePath" />, a <see cref="Title" />, an <see cref="Artist" />,
+        ///     <see cref="BPM" /> set to <c>1</c> or higher, a <see cref="Gap" /> of at least <c>0</c> and a
+        ///     <see cref="SongText" /> for at least one player (first element of the <see cref="Tuple" />).
+        /// </summary>
+        /// <returns><c>true</c> if the song is valid and <c>false</c> otherwise</returns>
         public bool IsValid() {
             return !string.IsNullOrEmpty(FilePath) && !string.IsNullOrEmpty(Title) && !string.IsNullOrEmpty(Artist) &&
                    BPM >= 1 && Gap >= 0 && HasMp3() && !string.IsNullOrEmpty(SongText.Item1);

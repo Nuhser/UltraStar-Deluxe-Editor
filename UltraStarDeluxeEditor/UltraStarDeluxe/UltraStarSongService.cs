@@ -29,9 +29,12 @@ namespace UltraStarDeluxeEditor.UltraStarDeluxe {
         ///     Takes a <see cref="UltraStarSong" /> and an URL, downloads the image from the URL and sets it as the new cover of
         ///     the song.
         /// </summary>
-        /// <param name="song"></param>
-        /// <param name="newCoverUrl"></param>
-        /// <param name="keepBackup"></param>
+        /// <param name="song">The <see cref="UltraStarSong" /> that's cover you want to change</param>
+        /// <param name="newCoverUrl">The URL of the image you want to download as the cover</param>
+        /// <param name="keepBackup">
+        ///     Specifies whether the old cover image should be kept as a backup until the song is saved for
+        ///     the next time (default: <c>true</c>)
+        /// </param>
         /// <returns></returns>
         public static bool ChangeCoverWithUrl(UltraStarSong song, string newCoverUrl, bool keepBackup = true) {
             if (song == null || string.IsNullOrWhiteSpace(newCoverUrl)) {
@@ -212,30 +215,52 @@ namespace UltraStarDeluxeEditor.UltraStarDeluxe {
                 song);
         }
 
+        /// <summary>
+        ///     Opens the cover image of an <see cref="UltraStarSong" /> if it exists using the default program for that file type.
+        /// </summary>
+        /// <param name="song">The <see cref="UltraStarSong" /> that's cover you want to open</param>
         public static void OpenCoverImage(UltraStarSong song) {
             if (song != null && song.HasCover()) {
                 Process.Start(song.GetCoverPath());
             }
         }
 
+        /// <summary>
+        ///     Opens the MP3 file of an <see cref="UltraStarSong" /> if it exists using the default program for that file type.
+        /// </summary>
+        /// <param name="song">The <see cref="UltraStarSong" /> that's MP3 you want to open</param>
         public static void OpenMp3(UltraStarSong song) {
             if (song != null && song.HasMp3()) {
                 Process.Start(song.GetMp3Path());
             }
         }
 
+        /// <summary>
+        ///     Opens the raw TXT file of an <see cref="UltraStarSong" /> if it exists using the default program for that file
+        ///     type.
+        /// </summary>
+        /// <param name="song">The <see cref="UltraStarSong" /> that's TXT you want to open</param>
         public static void OpenTxt(UltraStarSong song) {
             if (song != null) {
                 Process.Start(song.FilePath);
             }
         }
 
+        /// <summary>
+        ///     Opens the video file of an <see cref="UltraStarSong" /> if it exists using the default program for that file type.
+        /// </summary>
+        /// <param name="song">The <see cref="UltraStarSong" /> that's video you want to open</param>
         public static void OpenVideo(UltraStarSong song) {
             if (song != null && song.HasVideo()) {
                 Process.Start(song.GetVideoPath());
             }
         }
 
+        /// <summary>
+        ///     Opens a new tab in the systems default browser and searches the song with Google. The search string consists of the
+        ///     song's title followed by the artist.
+        /// </summary>
+        /// <param name="song">The <see cref="UltraStarSong" /> you want to search with Google</param>
         public static void SearchWithGoogle(UltraStarSong song) {
             if (song != null) {
                 Process.Start(
@@ -243,6 +268,11 @@ namespace UltraStarDeluxeEditor.UltraStarDeluxe {
             }
         }
 
+        /// <summary>
+        ///     Opens a new tab in the systems default browser and searches the song on Discogs.com. The search string consists of
+        ///     the song's title followed by the artist.
+        /// </summary>
+        /// <param name="song">The <see cref="UltraStarSong" /> you want to search on Discogs</param>
         public static void SearchOnDiscogs(UltraStarSong song) {
             if (song != null) {
                 Process.Start(
