@@ -368,6 +368,16 @@ namespace UltraStarDeluxeEditor {
             if (MessageBox.Show(
                     Resources.reloadSongMessage,
                     Resources.reloadSongCaption, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) {
+                if (_selectedSong != null) {
+                    if (!string.IsNullOrWhiteSpace(_selectedSong.OldCover)) {
+                        if (_selectedSong.HasCover()) {
+                            File.Delete(_selectedSong.GetCoverPath());
+                        }
+
+                        File.Move(_selectedSong.OldCover + ".backup", _selectedSong.OldCover);
+                    }
+                }
+                
                 bool loop;
                 do {
                     try {
