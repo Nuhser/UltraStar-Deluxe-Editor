@@ -438,7 +438,20 @@ namespace UltraStarDeluxeEditor {
         }
 
         private void editCoverButton_Click(object sender, EventArgs e) {
-            throw new NotImplementedException();
+            var openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+            openFileDialog.Filter = Resources.coverSelectFileFilter;
+            openFileDialog.Title = Resources.coverSelectFileCaption;
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK) {
+                if (UltraStarSongService.ChangeCoverFromFile(_selectedSong, openFileDialog.FileName)) {
+                    if (!_selectedSong.IsDirty) {
+                        ((SongListViewItem) songListView.SelectedItems[0]).SetDirty(true);
+                    }
+
+                    UpdateUi();
+                }
+            }
         }
 
         private void deleteCoverButton_Click(object sender, EventArgs e) {

@@ -68,11 +68,11 @@ Bitte wähle einen anderen.</value>
     <data name="urlInputCaption" xml:space="preserve">
         <value>URL eingeben</value>
     </data>
-    <data name="coverDownloadOverwriteCaption" xml:space="preserve">
+    <data name="coverOverwriteCaption" xml:space="preserve">
         <value>Cover überschreiben</value>
     </data>
-    <data name="coverDownloadOverwriteMessage" xml:space="preserve">
-        <value>Bist du sicher, dass du ein neues Cover-Bild herunterladen willst? Das würde das alte Bild beim Speichern löschen.</value>
+    <data name="coverOverwriteMessage" xml:space="preserve">
+        <value>Bist du sicher, dass du ein neues Cover-Bild verwenden willst? Das würde das alte Bild beim Speichern löschen.</value>
     </data>
     <data name="coverDeleteCaption" xml:space="preserve">
         <value>Cover-Bild löschen</value>
@@ -120,5 +120,14 @@ Die Datei muss mindestens einen Songtitel, einen Künstler, BPM von mindestens 1
     </data>
     <data name="videoFileNotExistsWarningIcon" xml:space="preserve">
         <value>Die Video-Datei existiert nicht.</value>
+    </data>
+    <data name="coverSelectFileCaption" xml:space="preserve">
+        <value>Cover-Bild wählen</value>
+    </data>
+    <data name="coverSelectFileFilter" xml:space="preserve">
+        <value>JPG oder PNG|*.jpg;*.jpeg;*.png</value>
+    </data>
+    <data name="findUsdFolderDescription" xml:space="preserve">
+        <value>Wähle den Ordner deiner UltraStar Deluxe Installation.</value>
     </data>
 </root>

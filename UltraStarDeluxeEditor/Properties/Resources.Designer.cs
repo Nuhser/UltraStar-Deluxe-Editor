@@ -124,24 +124,6 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Overwrite Cover.
-        /// </summary>
-        internal static string coverDownloadOverwriteCaption {
-            get {
-                return ResourceManager.GetString("coverDownloadOverwriteCaption", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Are you sure that you want to download a new cover image? This will delete the old one after saving..
-        /// </summary>
-        internal static string coverDownloadOverwriteMessage {
-            get {
-                return ResourceManager.GetString("coverDownloadOverwriteMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Cover successfully downloaded..
         /// </summary>
         internal static string coverDownloadSuccessMessage {
@@ -160,11 +142,56 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Overwrite Cover.
+        /// </summary>
+        internal static string coverOverwriteCaption {
+            get {
+                return ResourceManager.GetString("coverOverwriteCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure that you want to set a new cover image? This will delete the old one after saving..
+        /// </summary>
+        internal static string coverOverwriteMessage {
+            get {
+                return ResourceManager.GetString("coverOverwriteMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Cover Image.
+        /// </summary>
+        internal static string coverSelectFileCaption {
+            get {
+                return ResourceManager.GetString("coverSelectFileCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to JPG or PNG|*.jpg;*.jpeg;*.png.
+        /// </summary>
+        internal static string coverSelectFileFilter {
+            get {
+                return ResourceManager.GetString("coverSelectFileFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         internal static string errorCaption {
             get {
                 return ResourceManager.GetString("errorCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose the folder of your UltraStar Deluxe installation..
+        /// </summary>
+        internal static string findUsdFolderDescription {
+            get {
+                return ResourceManager.GetString("findUsdFolderDescription", resourceCulture);
             }
         }
         

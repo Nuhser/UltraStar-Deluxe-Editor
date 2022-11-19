@@ -38,14 +38,14 @@ namespace UltraStarDeluxeEditor.UltraStarDeluxe {
         ///     Specifies whether the old cover image should be kept as a backup until the song is saved for
         ///     the next time (default: <c>true</c>)
         /// </param>
-        /// <returns></returns>
+        /// <returns><c>true</c> if the cover was changed successfully and <c>false</c> otherwise.</returns>
         public static bool ChangeCoverWithUrl(UltraStarSong song, string newCoverUrl, bool keepBackup = true) {
             if (song == null || string.IsNullOrWhiteSpace(newCoverUrl)) {
                 return false;
             }
 
             if (song.HasCover()) {
-                if (MessageBox.Show(Resources.coverDownloadOverwriteMessage, Resources.coverDownloadOverwriteCaption,
+                if (MessageBox.Show(Resources.coverOverwriteMessage, Resources.coverOverwriteCaption,
                         MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes) {
                     return false;
                 }
@@ -79,6 +79,32 @@ namespace UltraStarDeluxeEditor.UltraStarDeluxe {
             }
 
             song.Cover = Path.GetFileName(imageLocation);
+            return true;
+        }
+
+        public static bool ChangeCoverFromFile(UltraStarSong song, string imageLocation, bool keepBackup = true) {
+            if (song == null || string.IsNullOrWhiteSpace(imageLocation) || !File.Exists(imageLocation)) {
+                return false;
+            }
+
+            if (song.HasCover()) {
+                if (MessageBox.Show(Resources.coverOverwriteMessage, Resources.coverOverwriteCaption,
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes) {
+                    return false;
+                }
+
+                if (keepBackup) {
+                    File.Move(song.GetCoverPath(), song.GetCoverPath() + ".backup");
+                    song.OldCover = song.GetCoverPath();
+                }
+            }
+
+            var newCoverLocation = song.GetSongDirectory() + "\\" + Path.GetFileNameWithoutExtension(song.FilePath) +
+                                   Path.GetExtension(imageLocation);
+
+            File.Copy(imageLocation, newCoverLocation, true);
+
+            song.Cover = Path.GetFileName(newCoverLocation);
             return true;
         }
 

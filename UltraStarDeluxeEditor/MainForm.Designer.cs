@@ -182,7 +182,7 @@ namespace UltraStarDeluxeEditor {
             // 
             this.openSongTxtToolStripMenuItem.Enabled = false;
             this.openSongTxtToolStripMenuItem.Name = "openSongTxtToolStripMenuItem";
-            this.openSongTxtToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.openSongTxtToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openSongTxtToolStripMenuItem.Text = "Open Raw TXT";
             this.openSongTxtToolStripMenuItem.Click += new System.EventHandler(this.openSongTxtToolStripMenuItem_Click);
             // 
@@ -190,21 +190,21 @@ namespace UltraStarDeluxeEditor {
             // 
             this.reloadSongToolStripMenuItem.Enabled = false;
             this.reloadSongToolStripMenuItem.Name = "reloadSongToolStripMenuItem";
-            this.reloadSongToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.reloadSongToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.reloadSongToolStripMenuItem.Text = "Reload Song";
             this.reloadSongToolStripMenuItem.Click += new System.EventHandler(this.reloadSongToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(147, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
             // 
             // coverToolStripMenuItem
             // 
             this.coverToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.openCoverToolStripMenuItem, this.chooseCoverImageToolStripMenuItem, this.downloadCoverFromURLToolStripMenuItem, this.deleteCoverToolStripMenuItem });
             this.coverToolStripMenuItem.Enabled = false;
             this.coverToolStripMenuItem.Name = "coverToolStripMenuItem";
-            this.coverToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.coverToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.coverToolStripMenuItem.Text = "Cover";
             // 
             // openCoverToolStripMenuItem
@@ -221,6 +221,7 @@ namespace UltraStarDeluxeEditor {
             this.chooseCoverImageToolStripMenuItem.Name = "chooseCoverImageToolStripMenuItem";
             this.chooseCoverImageToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.chooseCoverImageToolStripMenuItem.Text = "Choose File";
+            this.chooseCoverImageToolStripMenuItem.Click += new System.EventHandler(this.editCoverButton_Click);
             // 
             // downloadCoverFromURLToolStripMenuItem
             // 
@@ -242,7 +243,7 @@ namespace UltraStarDeluxeEditor {
             // 
             this.openMP3ToolStripMenuItem.Enabled = false;
             this.openMP3ToolStripMenuItem.Name = "openMP3ToolStripMenuItem";
-            this.openMP3ToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.openMP3ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openMP3ToolStripMenuItem.Text = "Open MP3";
             this.openMP3ToolStripMenuItem.Click += new System.EventHandler(this.mp3PlayButton_Click);
             // 
@@ -250,21 +251,21 @@ namespace UltraStarDeluxeEditor {
             // 
             this.openVideoToolStripMenuItem.Enabled = false;
             this.openVideoToolStripMenuItem.Name = "openVideoToolStripMenuItem";
-            this.openVideoToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.openVideoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openVideoToolStripMenuItem.Text = "Open Video";
             this.openVideoToolStripMenuItem.Click += new System.EventHandler(this.videoPlayButton_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(147, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
             // 
             // webSearchToolStripMenuItem
             // 
             this.webSearchToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.googleSearchToolStripMenuItem, this.discogsSearchToolStripMenuItem });
             this.webSearchToolStripMenuItem.Enabled = false;
             this.webSearchToolStripMenuItem.Name = "webSearchToolStripMenuItem";
-            this.webSearchToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.webSearchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.webSearchToolStripMenuItem.Text = "Web Search";
             // 
             // googleSearchToolStripMenuItem

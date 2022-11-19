@@ -51,6 +51,7 @@ namespace UltraStarDeluxeEditor.Config {
             while (true) {
                 var folderBrowserDialog = new FolderBrowserDialog();
                 folderBrowserDialog.ShowNewFolderButton = false;
+                folderBrowserDialog.Description = Resources.findUsdFolderDescription;
 
                 var result = folderBrowserDialog.ShowDialog();
                 if (result == DialogResult.OK) {
