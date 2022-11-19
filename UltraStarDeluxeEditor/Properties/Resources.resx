@@ -219,4 +219,10 @@ Unsaved changes will be lost.</value>
         <value>The song couldn't be reloaded du to the song file ({0}) not being valid.
 The file needs to contain at least a song title, an artist, a BPM of at least 1, a gap value of 0 or higher and a song text at least one player.</value>
     </data>
+    <data name="mp3FileNotExistsWarningIcon" xml:space="preserve">
+        <value>The MP3 file doesn't exist.</value>
+    </data>
+    <data name="videoFileNotExistsWarningIcon" xml:space="preserve">
+        <value>The video file doesn't exist.</value>
+    </data>
 </root>

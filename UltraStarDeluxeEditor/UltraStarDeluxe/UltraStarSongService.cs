@@ -25,6 +25,14 @@ namespace UltraStarDeluxeEditor.UltraStarDeluxe {
         private const string COVER_KEY = "#COVER:";
         private const string VIDEO_KEY = "#VIDEO:";
 
+        /// <summary>
+        ///     Takes a <see cref="UltraStarSong" /> and an URL, downloads the image from the URL and sets it as the new cover of
+        ///     the song.
+        /// </summary>
+        /// <param name="song"></param>
+        /// <param name="newCoverUrl"></param>
+        /// <param name="keepBackup"></param>
+        /// <returns></returns>
         public static bool ChangeCoverWithUrl(UltraStarSong song, string newCoverUrl, bool keepBackup = true) {
             if (song == null || string.IsNullOrWhiteSpace(newCoverUrl)) {
                 return false;
@@ -72,7 +80,7 @@ namespace UltraStarDeluxeEditor.UltraStarDeluxe {
         ///     This method can be used to delete the cover image of an UltraStar song. If a backup is saved the cover will be
         ///     unlinked first from the song and deleted when the user saves the song the next time.
         /// </summary>
-        /// <param name="song">The UltraStar song which cover should be deleted</param>
+        /// <param name="song">The <see cref="UltraStarSong" /> which cover should be deleted</param>
         /// <param name="keepBackup">Specifies if the cover should be kept as a backup until the song is saved</param>
         /// <returns>
         ///     <c>true</c> if the old cover was successfully deleted/unlinked or if there was no old cover
@@ -97,6 +105,11 @@ namespace UltraStarDeluxeEditor.UltraStarDeluxe {
             return true;
         }
 
+        /// <summary>
+        ///     Loads a UltraStar song based on an already existing <see cref="UltraStarSong" /> object.
+        /// </summary>
+        /// <param name="song">The existing <see cref="UltraStarSong" /></param>
+        /// <returns>The reloaded song as an <see cref="UltraStarSong" /> object</returns>
         public static UltraStarSong LoadSongFromFile(UltraStarSong song) {
             return song != null ? LoadSongFromFile(song.FilePath) : null;
         }
@@ -105,7 +118,7 @@ namespace UltraStarDeluxeEditor.UltraStarDeluxe {
         ///     Loads a UltraStar song from an appropriate TXT-file and returns it.
         /// </summary>
         /// <param name="filePath">Absolute path of the song's TXT-file</param>
-        /// <returns>The song contained inside the file as UltraStarSong</returns>
+        /// <returns>The song contained inside the file as an <see cref="UltraStarSong" /></returns>
         /// <exception cref="UltraStarSongNotValidException">
         ///     The loaded song isn't valid. Valid songs need a file path, title,
         ///     artist, BPM above 1, a gap value of 0 or higher and a song text for at least one player.

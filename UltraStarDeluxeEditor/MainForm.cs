@@ -30,6 +30,8 @@ namespace UltraStarDeluxeEditor {
             // add tool tips
             toolTip.SetToolTip(coverDownloadButton, Resources.coverDownloadFromUrl);
             toolTip.SetToolTip(deleteCoverButton, Resources.coverDeleteCaption);
+            toolTip.SetToolTip(mp3MissingPictureBox, Resources.mp3FileNotExistsWarningIcon);
+            toolTip.SetToolTip(videoMissingPictureBox, Resources.videoFileNotExistsWarningIcon);
 
             SetSongDetailUiEnabled(false);
         }
@@ -119,9 +121,11 @@ namespace UltraStarDeluxeEditor {
                 duetSinger2TextBox.Text = _selectedSong.DuetSingerP2;
 
                 mp3TextBox.Text = _selectedSong.MP3;
-                mp3PlayButton.Enabled = _selectedSong.HasMp3();
+                mp3PlayButton.Enabled = _selectedSong.HasMp3() && File.Exists(_selectedSong.GetMp3Path());
+                mp3MissingPictureBox.Visible = _selectedSong.HasMp3() && !File.Exists(_selectedSong.GetMp3Path());
                 videoTextBox.Text = _selectedSong.Video;
-                videoPlayButton.Enabled = _selectedSong.HasVideo();
+                videoPlayButton.Enabled = _selectedSong.HasVideo() && File.Exists(_selectedSong.GetVideoPath());
+                videoMissingPictureBox.Visible = _selectedSong.HasVideo() && !File.Exists(_selectedSong.GetVideoPath());
 
                 coverPictureBox.ImageLocation = _selectedSong.Cover != null
                     ? _selectedSong.GetCoverPath()

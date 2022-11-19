@@ -169,6 +169,15 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The MP3 file doesn&apos;t exist..
+        /// </summary>
+        internal static string mp3FileNotExistsWarningIcon {
+            get {
+                return ResourceManager.GetString("mp3FileNotExistsWarningIcon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No UltraStar Directory.
         /// </summary>
         internal static string noUSDPathConfiguredCaption {
@@ -341,6 +350,15 @@ namespace UltraStarDeluxeEditor.Properties {
         internal static string urlInputCaption {
             get {
                 return ResourceManager.GetString("urlInputCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The video file doesn&apos;t exist..
+        /// </summary>
+        internal static string videoFileNotExistsWarningIcon {
+            get {
+                return ResourceManager.GetString("videoFileNotExistsWarningIcon", resourceCulture);
             }
         }
     }

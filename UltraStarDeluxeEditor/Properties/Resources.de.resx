@@ -115,4 +115,10 @@ Ungespeicherte Änderungen gehen dabei verloren.</value>
         <value>Der Song konnte nicht neu geladen werden, da die Datei ({0}) ungültig ist.
 Die Datei muss mindestens einen Songtitel, einen Künstler, BPM von mindestens 1, einen Gap-Wert von 0 oder mehr und Songtexte für mindestens einen Spieler enthalten.</value>
     </data>
+    <data name="mp3FileNotExistsWarningIcon" xml:space="preserve">
+        <value>Die MP3-Datei existiert nicht.</value>
+    </data>
+    <data name="videoFileNotExistsWarningIcon" xml:space="preserve">
+        <value>Die Video-Datei existiert nicht.</value>
+    </data>
 </root>
