@@ -293,9 +293,12 @@ namespace UltraStarDeluxeEditor {
             }
         }
 
-        /**
-         * Marks a song as dirty if there were changes done to it by the user.
-         */
+        /// <summary>
+        ///     Marks a song as dirty if there were changes done to it by the user, saves the changes to the currently selected
+        ///     <see cref="UltraStarSong" /> and updates this forms title if necessary.
+        /// </summary>
+        /// <seealso cref="WriteDetailUiToSong" />
+        /// <seealso cref="UpdateFormTitle" />
         private void detailControl_ValueChanged(object sender, EventArgs e) {
             // check if changes were made by user and return if not
             if ((sender is TextBox textBox && !textBox.ContainsFocus) ||
@@ -315,14 +318,6 @@ namespace UltraStarDeluxeEditor {
             }
         }
 
-        private void songListView_SelectedIndexChanged(object sender, EventArgs e) {
-            _selectedSong = songListView.SelectedItems.Count > 0
-                ? ((SongListViewItem) songListView.SelectedItems[0]).UltraStarSong
-                : null;
-
-            UpdateUi();
-        }
-
         private void duetCheckBox_CheckedChanged(object sender, EventArgs e) {
             if (_selectedSong != null) {
                 _selectedSong.IsDuet = duetCheckBox.Checked;
@@ -330,14 +325,6 @@ namespace UltraStarDeluxeEditor {
 
             detailControl_ValueChanged(sender, e);
             UpdateUi();
-        }
-
-        private void mp3PlayButton_Click(object sender, EventArgs e) {
-            UltraStarSongService.OpenMp3(_selectedSong);
-        }
-
-        private void videoPlayButton_Click(object sender, EventArgs e) {
-            UltraStarSongService.OpenVideo(_selectedSong);
         }
 
         /// <summary>
@@ -351,10 +338,25 @@ namespace UltraStarDeluxeEditor {
             }
         }
 
+        private void songListView_SelectedIndexChanged(object sender, EventArgs e) {
+            _selectedSong = songListView.SelectedItems.Count > 0
+                ? ((SongListViewItem) songListView.SelectedItems[0]).UltraStarSong
+                : null;
+
+            UpdateUi();
+        }
+
+        private void mp3PlayButton_Click(object sender, EventArgs e) {
+            UltraStarSongService.OpenMp3(_selectedSong);
+        }
+
+        private void videoPlayButton_Click(object sender, EventArgs e) {
+            UltraStarSongService.OpenVideo(_selectedSong);
+        }
+
         private void saveToolStripMenuItem_Click(object sender, EventArgs e) {
             SaveSelectedSongFile();
         }
-
 
         private void saveAllToolStripMenuItem_Click(object sender, EventArgs e) {
             if (IsDirty()) {
@@ -435,20 +437,8 @@ namespace UltraStarDeluxeEditor {
             }
         }
 
-        private void coverPictureBox_DoubleClick(object sender, EventArgs e) {
-            UltraStarSongService.OpenCoverImage(_selectedSong);
-        }
-
-        private void googleSearchToolStripMenuItem_Click(object sender, EventArgs e) {
-            UltraStarSongService.SearchWithGoogle(_selectedSong);
-        }
-
-        private void discogsSearchToolStripMenuItem_Click(object sender, EventArgs e) {
-            UltraStarSongService.SearchOnDiscogs(_selectedSong);
-        }
-
-        private void closeToolStripMenuItem_Click(object sender, EventArgs e) {
-            Close();
+        private void editCoverButton_Click(object sender, EventArgs e) {
+            throw new NotImplementedException();
         }
 
         private void deleteCoverButton_Click(object sender, EventArgs e) {
@@ -470,8 +460,24 @@ namespace UltraStarDeluxeEditor {
             }
         }
 
+        private void coverPictureBox_DoubleClick(object sender, EventArgs e) {
+            UltraStarSongService.OpenCoverImage(_selectedSong);
+        }
+
         private void openSongTxtToolStripMenuItem_Click(object sender, EventArgs e) {
             UltraStarSongService.OpenTxt(_selectedSong);
+        }
+
+        private void googleSearchToolStripMenuItem_Click(object sender, EventArgs e) {
+            UltraStarSongService.SearchWithGoogle(_selectedSong);
+        }
+
+        private void discogsSearchToolStripMenuItem_Click(object sender, EventArgs e) {
+            UltraStarSongService.SearchOnDiscogs(_selectedSong);
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e) {
+            Close();
         }
     }
 }
