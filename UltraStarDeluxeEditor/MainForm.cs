@@ -122,14 +122,14 @@ namespace UltraStarDeluxeEditor {
                 languageTextBox.Text = _selectedSong.Language;
                 editionTextBox.Text = _selectedSong.Edition;
 
-                bpmNumericUpDown.Value = _selectedSong.BPM;
+                bpmNumericUpDown.Value = _selectedSong.Bpm;
                 gapNumericUpDown.Value = _selectedSong.Gap;
                 videoGapNumericUpDown.Value = _selectedSong.VideoGap;
                 duetCheckBox.Checked = _selectedSong.IsDuet;
                 duetSinger1TextBox.Text = _selectedSong.DuetSingerP1;
                 duetSinger2TextBox.Text = _selectedSong.DuetSingerP2;
 
-                mp3TextBox.Text = _selectedSong.MP3;
+                mp3TextBox.Text = _selectedSong.Mp3;
                 mp3PlayButton.Enabled = _selectedSong.HasMp3() && File.Exists(_selectedSong.GetMp3Path());
                 mp3MissingPictureBox.Visible = _selectedSong.HasMp3() && !File.Exists(_selectedSong.GetMp3Path());
                 videoTextBox.Text = _selectedSong.Video;
@@ -210,14 +210,14 @@ namespace UltraStarDeluxeEditor {
             song.Language = languageTextBox.Text;
             song.Edition = editionTextBox.Text;
 
-            song.BPM = bpmNumericUpDown.Value;
+            song.Bpm = bpmNumericUpDown.Value;
             song.Gap = gapNumericUpDown.Value;
             song.VideoGap = videoGapNumericUpDown.Value;
             song.IsDuet = duetCheckBox.Checked;
             song.DuetSingerP1 = duetSinger1TextBox.Text;
             song.DuetSingerP2 = duetSinger2TextBox.Text;
 
-            song.MP3 = mp3TextBox.Text;
+            song.Mp3 = mp3TextBox.Text;
             song.Video = videoTextBox.Text;
 
             song.Cover = coverPictureBox.ImageLocation != DEFAULT_IMAGE_LOCATION

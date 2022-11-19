@@ -29,11 +29,11 @@ namespace UltraStarDeluxeEditor.UltraStar {
         private const string DEFAULT_CREATOR_STRING = "Edited with Nuhser's USD Song Editor";
 
         /// <summary>
-        ///     Takes a <see cref="UltraStarSong" /> and an URL, downloads the image from the URL and sets it as the new cover of
+        ///     Takes an <see cref="UltraStarSong" /> and an URL, downloads the image from the URL and sets it as the new cover of
         ///     the song.
         /// </summary>
-        /// <param name="song">The <see cref="UltraStarSong" /> that's cover you want to change</param>
-        /// <param name="newCoverUrl">The URL of the image you want to download as the cover</param>
+        /// <param name="song">The <see cref="UltraStarSong" /> that's cover you want to change.</param>
+        /// <param name="newCoverUrl">The URL of the image you want to download as the cover.</param>
         /// <param name="keepBackup">
         ///     Specifies whether the old cover image should be kept as a backup until the song is saved for
         ///     the next time (default: <c>true</c>)
@@ -83,11 +83,16 @@ namespace UltraStarDeluxeEditor.UltraStar {
         }
 
         /// <summary>
+        ///     Takes an <see cref="UltraStarSong" /> as well as the path to the new cover image file and sets it as the new cover
+        ///     of the song.
         /// </summary>
-        /// <param name="song"></param>
-        /// <param name="imageLocation"></param>
-        /// <param name="keepBackup"></param>
-        /// <returns></returns>
+        /// <param name="song">The <see cref="UltraStarSong" /> that's cover you want to change.</param>
+        /// <param name="imageLocation">The path to the new image you want to use as the cover.</param>
+        /// <param name="keepBackup">
+        ///     Specifies whether the old cover image should be kept as a backup until the song is saved for
+        ///     the next time (default: <c>true</c>).
+        /// </param>
+        /// <returns><c>true</c> if the cover was changed successfully and <c>false</c> otherwise.</returns>
         public static bool ChangeCoverFromFile(UltraStarSong song, string imageLocation, bool keepBackup = true) {
             if (song == null || string.IsNullOrWhiteSpace(imageLocation) || !File.Exists(imageLocation)) {
                 return false;
@@ -143,6 +148,17 @@ namespace UltraStarDeluxeEditor.UltraStar {
             return true;
         }
 
+        /// <summary>
+        ///     Exports a song and saves it to a TXT file. The song needs to be saved first since it's file is used for the export
+        ///     rather then the current state of the <see cref="UltraStarSong" /> object.
+        /// </summary>
+        /// <param name="song">The <see cref="UltraStarSong" /> you want to export.</param>
+        /// <param name="filePath">The absolute path of the file the export should be saved in.</param>
+        /// <param name="openAfterExport">Specifies if the exported file should be shown in the explorer after the export is done.</param>
+        /// <returns>
+        ///     <c>true</c> if the export was successful and <c>false</c> if <paramref name="song" /> is <c>null</c> or
+        ///     <paramref name="filePath" /> is <c>null</c>, empty or only white space.
+        /// </returns>
         public static bool ExportSong(UltraStarSong song, string filePath, bool openAfterExport = true) {
             if (song == null || string.IsNullOrWhiteSpace(filePath)) {
                 return false;
@@ -216,7 +232,7 @@ namespace UltraStarDeluxeEditor.UltraStar {
                             song.Edition = line.Replace(EDITION_KEY, "");
                         }
                         else if (line.StartsWith(BPM_KEY)) {
-                            song.BPM = Convert.ToDecimal(line.Replace(BPM_KEY, ""), new CultureInfo("en-US"));
+                            song.Bpm = Convert.ToDecimal(line.Replace(BPM_KEY, ""), new CultureInfo("en-US"));
                         }
                         else if (line.StartsWith(GAP_KEY)) {
                             song.Gap = Convert.ToDecimal(line.Replace(GAP_KEY, ""), new CultureInfo("en-US"));
@@ -232,7 +248,7 @@ namespace UltraStarDeluxeEditor.UltraStar {
                             song.DuetSingerP2 = line.Replace(DUET_SINGER_P2_KEY, "");
                         }
                         else if (line.StartsWith(MP3_KEY)) {
-                            song.MP3 = line.Replace(MP3_KEY, "");
+                            song.Mp3 = line.Replace(MP3_KEY, "");
                         }
                         else if (line.StartsWith(COVER_KEY)) {
                             song.Cover = line.Replace(COVER_KEY, "");
@@ -368,7 +384,7 @@ namespace UltraStarDeluxeEditor.UltraStar {
 
                 streamWriter.WriteLine(CREATOR_KEY + DEFAULT_CREATOR_STRING);
 
-                streamWriter.WriteLine(BPM_KEY + Convert.ToString(song.BPM, new CultureInfo("en-US")));
+                streamWriter.WriteLine(BPM_KEY + Convert.ToString(song.Bpm, new CultureInfo("en-US")));
                 streamWriter.WriteLine(GAP_KEY + Convert.ToString(song.Gap, new CultureInfo("en-US")));
 
                 if (song.VideoGap > 0) {
@@ -385,7 +401,7 @@ namespace UltraStarDeluxeEditor.UltraStar {
                     }
                 }
 
-                streamWriter.WriteLine(MP3_KEY + song.MP3);
+                streamWriter.WriteLine(MP3_KEY + song.Mp3);
 
                 if (!string.IsNullOrWhiteSpace(song.Cover)) {
                     streamWriter.WriteLine(COVER_KEY + song.Cover);

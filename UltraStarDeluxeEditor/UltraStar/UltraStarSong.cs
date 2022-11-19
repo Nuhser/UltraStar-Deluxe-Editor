@@ -27,13 +27,13 @@ namespace UltraStarDeluxeEditor.UltraStar {
         public string Year { get; set; }
         public string Language { get; set; }
         public string Edition { get; set; }
-        public decimal BPM { get; set; }
+        public decimal Bpm { get; set; }
         public decimal Gap { get; set; }
         public decimal VideoGap { get; set; }
         public bool IsDuet { get; set; }
         public string DuetSingerP1 { get; set; }
         public string DuetSingerP2 { get; set; }
-        public string MP3 { get; set; }
+        public string Mp3 { get; set; }
         public string Cover { get; set; }
         public string Video { get; set; }
         public Tuple<string, string> SongText { get; set; }
@@ -42,13 +42,13 @@ namespace UltraStarDeluxeEditor.UltraStar {
         ///     Checks if the <see cref="UltraStarSong" /> is valid.
         ///     <br />
         ///     Valid songs need to contain at least a <see cref="FilePath" />, a <see cref="Title" />, an <see cref="Artist" />,
-        ///     <see cref="BPM" /> set to <c>1</c> or higher, a <see cref="Gap" /> of at least <c>0</c> and a
+        ///     <see cref="Bpm" /> set to <c>1</c> or higher, a <see cref="Gap" /> of at least <c>0</c> and a
         ///     <see cref="SongText" /> for at least one player (first element of the <see cref="Tuple" />).
         /// </summary>
         /// <returns><c>true</c> if the song is valid and <c>false</c> otherwise</returns>
         public bool IsValid() {
             return !string.IsNullOrEmpty(FilePath) && !string.IsNullOrEmpty(Title) && !string.IsNullOrEmpty(Artist) &&
-                   BPM >= 1 && Gap >= 0 && HasMp3() && !string.IsNullOrEmpty(SongText.Item1);
+                   Bpm >= 1 && Gap >= 0 && HasMp3() && !string.IsNullOrEmpty(SongText.Item1);
         }
 
         public bool HasCover() {
@@ -56,7 +56,7 @@ namespace UltraStarDeluxeEditor.UltraStar {
         }
 
         public bool HasMp3() {
-            return !string.IsNullOrWhiteSpace(MP3);
+            return !string.IsNullOrWhiteSpace(Mp3);
         }
 
         public bool HasVideo() {
@@ -73,7 +73,7 @@ namespace UltraStarDeluxeEditor.UltraStar {
         }
 
         public string GetMp3Path() {
-            return GetSongDirectory() + "\\" + MP3;
+            return GetSongDirectory() + "\\" + Mp3;
         }
 
         public string GetCoverPath() {
