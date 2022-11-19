@@ -217,7 +217,7 @@ namespace UltraStarDeluxeEditor {
         }
 
         private void SaveSongFile(UltraStarSong song, bool updateUi = true) {
-            song.SaveSongToFile();
+            UltraStarSongService.SaveSongToFile(song);
 
             foreach (SongListViewItem listViewItem in songListView.Items) {
                 if (listViewItem.UltraStarSong == song) {

@@ -16,6 +16,7 @@ namespace UltraStarDeluxeEditor.UltraStarDeluxe {
         private const string YEAR_KEY = "#YEAR:";
         private const string LANGUAGE_KEY = "#LANGUAGE:";
         private const string EDITION_KEY = "#EDITION:";
+        private const string CREATOR_KEY = "#CREATOR:";
         private const string BPM_KEY = "#BPM:";
         private const string GAP_KEY = "#GAP:";
         private const string VIDEO_GAP_KEY = "#VIDEOGAP:";
@@ -24,6 +25,8 @@ namespace UltraStarDeluxeEditor.UltraStarDeluxe {
         private const string MP3_KEY = "#MP3:";
         private const string COVER_KEY = "#COVER:";
         private const string VIDEO_KEY = "#VIDEO:";
+
+        private const string DEFAULT_CREATOR_STRING = "Edited with Nuhser's USD Song Editor";
 
         /// <summary>
         ///     Takes a <see cref="UltraStarSong" /> and an URL, downloads the image from the URL and sets it as the new cover of
@@ -254,6 +257,106 @@ namespace UltraStarDeluxeEditor.UltraStarDeluxe {
             if (song != null && song.HasVideo()) {
                 Process.Start(song.GetVideoPath());
             }
+        }
+
+        /// <summary>
+        ///     Formats the information saved inside an <see cref="UltraStarSong" /> and saves it to the file specified the song's
+        ///     <see cref="UltraStarSong.FilePath" />. The text gets formatted so that UltraStar Deluxe can interpret the song (see
+        ///     <a href="https://wiki.usdb.eu/txt_files/format">here</a>).
+        /// </summary>
+        /// <param name="song">The <see cref="UltraStarSong" /> that should be saved.</param>
+        /// <returns>
+        ///     <c>true</c> if the song was saved successfully or wasn't dirty to begin with or <c>false</c> if the given song
+        ///     was <c>null</c>.
+        /// </returns>
+        /// <exception cref="UltraStarSongNotValidException">The song tried to save isn't valid.</exception>
+        /// <seealso cref="UltraStarSong.IsValid" />
+        public static bool SaveSongToFile(UltraStarSong song) {
+            if (song == null) {
+                return false;
+            }
+
+            if (!song.IsDirty) {
+                return true;
+            }
+
+            if (!song.IsValid()) {
+                throw new UltraStarSongNotValidException("The song you're trying to save is no valid UltraStar song!",
+                    song);
+            }
+
+            // write song information to file
+            using (var fileStream = new FileStream(song.FilePath, FileMode.Create))
+            using (var streamWriter = new StreamWriter(fileStream)) {
+                streamWriter.WriteLine(TITLE_KEY + song.Title);
+                streamWriter.WriteLine(ARTIST_KEY + song.Artist);
+
+                if (!string.IsNullOrWhiteSpace(song.Genre)) {
+                    streamWriter.WriteLine(GENRE_KEY + song.Genre);
+                }
+
+                if (!string.IsNullOrWhiteSpace(song.Year)) {
+                    streamWriter.WriteLine(YEAR_KEY + song.Year);
+                }
+
+                if (!string.IsNullOrWhiteSpace(song.Language)) {
+                    streamWriter.WriteLine(LANGUAGE_KEY + song.Language);
+                }
+
+                if (!string.IsNullOrWhiteSpace(song.Edition)) {
+                    streamWriter.WriteLine(EDITION_KEY + song.Edition);
+                }
+
+                streamWriter.WriteLine(CREATOR_KEY + DEFAULT_CREATOR_STRING);
+
+                streamWriter.WriteLine(BPM_KEY + Convert.ToString(song.BPM, new CultureInfo("en-US")));
+                streamWriter.WriteLine(GAP_KEY + Convert.ToString(song.Gap, new CultureInfo("en-US")));
+
+                if (song.VideoGap > 0) {
+                    streamWriter.WriteLine(VIDEO_GAP_KEY + Convert.ToString(song.VideoGap, new CultureInfo("en-US")));
+                }
+
+                if (song.IsDuet) {
+                    if (!string.IsNullOrWhiteSpace(song.DuetSingerP1)) {
+                        streamWriter.WriteLine(DUET_SINGER_P1_KEY + song.DuetSingerP1);
+                    }
+
+                    if (!string.IsNullOrWhiteSpace(song.DuetSingerP2)) {
+                        streamWriter.WriteLine(DUET_SINGER_P2_KEY + song.DuetSingerP2);
+                    }
+                }
+
+                streamWriter.WriteLine(MP3_KEY + song.MP3);
+
+                if (!string.IsNullOrWhiteSpace(song.Cover)) {
+                    streamWriter.WriteLine(COVER_KEY + song.Cover);
+                }
+
+                if (!string.IsNullOrWhiteSpace(song.Video)) {
+                    streamWriter.WriteLine(VIDEO_KEY + song.Video);
+                }
+
+                if (song.IsDuet) {
+                    streamWriter.WriteLine("P1");
+                }
+
+                streamWriter.WriteLine(song.SongText.Item1.Trim());
+
+                if (song.IsDuet) {
+                    streamWriter.WriteLine("P2");
+                    streamWriter.WriteLine(song.SongText.Item2.Trim());
+                }
+
+                streamWriter.WriteLine("E");
+            }
+
+            // delete backups if there where any
+            if (!string.IsNullOrWhiteSpace(song.OldCover) && File.Exists(song.OldCover + ".backup")) {
+                File.Delete(song.OldCover + ".backup");
+                song.OldCover = null;
+            }
+
+            return true;
         }
 
         /// <summary>
