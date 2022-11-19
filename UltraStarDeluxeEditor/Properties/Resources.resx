@@ -120,17 +120,17 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="noUSDPathConfiguredCaption" xml:space="preserve">
+    <data name="usdPathNotConfiguredCaption" xml:space="preserve">
     <value>No UltraStar Directory</value>
   </data>
-    <data name="noUSDPathConfiguredMessage" xml:space="preserve">
+    <data name="usdPathNotConfiguredMessage" xml:space="preserve">
         <value>You have no UltraStar path configured at the moment.
 Please select your UltraStar Deluxe directory in order to move on.</value>
     </data>
-    <data name="pathIsNoUSDPathCaption" xml:space="preserve">
-        <value>Not an UltraStar Directory</value>
+    <data name="usdPathNotValidCaption" xml:space="preserve">
+        <value>UltraStar directory not valid</value>
     </data>
-    <data name="pathIsNoUSDPathMessage" xml:space="preserve">
+    <data name="usdPathNotValidMessage" xml:space="preserve">
         <value>The folder you selected isn't an UltraStar Directory.
 Please select another one.</value>
     </data>

@@ -879,23 +879,6 @@
             Y5PB02cAAAAASUVORK5CYII=
         </value>
     </data>
-    <data name="mp3DeleteButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing"
-          mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>
-            iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAlxJREFUaEPt
-            mT1Ow0AQhS2aSERIJEWQIvGThBSQKKKjAIlUNJCII3ADrpAjIHEAuAHcAG4AN4CCnoYKCphnecTGWtbj
-            yeAA8ic9rb2afW83+A87KvniIKd+Bcuka9KHUpckeMwFBN+TfBPLI3jMZRHnJHcidznljoVX4byQeAIn
-            6MgJxvB4eBXKBonDn9ChBGPZB56FMSRxMA4HLe6hBE8VOIF8lznoiHTm0QWJg5+TfY0wln2w78vCHHxz
-            g+KT3+JKMi9h7lPH4V9TfP7h2LsiuZc4lluMK4WrV9Ib6X1GwQNeaX832zc3zDnzvHFNisYk28REiUm2
-            iYkSk2wTEyUm2SYmSkyyTUyUmGSbmCgxyZaa4MnykYR/brJADWqznmCl2UGkJjckrgvdXNyHQIwJwXWQ
-            GqkJ7oxcJ10AxoTgOkiN1KRcgAeug9RITcoFeOA6SI3UpFyAB66D1EhNygV44DpIjdSkXIAHroPUSE3K
-            BXjgOkiN1ASvOLhOugCMCcF1kBqpyQ4Jv2jWpAC/g8KYENLsICYmSkyyTUyUmGQHTarV6mGn01lNdq0J
-            ZksJmRz3+/0tbIxGo8W4J6HX69Unk8lCshvV6/Vt1LTb7bXhcIhX4sfob7Va62jH4/ES2hShbDEhk3gS
-            aOmvsJlsR7VabR9to9FYqVQqeLcfMxgM+tRgDCum2WzuJZtpQtlivjXpdru71ExNxphvs/Pgfjs4RUdB
-            IItzH9ChZUJiIwhfRG5/WOkvRpjDTOAXcA2L1Ey/PoOrRvqjdhFCpvkXfNz+8Tzzk8p6xPhPRNEnyf1t
-            Y5PB02cAAAAASUVORK5CYII=
-        </value>
-    </data>
     <metadata name="toolTip.TrayLocation"
               type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
         <value>144, 17</value>

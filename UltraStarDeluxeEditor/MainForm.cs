@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
-using UltraStarDeluxeEditor.Config;
+using UltraStarDeluxeEditor.Configuration;
 using UltraStarDeluxeEditor.Properties;
-using UltraStarDeluxeEditor.UltraStarDeluxe;
+using UltraStarDeluxeEditor.UltraStar;
 using UltraStarDeluxeEditor.Utility;
 
 namespace UltraStarDeluxeEditor {
@@ -62,7 +63,7 @@ namespace UltraStarDeluxeEditor {
             var invalidSongs = new List<string>();
 
             var songDirectories = ConfigService.GetSongDirectories();
-            foreach (var songFile in songDirectories.Where(songDirectory => Directory.Exists(songDirectory))
+            foreach (var songFile in songDirectories.Where(Directory.Exists)
                          .SelectMany(songDirectory => Directory.GetFiles(songDirectory, "*.txt"))) {
                 UltraStarSong song;
 
@@ -171,6 +172,7 @@ namespace UltraStarDeluxeEditor {
             // enable/disable menu items
             saveToolStripMenuItem.Enabled = songSelected && _selectedSong.IsDirty;
             openSongTxtToolStripMenuItem.Enabled = songSelected;
+            openDirectoryToolStripMenuItem.Enabled = songSelected;
             reloadSongToolStripMenuItem.Enabled = songSelected;
             coverToolStripMenuItem.Enabled = songSelected;
             openCoverToolStripMenuItem.Enabled = songSelected && _selectedSong.HasCover();
@@ -250,7 +252,16 @@ namespace UltraStarDeluxeEditor {
         private void MainForm_Load(object sender, EventArgs e) {
             var config = ConfigService.Config;
 
-            if (string.IsNullOrEmpty(config.UsdPath) || !Directory.Exists(config.UsdPath)) {
+            if (!config.IsValidUsdPath()) {
+                if (config.HasUsdPath()) {
+                    MessageBox.Show(Resources.usdPathNotValidMessage, Resources.usdPathNotValidCaption,
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else {
+                    MessageBox.Show(Resources.usdPathNotConfiguredMessage, Resources.usdPathNotConfiguredCaption,
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
                 ConfigService.FindUsdFolder();
             }
         }
@@ -258,7 +269,7 @@ namespace UltraStarDeluxeEditor {
         private void MainForm_Shown(object sender, EventArgs e) {
             var config = ConfigService.Config;
 
-            if (!string.IsNullOrEmpty(config.UsdPath) && Directory.Exists(config.UsdPath)) {
+            if (config.IsValidUsdPath()) {
                 InitSongListView();
             }
         }
@@ -377,7 +388,7 @@ namespace UltraStarDeluxeEditor {
                         File.Move(_selectedSong.OldCover + ".backup", _selectedSong.OldCover);
                     }
                 }
-                
+
                 bool loop;
                 do {
                     try {
@@ -422,7 +433,16 @@ namespace UltraStarDeluxeEditor {
 
         private void reloadSongsToolStripMenuItem_Click(object sender, EventArgs e) {
             var config = ConfigService.Config;
-            if (string.IsNullOrEmpty(config.UsdPath)) {
+            if (!config.IsValidUsdPath()) {
+                if (config.HasUsdPath()) {
+                    MessageBox.Show(Resources.usdPathNotValidMessage, Resources.usdPathNotValidCaption,
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else {
+                    MessageBox.Show(Resources.usdPathNotConfiguredMessage, Resources.usdPathNotConfiguredCaption,
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
                 ConfigService.FindUsdFolder();
             }
 
@@ -501,6 +521,17 @@ namespace UltraStarDeluxeEditor {
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e) {
             Close();
+        }
+
+        private void openDirectoryToolStripMenuItem_Click(object sender, EventArgs e) {
+            UltraStarSongService.OpenSongDirectory(_selectedSong);
+        }
+
+        private void startUltraStarDeluxeToolStripMenuItem_Click(object sender, EventArgs e) {
+            var config = ConfigService.Config;
+            if (config.IsValidUsdPath()) {
+                Process.Start(Path.Combine(config.UsdPath, Config.USD_EXE_NAME));
+            }
         }
     }
 }

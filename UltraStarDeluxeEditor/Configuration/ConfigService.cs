@@ -8,11 +8,9 @@ using System.Xml.Serialization;
 using UltraStarDeluxeEditor.Properties;
 using UltraStarDeluxeEditor.Utility;
 
-namespace UltraStarDeluxeEditor.Config {
+namespace UltraStarDeluxeEditor.Configuration {
     public static class ConfigService {
         private const string CONFIG_PATH = ".\\config.xml";
-        private const string USD_CONFIG_PATH = "\\config.ini";
-        private const string USD_SONGS_PATH = "\\songs";
 
         private static Config _config;
         public static Config Config => _config ?? (_config = DeserializeConfig());
@@ -44,10 +42,6 @@ namespace UltraStarDeluxeEditor.Config {
         }
 
         public static bool FindUsdFolder() {
-            MessageBox.Show(
-                Resources.noUSDPathConfiguredMessage,
-                Resources.noUSDPathConfiguredCaption, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
             while (true) {
                 var folderBrowserDialog = new FolderBrowserDialog();
                 folderBrowserDialog.ShowNewFolderButton = false;
@@ -56,14 +50,13 @@ namespace UltraStarDeluxeEditor.Config {
                 var result = folderBrowserDialog.ShowDialog();
                 if (result == DialogResult.OK) {
                     var folderName = folderBrowserDialog.SelectedPath;
-                    if (File.Exists(folderName + USD_CONFIG_PATH)) {
-                        _config.UsdPath = folderName;
+                    _config.UsdPath = folderName;
+                    if (_config.IsValidUsdPath()) {
                         SerializeConfig();
-
                         return true;
                     }
 
-                    if (MessageBox.Show(Resources.pathIsNoUSDPathMessage, Resources.pathIsNoUSDPathCaption,
+                    if (MessageBox.Show(Resources.usdPathNotValidMessage, Resources.usdPathNotValidCaption,
                             MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes) {
                         continue;
                     }
@@ -75,12 +68,13 @@ namespace UltraStarDeluxeEditor.Config {
 
         public static List<string> GetSongDirectories() {
             var songDirectories = new List<string>();
-            songDirectories.Add(_config.UsdPath + USD_SONGS_PATH);
+            songDirectories.Add(Path.Combine(_config.UsdPath, Config.USD_SONGS_DIRECTORY));
 
             var i = 1;
-            while (IniUtil.KeyExists("Directories", "SongDir" + i, _config.UsdPath + USD_CONFIG_PATH)) {
+            while (IniUtil.KeyExists("Directories", "SongDir" + i,
+                       Path.Combine(_config.UsdPath, Config.USD_CONFIG_NAME))) {
                 songDirectories.Add(IniUtil.Read("Directories", "SongDir" + i,
-                    _config.UsdPath + USD_CONFIG_PATH));
+                    Path.Combine(_config.UsdPath, Config.USD_CONFIG_NAME)));
 
                 i++;
             }

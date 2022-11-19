@@ -1,6 +1,6 @@
 using System.Drawing;
 using System.Windows.Forms;
-using UltraStarDeluxeEditor.UltraStarDeluxe;
+using UltraStarDeluxeEditor.UltraStar;
 
 namespace UltraStarDeluxeEditor.Utility {
     public class SongListViewItem : ListViewItem {

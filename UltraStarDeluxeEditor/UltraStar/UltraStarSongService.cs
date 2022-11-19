@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using UltraStarDeluxeEditor.Properties;
 using UltraStarDeluxeEditor.Utility;
 
-namespace UltraStarDeluxeEditor.UltraStarDeluxe {
+namespace UltraStarDeluxeEditor.UltraStar {
     public static class UltraStarSongService {
         private const string TITLE_KEY = "#TITLE:";
         private const string ARTIST_KEY = "#ARTIST:";
@@ -247,7 +247,7 @@ namespace UltraStarDeluxeEditor.UltraStarDeluxe {
         /// <summary>
         ///     Opens the cover image of an <see cref="UltraStarSong" /> if it exists using the default program for that file type.
         /// </summary>
-        /// <param name="song">The <see cref="UltraStarSong" /> that's cover you want to open</param>
+        /// <param name="song">The <see cref="UltraStarSong" /> that's cover you want to open.</param>
         public static void OpenCoverImage(UltraStarSong song) {
             if (song != null && song.HasCover()) {
                 Process.Start(song.GetCoverPath());
@@ -257,7 +257,7 @@ namespace UltraStarDeluxeEditor.UltraStarDeluxe {
         /// <summary>
         ///     Opens the MP3 file of an <see cref="UltraStarSong" /> if it exists using the default program for that file type.
         /// </summary>
-        /// <param name="song">The <see cref="UltraStarSong" /> that's MP3 you want to open</param>
+        /// <param name="song">The <see cref="UltraStarSong" /> that's MP3 you want to open.</param>
         public static void OpenMp3(UltraStarSong song) {
             if (song != null && song.HasMp3()) {
                 Process.Start(song.GetMp3Path());
@@ -265,10 +265,20 @@ namespace UltraStarDeluxeEditor.UltraStarDeluxe {
         }
 
         /// <summary>
+        ///     Opens the song directory of an given <see cref="UltraStarSong" />.
+        /// </summary>
+        /// <param name="song">The <see cref="UltraStarSong" /> that's song directory you want to open.</param>
+        public static void OpenSongDirectory(UltraStarSong song) {
+            if (song != null) {
+                Process.Start(song.GetSongDirectory());
+            }
+        }
+
+        /// <summary>
         ///     Opens the raw TXT file of an <see cref="UltraStarSong" /> if it exists using the default program for that file
         ///     type.
         /// </summary>
-        /// <param name="song">The <see cref="UltraStarSong" /> that's TXT you want to open</param>
+        /// <param name="song">The <see cref="UltraStarSong" /> that's TXT you want to open.</param>
         public static void OpenTxt(UltraStarSong song) {
             if (song != null) {
                 Process.Start(song.FilePath);
@@ -278,7 +288,7 @@ namespace UltraStarDeluxeEditor.UltraStarDeluxe {
         /// <summary>
         ///     Opens the video file of an <see cref="UltraStarSong" /> if it exists using the default program for that file type.
         /// </summary>
-        /// <param name="song">The <see cref="UltraStarSong" /> that's video you want to open</param>
+        /// <param name="song">The <see cref="UltraStarSong" /> that's video you want to open.</param>
         public static void OpenVideo(UltraStarSong song) {
             if (song != null && song.HasVideo()) {
                 Process.Start(song.GetVideoPath());

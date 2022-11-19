@@ -205,44 +205,6 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No UltraStar Directory.
-        /// </summary>
-        internal static string noUSDPathConfiguredCaption {
-            get {
-                return ResourceManager.GetString("noUSDPathConfiguredCaption", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to You have no UltraStar path configured at the moment.
-        ///Please select your UltraStar Deluxe directory in order to move on..
-        /// </summary>
-        internal static string noUSDPathConfiguredMessage {
-            get {
-                return ResourceManager.GetString("noUSDPathConfiguredMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Not an UltraStar Directory.
-        /// </summary>
-        internal static string pathIsNoUSDPathCaption {
-            get {
-                return ResourceManager.GetString("pathIsNoUSDPathCaption", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The folder you selected isn&apos;t an UltraStar Directory.
-        ///Please select another one..
-        /// </summary>
-        internal static string pathIsNoUSDPathMessage {
-            get {
-                return ResourceManager.GetString("pathIsNoUSDPathMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Reload Song.
         /// </summary>
         internal static string reloadSongCaption {
@@ -377,6 +339,44 @@ namespace UltraStarDeluxeEditor.Properties {
         internal static string urlInputCaption {
             get {
                 return ResourceManager.GetString("urlInputCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No UltraStar Directory.
+        /// </summary>
+        internal static string usdPathNotConfiguredCaption {
+            get {
+                return ResourceManager.GetString("usdPathNotConfiguredCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have no UltraStar path configured at the moment.
+        ///Please select your UltraStar Deluxe directory in order to move on..
+        /// </summary>
+        internal static string usdPathNotConfiguredMessage {
+            get {
+                return ResourceManager.GetString("usdPathNotConfiguredMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UltraStar directory not valid.
+        /// </summary>
+        internal static string usdPathNotValidCaption {
+            get {
+                return ResourceManager.GetString("usdPathNotValidCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The folder you selected isn&apos;t an UltraStar Directory.
+        ///Please select another one..
+        /// </summary>
+        internal static string usdPathNotValidMessage {
+            get {
+                return ResourceManager.GetString("usdPathNotValidMessage", resourceCulture);
             }
         }
         

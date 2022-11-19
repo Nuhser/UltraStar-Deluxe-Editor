@@ -37,6 +37,7 @@ namespace UltraStarDeluxeEditor {
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.songToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openSongTxtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reloadSongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.coverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,6 +51,8 @@ namespace UltraStarDeluxeEditor {
             this.webSearchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.googleSearchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.discogsSearchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.startUltraStarDeluxeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.songListView = new System.Windows.Forms.ListView();
             this.titleColumn = new System.Windows.Forms.ColumnHeader();
             this.artistColumn = new System.Windows.Forms.ColumnHeader();
@@ -94,7 +97,6 @@ namespace UltraStarDeluxeEditor {
             this.mp3EditButton = new System.Windows.Forms.Button();
             this.videoDeleteButton = new System.Windows.Forms.Button();
             this.videoLabel = new System.Windows.Forms.Label();
-            this.mp3DeleteButton = new System.Windows.Forms.Button();
             this.mp3Label = new System.Windows.Forms.Label();
             this.textTabControl = new System.Windows.Forms.TabControl();
             this.player1TextTab = new System.Windows.Forms.TabPage();
@@ -120,7 +122,7 @@ namespace UltraStarDeluxeEditor {
             // mainMenuStrip
             // 
             this.mainMenuStrip.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.fileToolStripMenuItem, this.songToolStripMenuItem });
+            this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.fileToolStripMenuItem, this.songToolStripMenuItem, this.toolsToolStripMenuItem });
             this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.mainMenuStrip.Name = "mainMenuStrip";
             this.mainMenuStrip.Size = new System.Drawing.Size(1445, 24);
@@ -156,7 +158,7 @@ namespace UltraStarDeluxeEditor {
             // 
             this.reloadSongsToolStripMenuItem.Name = "reloadSongsToolStripMenuItem";
             this.reloadSongsToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.reloadSongsToolStripMenuItem.Text = "Reload Songs";
+            this.reloadSongsToolStripMenuItem.Text = "Reload All Songs";
             this.reloadSongsToolStripMenuItem.Click += new System.EventHandler(this.reloadSongsToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
@@ -173,7 +175,7 @@ namespace UltraStarDeluxeEditor {
             // 
             // songToolStripMenuItem
             // 
-            this.songToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.openSongTxtToolStripMenuItem, this.reloadSongToolStripMenuItem, this.toolStripSeparator3, this.coverToolStripMenuItem, this.openMP3ToolStripMenuItem, this.openVideoToolStripMenuItem, this.toolStripSeparator2, this.webSearchToolStripMenuItem });
+            this.songToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.openSongTxtToolStripMenuItem, this.openDirectoryToolStripMenuItem, this.reloadSongToolStripMenuItem, this.toolStripSeparator3, this.coverToolStripMenuItem, this.openMP3ToolStripMenuItem, this.openVideoToolStripMenuItem, this.toolStripSeparator2, this.webSearchToolStripMenuItem });
             this.songToolStripMenuItem.Name = "songToolStripMenuItem";
             this.songToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.songToolStripMenuItem.Text = "Song";
@@ -182,29 +184,37 @@ namespace UltraStarDeluxeEditor {
             // 
             this.openSongTxtToolStripMenuItem.Enabled = false;
             this.openSongTxtToolStripMenuItem.Name = "openSongTxtToolStripMenuItem";
-            this.openSongTxtToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openSongTxtToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.openSongTxtToolStripMenuItem.Text = "Open Raw TXT";
             this.openSongTxtToolStripMenuItem.Click += new System.EventHandler(this.openSongTxtToolStripMenuItem_Click);
+            // 
+            // openDirectoryToolStripMenuItem
+            // 
+            this.openDirectoryToolStripMenuItem.Enabled = false;
+            this.openDirectoryToolStripMenuItem.Name = "openDirectoryToolStripMenuItem";
+            this.openDirectoryToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.openDirectoryToolStripMenuItem.Text = "Open Directory";
+            this.openDirectoryToolStripMenuItem.Click += new System.EventHandler(this.openDirectoryToolStripMenuItem_Click);
             // 
             // reloadSongToolStripMenuItem
             // 
             this.reloadSongToolStripMenuItem.Enabled = false;
             this.reloadSongToolStripMenuItem.Name = "reloadSongToolStripMenuItem";
-            this.reloadSongToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.reloadSongToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.reloadSongToolStripMenuItem.Text = "Reload Song";
             this.reloadSongToolStripMenuItem.Click += new System.EventHandler(this.reloadSongToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(151, 6);
             // 
             // coverToolStripMenuItem
             // 
             this.coverToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.openCoverToolStripMenuItem, this.chooseCoverImageToolStripMenuItem, this.downloadCoverFromURLToolStripMenuItem, this.deleteCoverToolStripMenuItem });
             this.coverToolStripMenuItem.Enabled = false;
             this.coverToolStripMenuItem.Name = "coverToolStripMenuItem";
-            this.coverToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.coverToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.coverToolStripMenuItem.Text = "Cover";
             // 
             // openCoverToolStripMenuItem
@@ -243,7 +253,7 @@ namespace UltraStarDeluxeEditor {
             // 
             this.openMP3ToolStripMenuItem.Enabled = false;
             this.openMP3ToolStripMenuItem.Name = "openMP3ToolStripMenuItem";
-            this.openMP3ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openMP3ToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.openMP3ToolStripMenuItem.Text = "Open MP3";
             this.openMP3ToolStripMenuItem.Click += new System.EventHandler(this.mp3PlayButton_Click);
             // 
@@ -251,21 +261,21 @@ namespace UltraStarDeluxeEditor {
             // 
             this.openVideoToolStripMenuItem.Enabled = false;
             this.openVideoToolStripMenuItem.Name = "openVideoToolStripMenuItem";
-            this.openVideoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openVideoToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.openVideoToolStripMenuItem.Text = "Open Video";
             this.openVideoToolStripMenuItem.Click += new System.EventHandler(this.videoPlayButton_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(151, 6);
             // 
             // webSearchToolStripMenuItem
             // 
             this.webSearchToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.googleSearchToolStripMenuItem, this.discogsSearchToolStripMenuItem });
             this.webSearchToolStripMenuItem.Enabled = false;
             this.webSearchToolStripMenuItem.Name = "webSearchToolStripMenuItem";
-            this.webSearchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.webSearchToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.webSearchToolStripMenuItem.Text = "Web Search";
             // 
             // googleSearchToolStripMenuItem
@@ -281,6 +291,20 @@ namespace UltraStarDeluxeEditor {
             this.discogsSearchToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.discogsSearchToolStripMenuItem.Text = "Search on Discogs";
             this.discogsSearchToolStripMenuItem.Click += new System.EventHandler(this.discogsSearchToolStripMenuItem_Click);
+            // 
+            // toolsToolStripMenuItem
+            // 
+            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.startUltraStarDeluxeToolStripMenuItem });
+            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            this.toolsToolStripMenuItem.Text = "Tools";
+            // 
+            // startUltraStarDeluxeToolStripMenuItem
+            // 
+            this.startUltraStarDeluxeToolStripMenuItem.Name = "startUltraStarDeluxeToolStripMenuItem";
+            this.startUltraStarDeluxeToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.startUltraStarDeluxeToolStripMenuItem.Text = "Start UltraStar Deluxe";
+            this.startUltraStarDeluxeToolStripMenuItem.Click += new System.EventHandler(this.startUltraStarDeluxeToolStripMenuItem_Click);
             // 
             // songListView
             // 
@@ -658,7 +682,6 @@ namespace UltraStarDeluxeEditor {
             this.songFilesGroupBox.Controls.Add(this.mp3EditButton);
             this.songFilesGroupBox.Controls.Add(this.videoDeleteButton);
             this.songFilesGroupBox.Controls.Add(this.videoLabel);
-            this.songFilesGroupBox.Controls.Add(this.mp3DeleteButton);
             this.songFilesGroupBox.Controls.Add(this.mp3Label);
             this.songFilesGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.songFilesGroupBox.Location = new System.Drawing.Point(709, 378);
@@ -782,18 +805,6 @@ namespace UltraStarDeluxeEditor {
             this.videoLabel.Text = "Video";
             this.videoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // mp3DeleteButton
-            // 
-            this.mp3DeleteButton.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("mp3DeleteButton.BackgroundImage")));
-            this.mp3DeleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.mp3DeleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mp3DeleteButton.Location = new System.Drawing.Point(686, 20);
-            this.mp3DeleteButton.Name = "mp3DeleteButton";
-            this.mp3DeleteButton.Size = new System.Drawing.Size(32, 32);
-            this.mp3DeleteButton.TabIndex = 5;
-            this.mp3DeleteButton.TabStop = false;
-            this.mp3DeleteButton.UseVisualStyleBackColor = true;
-            // 
             // mp3Label
             // 
             this.mp3Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
@@ -911,6 +922,11 @@ namespace UltraStarDeluxeEditor {
             this.PerformLayout();
         }
 
+        private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem startUltraStarDeluxeToolStripMenuItem;
+
+        private System.Windows.Forms.ToolStripMenuItem openDirectoryToolStripMenuItem;
+
         private System.Windows.Forms.PictureBox mp3MissingPictureBox;
         private System.Windows.Forms.PictureBox videoMissingPictureBox;
 
@@ -1006,7 +1022,6 @@ namespace UltraStarDeluxeEditor {
         private System.Windows.Forms.TextBox artistTextBox;
         private System.Windows.Forms.Label artistLabel;
         private System.Windows.Forms.Button deleteCoverButton;
-        private System.Windows.Forms.Button mp3DeleteButton;
 
         private System.Windows.Forms.PictureBox coverPictureBox;
 

@@ -15,17 +15,17 @@
             PublicKeyToken=b77a5c561934e089
         </value>
     </resheader>
-    <data name="noUSDPathConfiguredCaption" xml:space="preserve">
+    <data name="usdPathNotConfiguredCaption" xml:space="preserve">
         <value>Kein UltraStar-Ordner</value>
     </data>
-    <data name="noUSDPathConfiguredMessage" xml:space="preserve">
+    <data name="usdPathNotConfiguredMessage" xml:space="preserve">
         <value>Du hast momentan keinen UltraStar-Ordner eingestellt.
 Bitte wähle einen Ordner aus, um fortzufahren.</value>
     </data>
-    <data name="pathIsNoUSDPathCaption" xml:space="preserve">
-        <value>Kein UltraStar-Ordner</value>
+    <data name="usdPathNotValidCaption" xml:space="preserve">
+        <value>UltraStar-Ordner nicht gültig</value>
     </data>
-    <data name="pathIsNoUSDPathMessage" xml:space="preserve">
+    <data name="usdPathNotValidMessage" xml:space="preserve">
         <value>Der Ordner, den du ausgewählt hast, ist kein UltraStar-Ordner.
 Bitte wähle einen anderen.</value>
     </data>

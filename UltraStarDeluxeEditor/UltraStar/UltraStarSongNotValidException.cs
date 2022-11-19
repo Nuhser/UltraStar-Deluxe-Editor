@@ -1,6 +1,6 @@
 using System;
 
-namespace UltraStarDeluxeEditor.UltraStarDeluxe {
+namespace UltraStarDeluxeEditor.UltraStar {
     public class UltraStarSongNotValidException : Exception {
         public UltraStarSongNotValidException(string message, UltraStarSong song) : base(message) {
             Song = song;

@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Linq;
 
-namespace UltraStarDeluxeEditor.UltraStarDeluxe {
+namespace UltraStarDeluxeEditor.UltraStar {
     public class UltraStarSong {
         /// <summary>
         ///     This constructor creates a minimal <see cref="UltraStarSong" /> containing only <see cref="FilePath" />, the empty
