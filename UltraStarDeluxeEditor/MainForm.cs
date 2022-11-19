@@ -89,10 +89,18 @@ namespace UltraStarDeluxeEditor {
             MessageBox.Show(
                 string.Format(Resources.songListInitializationDoneMessage, songsFound) + (invalidSongs.Any()
                     ? "\n\n" + string.Format(Resources.songListInitializationErrorsMessage, invalidSongs.Count,
-                        string.Join("\n", invalidSongs.Select(s => "  \u2022 " + s).ToList()))
+                        GetInvalidSongFileListString(invalidSongs))
                     : ""),
                 Resources.songListInitializationDoneCaption,
                 MessageBoxButtons.OK);
+        }
+
+        private string GetInvalidSongFileListString(List<string> invalidSongs) {
+            if (invalidSongs.Count <= 5) {
+                return string.Join("\n", invalidSongs.Select(s => "  \u2022 " + s).ToList());
+            }
+
+            return string.Join("\n", invalidSongs.Take(5).Select(s => "  \u2022 " + s).ToList()) + "\n  \u2022...";
         }
 
         private void SetSongDetailUiEnabled(bool enabled) {
