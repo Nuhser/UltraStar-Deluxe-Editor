@@ -15,6 +15,7 @@ namespace UltraStarDeluxeEditor.UltraStar {
         public UltraStarSong(string filePath) {
             IsDirty = false;
             FilePath = filePath;
+            Bpm = 1;
             SongText = new Tuple<string, string>("", "");
         }
 

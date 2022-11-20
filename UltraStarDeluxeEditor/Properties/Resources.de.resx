@@ -109,11 +109,7 @@ Ungespeicherte Änderungen gehen dabei verloren.</value>
 {1}</value>
     </data>
     <data name="reloadSongFileNotFoundErrorMessage" xml:space="preserve">
-        <value>Der Song konnte nicht neu geladen werden, da die Datei ({0}) nicht existiert.</value>
-    </data>
-    <data name="reloadSongNotValidErrorMessage" xml:space="preserve">
-        <value>Der Song konnte nicht neu geladen werden, da die Datei ({0}) ungültig ist.
-Die Datei muss mindestens einen Songtitel, einen Künstler, BPM von mindestens 1, einen Gap-Wert von 0 oder mehr und Songtexte für mindestens einen Spieler enthalten.</value>
+        <value>Der Song konnte nicht neu geladen werden, da die Datei{0} nicht existiert.</value>
     </data>
     <data name="mp3FileNotExistsWarningIcon" xml:space="preserve">
         <value>Die MP3-Datei existiert nicht.</value>
@@ -144,5 +140,20 @@ Die Datei muss mindestens einen Songtitel, einen Künstler, BPM von mindestens 1
     </data>
     <data name="overwriteFileMessage" xml:space="preserve">
         <value>Diese Datei existiert bereits. Willst du sie überschreiben?</value>
+    </data>
+    <data name="exportSongTitle" xml:space="preserve">
+        <value>Wähle das Exportziel</value>
+    </data>
+    <data name="saveSongErrorMessage" xml:space="preserve">
+        <value>Während des Speicherns des Songs{0} ist ein unerwarteter Fehler aufgetreten.</value>
+    </data>
+    <data name="songNotPlayableCaption" xml:space="preserve">
+        <value>Song nicht spielbar</value>
+    </data>
+    <data name="songNotPlayableMessage" xml:space="preserve">
+        <value>Der Song, den du speichern willst, ist aktuell nicht spielbar. Bist du sicher, dass du ihn speichern willst?</value>
+    </data>
+    <data name="songsNotPlayableMessage" xml:space="preserve">
+        <value>Mindestens einer der Songs, die du speichern willst, ist aktuell nicht spielbar. Bist du sicher, dass du speichern willst?</value>
     </data>
 </root>

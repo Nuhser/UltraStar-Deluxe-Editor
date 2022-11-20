@@ -67,18 +67,16 @@ namespace UltraStarDeluxeEditor {
                          .SelectMany(songDirectory => Directory.GetFiles(songDirectory, "*.txt"))) {
                 UltraStarSong song;
 
-                try {
-                    song = UltraStarSongService.LoadSongFromFile(songFile);
-                }
-                catch (UltraStarSongNotValidException) {
+                if (!song.IsValid()) {
                     invalidSongs.Add(songFile);
-                    continue;
                 }
 
                 var songListViewItem = new SongListViewItem(song);
+                songListViewItem.SetInvalid(!song.IsValid());
                 songListViewItem.SubItems.Add(song.Artist);
                 songListViewItem.SubItems.Add(song.GetSongFileName());
                 songListViewItem.ToolTipText = songFile;
+
                 songListView.Items.Add(songListViewItem);
 
                 songsFound++;
@@ -202,6 +200,27 @@ namespace UltraStarDeluxeEditor {
             saveAllToolStripMenuItem.Enabled = isDirty;
         }
 
+        private void UpdateSongListItem(UltraStarSong song, bool setDirty) {
+            foreach (SongListViewItem listViewItem in songListView.Items) {
+                if (listViewItem.UltraStarSong == song) {
+                    UpdateSongListItem(listViewItem, setDirty);
+                    break;
+                }
+            }
+        }
+
+        private void UpdateSongListItem(SongListViewItem songListViewItem, bool setDirty) {
+            var song = songListViewItem.UltraStarSong;
+
+            songListViewItem.Text = song.Title;
+            songListViewItem.SubItems[1].Text = song.Artist;
+            songListViewItem.SubItems[2].Text = song.GetSongFileName();
+            songListViewItem.ToolTipText = song.FilePath;
+
+            songListViewItem.SetInvalid(!song.IsValid());
+            songListViewItem.SetDirty(setDirty);
+        }
+
         private void WriteDetailUiToSong(UltraStarSong song) {
             song.Title = titleTextBox.Text;
             song.Artist = artistTextBox.Text;
@@ -228,27 +247,39 @@ namespace UltraStarDeluxeEditor {
         }
 
         private void SaveSongFile(UltraStarSong song, bool updateUi = true) {
-            UltraStarSongService.SaveSongToFile(song);
+            if (UltraStarSongService.SaveSongToFile(song)) {
+                UpdateSongListItem(song, false);
 
-            foreach (SongListViewItem listViewItem in songListView.Items) {
-                if (listViewItem.UltraStarSong == song) {
-                    listViewItem.SetDirty(false);
-                    break;
+                if (updateUi) {
+                    UpdateUi();
                 }
             }
-
-            if (updateUi) {
-                UpdateUi();
+            else {
+                MessageBox.Show(
+                    string.Format(Resources.saveSongErrorMessage,
+                        song != null && song.HasTitle() ? " \"" + song.Title + "\"" : ""),
+                    Resources.errorCaption, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void SaveSelectedSongFile() {
-            if (_selectedSong != null) {
-                SaveSongFile(_selectedSong);
+            if (_selectedSong != null && !_selectedSong.IsValid() &&
+                MessageBox.Show(Resources.songNotPlayableMessage, Resources.songNotPlayableCaption,
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes) {
+                return;
             }
+
+            SaveSongFile(_selectedSong);
         }
 
         private void SaveAllSongFiles() {
+            if (songListView.Items.Cast<SongListViewItem>().Any(item => !item.UltraStarSong.IsValid()) &&
+                MessageBox.Show(
+                    Resources.songsNotPlayableMessage, Resources.songNotPlayableCaption, MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning) != DialogResult.Yes) {
+                return;
+            }
+
             foreach (SongListViewItem listViewItem in songListView.Items) {
                 if (listViewItem.UltraStarSong.IsDirty) {
                     SaveSongFile(listViewItem.UltraStarSong, false);
@@ -328,11 +359,24 @@ namespace UltraStarDeluxeEditor {
             }
 
             if (_selectedSong != null) {
+                if (!_selectedSong.IsDirty) {
+                    saveToolStripMenuItem.Enabled = true;
+                }
+
+                // save values before change to reduce UI updates
+                var oldDirtyValue = _selectedSong.IsDirty;
+                var oldValidValue = _selectedSong.IsValid();
+                var oldTitle = _selectedSong.Title;
+                var oldArtist = _selectedSong.Artist;
+
                 WriteDetailUiToSong(_selectedSong);
 
-                if (!_selectedSong.IsDirty) {
-                    ((SongListViewItem) songListView.SelectedItems[0]).SetDirty(true);
-                    saveToolStripMenuItem.Enabled = true;
+                if (oldDirtyValue != true || oldValidValue != _selectedSong.IsValid() ||
+                    oldTitle != _selectedSong.Title || oldArtist != _selectedSong.Artist) {
+                    UpdateSongListItem(_selectedSong, true);
+                }
+
+                if (oldDirtyValue != true) {
                     UpdateFormTitle();
                 }
             }
@@ -348,8 +392,7 @@ namespace UltraStarDeluxeEditor {
         }
 
         /// <summary>
-        ///     Cancels the tab switching process if the tab is disabled.
-        ///     <br />
+        ///     Cancels the tab switching process if the tab is disabled.<br />
         ///     Used for disabling the second players text tab if the song isn't a duet.
         /// </summary>
         private void textTabControl_Selecting(object sender, TabControlCancelEventArgs e) {
@@ -406,6 +449,7 @@ namespace UltraStarDeluxeEditor {
                             _selectedSong = song;
                             ((SongListViewItem) songListView.SelectedItems[0]).UltraStarSong = _selectedSong;
                             ((SongListViewItem) songListView.SelectedItems[0]).SetDirty(false);
+                            ((SongListViewItem) songListView.SelectedItems[0]).SetInvalid(!_selectedSong.IsValid());
                             saveToolStripMenuItem.Enabled = false;
                             UpdateFormTitle();
                             UpdateUi();
@@ -418,21 +462,16 @@ namespace UltraStarDeluxeEditor {
 
                         loop = MessageBox.Show(
                                    string.Format(Resources.reloadSongErrorMessage,
-                                       _selectedSong != null ? " \"" + _selectedSong.Title + "\"" : ""),
+                                       _selectedSong != null && _selectedSong.HasTitle()
+                                           ? " \"" + _selectedSong.Title + "\""
+                                           : ""),
                                    Resources.errorCaption, MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) ==
                                DialogResult.Retry;
                     }
                     catch (FileNotFoundException) {
                         loop = MessageBox.Show(
                                    string.Format(Resources.reloadSongFileNotFoundErrorMessage,
-                                       _selectedSong.FilePath),
-                                   Resources.errorCaption, MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) ==
-                               DialogResult.Retry;
-                    }
-                    catch (UltraStarSongNotValidException) {
-                        loop = MessageBox.Show(
-                                   string.Format(Resources.reloadSongNotValidErrorMessage,
-                                       _selectedSong.FilePath),
+                                       _selectedSong.HasFilePath() ? " (" + _selectedSong.FilePath + ")" : ""),
                                    Resources.errorCaption, MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) ==
                                DialogResult.Retry;
                     }
@@ -562,7 +601,7 @@ namespace UltraStarDeluxeEditor {
             var saveFileDialog = new SaveFileDialog();
             saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             saveFileDialog.Filter = Resources.textFileFilter;
-            saveFileDialog.Title = "";
+            saveFileDialog.Title = Resources.exportSongTitle;
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK) {
                 UltraStarSongService.ExportSong(_selectedSong, saveFileDialog.FileName);

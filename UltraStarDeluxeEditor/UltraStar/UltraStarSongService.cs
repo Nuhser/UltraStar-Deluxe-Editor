@@ -274,6 +274,105 @@ namespace UltraStarDeluxeEditor.UltraStar {
         }
 
         /// <summary>
+        ///     Formats the information saved inside an <see cref="UltraStarSong" /> and saves it to the file specified the song's
+        ///     <see cref="UltraStarSong.FilePath" />. The text gets formatted so that UltraStar Deluxe can interpret the song (see
+        ///     <a href="https://wiki.usdb.eu/txt_files/format">here</a>).
+        /// </summary>
+        /// <param name="song">The <see cref="UltraStarSong" /> that should be saved.</param>
+        /// <returns>
+        ///     <c>true</c> if the song was saved successfully or wasn't dirty to begin with or <c>false</c> if the given song
+        ///     is <c>null</c> or has no <see cref="UltraStarSong.FilePath" />.
+        /// </returns>
+        /// <seealso cref="UltraStarSong.IsValid" />
+        public static bool SaveSongToFile(UltraStarSong song) {
+            if (song == null || !song.HasFilePath()) {
+                return false;
+            }
+
+            if (!song.IsDirty) {
+                return true;
+            }
+
+            // write song information to file
+            using (var fileStream = new FileStream(song.FilePath, FileMode.Create))
+            using (var streamWriter = new StreamWriter(fileStream)) {
+                if (song.HasTitle()) {
+                    streamWriter.WriteLine(TITLE_KEY + song.Title);
+                }
+
+                if (song.HasArtist()) {
+                    streamWriter.WriteLine(ARTIST_KEY + song.Artist);
+                }
+
+                if (!string.IsNullOrWhiteSpace(song.Genre)) {
+                    streamWriter.WriteLine(GENRE_KEY + song.Genre);
+                }
+
+                if (!string.IsNullOrWhiteSpace(song.Year)) {
+                    streamWriter.WriteLine(YEAR_KEY + song.Year);
+                }
+
+                if (!string.IsNullOrWhiteSpace(song.Language)) {
+                    streamWriter.WriteLine(LANGUAGE_KEY + song.Language);
+                }
+
+                if (!string.IsNullOrWhiteSpace(song.Edition)) {
+                    streamWriter.WriteLine(EDITION_KEY + song.Edition);
+                }
+
+                // add creator tag ;)
+                streamWriter.WriteLine(CREATOR_KEY + DEFAULT_CREATOR_STRING);
+
+                streamWriter.WriteLine(BPM_KEY + Convert.ToString(song.Bpm, new CultureInfo("en-US")));
+                streamWriter.WriteLine(GAP_KEY + Convert.ToString(song.Gap, new CultureInfo("en-US")));
+
+                if (song.VideoGap > 0) {
+                    streamWriter.WriteLine(VIDEO_GAP_KEY + Convert.ToString(song.VideoGap, new CultureInfo("en-US")));
+                }
+
+                if (song.IsDuet) {
+                    if (!string.IsNullOrWhiteSpace(song.DuetSingerP1)) {
+                        streamWriter.WriteLine(DUET_SINGER_P1_KEY + song.DuetSingerP1);
+                    }
+
+                    if (!string.IsNullOrWhiteSpace(song.DuetSingerP2)) {
+                        streamWriter.WriteLine(DUET_SINGER_P2_KEY + song.DuetSingerP2);
+                    }
+                }
+
+                if (song.HasMp3()) {
+                    streamWriter.WriteLine(MP3_KEY + song.Mp3);
+                }
+
+                if (song.HasCover()) {
+                    streamWriter.WriteLine(COVER_KEY + song.Cover);
+                }
+
+                if (song.HasVideo()) {
+                    streamWriter.WriteLine(VIDEO_KEY + song.Video);
+                }
+
+                if (song.IsDuet) {
+                    streamWriter.WriteLine("P1");
+                }
+
+                streamWriter.WriteLine(song.SongText.Item1.Trim());
+
+                if (song.IsDuet) {
+                    streamWriter.WriteLine("P2");
+                    streamWriter.WriteLine(song.SongText.Item2.Trim());
+                }
+
+                streamWriter.WriteLine("E");
+            }
+
+            // delete backups if there where any
+            DeleteBackups(song);
+
+            return true;
+        }
+
+        /// <summary>
         ///     Opens the cover image of an <see cref="UltraStarSong" /> if it exists using the default program for that file type.
         /// </summary>
         /// <param name="song">The <see cref="UltraStarSong" /> that's cover you want to open.</param>

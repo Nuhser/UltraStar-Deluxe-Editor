@@ -213,11 +213,7 @@ Unsaved changes will be lost.</value>
 {1}</value>
     </data>
     <data name="reloadSongFileNotFoundErrorMessage" xml:space="preserve">
-        <value>The song couldn't be reloaded due to the file ({0}) not existing.</value>
-    </data>
-    <data name="reloadSongNotValidErrorMessage" xml:space="preserve">
-        <value>The song couldn't be reloaded du to the song file ({0}) not being valid.
-The file needs to contain at least a song title, an artist, a BPM of at least 1, a gap value of 0 or higher and a song text at least one player.</value>
+        <value>The song couldn't be reloaded due to the file {0} not existing.</value>
     </data>
     <data name="mp3FileNotExistsWarningIcon" xml:space="preserve">
         <value>The MP3 file doesn't exist.</value>
@@ -248,5 +244,20 @@ The file needs to contain at least a song title, an artist, a BPM of at least 1,
     </data>
     <data name="overwriteFileMessage" xml:space="preserve">
         <value>This file already exists. Do you want to overwrite it?</value>
+    </data>
+    <data name="exportSongTitle" xml:space="preserve">
+        <value>Choose export destination</value>
+    </data>
+    <data name="saveSongErrorMessage" xml:space="preserve">
+        <value>An unexpected error occured while trying to save the song{0}.</value>
+    </data>
+    <data name="songNotPlayableCaption" xml:space="preserve">
+        <value>Song not playable</value>
+    </data>
+    <data name="songNotPlayableMessage" xml:space="preserve">
+        <value>The song you're trying to save is currently not playable. Are you sure that you want to save it?</value>
+    </data>
+    <data name="songsNotPlayableMessage" xml:space="preserve">
+        <value>At least one of the songs you're trying to save is currently not playable. Are you sure that you want to save?</value>
     </data>
 </root>

@@ -187,6 +187,15 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Choose export destination.
+        /// </summary>
+        internal static string exportSongTitle {
+            get {
+                return ResourceManager.GetString("exportSongTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Choose the folder of your UltraStar Deluxe installation..
         /// </summary>
         internal static string findUsdFolderDescription {
@@ -250,7 +259,7 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The song couldn&apos;t be reloaded due to the file ({0}) not existing..
+        ///   Looks up a localized string similar to The song couldn&apos;t be reloaded due to the file {0} not existing..
         /// </summary>
         internal static string reloadSongFileNotFoundErrorMessage {
             get {
@@ -265,16 +274,6 @@ namespace UltraStarDeluxeEditor.Properties {
         internal static string reloadSongMessage {
             get {
                 return ResourceManager.GetString("reloadSongMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The song couldn&apos;t be reloaded du to the song file ({0}) not being valid.
-        ///The file needs to contain at least a song title, an artist, a BPM of at least 1, a gap value of 0 or higher and a song text at least one player..
-        /// </summary>
-        internal static string reloadSongNotValidErrorMessage {
-            get {
-                return ResourceManager.GetString("reloadSongNotValidErrorMessage", resourceCulture);
             }
         }
         
@@ -315,6 +314,15 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to An unexpected error occured while trying to save the song{0}..
+        /// </summary>
+        internal static string saveSongErrorMessage {
+            get {
+                return ResourceManager.GetString("saveSongErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Songlist Initialization Done.
         /// </summary>
         internal static string songListInitializationDoneCaption {
@@ -339,6 +347,33 @@ namespace UltraStarDeluxeEditor.Properties {
         internal static string songListInitializationErrorsMessage {
             get {
                 return ResourceManager.GetString("songListInitializationErrorsMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Song not playable.
+        /// </summary>
+        internal static string songNotPlayableCaption {
+            get {
+                return ResourceManager.GetString("songNotPlayableCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The song you&apos;re trying to save is currently not playable. Are you sure that you want to save it?.
+        /// </summary>
+        internal static string songNotPlayableMessage {
+            get {
+                return ResourceManager.GetString("songNotPlayableMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to At least one of the songs you&apos;re trying to save is currently not playable. Are you sure that you want to save?.
+        /// </summary>
+        internal static string songsNotPlayableMessage {
+            get {
+                return ResourceManager.GetString("songsNotPlayableMessage", resourceCulture);
             }
         }
         
