@@ -15,12 +15,14 @@ namespace UltraStarDeluxeEditor.Utility {
 
             Font = new Font(Font.FontFamily,
                 Font.Size,
-                isDirty ? Font.Style | FontStyle.Bold | FontStyle.Italic : FontStyle.Regular);
+                isDirty
+                    ? Font.Style | FontStyle.Bold | FontStyle.Italic
+                    : Font.Style & ~FontStyle.Bold & ~FontStyle.Italic);
         }
 
         public void SetInvalid(bool isInvalid) {
             Font = new Font(Font.FontFamily, Font.Size,
-                isInvalid ? Font.Style | FontStyle.Strikeout : FontStyle.Regular);
+                isInvalid ? Font.Style | FontStyle.Strikeout : Font.Style & ~FontStyle.Strikeout);
         }
     }
 }
