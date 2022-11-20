@@ -69,33 +69,6 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete Cover Image.
-        /// </summary>
-        internal static string coverDeleteCaption {
-            get {
-                return ResourceManager.GetString("coverDeleteCaption", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Cover Deletion Error.
-        /// </summary>
-        internal static string coverDeleteErrorCaption {
-            get {
-                return ResourceManager.GetString("coverDeleteErrorCaption", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to An error occured while deleting the cover image..
-        /// </summary>
-        internal static string coverDeleteErrorMessage {
-            get {
-                return ResourceManager.GetString("coverDeleteErrorMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Are you sure that you want to delete the cover image?
         ///This will also delete the image file from your drive..
         /// </summary>
@@ -205,6 +178,33 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete File.
+        /// </summary>
+        internal static string fileDeleteCaption {
+            get {
+                return ResourceManager.GetString("fileDeleteCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File Deletion Error.
+        /// </summary>
+        internal static string fileDeleteErrorCaption {
+            get {
+                return ResourceManager.GetString("fileDeleteErrorCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An error occured while deleting the file..
+        /// </summary>
+        internal static string fileDeleteErrorMessage {
+            get {
+                return ResourceManager.GetString("fileDeleteErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Choose the folder of your UltraStar Deluxe installation..
         /// </summary>
         internal static string findUsdFolderDescription {
@@ -223,6 +223,16 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure that you want to delete the MP3?
+        ///This will also delete the music file from your drive..
+        /// </summary>
+        internal static string mp3DeleteMessage {
+            get {
+                return ResourceManager.GetString("mp3DeleteMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to MP3 file missing.
         /// </summary>
         internal static string mp3FileMissingWarningIcon {
@@ -237,6 +247,33 @@ namespace UltraStarDeluxeEditor.Properties {
         internal static string mp3FileNotExistsWarningIcon {
             get {
                 return ResourceManager.GetString("mp3FileNotExistsWarningIcon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Overwrite MP3.
+        /// </summary>
+        internal static string mp3OverwriteCaption {
+            get {
+                return ResourceManager.GetString("mp3OverwriteCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure that you want to use a new MP3 file? This will delete the old one after saving..
+        /// </summary>
+        internal static string mp3OverwriteMessage {
+            get {
+                return ResourceManager.GetString("mp3OverwriteMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select MP3 File.
+        /// </summary>
+        internal static string mp3SelectFileCaption {
+            get {
+                return ResourceManager.GetString("mp3SelectFileCaption", resourceCulture);
             }
         }
         
@@ -487,11 +524,39 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure that you want to delete the video?
+        ///This will also delete the file from your drive..
+        /// </summary>
+        internal static string videoDeleteMessage {
+            get {
+                return ResourceManager.GetString("videoDeleteMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Video file doesn&apos;t exist.
         /// </summary>
         internal static string videoFileNotExistsWarningIcon {
             get {
                 return ResourceManager.GetString("videoFileNotExistsWarningIcon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Overwrite Video.
+        /// </summary>
+        internal static string videoOverwriteCaption {
+            get {
+                return ResourceManager.GetString("videoOverwriteCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure that you want to use a new video for this song? This will delete the old one after saving..
+        /// </summary>
+        internal static string videoOverwriteMessage {
+            get {
+                return ResourceManager.GetString("videoOverwriteMessage", resourceCulture);
             }
         }
     }

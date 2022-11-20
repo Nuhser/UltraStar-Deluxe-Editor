@@ -183,14 +183,14 @@ Please select another one.</value>
         <value>Are you sure that you want to delete the cover image?
 This will also delete the image file from your drive.</value>
     </data>
-    <data name="coverDeleteCaption" xml:space="preserve">
-        <value>Delete Cover Image</value>
+    <data name="fileDeleteCaption" xml:space="preserve">
+        <value>Delete File</value>
     </data>
-    <data name="coverDeleteErrorMessage" xml:space="preserve">
-        <value>An error occured while deleting the cover image.</value>
+    <data name="fileDeleteErrorMessage" xml:space="preserve">
+        <value>An error occured while deleting the file.</value>
     </data>
-    <data name="coverDeleteErrorCaption" xml:space="preserve">
-        <value>Cover Deletion Error</value>
+    <data name="fileDeleteErrorCaption" xml:space="preserve">
+        <value>File Deletion Error</value>
     </data>
     <data name="reloadSongMessage" xml:space="preserve">
         <value>Are you sure that you want to reload the selected song?
@@ -267,5 +267,28 @@ Unsaved changes will be lost.</value>
     </data>
     <data name="player2TextMissingWarningIcon" xml:space="preserve">
         <value>Song text for player 2 missing</value>
+    </data>
+    <data name="mp3SelectFileCaption" xml:space="preserve">
+        <value>Select MP3 File</value>
+    </data>
+    <data name="videoOverwriteMessage" xml:space="preserve">
+        <value>Are you sure that you want to use a new video for this song? This will delete the old one after saving.</value>
+    </data>
+    <data name="mp3OverwriteMessage" xml:space="preserve">
+        <value>Are you sure that you want to use a new MP3 file? This will delete the old one after saving.</value>
+    </data>
+    <data name="mp3OverwriteCaption" xml:space="preserve">
+        <value>Overwrite MP3</value>
+    </data>
+    <data name="videoOverwriteCaption" xml:space="preserve">
+        <value>Overwrite Video</value>
+    </data>
+    <data name="mp3DeleteMessage" xml:space="preserve">
+        <value>Are you sure that you want to delete the MP3?
+This will also delete the music file from your drive.</value>
+    </data>
+    <data name="videoDeleteMessage" xml:space="preserve">
+        <value>Are you sure that you want to delete the video?
+This will also delete the file from your drive.</value>
     </data>
 </root>

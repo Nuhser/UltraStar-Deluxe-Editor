@@ -33,7 +33,7 @@ namespace UltraStarDeluxeEditor {
 
             // add tool tips
             toolTip.SetToolTip(coverDownloadButton, Resources.coverDownloadFromUrl);
-            toolTip.SetToolTip(coverDeleteButton, Resources.coverDeleteCaption);
+            toolTip.SetToolTip(coverDeleteButton, Resources.fileDeleteCaption);
             toolTip.SetToolTip(titleMissingPictureBox, Resources.titleMissingWarningIcon);
             toolTip.SetToolTip(artistMissingPictureBox, Resources.artistMissingWarningIcon);
             toolTip.SetToolTip(mp3MissingPictureBox, Resources.mp3FileMissingWarningIcon);
@@ -551,7 +551,7 @@ namespace UltraStarDeluxeEditor {
         private void coverDeleteButton_Click(object sender, EventArgs e) {
             if (MessageBox.Show(
                     Resources.coverDeleteMessage,
-                    Resources.coverDeleteCaption, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) ==
+                    Resources.fileDeleteCaption, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) ==
                 DialogResult.Yes) {
                 if (UltraStarSongService.DeleteCoverImage(_selectedSong)) {
                     if (!_selectedSong.IsDirty) {
@@ -561,7 +561,7 @@ namespace UltraStarDeluxeEditor {
                     UpdateUi();
                 }
                 else {
-                    MessageBox.Show(Resources.coverDeleteErrorMessage, Resources.coverDeleteErrorCaption,
+                    MessageBox.Show(Resources.fileDeleteErrorMessage, Resources.fileDeleteErrorCaption,
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -572,15 +572,75 @@ namespace UltraStarDeluxeEditor {
         }
 
         private void mp3EditButton_Click(object sender, EventArgs e) {
-            throw new NotImplementedException();
+            var openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
+            openFileDialog.Filter = @"MP3|*.mp3";
+            openFileDialog.Title = Resources.mp3SelectFileCaption;
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK) {
+                if (UltraStarSongService.ChangeMp3FromFile(_selectedSong, openFileDialog.FileName)) {
+                    if (!_selectedSong.IsDirty) {
+                        ((SongListViewItem) songListView.SelectedItems[0]).SetDirty(true);
+                    }
+
+                    UpdateUi();
+                }
+            }
+        }
+
+        private void mp3DeleteButton_Click(object sender, EventArgs e) {
+            if (MessageBox.Show(
+                    Resources.mp3DeleteMessage, Resources.fileDeleteCaption, MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning) ==
+                DialogResult.Yes) {
+                if (UltraStarSongService.DeleteMp3File(_selectedSong)) {
+                    if (!_selectedSong.IsDirty) {
+                        ((SongListViewItem) songListView.SelectedItems[0]).SetDirty(true);
+                    }
+
+                    UpdateUi();
+                }
+                else {
+                    MessageBox.Show(Resources.fileDeleteErrorMessage, Resources.fileDeleteErrorCaption,
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void videoEditButton_Click(object sender, EventArgs e) {
-            throw new NotImplementedException();
+            var openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyVideos);
+            openFileDialog.Filter = @"MP4|*.mp4";
+            openFileDialog.Title = Resources.mp3SelectFileCaption;
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK) {
+                if (UltraStarSongService.ChangeVideoFromFile(_selectedSong, openFileDialog.FileName)) {
+                    if (!_selectedSong.IsDirty) {
+                        ((SongListViewItem) songListView.SelectedItems[0]).SetDirty(true);
+                    }
+
+                    UpdateUi();
+                }
+            }
         }
 
         private void videoDeleteButton_Click(object sender, EventArgs e) {
-            throw new NotImplementedException();
+            if (MessageBox.Show(
+                    Resources.videoDeleteMessage, Resources.fileDeleteCaption, MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning) ==
+                DialogResult.Yes) {
+                if (UltraStarSongService.DeleteVideoFile(_selectedSong)) {
+                    if (!_selectedSong.IsDirty) {
+                        ((SongListViewItem) songListView.SelectedItems[0]).SetDirty(true);
+                    }
+
+                    UpdateUi();
+                }
+                else {
+                    MessageBox.Show(Resources.fileDeleteErrorMessage, Resources.fileDeleteErrorCaption,
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void openSongTxtToolStripMenuItem_Click(object sender, EventArgs e) {

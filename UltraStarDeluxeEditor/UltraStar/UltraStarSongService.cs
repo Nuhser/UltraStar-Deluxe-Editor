@@ -117,6 +117,56 @@ namespace UltraStarDeluxeEditor.UltraStar {
             return true;
         }
 
+        public static bool ChangeMp3FromFile(UltraStarSong song, string mp3Location, bool keepBackup = true) {
+            if (song == null || string.IsNullOrWhiteSpace(mp3Location) || !File.Exists(mp3Location)) {
+                return false;
+            }
+
+            if (song.HasMp3()) {
+                if (MessageBox.Show(Resources.mp3OverwriteMessage, Resources.mp3OverwriteCaption,
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes) {
+                    return false;
+                }
+
+                if (keepBackup) {
+                    CreateMp3Backup(song);
+                }
+            }
+
+            var newMp3Location = song.GetSongDirectory() + "\\" + Path.GetFileNameWithoutExtension(song.FilePath) +
+                                 Path.GetExtension(mp3Location);
+
+            File.Copy(mp3Location, newMp3Location, true);
+
+            song.Mp3 = Path.GetFileName(newMp3Location);
+            return true;
+        }
+
+        public static bool ChangeVideoFromFile(UltraStarSong song, string videoLocation, bool keepBackup = true) {
+            if (song == null || string.IsNullOrWhiteSpace(videoLocation) || !File.Exists(videoLocation)) {
+                return false;
+            }
+
+            if (song.HasVideo()) {
+                if (MessageBox.Show(Resources.videoOverwriteMessage, Resources.videoOverwriteCaption,
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes) {
+                    return false;
+                }
+
+                if (keepBackup) {
+                    CreateVideoBackup(song);
+                }
+            }
+
+            var newVideoLocation = song.GetSongDirectory() + "\\" + Path.GetFileNameWithoutExtension(song.FilePath) +
+                                   Path.GetExtension(videoLocation);
+
+            File.Copy(videoLocation, newVideoLocation, true);
+
+            song.Video = Path.GetFileName(newVideoLocation);
+            return true;
+        }
+
         /// <summary>
         ///     This method can be used to delete the cover image of an UltraStar song. If a backup is saved the cover will be
         ///     unlinked first from the song and deleted when the user saves the song the next time.
@@ -142,6 +192,40 @@ namespace UltraStarDeluxeEditor.UltraStar {
             }
 
             song.Cover = null;
+            return true;
+        }
+
+        public static bool DeleteMp3File(UltraStarSong song, bool keepBackup = true) {
+            if (song == null) {
+                return false;
+            }
+
+            if (!song.HasMp3()) {
+                return true;
+            }
+
+            if (keepBackup) {
+                CreateMp3Backup(song);
+            }
+
+            song.Mp3 = null;
+            return true;
+        }
+
+        public static bool DeleteVideoFile(UltraStarSong song, bool keepBackup = true) {
+            if (song == null) {
+                return false;
+            }
+
+            if (!song.HasVideo()) {
+                return true;
+            }
+
+            if (keepBackup) {
+                CreateVideoBackup(song);
+            }
+
+            song.Video = null;
             return true;
         }
 

@@ -74,18 +74,18 @@ Bitte wähle einen anderen.</value>
     <data name="coverOverwriteMessage" xml:space="preserve">
         <value>Bist du sicher, dass du ein neues Cover-Bild verwenden willst? Das würde das alte Bild beim Speichern löschen.</value>
     </data>
-    <data name="coverDeleteCaption" xml:space="preserve">
-        <value>Cover-Bild löschen</value>
+    <data name="fileDeleteCaption" xml:space="preserve">
+        <value>Datei löschen</value>
     </data>
-    <data name="coverDeleteErrorCaption" xml:space="preserve">
-        <value>Fehler während Cover löschen</value>
+    <data name="fileDeleteErrorCaption" xml:space="preserve">
+        <value>Fehler während Datei löschen</value>
     </data>
-    <data name="coverDeleteErrorMessage" xml:space="preserve">
-        <value>Während des Löschens des Cover-Bildes ist ein Fehler aufgetreten.</value>
+    <data name="fileDeleteErrorMessage" xml:space="preserve">
+        <value>Während des Löschens der Datei ist ein Fehler aufgetreten.</value>
     </data>
     <data name="coverDeleteMessage" xml:space="preserve">
         <value>Bist du sicher, dass du das Cover-Bild löschen willst?
-Dies löscht beim nächsten Speichern ebenfalls die Bild-Datei.</value>
+Dies löscht beim nächsten Speichern ebenfalls die Bilddatei.</value>
     </data>
     <data name="reloadSongCaption" xml:space="preserve">
         <value>Song neu laden</value>
@@ -163,5 +163,28 @@ Ungespeicherte Änderungen gehen dabei verloren.</value>
     </data>
     <data name="player2TextMissingWarningIcon" xml:space="preserve">
         <value>Songtext für Spieler 2 fehlt</value>
+    </data>
+    <data name="mp3SelectFileCaption" xml:space="preserve">
+        <value>MP3-Datei wählen</value>
+    </data>
+    <data name="videoOverwriteMessage" xml:space="preserve">
+        <value>Bist du sicher, dass du ein neues Video für diesen Song verwenden willst? Das würde das alte Bild beim Speichern löschen.</value>
+    </data>
+    <data name="mp3OverwriteMessage" xml:space="preserve">
+        <value>Bist du sicher, dass du eine neue MP3-Datei verwenden willst? Das würde das alte Bild beim Speichern löschen.</value>
+    </data>
+    <data name="mp3OverwriteCaption" xml:space="preserve">
+        <value>MP3 überschreiben</value>
+    </data>
+    <data name="videoOverwriteCaption" xml:space="preserve">
+        <value>Video überschreiben</value>
+    </data>
+    <data name="mp3DeleteMessage" xml:space="preserve">
+        <value>Bist du sicher, dass du die MP3 löschen willst?
+Dies löscht beim nächsten Speichern ebenfalls die Musikdatei.</value>
+    </data>
+    <data name="videoDeleteMessage" xml:space="preserve">
+        <value>Bist du sicher, dass du das Video löschen willst?
+Dies löscht beim nächsten Speichern ebenfalls die Videodatei.</value>
     </data>
 </root>

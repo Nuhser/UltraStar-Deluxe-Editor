@@ -107,6 +107,7 @@ namespace UltraStarDeluxeEditor {
             this.videoPlayButton = new System.Windows.Forms.Button();
             this.mp3PlayButton = new System.Windows.Forms.Button();
             this.mp3EditButton = new System.Windows.Forms.Button();
+            this.mp3DeleteButton = new System.Windows.Forms.Button();
             this.videoDeleteButton = new System.Windows.Forms.Button();
             this.videoLabel = new System.Windows.Forms.Label();
             this.mp3Label = new System.Windows.Forms.Label();
@@ -793,6 +794,7 @@ namespace UltraStarDeluxeEditor {
             this.songFilesGroupBox.Controls.Add(this.videoPlayButton);
             this.songFilesGroupBox.Controls.Add(this.mp3PlayButton);
             this.songFilesGroupBox.Controls.Add(this.mp3EditButton);
+            this.songFilesGroupBox.Controls.Add(this.mp3DeleteButton);
             this.songFilesGroupBox.Controls.Add(this.videoDeleteButton);
             this.songFilesGroupBox.Controls.Add(this.videoLabel);
             this.songFilesGroupBox.Controls.Add(this.mp3Label);
@@ -909,6 +911,19 @@ namespace UltraStarDeluxeEditor {
             this.mp3EditButton.UseVisualStyleBackColor = true;
             this.mp3EditButton.Click += new System.EventHandler(this.mp3EditButton_Click);
             // 
+            // mp3DeleteButton
+            // 
+            this.mp3DeleteButton.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("mp3DeleteButton.BackgroundImage")));
+            this.mp3DeleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.mp3DeleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.mp3DeleteButton.Location = new System.Drawing.Point(686, 20);
+            this.mp3DeleteButton.Name = "mp3DeleteButton";
+            this.mp3DeleteButton.Size = new System.Drawing.Size(32, 32);
+            this.mp3DeleteButton.TabIndex = 5;
+            this.mp3DeleteButton.TabStop = false;
+            this.mp3DeleteButton.UseVisualStyleBackColor = true;
+            this.mp3DeleteButton.Click += new System.EventHandler(this.mp3DeleteButton_Click);
+            // 
             // videoDeleteButton
             // 
             this.videoDeleteButton.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("videoDeleteButton.BackgroundImage")));
@@ -982,7 +997,7 @@ namespace UltraStarDeluxeEditor {
             // 
             this.songText1MissingPictureBox.BackColor = System.Drawing.SystemColors.Window;
             this.songText1MissingPictureBox.Image = ((System.Drawing.Image) (resources.GetObject("songText1MissingPictureBox.Image")));
-            this.songText1MissingPictureBox.Location = new System.Drawing.Point(6, 334);
+            this.songText1MissingPictureBox.Location = new System.Drawing.Point(8, 332);
             this.songText1MissingPictureBox.Name = "songText1MissingPictureBox";
             this.songText1MissingPictureBox.Size = new System.Drawing.Size(26, 26);
             this.songText1MissingPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1006,7 +1021,7 @@ namespace UltraStarDeluxeEditor {
             // 
             this.songText2MissingPictureBox.BackColor = System.Drawing.SystemColors.Window;
             this.songText2MissingPictureBox.Image = ((System.Drawing.Image) (resources.GetObject("songText2MissingPictureBox.Image")));
-            this.songText2MissingPictureBox.Location = new System.Drawing.Point(6, 334);
+            this.songText2MissingPictureBox.Location = new System.Drawing.Point(8, 332);
             this.songText2MissingPictureBox.Name = "songText2MissingPictureBox";
             this.songText2MissingPictureBox.Size = new System.Drawing.Size(26, 26);
             this.songText2MissingPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1080,6 +1095,8 @@ namespace UltraStarDeluxeEditor {
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Button mp3DeleteButton;
 
         private System.Windows.Forms.PictureBox mp3MissingPictureBox;
 
