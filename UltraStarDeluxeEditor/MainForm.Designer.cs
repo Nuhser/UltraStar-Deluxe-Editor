@@ -411,6 +411,7 @@ namespace UltraStarDeluxeEditor {
             this.songListView.TabStop = false;
             this.songListView.UseCompatibleStateImageBehavior = false;
             this.songListView.View = System.Windows.Forms.View.Details;
+            this.songListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.songListView_ColumnClick);
             this.songListView.SelectedIndexChanged += new System.EventHandler(this.songListView_SelectedIndexChanged);
             // 
             // titleColumn

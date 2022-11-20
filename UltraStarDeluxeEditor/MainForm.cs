@@ -16,9 +16,13 @@ namespace UltraStarDeluxeEditor {
         private const string DEFAULT_IMAGE_LOCATION = "..\\..\\assets\\DefaultCover.jpg";
 
         private UltraStarSong _selectedSong;
+        private SongListViewSorter _songListViewSorter;
 
         public MainForm() {
             InitializeComponent();
+
+            _songListViewSorter = new SongListViewSorter();
+            songListView.ListViewItemSorter = _songListViewSorter;
 
             // set ranges for NumericUpDowns
             bpmNumericUpDown.Minimum = decimal.One;
@@ -694,6 +698,18 @@ namespace UltraStarDeluxeEditor {
 
         private void openUsdbAnimuxDeToolStripMenuItem_Click(object sender, EventArgs e) {
             Process.Start(@"http://usdb.animux.de/");
+        }
+
+        private void songListView_ColumnClick(object sender, ColumnClickEventArgs e) {
+            if (e.Column == _songListViewSorter.ColumnToSort) {
+                _songListViewSorter.SortOrder = _songListViewSorter.SortOrder == SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending;
+            }
+            else {
+                _songListViewSorter.ColumnToSort = e.Column;
+                _songListViewSorter.SortOrder = SortOrder.Ascending;
+            }
+            
+            songListView.Sort();
         }
     }
 }
