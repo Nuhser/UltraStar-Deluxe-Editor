@@ -188,10 +188,6 @@ namespace UltraStarDeluxeEditor.UltraStar {
         /// </summary>
         /// <param name="filePath">Absolute path of the song's TXT-file</param>
         /// <returns>The song contained inside the file as an <see cref="UltraStarSong" /></returns>
-        /// <exception cref="UltraStarSongNotValidException">
-        ///     The loaded song isn't valid. Valid songs need a file path, title,
-        ///     artist, BPM above 1, a gap value of 0 or higher and a song text for at least one player.
-        /// </exception>
         public static UltraStarSong LoadSongFromFile(string filePath) {
             var song = new UltraStarSong(filePath);
 
@@ -232,7 +228,8 @@ namespace UltraStarDeluxeEditor.UltraStar {
                             song.Edition = line.Replace(EDITION_KEY, "");
                         }
                         else if (line.StartsWith(BPM_KEY)) {
-                            song.Bpm = Convert.ToDecimal(line.Replace(BPM_KEY, ""), new CultureInfo("en-US"));
+                            song.Bpm = Math.Max(1,
+                                Convert.ToDecimal(line.Replace(BPM_KEY, ""), new CultureInfo("en-US")));
                         }
                         else if (line.StartsWith(GAP_KEY)) {
                             song.Gap = Convert.ToDecimal(line.Replace(GAP_KEY, ""), new CultureInfo("en-US"));
@@ -273,12 +270,7 @@ namespace UltraStarDeluxeEditor.UltraStar {
 
             song.IsDuet = !string.IsNullOrEmpty(song.SongText.Item2);
 
-            if (song.IsValid()) {
-                return song;
-            }
-
-            throw new UltraStarSongNotValidException($"The file with path '{filePath}' is no valid UltraStar song!",
-                song);
+            return song;
         }
 
         /// <summary>

@@ -47,8 +47,20 @@ namespace UltraStarDeluxeEditor.UltraStar {
         /// </summary>
         /// <returns><c>true</c> if the song is valid and <c>false</c> otherwise</returns>
         public bool IsValid() {
-            return !string.IsNullOrEmpty(FilePath) && !string.IsNullOrEmpty(Title) && !string.IsNullOrEmpty(Artist) &&
-                   Bpm >= 1 && Gap >= 0 && HasMp3() && !string.IsNullOrEmpty(SongText.Item1);
+            return HasFilePath() && HasTitle() && HasArtist() && Bpm >= 1 && HasMp3() &&
+                   !string.IsNullOrWhiteSpace(SongText.Item1);
+        }
+
+        public bool HasFilePath() {
+            return !string.IsNullOrWhiteSpace(FilePath);
+        }
+
+        public bool HasTitle() {
+            return !string.IsNullOrWhiteSpace(Title);
+        }
+
+        public bool HasArtist() {
+            return !string.IsNullOrWhiteSpace(Artist);
         }
 
         public bool HasCover() {

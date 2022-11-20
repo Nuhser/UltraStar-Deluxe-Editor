@@ -23,9 +23,9 @@ namespace UltraStarDeluxeEditor {
             // set ranges for NumericUpDowns
             bpmNumericUpDown.Minimum = decimal.One;
             bpmNumericUpDown.Maximum = decimal.MaxValue;
-            gapNumericUpDown.Minimum = decimal.Zero;
+            gapNumericUpDown.Minimum = decimal.MinValue;
             gapNumericUpDown.Maximum = decimal.MaxValue;
-            videoGapNumericUpDown.Minimum = decimal.Zero;
+            videoGapNumericUpDown.Minimum = decimal.MinValue;
             videoGapNumericUpDown.Maximum = decimal.MaxValue;
 
             // add tool tips
