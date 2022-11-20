@@ -28,11 +28,19 @@ namespace UltraStarDeluxeEditor {
             videoGapNumericUpDown.Minimum = decimal.MinValue;
             videoGapNumericUpDown.Maximum = decimal.MaxValue;
 
+            songText1MissingPictureBox.BringToFront();
+            songText2MissingPictureBox.BringToFront();
+
             // add tool tips
             toolTip.SetToolTip(coverDownloadButton, Resources.coverDownloadFromUrl);
-            toolTip.SetToolTip(deleteCoverButton, Resources.coverDeleteCaption);
-            toolTip.SetToolTip(mp3MissingPictureBox, Resources.mp3FileNotExistsWarningIcon);
-            toolTip.SetToolTip(videoMissingPictureBox, Resources.videoFileNotExistsWarningIcon);
+            toolTip.SetToolTip(coverDeleteButton, Resources.coverDeleteCaption);
+            toolTip.SetToolTip(titleMissingPictureBox, Resources.titleMissingWarningIcon);
+            toolTip.SetToolTip(artistMissingPictureBox, Resources.artistMissingWarningIcon);
+            toolTip.SetToolTip(mp3MissingPictureBox, Resources.mp3FileMissingWarningIcon);
+            toolTip.SetToolTip(mp3NotFoundPictureBox, Resources.mp3FileNotExistsWarningIcon);
+            toolTip.SetToolTip(videoNotFoundPictureBox, Resources.videoFileNotExistsWarningIcon);
+            toolTip.SetToolTip(songText1MissingPictureBox, Resources.player1TextMissingWarningIcon);
+            toolTip.SetToolTip(songText2MissingPictureBox, Resources.player2TextMissingWarningIcon);
 
             SetSongDetailUiEnabled(false);
         }
@@ -65,7 +73,7 @@ namespace UltraStarDeluxeEditor {
             var songDirectories = ConfigService.GetSongDirectories();
             foreach (var songFile in songDirectories.Where(Directory.Exists)
                          .SelectMany(songDirectory => Directory.GetFiles(songDirectory, "*.txt"))) {
-                UltraStarSong song;
+                var song = UltraStarSongService.LoadSongFromFile(songFile);
 
                 if (!song.IsValid()) {
                     invalidSongs.Add(songFile);
@@ -86,19 +94,10 @@ namespace UltraStarDeluxeEditor {
 
             MessageBox.Show(
                 string.Format(Resources.songListInitializationDoneMessage, songsFound) + (invalidSongs.Any()
-                    ? "\n\n" + string.Format(Resources.songListInitializationErrorsMessage, invalidSongs.Count,
-                        GetInvalidSongFileListString(invalidSongs))
+                    ? "\n" + string.Format(Resources.songListInitializationErrorsMessage, invalidSongs.Count)
                     : ""),
                 Resources.songListInitializationDoneCaption,
                 MessageBoxButtons.OK);
-        }
-
-        private string GetInvalidSongFileListString(List<string> invalidSongs) {
-            if (invalidSongs.Count <= 5) {
-                return string.Join("\n", invalidSongs.Select(s => "  \u2022 " + s).ToList());
-            }
-
-            return string.Join("\n", invalidSongs.Take(5).Select(s => "  \u2022 " + s).ToList()) + "\n  \u2022...";
         }
 
         private void SetSongDetailUiEnabled(bool enabled) {
@@ -128,11 +127,7 @@ namespace UltraStarDeluxeEditor {
                 duetSinger2TextBox.Text = _selectedSong.DuetSingerP2;
 
                 mp3TextBox.Text = _selectedSong.Mp3;
-                mp3PlayButton.Enabled = _selectedSong.HasMp3() && File.Exists(_selectedSong.GetMp3Path());
-                mp3MissingPictureBox.Visible = _selectedSong.HasMp3() && !File.Exists(_selectedSong.GetMp3Path());
                 videoTextBox.Text = _selectedSong.Video;
-                videoPlayButton.Enabled = _selectedSong.HasVideo() && File.Exists(_selectedSong.GetVideoPath());
-                videoMissingPictureBox.Visible = _selectedSong.HasVideo() && !File.Exists(_selectedSong.GetVideoPath());
 
                 coverPictureBox.ImageLocation = _selectedSong.Cover != null
                     ? _selectedSong.GetCoverPath()
@@ -157,9 +152,9 @@ namespace UltraStarDeluxeEditor {
                 languageTextBox.Text = "";
                 editionTextBox.Text = "";
 
-                bpmNumericUpDown.Value = bpmNumericUpDown.Minimum;
-                gapNumericUpDown.Value = gapNumericUpDown.Minimum;
-                videoGapNumericUpDown.Value = videoGapNumericUpDown.Minimum;
+                bpmNumericUpDown.Value = decimal.One;
+                gapNumericUpDown.Value = decimal.Zero;
+                videoGapNumericUpDown.Value = decimal.Zero;
                 duetCheckBox.Checked = false;
                 duetSinger1TextBox.Text = "";
                 duetSinger2TextBox.Text = "";
@@ -167,13 +162,33 @@ namespace UltraStarDeluxeEditor {
                 mp3TextBox.Text = "";
                 videoTextBox.Text = "";
                 coverPictureBox.ImageLocation = DEFAULT_IMAGE_LOCATION;
+                toolTip.SetToolTip(coverPictureBox, null);
 
                 player1TextBox.Text = "";
                 player2TextBox.Text = "";
             }
 
+            // show/hide error icons
+            titleMissingPictureBox.Visible = songSelected && !_selectedSong.HasTitle();
+            artistMissingPictureBox.Visible = songSelected && !_selectedSong.HasArtist();
+            mp3MissingPictureBox.Visible = songSelected && !_selectedSong.HasMp3();
+            mp3NotFoundPictureBox.Visible =
+                songSelected && _selectedSong.HasMp3() && !File.Exists(_selectedSong.GetMp3Path());
+
+            videoNotFoundPictureBox.Visible =
+                songSelected && _selectedSong.HasVideo() && !File.Exists(_selectedSong.GetVideoPath());
+
+            songText1MissingPictureBox.Visible = songSelected && !_selectedSong.HasPlayer1Text();
+            songText2MissingPictureBox.Visible = songSelected && !_selectedSong.HasPlayer2Text();
+
             // enable/disable buttons
-            deleteCoverButton.Enabled = songSelected && _selectedSong.HasCover();
+            coverDeleteButton.Enabled = songSelected && _selectedSong.HasCover();
+            mp3PlayButton.Enabled = songSelected && _selectedSong.HasMp3() && File.Exists(_selectedSong.GetMp3Path());
+            mp3EditButton.Enabled = songSelected;
+            videoEditButton.Enabled = songSelected;
+            videoDeleteButton.Enabled = songSelected && _selectedSong.HasVideo();
+            videoPlayButton.Enabled =
+                songSelected && _selectedSong.HasVideo() && File.Exists(_selectedSong.GetVideoPath());
 
             // enable/disable menu items
             saveToolStripMenuItem.Enabled = songSelected && _selectedSong.IsDirty;
@@ -185,8 +200,13 @@ namespace UltraStarDeluxeEditor {
             chooseCoverImageToolStripMenuItem.Enabled = songSelected;
             downloadCoverFromURLToolStripMenuItem.Enabled = songSelected;
             deleteCoverToolStripMenuItem.Enabled = songSelected && _selectedSong.HasCover();
-            openMP3ToolStripMenuItem.Enabled = songSelected && _selectedSong.HasMp3();
+            mp3ToolStripMenuItem.Enabled = songSelected;
+            openMp3ToolStripMenuItem.Enabled = songSelected && _selectedSong.HasMp3();
+            chooseMp3FileToolStripMenuItem.Enabled = songSelected;
+            videoToolStripMenuItem.Enabled = songSelected;
             openVideoToolStripMenuItem.Enabled = songSelected && _selectedSong.HasVideo();
+            chooseVideoToolStripMenuItem.Enabled = songSelected;
+            deleteVideoToolStripMenuItem.Enabled = songSelected && _selectedSong.HasVideo();
             webSearchToolStripMenuItem.Enabled = songSelected;
             exportSongTxtToolStripMenuItem.Enabled = songSelected;
 
@@ -379,6 +399,17 @@ namespace UltraStarDeluxeEditor {
                 if (oldDirtyValue != true) {
                     UpdateFormTitle();
                 }
+
+                // show/hide error icons
+                titleMissingPictureBox.Visible = !_selectedSong.HasTitle();
+                artistMissingPictureBox.Visible = !_selectedSong.HasArtist();
+                mp3MissingPictureBox.Visible = !_selectedSong.HasMp3();
+                mp3NotFoundPictureBox.Visible = _selectedSong.HasMp3() && !File.Exists(_selectedSong.GetMp3Path());
+                videoNotFoundPictureBox.Visible =
+                    _selectedSong.HasVideo() && !File.Exists(_selectedSong.GetVideoPath());
+
+                songText1MissingPictureBox.Visible = !_selectedSong.HasPlayer1Text();
+                songText2MissingPictureBox.Visible = !_selectedSong.HasPlayer2Text();
             }
         }
 
@@ -515,7 +546,7 @@ namespace UltraStarDeluxeEditor {
             }
         }
 
-        private void editCoverButton_Click(object sender, EventArgs e) {
+        private void coverEditButton_Click(object sender, EventArgs e) {
             var openFileDialog = new OpenFileDialog();
             openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
             openFileDialog.Filter = Resources.imageFileFilter;
@@ -532,7 +563,7 @@ namespace UltraStarDeluxeEditor {
             }
         }
 
-        private void deleteCoverButton_Click(object sender, EventArgs e) {
+        private void coverDeleteButton_Click(object sender, EventArgs e) {
             if (MessageBox.Show(
                     Resources.coverDeleteMessage,
                     Resources.coverDeleteCaption, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) ==
@@ -553,6 +584,18 @@ namespace UltraStarDeluxeEditor {
 
         private void coverPictureBox_DoubleClick(object sender, EventArgs e) {
             UltraStarSongService.OpenCoverImage(_selectedSong);
+        }
+
+        private void mp3EditButton_Click(object sender, EventArgs e) {
+            throw new NotImplementedException();
+        }
+
+        private void videoEditButton_Click(object sender, EventArgs e) {
+            throw new NotImplementedException();
+        }
+
+        private void videoDeleteButton_Click(object sender, EventArgs e) {
+            throw new NotImplementedException();
         }
 
         private void openSongTxtToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -606,6 +649,10 @@ namespace UltraStarDeluxeEditor {
             if (saveFileDialog.ShowDialog() == DialogResult.OK) {
                 UltraStarSongService.ExportSong(_selectedSong, saveFileDialog.FileName);
             }
+        }
+
+        private void openUsdbAnimuxDeToolStripMenuItem_Click(object sender, EventArgs e) {
+            Process.Start(@"http://usdb.animux.de/");
         }
     }
 }

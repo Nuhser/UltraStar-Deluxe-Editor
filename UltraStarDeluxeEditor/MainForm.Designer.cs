@@ -45,14 +45,21 @@ namespace UltraStarDeluxeEditor {
             this.chooseCoverImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.downloadCoverFromURLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteCoverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openMP3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mp3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openMp3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chooseMp3FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.videoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openVideoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chooseVideoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteVideoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.webSearchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.googleSearchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.discogsSearchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startUltraStarDeluxeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.databasesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openUsdbAnimuxDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importSongTxtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportSongTxtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.songListView = new System.Windows.Forms.ListView();
@@ -64,8 +71,8 @@ namespace UltraStarDeluxeEditor {
             this.coverPictureBox = new System.Windows.Forms.PictureBox();
             this.artistTextBox = new System.Windows.Forms.TextBox();
             this.artistLabel = new System.Windows.Forms.Label();
-            this.deleteCoverButton = new System.Windows.Forms.Button();
-            this.editCoverButton = new System.Windows.Forms.Button();
+            this.coverDeleteButton = new System.Windows.Forms.Button();
+            this.coverEditButton = new System.Windows.Forms.Button();
             this.yearLabel = new System.Windows.Forms.Label();
             this.languageTextBox = new System.Windows.Forms.TextBox();
             this.languageLabel = new System.Windows.Forms.Label();
@@ -74,6 +81,8 @@ namespace UltraStarDeluxeEditor {
             this.editionTextBox = new System.Windows.Forms.TextBox();
             this.editionLabel = new System.Windows.Forms.Label();
             this.songInfoGroupBox = new System.Windows.Forms.GroupBox();
+            this.artistMissingPictureBox = new System.Windows.Forms.PictureBox();
+            this.titleMissingPictureBox = new System.Windows.Forms.PictureBox();
             this.coverDownloadButton = new System.Windows.Forms.Button();
             this.yearTextBox = new System.Windows.Forms.TextBox();
             this.songSettingsGroupBox = new System.Windows.Forms.GroupBox();
@@ -89,8 +98,9 @@ namespace UltraStarDeluxeEditor {
             this.gapNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.duetSinger1Label = new System.Windows.Forms.Label();
             this.songFilesGroupBox = new System.Windows.Forms.GroupBox();
-            this.videoMissingPictureBox = new System.Windows.Forms.PictureBox();
             this.mp3MissingPictureBox = new System.Windows.Forms.PictureBox();
+            this.videoNotFoundPictureBox = new System.Windows.Forms.PictureBox();
+            this.mp3NotFoundPictureBox = new System.Windows.Forms.PictureBox();
             this.videoTextBox = new System.Windows.Forms.TextBox();
             this.mp3TextBox = new System.Windows.Forms.TextBox();
             this.videoEditButton = new System.Windows.Forms.Button();
@@ -103,22 +113,29 @@ namespace UltraStarDeluxeEditor {
             this.textTabControl = new System.Windows.Forms.TabControl();
             this.player1TextTab = new System.Windows.Forms.TabPage();
             this.player1TextBox = new System.Windows.Forms.TextBox();
+            this.songText1MissingPictureBox = new System.Windows.Forms.PictureBox();
             this.player2TextTab = new System.Windows.Forms.TabPage();
+            this.songText2MissingPictureBox = new System.Windows.Forms.PictureBox();
             this.player2TextBox = new System.Windows.Forms.TextBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.mainMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.coverPictureBox)).BeginInit();
             this.songInfoGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.artistMissingPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.titleMissingPictureBox)).BeginInit();
             this.songSettingsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.videoGapNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.bpmNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.gapNumericUpDown)).BeginInit();
             this.songFilesGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.videoMissingPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.mp3MissingPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.videoNotFoundPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.mp3NotFoundPictureBox)).BeginInit();
             this.textTabControl.SuspendLayout();
             this.player1TextTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.songText1MissingPictureBox)).BeginInit();
             this.player2TextTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.songText2MissingPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // mainMenuStrip
@@ -177,7 +194,7 @@ namespace UltraStarDeluxeEditor {
             // 
             // songToolStripMenuItem
             // 
-            this.songToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.openSongTxtToolStripMenuItem, this.openDirectoryToolStripMenuItem, this.reloadSongToolStripMenuItem, this.toolStripSeparator3, this.coverToolStripMenuItem, this.openMP3ToolStripMenuItem, this.openVideoToolStripMenuItem, this.toolStripSeparator2, this.webSearchToolStripMenuItem });
+            this.songToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.openSongTxtToolStripMenuItem, this.openDirectoryToolStripMenuItem, this.reloadSongToolStripMenuItem, this.toolStripSeparator3, this.coverToolStripMenuItem, this.mp3ToolStripMenuItem, this.videoToolStripMenuItem, this.toolStripSeparator2, this.webSearchToolStripMenuItem });
             this.songToolStripMenuItem.Name = "songToolStripMenuItem";
             this.songToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.songToolStripMenuItem.Text = "Song";
@@ -233,7 +250,7 @@ namespace UltraStarDeluxeEditor {
             this.chooseCoverImageToolStripMenuItem.Name = "chooseCoverImageToolStripMenuItem";
             this.chooseCoverImageToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.chooseCoverImageToolStripMenuItem.Text = "Choose File";
-            this.chooseCoverImageToolStripMenuItem.Click += new System.EventHandler(this.editCoverButton_Click);
+            this.chooseCoverImageToolStripMenuItem.Click += new System.EventHandler(this.coverEditButton_Click);
             // 
             // downloadCoverFromURLToolStripMenuItem
             // 
@@ -249,23 +266,63 @@ namespace UltraStarDeluxeEditor {
             this.deleteCoverToolStripMenuItem.Name = "deleteCoverToolStripMenuItem";
             this.deleteCoverToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.deleteCoverToolStripMenuItem.Text = "Delete";
-            this.deleteCoverToolStripMenuItem.Click += new System.EventHandler(this.deleteCoverButton_Click);
+            this.deleteCoverToolStripMenuItem.Click += new System.EventHandler(this.coverDeleteButton_Click);
             // 
-            // openMP3ToolStripMenuItem
+            // mp3ToolStripMenuItem
             // 
-            this.openMP3ToolStripMenuItem.Enabled = false;
-            this.openMP3ToolStripMenuItem.Name = "openMP3ToolStripMenuItem";
-            this.openMP3ToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.openMP3ToolStripMenuItem.Text = "Open MP3";
-            this.openMP3ToolStripMenuItem.Click += new System.EventHandler(this.mp3PlayButton_Click);
+            this.mp3ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.openMp3ToolStripMenuItem, this.chooseMp3FileToolStripMenuItem });
+            this.mp3ToolStripMenuItem.Enabled = false;
+            this.mp3ToolStripMenuItem.Name = "mp3ToolStripMenuItem";
+            this.mp3ToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.mp3ToolStripMenuItem.Text = "MP3";
+            // 
+            // openMp3ToolStripMenuItem
+            // 
+            this.openMp3ToolStripMenuItem.Enabled = false;
+            this.openMp3ToolStripMenuItem.Name = "openMp3ToolStripMenuItem";
+            this.openMp3ToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.openMp3ToolStripMenuItem.Text = "Open MP3";
+            this.openMp3ToolStripMenuItem.Click += new System.EventHandler(this.mp3PlayButton_Click);
+            // 
+            // chooseMp3FileToolStripMenuItem
+            // 
+            this.chooseMp3FileToolStripMenuItem.Enabled = false;
+            this.chooseMp3FileToolStripMenuItem.Name = "chooseMp3FileToolStripMenuItem";
+            this.chooseMp3FileToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.chooseMp3FileToolStripMenuItem.Text = "Choose File";
+            this.chooseMp3FileToolStripMenuItem.Click += new System.EventHandler(this.mp3EditButton_Click);
+            // 
+            // videoToolStripMenuItem
+            // 
+            this.videoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.openVideoToolStripMenuItem, this.chooseVideoToolStripMenuItem, this.deleteVideoToolStripMenuItem });
+            this.videoToolStripMenuItem.Enabled = false;
+            this.videoToolStripMenuItem.Name = "videoToolStripMenuItem";
+            this.videoToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.videoToolStripMenuItem.Text = "Video";
             // 
             // openVideoToolStripMenuItem
             // 
             this.openVideoToolStripMenuItem.Enabled = false;
             this.openVideoToolStripMenuItem.Name = "openVideoToolStripMenuItem";
-            this.openVideoToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.openVideoToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.openVideoToolStripMenuItem.Text = "Open Video";
             this.openVideoToolStripMenuItem.Click += new System.EventHandler(this.videoPlayButton_Click);
+            // 
+            // chooseVideoToolStripMenuItem
+            // 
+            this.chooseVideoToolStripMenuItem.Enabled = false;
+            this.chooseVideoToolStripMenuItem.Name = "chooseVideoToolStripMenuItem";
+            this.chooseVideoToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.chooseVideoToolStripMenuItem.Text = "Choose File";
+            this.chooseVideoToolStripMenuItem.Click += new System.EventHandler(this.videoEditButton_Click);
+            // 
+            // deleteVideoToolStripMenuItem
+            // 
+            this.deleteVideoToolStripMenuItem.Enabled = false;
+            this.deleteVideoToolStripMenuItem.Name = "deleteVideoToolStripMenuItem";
+            this.deleteVideoToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.deleteVideoToolStripMenuItem.Text = "Delete";
+            this.deleteVideoToolStripMenuItem.Click += new System.EventHandler(this.videoDeleteButton_Click);
             // 
             // toolStripSeparator2
             // 
@@ -296,7 +353,7 @@ namespace UltraStarDeluxeEditor {
             // 
             // toolsToolStripMenuItem
             // 
-            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.startUltraStarDeluxeToolStripMenuItem, this.importSongTxtToolStripMenuItem, this.exportSongTxtToolStripMenuItem });
+            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.startUltraStarDeluxeToolStripMenuItem, this.databasesToolStripMenuItem, this.importSongTxtToolStripMenuItem, this.exportSongTxtToolStripMenuItem });
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
@@ -307,6 +364,20 @@ namespace UltraStarDeluxeEditor {
             this.startUltraStarDeluxeToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.startUltraStarDeluxeToolStripMenuItem.Text = "Start UltraStar Deluxe";
             this.startUltraStarDeluxeToolStripMenuItem.Click += new System.EventHandler(this.startUltraStarDeluxeToolStripMenuItem_Click);
+            // 
+            // databasesToolStripMenuItem
+            // 
+            this.databasesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.openUsdbAnimuxDeToolStripMenuItem });
+            this.databasesToolStripMenuItem.Name = "databasesToolStripMenuItem";
+            this.databasesToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.databasesToolStripMenuItem.Text = "Databases";
+            // 
+            // openUsdbAnimuxDeToolStripMenuItem
+            // 
+            this.openUsdbAnimuxDeToolStripMenuItem.Name = "openUsdbAnimuxDeToolStripMenuItem";
+            this.openUsdbAnimuxDeToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.openUsdbAnimuxDeToolStripMenuItem.Text = "Open usdb.animux.de";
+            this.openUsdbAnimuxDeToolStripMenuItem.Click += new System.EventHandler(this.openUsdbAnimuxDeToolStripMenuItem_Click);
             // 
             // importSongTxtToolStripMenuItem
             // 
@@ -407,31 +478,31 @@ namespace UltraStarDeluxeEditor {
             this.artistLabel.Text = "Artist";
             this.artistLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // deleteCoverButton
+            // coverDeleteButton
             // 
-            this.deleteCoverButton.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("deleteCoverButton.BackgroundImage")));
-            this.deleteCoverButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.deleteCoverButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.deleteCoverButton.Location = new System.Drawing.Point(686, 180);
-            this.deleteCoverButton.Name = "deleteCoverButton";
-            this.deleteCoverButton.Size = new System.Drawing.Size(32, 32);
-            this.deleteCoverButton.TabIndex = 16;
-            this.deleteCoverButton.TabStop = false;
-            this.deleteCoverButton.UseVisualStyleBackColor = true;
-            this.deleteCoverButton.Click += new System.EventHandler(this.deleteCoverButton_Click);
+            this.coverDeleteButton.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("coverDeleteButton.BackgroundImage")));
+            this.coverDeleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.coverDeleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.coverDeleteButton.Location = new System.Drawing.Point(686, 180);
+            this.coverDeleteButton.Name = "coverDeleteButton";
+            this.coverDeleteButton.Size = new System.Drawing.Size(32, 32);
+            this.coverDeleteButton.TabIndex = 16;
+            this.coverDeleteButton.TabStop = false;
+            this.coverDeleteButton.UseVisualStyleBackColor = true;
+            this.coverDeleteButton.Click += new System.EventHandler(this.coverDeleteButton_Click);
             // 
-            // editCoverButton
+            // coverEditButton
             // 
-            this.editCoverButton.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("editCoverButton.BackgroundImage")));
-            this.editCoverButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.editCoverButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.editCoverButton.Location = new System.Drawing.Point(648, 180);
-            this.editCoverButton.Name = "editCoverButton";
-            this.editCoverButton.Size = new System.Drawing.Size(32, 32);
-            this.editCoverButton.TabIndex = 15;
-            this.editCoverButton.TabStop = false;
-            this.editCoverButton.UseVisualStyleBackColor = true;
-            this.editCoverButton.Click += new System.EventHandler(this.editCoverButton_Click);
+            this.coverEditButton.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("coverEditButton.BackgroundImage")));
+            this.coverEditButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.coverEditButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.coverEditButton.Location = new System.Drawing.Point(648, 180);
+            this.coverEditButton.Name = "coverEditButton";
+            this.coverEditButton.Size = new System.Drawing.Size(32, 32);
+            this.coverEditButton.TabIndex = 15;
+            this.coverEditButton.TabStop = false;
+            this.coverEditButton.UseVisualStyleBackColor = true;
+            this.coverEditButton.Click += new System.EventHandler(this.coverEditButton_Click);
             // 
             // yearLabel
             // 
@@ -503,9 +574,11 @@ namespace UltraStarDeluxeEditor {
             // songInfoGroupBox
             // 
             this.songInfoGroupBox.Controls.Add(this.titleTextBox);
+            this.songInfoGroupBox.Controls.Add(this.artistMissingPictureBox);
+            this.songInfoGroupBox.Controls.Add(this.titleMissingPictureBox);
             this.songInfoGroupBox.Controls.Add(this.coverDownloadButton);
-            this.songInfoGroupBox.Controls.Add(this.editCoverButton);
-            this.songInfoGroupBox.Controls.Add(this.deleteCoverButton);
+            this.songInfoGroupBox.Controls.Add(this.coverEditButton);
+            this.songInfoGroupBox.Controls.Add(this.coverDeleteButton);
             this.songInfoGroupBox.Controls.Add(this.yearTextBox);
             this.songInfoGroupBox.Controls.Add(this.artistTextBox);
             this.songInfoGroupBox.Controls.Add(this.coverPictureBox);
@@ -525,6 +598,28 @@ namespace UltraStarDeluxeEditor {
             this.songInfoGroupBox.TabIndex = 6;
             this.songInfoGroupBox.TabStop = false;
             this.songInfoGroupBox.Text = "Song Info";
+            // 
+            // artistMissingPictureBox
+            // 
+            this.artistMissingPictureBox.Image = ((System.Drawing.Image) (resources.GetObject("artistMissingPictureBox.Image")));
+            this.artistMissingPictureBox.Location = new System.Drawing.Point(6, 56);
+            this.artistMissingPictureBox.Name = "artistMissingPictureBox";
+            this.artistMissingPictureBox.Size = new System.Drawing.Size(26, 26);
+            this.artistMissingPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.artistMissingPictureBox.TabIndex = 6;
+            this.artistMissingPictureBox.TabStop = false;
+            this.artistMissingPictureBox.Visible = false;
+            // 
+            // titleMissingPictureBox
+            // 
+            this.titleMissingPictureBox.Image = ((System.Drawing.Image) (resources.GetObject("titleMissingPictureBox.Image")));
+            this.titleMissingPictureBox.Location = new System.Drawing.Point(6, 22);
+            this.titleMissingPictureBox.Name = "titleMissingPictureBox";
+            this.titleMissingPictureBox.Size = new System.Drawing.Size(26, 26);
+            this.titleMissingPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.titleMissingPictureBox.TabIndex = 6;
+            this.titleMissingPictureBox.TabStop = false;
+            this.titleMissingPictureBox.Visible = false;
             // 
             // coverDownloadButton
             // 
@@ -689,8 +784,9 @@ namespace UltraStarDeluxeEditor {
             // 
             // songFilesGroupBox
             // 
-            this.songFilesGroupBox.Controls.Add(this.videoMissingPictureBox);
             this.songFilesGroupBox.Controls.Add(this.mp3MissingPictureBox);
+            this.songFilesGroupBox.Controls.Add(this.videoNotFoundPictureBox);
+            this.songFilesGroupBox.Controls.Add(this.mp3NotFoundPictureBox);
             this.songFilesGroupBox.Controls.Add(this.videoTextBox);
             this.songFilesGroupBox.Controls.Add(this.mp3TextBox);
             this.songFilesGroupBox.Controls.Add(this.videoEditButton);
@@ -708,17 +804,6 @@ namespace UltraStarDeluxeEditor {
             this.songFilesGroupBox.TabStop = false;
             this.songFilesGroupBox.Text = "Song Files";
             // 
-            // videoMissingPictureBox
-            // 
-            this.videoMissingPictureBox.Image = ((System.Drawing.Image) (resources.GetObject("videoMissingPictureBox.Image")));
-            this.videoMissingPictureBox.Location = new System.Drawing.Point(6, 62);
-            this.videoMissingPictureBox.Name = "videoMissingPictureBox";
-            this.videoMissingPictureBox.Size = new System.Drawing.Size(26, 26);
-            this.videoMissingPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.videoMissingPictureBox.TabIndex = 6;
-            this.videoMissingPictureBox.TabStop = false;
-            this.videoMissingPictureBox.Visible = false;
-            // 
             // mp3MissingPictureBox
             // 
             this.mp3MissingPictureBox.Image = ((System.Drawing.Image) (resources.GetObject("mp3MissingPictureBox.Image")));
@@ -726,9 +811,31 @@ namespace UltraStarDeluxeEditor {
             this.mp3MissingPictureBox.Name = "mp3MissingPictureBox";
             this.mp3MissingPictureBox.Size = new System.Drawing.Size(26, 26);
             this.mp3MissingPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.mp3MissingPictureBox.TabIndex = 6;
+            this.mp3MissingPictureBox.TabIndex = 7;
             this.mp3MissingPictureBox.TabStop = false;
             this.mp3MissingPictureBox.Visible = false;
+            // 
+            // videoNotFoundPictureBox
+            // 
+            this.videoNotFoundPictureBox.Image = ((System.Drawing.Image) (resources.GetObject("videoNotFoundPictureBox.Image")));
+            this.videoNotFoundPictureBox.Location = new System.Drawing.Point(6, 62);
+            this.videoNotFoundPictureBox.Name = "videoNotFoundPictureBox";
+            this.videoNotFoundPictureBox.Size = new System.Drawing.Size(26, 26);
+            this.videoNotFoundPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.videoNotFoundPictureBox.TabIndex = 6;
+            this.videoNotFoundPictureBox.TabStop = false;
+            this.videoNotFoundPictureBox.Visible = false;
+            // 
+            // mp3NotFoundPictureBox
+            // 
+            this.mp3NotFoundPictureBox.Image = ((System.Drawing.Image) (resources.GetObject("mp3NotFoundPictureBox.Image")));
+            this.mp3NotFoundPictureBox.Location = new System.Drawing.Point(6, 24);
+            this.mp3NotFoundPictureBox.Name = "mp3NotFoundPictureBox";
+            this.mp3NotFoundPictureBox.Size = new System.Drawing.Size(26, 26);
+            this.mp3NotFoundPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.mp3NotFoundPictureBox.TabIndex = 6;
+            this.mp3NotFoundPictureBox.TabStop = false;
+            this.mp3NotFoundPictureBox.Visible = false;
             // 
             // videoTextBox
             // 
@@ -761,6 +868,7 @@ namespace UltraStarDeluxeEditor {
             this.videoEditButton.TabIndex = 5;
             this.videoEditButton.TabStop = false;
             this.videoEditButton.UseVisualStyleBackColor = true;
+            this.videoEditButton.Click += new System.EventHandler(this.videoEditButton_Click);
             // 
             // videoPlayButton
             // 
@@ -799,6 +907,7 @@ namespace UltraStarDeluxeEditor {
             this.mp3EditButton.TabIndex = 5;
             this.mp3EditButton.TabStop = false;
             this.mp3EditButton.UseVisualStyleBackColor = true;
+            this.mp3EditButton.Click += new System.EventHandler(this.mp3EditButton_Click);
             // 
             // videoDeleteButton
             // 
@@ -811,6 +920,7 @@ namespace UltraStarDeluxeEditor {
             this.videoDeleteButton.TabIndex = 5;
             this.videoDeleteButton.TabStop = false;
             this.videoDeleteButton.UseVisualStyleBackColor = true;
+            this.videoDeleteButton.Click += new System.EventHandler(this.videoDeleteButton_Click);
             // 
             // videoLabel
             // 
@@ -848,6 +958,7 @@ namespace UltraStarDeluxeEditor {
             // player1TextTab
             // 
             this.player1TextTab.Controls.Add(this.player1TextBox);
+            this.player1TextTab.Controls.Add(this.songText1MissingPictureBox);
             this.player1TextTab.Location = new System.Drawing.Point(4, 22);
             this.player1TextTab.Name = "player1TextTab";
             this.player1TextTab.Padding = new System.Windows.Forms.Padding(3);
@@ -867,8 +978,21 @@ namespace UltraStarDeluxeEditor {
             this.player1TextBox.TabIndex = 12;
             this.player1TextBox.TextChanged += new System.EventHandler(this.detailControl_ValueChanged);
             // 
+            // songText1MissingPictureBox
+            // 
+            this.songText1MissingPictureBox.BackColor = System.Drawing.SystemColors.Window;
+            this.songText1MissingPictureBox.Image = ((System.Drawing.Image) (resources.GetObject("songText1MissingPictureBox.Image")));
+            this.songText1MissingPictureBox.Location = new System.Drawing.Point(6, 334);
+            this.songText1MissingPictureBox.Name = "songText1MissingPictureBox";
+            this.songText1MissingPictureBox.Size = new System.Drawing.Size(26, 26);
+            this.songText1MissingPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.songText1MissingPictureBox.TabIndex = 6;
+            this.songText1MissingPictureBox.TabStop = false;
+            this.songText1MissingPictureBox.Visible = false;
+            // 
             // player2TextTab
             // 
+            this.player2TextTab.Controls.Add(this.songText2MissingPictureBox);
             this.player2TextTab.Controls.Add(this.player2TextBox);
             this.player2TextTab.Location = new System.Drawing.Point(4, 22);
             this.player2TextTab.Name = "player2TextTab";
@@ -877,6 +1001,18 @@ namespace UltraStarDeluxeEditor {
             this.player2TextTab.TabIndex = 1;
             this.player2TextTab.Text = "Player 2";
             this.player2TextTab.UseVisualStyleBackColor = true;
+            // 
+            // songText2MissingPictureBox
+            // 
+            this.songText2MissingPictureBox.BackColor = System.Drawing.SystemColors.Window;
+            this.songText2MissingPictureBox.Image = ((System.Drawing.Image) (resources.GetObject("songText2MissingPictureBox.Image")));
+            this.songText2MissingPictureBox.Location = new System.Drawing.Point(6, 334);
+            this.songText2MissingPictureBox.Name = "songText2MissingPictureBox";
+            this.songText2MissingPictureBox.Size = new System.Drawing.Size(26, 26);
+            this.songText2MissingPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.songText2MissingPictureBox.TabIndex = 6;
+            this.songText2MissingPictureBox.TabStop = false;
+            this.songText2MissingPictureBox.Visible = false;
             // 
             // player2TextBox
             // 
@@ -922,6 +1058,8 @@ namespace UltraStarDeluxeEditor {
             ((System.ComponentModel.ISupportInitialize) (this.coverPictureBox)).EndInit();
             this.songInfoGroupBox.ResumeLayout(false);
             this.songInfoGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.artistMissingPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.titleMissingPictureBox)).EndInit();
             this.songSettingsGroupBox.ResumeLayout(false);
             this.songSettingsGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize) (this.videoGapNumericUpDown)).EndInit();
@@ -929,16 +1067,39 @@ namespace UltraStarDeluxeEditor {
             ((System.ComponentModel.ISupportInitialize) (this.gapNumericUpDown)).EndInit();
             this.songFilesGroupBox.ResumeLayout(false);
             this.songFilesGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.videoMissingPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.mp3MissingPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.videoNotFoundPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.mp3NotFoundPictureBox)).EndInit();
             this.textTabControl.ResumeLayout(false);
             this.player1TextTab.ResumeLayout(false);
             this.player1TextTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.songText1MissingPictureBox)).EndInit();
             this.player2TextTab.ResumeLayout(false);
             this.player2TextTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.songText2MissingPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.PictureBox mp3MissingPictureBox;
+
+        private System.Windows.Forms.PictureBox songText1MissingPictureBox;
+
+        private System.Windows.Forms.PictureBox songText2MissingPictureBox;
+
+        private System.Windows.Forms.PictureBox titleMissingPictureBox;
+        private System.Windows.Forms.PictureBox artistMissingPictureBox;
+
+        private System.Windows.Forms.ToolStripMenuItem deleteVideoToolStripMenuItem;
+
+        private System.Windows.Forms.ToolStripMenuItem chooseMp3FileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem chooseVideoToolStripMenuItem;
+
+        private System.Windows.Forms.ToolStripMenuItem mp3ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem videoToolStripMenuItem;
+
+        private System.Windows.Forms.ToolStripMenuItem databasesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openUsdbAnimuxDeToolStripMenuItem;
 
         private System.Windows.Forms.ToolStripMenuItem importSongTxtToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportSongTxtToolStripMenuItem;
@@ -948,8 +1109,8 @@ namespace UltraStarDeluxeEditor {
 
         private System.Windows.Forms.ToolStripMenuItem openDirectoryToolStripMenuItem;
 
-        private System.Windows.Forms.PictureBox mp3MissingPictureBox;
-        private System.Windows.Forms.PictureBox videoMissingPictureBox;
+        private System.Windows.Forms.PictureBox mp3NotFoundPictureBox;
+        private System.Windows.Forms.PictureBox videoNotFoundPictureBox;
 
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem openSongTxtToolStripMenuItem;
@@ -965,7 +1126,7 @@ namespace UltraStarDeluxeEditor {
 
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
 
-        private System.Windows.Forms.ToolStripMenuItem openMP3ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openMp3ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openVideoToolStripMenuItem;
 
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -1005,7 +1166,7 @@ namespace UltraStarDeluxeEditor {
 
         private System.Windows.Forms.Label mp3Label;
         private System.Windows.Forms.TextBox mp3TextBox;
-        private System.Windows.Forms.Button editCoverButton;
+        private System.Windows.Forms.Button coverEditButton;
         private System.Windows.Forms.Button mp3EditButton;
         private System.Windows.Forms.Label videoLabel;
         private System.Windows.Forms.Button videoDeleteButton;
@@ -1042,7 +1203,7 @@ namespace UltraStarDeluxeEditor {
 
         private System.Windows.Forms.TextBox artistTextBox;
         private System.Windows.Forms.Label artistLabel;
-        private System.Windows.Forms.Button deleteCoverButton;
+        private System.Windows.Forms.Button coverDeleteButton;
 
         private System.Windows.Forms.PictureBox coverPictureBox;
 

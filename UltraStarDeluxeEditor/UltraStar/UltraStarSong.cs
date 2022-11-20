@@ -21,6 +21,8 @@ namespace UltraStarDeluxeEditor.UltraStar {
 
         public bool IsDirty { get; set; }
         public string OldCover { get; set; }
+        public string OldMp3 { get; set; }
+        public string OldVideo { get; set; }
         public string FilePath { get; }
         public string Title { get; set; }
         public string Artist { get; set; }
@@ -48,8 +50,8 @@ namespace UltraStarDeluxeEditor.UltraStar {
         /// </summary>
         /// <returns><c>true</c> if the song is valid and <c>false</c> otherwise</returns>
         public bool IsValid() {
-            return HasFilePath() && HasTitle() && HasArtist() && Bpm >= 1 && HasMp3() &&
-                   !string.IsNullOrWhiteSpace(SongText.Item1);
+            return HasFilePath() && HasTitle() && HasArtist() && Bpm >= 1 && HasMp3() && HasPlayer1Text() &&
+                   (!IsDuet || HasPlayer2Text());
         }
 
         public bool HasFilePath() {
@@ -74,6 +76,30 @@ namespace UltraStarDeluxeEditor.UltraStar {
 
         public bool HasVideo() {
             return !string.IsNullOrWhiteSpace(Video);
+        }
+
+        public bool HasPlayer1Text() {
+            return !string.IsNullOrWhiteSpace(SongText.Item1);
+        }
+
+        public bool HasPlayer2Text() {
+            return !string.IsNullOrWhiteSpace(SongText.Item2);
+        }
+
+        public bool HasCoverBackup() {
+            return !string.IsNullOrWhiteSpace(OldCover);
+        }
+
+        public bool HasMp3Backup() {
+            return !string.IsNullOrWhiteSpace(OldMp3);
+        }
+
+        public bool HasVideoBackup() {
+            return !string.IsNullOrWhiteSpace(OldVideo);
+        }
+
+        public bool HasBackups() {
+            return HasCover() || HasMp3() || HasVideoBackup();
         }
 
         public string GetSongDirectory() {

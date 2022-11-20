@@ -60,6 +60,15 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Artist missing.
+        /// </summary>
+        internal static string artistMissingWarningIcon {
+            get {
+                return ResourceManager.GetString("artistMissingWarningIcon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete Cover Image.
         /// </summary>
         internal static string coverDeleteCaption {
@@ -214,7 +223,16 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The MP3 file doesn&apos;t exist..
+        ///   Looks up a localized string similar to MP3 file missing.
+        /// </summary>
+        internal static string mp3FileMissingWarningIcon {
+            get {
+                return ResourceManager.GetString("mp3FileMissingWarningIcon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MP3 file doesn&apos;t exist.
         /// </summary>
         internal static string mp3FileNotExistsWarningIcon {
             get {
@@ -223,20 +241,20 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Overwrite File.
+        ///   Looks up a localized string similar to Song text for player 1 missing.
         /// </summary>
-        internal static string overwriteFileCaption {
+        internal static string player1TextMissingWarningIcon {
             get {
-                return ResourceManager.GetString("overwriteFileCaption", resourceCulture);
+                return ResourceManager.GetString("player1TextMissingWarningIcon", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This file already exists. Do you want to overwrite it?.
+        ///   Looks up a localized string similar to Song text for player 2 missing.
         /// </summary>
-        internal static string overwriteFileMessage {
+        internal static string player2TextMissingWarningIcon {
             get {
-                return ResourceManager.GetString("overwriteFileMessage", resourceCulture);
+                return ResourceManager.GetString("player2TextMissingWarningIcon", resourceCulture);
             }
         }
         
@@ -332,7 +350,7 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} valid UltraStar songs where found..
+        ///   Looks up a localized string similar to {0} valid UltraStar song(s) where found..
         /// </summary>
         internal static string songListInitializationDoneMessage {
             get {
@@ -341,8 +359,7 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} invalid song files where found:
-        ///{1}.
+        ///   Looks up a localized string similar to {0} invalid song(s) files where found..
         /// </summary>
         internal static string songListInitializationErrorsMessage {
             get {
@@ -392,6 +409,15 @@ namespace UltraStarDeluxeEditor.Properties {
         internal static string textFileFilter {
             get {
                 return ResourceManager.GetString("textFileFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Song title missing.
+        /// </summary>
+        internal static string titleMissingWarningIcon {
+            get {
+                return ResourceManager.GetString("titleMissingWarningIcon", resourceCulture);
             }
         }
         
@@ -461,7 +487,7 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The video file doesn&apos;t exist..
+        ///   Looks up a localized string similar to Video file doesn&apos;t exist.
         /// </summary>
         internal static string videoFileNotExistsWarningIcon {
             get {

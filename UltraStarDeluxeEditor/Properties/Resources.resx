@@ -135,7 +135,7 @@ Please select your UltraStar Deluxe directory in order to move on.</value>
 Please select another one.</value>
     </data>
     <data name="songListInitializationDoneMessage" xml:space="preserve">
-        <value>{0} valid UltraStar songs where found.</value>
+        <value>{0} valid UltraStar song(s) where found.</value>
     </data>
     <data name="songListInitializationDoneCaption" xml:space="preserve">
         <value>Songlist Initialization Done</value>
@@ -209,17 +209,16 @@ Unsaved changes will be lost.</value>
         <value>Error</value>
     </data>
     <data name="songListInitializationErrorsMessage" xml:space="preserve">
-        <value>{0} invalid song files where found:
-{1}</value>
+        <value>{0} invalid song(s) files where found.</value>
     </data>
     <data name="reloadSongFileNotFoundErrorMessage" xml:space="preserve">
         <value>The song couldn't be reloaded due to the file {0} not existing.</value>
     </data>
     <data name="mp3FileNotExistsWarningIcon" xml:space="preserve">
-        <value>The MP3 file doesn't exist.</value>
+        <value>MP3 file doesn't exist</value>
     </data>
     <data name="videoFileNotExistsWarningIcon" xml:space="preserve">
-        <value>The video file doesn't exist.</value>
+        <value>Video file doesn't exist</value>
     </data>
     <data name="coverSelectFileCaption" xml:space="preserve">
         <value>Select Cover Image</value>
@@ -239,12 +238,6 @@ Unsaved changes will be lost.</value>
     <data name="exportSongSaveFirstMessage" xml:space="preserve">
         <value>You need to save the song before exporting it. Do you want to do this now?</value>
     </data>
-    <data name="overwriteFileCaption" xml:space="preserve">
-        <value>Overwrite File</value>
-    </data>
-    <data name="overwriteFileMessage" xml:space="preserve">
-        <value>This file already exists. Do you want to overwrite it?</value>
-    </data>
     <data name="exportSongTitle" xml:space="preserve">
         <value>Choose export destination</value>
     </data>
@@ -259,5 +252,20 @@ Unsaved changes will be lost.</value>
     </data>
     <data name="songsNotPlayableMessage" xml:space="preserve">
         <value>At least one of the songs you're trying to save is currently not playable. Are you sure that you want to save?</value>
+    </data>
+    <data name="titleMissingWarningIcon" xml:space="preserve">
+        <value>Song title missing</value>
+    </data>
+    <data name="artistMissingWarningIcon" xml:space="preserve">
+        <value>Artist missing</value>
+    </data>
+    <data name="mp3FileMissingWarningIcon" xml:space="preserve">
+        <value>MP3 file missing</value>
+    </data>
+    <data name="player1TextMissingWarningIcon" xml:space="preserve">
+        <value>Song text for player 1 missing</value>
+    </data>
+    <data name="player2TextMissingWarningIcon" xml:space="preserve">
+        <value>Song text for player 2 missing</value>
     </data>
 </root>
