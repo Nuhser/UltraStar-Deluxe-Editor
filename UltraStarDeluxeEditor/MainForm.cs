@@ -51,16 +51,10 @@ namespace UltraStarDeluxeEditor {
         }
 
         private void InitSongListView() {
+            // restore backups if there are dirty songs
             if (IsDirty()) {
                 foreach (SongListViewItem listViewItem in songListView.Items) {
-                    var song = listViewItem.UltraStarSong;
-                    if (!string.IsNullOrWhiteSpace(song.OldCover)) {
-                        if (song.HasCover()) {
-                            File.Delete(song.GetCoverPath());
-                        }
-
-                        File.Move(song.OldCover + ".backup", song.OldCover);
-                    }
+                    UltraStarSongService.RestoreAllBackups(listViewItem.UltraStarSong);
                 }
             }
 
@@ -351,17 +345,15 @@ namespace UltraStarDeluxeEditor {
                         break;
                 }
 
+                // restore backups for all songs
                 foreach (SongListViewItem listViewItem in songListView.Items) {
-                    var song = listViewItem.UltraStarSong;
-                    if (!string.IsNullOrWhiteSpace(song.OldCover)) {
-                        if (song.HasCover()) {
-                            File.Delete(song.GetCoverPath());
-                        }
-
-                        File.Move(song.OldCover + ".backup", song.OldCover);
-                    }
+                    UltraStarSongService.RestoreAllBackups(listViewItem.UltraStarSong);
                 }
             }
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e) {
+            Close();
         }
 
         /// <summary>
@@ -462,15 +454,8 @@ namespace UltraStarDeluxeEditor {
             if (MessageBox.Show(
                     Resources.reloadSongMessage,
                     Resources.reloadSongCaption, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) {
-                if (_selectedSong != null) {
-                    if (!string.IsNullOrWhiteSpace(_selectedSong.OldCover)) {
-                        if (_selectedSong.HasCover()) {
-                            File.Delete(_selectedSong.GetCoverPath());
-                        }
-
-                        File.Move(_selectedSong.OldCover + ".backup", _selectedSong.OldCover);
-                    }
-                }
+                // restore backups
+                UltraStarSongService.RestoreAllBackups(_selectedSong);
 
                 bool loop;
                 do {
@@ -608,10 +593,6 @@ namespace UltraStarDeluxeEditor {
 
         private void discogsSearchToolStripMenuItem_Click(object sender, EventArgs e) {
             UltraStarSongService.SearchOnDiscogs(_selectedSong);
-        }
-
-        private void closeToolStripMenuItem_Click(object sender, EventArgs e) {
-            Close();
         }
 
         private void openDirectoryToolStripMenuItem_Click(object sender, EventArgs e) {

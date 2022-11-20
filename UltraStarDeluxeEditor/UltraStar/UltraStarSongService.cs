@@ -51,8 +51,7 @@ namespace UltraStarDeluxeEditor.UltraStar {
                 }
 
                 if (keepBackup) {
-                    File.Move(song.GetCoverPath(), song.GetCoverPath() + ".backup");
-                    song.OldCover = song.GetCoverPath();
+                    CreateCoverBackup(song);
                 }
             }
 
@@ -105,8 +104,7 @@ namespace UltraStarDeluxeEditor.UltraStar {
                 }
 
                 if (keepBackup) {
-                    File.Move(song.GetCoverPath(), song.GetCoverPath() + ".backup");
-                    song.OldCover = song.GetCoverPath();
+                    CreateCoverBackup(song);
                 }
             }
 
@@ -140,8 +138,7 @@ namespace UltraStarDeluxeEditor.UltraStar {
             }
 
             if (keepBackup) {
-                File.Move(song.GetCoverPath(), song.GetCoverPath() + ".backup");
-                song.OldCover = song.GetCoverPath();
+                CreateCoverBackup(song);
             }
 
             song.Cover = null;
@@ -425,104 +422,94 @@ namespace UltraStarDeluxeEditor.UltraStar {
             }
         }
 
-        /// <summary>
-        ///     Formats the information saved inside an <see cref="UltraStarSong" /> and saves it to the file specified the song's
-        ///     <see cref="UltraStarSong.FilePath" />. The text gets formatted so that UltraStar Deluxe can interpret the song (see
-        ///     <a href="https://wiki.usdb.eu/txt_files/format">here</a>).
-        /// </summary>
-        /// <param name="song">The <see cref="UltraStarSong" /> that should be saved.</param>
-        /// <returns>
-        ///     <c>true</c> if the song was saved successfully or wasn't dirty to begin with or <c>false</c> if the given song
-        ///     was <c>null</c>.
-        /// </returns>
-        /// <exception cref="UltraStarSongNotValidException">The song tried to save isn't valid.</exception>
-        /// <seealso cref="UltraStarSong.IsValid" />
-        public static bool SaveSongToFile(UltraStarSong song) {
+        public static void CreateCoverBackup(UltraStarSong song) {
             if (song == null) {
-                return false;
+                return;
             }
 
-            if (!song.IsDirty) {
-                return true;
+            File.Move(song.GetCoverPath(), song.GetCoverPath() + ".backup");
+            song.OldCover = song.GetCoverPath();
+        }
+
+        public static void CreateMp3Backup(UltraStarSong song) {
+            if (song == null) {
+                return;
             }
 
-            if (!song.IsValid()) {
-                throw new UltraStarSongNotValidException("The song you're trying to save is no valid UltraStar song!",
-                    song);
+            File.Move(song.GetMp3Path(), song.GetMp3Path() + ".backup");
+            song.OldMp3 = song.GetMp3Path();
+        }
+
+        public static void CreateVideoBackup(UltraStarSong song) {
+            if (song == null) {
+                return;
             }
 
-            // write song information to file
-            using (var fileStream = new FileStream(song.FilePath, FileMode.Create))
-            using (var streamWriter = new StreamWriter(fileStream)) {
-                streamWriter.WriteLine(TITLE_KEY + song.Title);
-                streamWriter.WriteLine(ARTIST_KEY + song.Artist);
+            File.Move(song.GetVideoPath(), song.GetVideoPath() + ".backup");
+            song.OldVideo = song.GetVideoPath();
+        }
 
-                if (!string.IsNullOrWhiteSpace(song.Genre)) {
-                    streamWriter.WriteLine(GENRE_KEY + song.Genre);
-                }
-
-                if (!string.IsNullOrWhiteSpace(song.Year)) {
-                    streamWriter.WriteLine(YEAR_KEY + song.Year);
-                }
-
-                if (!string.IsNullOrWhiteSpace(song.Language)) {
-                    streamWriter.WriteLine(LANGUAGE_KEY + song.Language);
-                }
-
-                if (!string.IsNullOrWhiteSpace(song.Edition)) {
-                    streamWriter.WriteLine(EDITION_KEY + song.Edition);
-                }
-
-                streamWriter.WriteLine(CREATOR_KEY + DEFAULT_CREATOR_STRING);
-
-                streamWriter.WriteLine(BPM_KEY + Convert.ToString(song.Bpm, new CultureInfo("en-US")));
-                streamWriter.WriteLine(GAP_KEY + Convert.ToString(song.Gap, new CultureInfo("en-US")));
-
-                if (song.VideoGap > 0) {
-                    streamWriter.WriteLine(VIDEO_GAP_KEY + Convert.ToString(song.VideoGap, new CultureInfo("en-US")));
-                }
-
-                if (song.IsDuet) {
-                    if (!string.IsNullOrWhiteSpace(song.DuetSingerP1)) {
-                        streamWriter.WriteLine(DUET_SINGER_P1_KEY + song.DuetSingerP1);
-                    }
-
-                    if (!string.IsNullOrWhiteSpace(song.DuetSingerP2)) {
-                        streamWriter.WriteLine(DUET_SINGER_P2_KEY + song.DuetSingerP2);
-                    }
-                }
-
-                streamWriter.WriteLine(MP3_KEY + song.Mp3);
-
-                if (!string.IsNullOrWhiteSpace(song.Cover)) {
-                    streamWriter.WriteLine(COVER_KEY + song.Cover);
-                }
-
-                if (!string.IsNullOrWhiteSpace(song.Video)) {
-                    streamWriter.WriteLine(VIDEO_KEY + song.Video);
-                }
-
-                if (song.IsDuet) {
-                    streamWriter.WriteLine("P1");
-                }
-
-                streamWriter.WriteLine(song.SongText.Item1.Trim());
-
-                if (song.IsDuet) {
-                    streamWriter.WriteLine("P2");
-                    streamWriter.WriteLine(song.SongText.Item2.Trim());
-                }
-
-                streamWriter.WriteLine("E");
+        public static void RestoreCoverBackup(UltraStarSong song) {
+            if (song == null || !song.HasCoverBackup()) {
+                return;
             }
 
-            // delete backups if there where any
-            if (!string.IsNullOrWhiteSpace(song.OldCover) && File.Exists(song.OldCover + ".backup")) {
+            if (song.HasCover()) {
+                File.Delete(song.GetCoverPath());
+            }
+
+            File.Move(song.OldCover + ".backup", song.OldCover);
+        }
+
+        public static void RestoreMp3Backup(UltraStarSong song) {
+            if (song == null || !song.HasMp3Backup()) {
+                return;
+            }
+
+            if (song.HasMp3()) {
+                File.Delete(song.GetMp3Path());
+            }
+
+            File.Move(song.OldMp3 + ".backup", song.OldMp3);
+        }
+
+        public static void RestoreVideoBackup(UltraStarSong song) {
+            if (song == null || !song.HasVideoBackup()) {
+                return;
+            }
+
+            if (song.HasVideo()) {
+                File.Delete(song.GetVideoPath());
+            }
+
+            File.Move(song.OldVideo + ".backup", song.OldVideo);
+        }
+
+        public static void RestoreAllBackups(UltraStarSong song) {
+            RestoreCoverBackup(song);
+            RestoreMp3Backup(song);
+            RestoreVideoBackup(song);
+        }
+
+        public static void DeleteBackups(UltraStarSong song) {
+            if (song == null || !song.HasBackups()) {
+                return;
+            }
+
+            if (song.HasCoverBackup()) {
                 File.Delete(song.OldCover + ".backup");
                 song.OldCover = null;
             }
 
-            return true;
+            if (song.HasMp3Backup()) {
+                File.Delete(song.OldMp3 + ".backup");
+                song.OldMp3 = null;
+            }
+
+            if (song.HasVideoBackup()) {
+                File.Delete(song.OldVideo + ".backup");
+                song.OldVideo = null;
+            }
         }
 
         /// <summary>
