@@ -16,7 +16,7 @@ namespace UltraStarDeluxeEditor {
         private const string DEFAULT_IMAGE_LOCATION = "..\\..\\assets\\DefaultCover.jpg";
 
         private UltraStarSong _selectedSong;
-        private SongListViewSorter _songListViewSorter;
+        private readonly SongListViewSorter _songListViewSorter;
 
         public MainForm() {
             InitializeComponent();
@@ -702,14 +702,20 @@ namespace UltraStarDeluxeEditor {
 
         private void songListView_ColumnClick(object sender, ColumnClickEventArgs e) {
             if (e.Column == _songListViewSorter.ColumnToSort) {
-                _songListViewSorter.SortOrder = _songListViewSorter.SortOrder == SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending;
+                _songListViewSorter.SortOrder = _songListViewSorter.SortOrder == SortOrder.Ascending
+                    ? SortOrder.Descending
+                    : SortOrder.Ascending;
             }
             else {
                 _songListViewSorter.ColumnToSort = e.Column;
                 _songListViewSorter.SortOrder = SortOrder.Ascending;
             }
-            
+
             songListView.Sort();
+        }
+
+        private void newSongToolStripMenuItem_Click(object sender, EventArgs e) {
+            throw new NotImplementedException();
         }
     }
 }

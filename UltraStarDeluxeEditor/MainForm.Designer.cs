@@ -119,6 +119,7 @@ namespace UltraStarDeluxeEditor {
             this.songText2MissingPictureBox = new System.Windows.Forms.PictureBox();
             this.player2TextBox = new System.Windows.Forms.TextBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.newSongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.coverPictureBox)).BeginInit();
             this.songInfoGroupBox.SuspendLayout();
@@ -151,7 +152,7 @@ namespace UltraStarDeluxeEditor {
             // 
             // fileToolStripMenuItem
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.saveToolStripMenuItem, this.saveAllToolStripMenuItem, this.reloadSongsToolStripMenuItem, this.toolStripSeparator1, this.closeToolStripMenuItem });
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.newSongToolStripMenuItem, this.saveToolStripMenuItem, this.saveAllToolStripMenuItem, this.reloadSongsToolStripMenuItem, this.toolStripSeparator1, this.closeToolStripMenuItem });
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&File";
@@ -1048,6 +1049,13 @@ namespace UltraStarDeluxeEditor {
             this.toolTip.ReshowDelay = 500;
             this.toolTip.ShowAlways = true;
             // 
+            // newSongToolStripMenuItem
+            // 
+            this.newSongToolStripMenuItem.Name = "newSongToolStripMenuItem";
+            this.newSongToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.newSongToolStripMenuItem.Text = "New Song";
+            this.newSongToolStripMenuItem.Click += new System.EventHandler(this.newSongToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1096,6 +1104,8 @@ namespace UltraStarDeluxeEditor {
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.ToolStripMenuItem newSongToolStripMenuItem;
 
         private System.Windows.Forms.Button mp3DeleteButton;
 
