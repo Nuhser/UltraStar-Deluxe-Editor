@@ -5,9 +5,9 @@ using System.Linq;
 namespace UltraStarDeluxeEditor.UltraStar {
     public class UltraStarSong {
         /// <summary>
-        ///     This constructor creates a minimal <see cref="UltraStarSong" /> containing only <see cref="FilePath" />, the empty
-        ///     <see cref="SongText" /> and <see cref="IsDirty" /> set to <c>false</c>.
-        ///     <br />
+        ///     This constructor creates a minimal <see cref="UltraStarSong" /> containing only <see cref="FilePath" />, a
+        ///     <see cref="Bpm" /> value of <c>1</c>, the empty <see cref="SongText" /> and <see cref="IsDirty" /> set to
+        ///     <c>false</c>.<br />
         ///     This song is not valid as specified in <see cref="IsValid" />.
         /// </summary>
         /// <param name="filePath">The path of the TXT file containing the song</param>
@@ -15,6 +15,15 @@ namespace UltraStarDeluxeEditor.UltraStar {
         public UltraStarSong(string filePath) {
             IsDirty = false;
             FilePath = filePath;
+            Bpm = 1;
+            SongText = new Tuple<string, string>("", "");
+        }
+
+        public UltraStarSong(string filePath, string title, string artist) {
+            IsDirty = false;
+            FilePath = filePath;
+            Title = title;
+            Artist = artist;
             Bpm = 1;
             SongText = new Tuple<string, string>("", "");
         }

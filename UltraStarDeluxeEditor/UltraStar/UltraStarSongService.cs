@@ -28,6 +28,24 @@ namespace UltraStarDeluxeEditor.UltraStar {
 
         private const string DEFAULT_CREATOR_STRING = "Edited with Nuhser's USD Song Editor";
 
+        public static UltraStarSong CreateNewSong(string title, string artist, string songDirectory) {
+            if (string.IsNullOrWhiteSpace(title) || string.IsNullOrWhiteSpace(artist)) {
+                return null;
+            }
+
+            var filePath = Path.Combine(songDirectory,
+                artist.Replace(" ", "-").ToLower() + "-" + title.Replace(" ", "-").ToLower());
+
+            var i = 0;
+            while (File.Exists(filePath + (i > 0 ? Convert.ToString(i) : "") + ".txt")) {
+                i++;
+            }
+
+            filePath = filePath + (i > 0 ? Convert.ToString(i) : "") + ".txt";
+
+            return new UltraStarSong(filePath, title, artist);
+        }
+
         /// <summary>
         ///     Loads a UltraStar song based on an already existing <see cref="UltraStarSong" /> object.
         /// </summary>
