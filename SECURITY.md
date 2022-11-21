@@ -2,6 +2,8 @@
 
 ## Supported Versions
 
+This versions of the UltraStar Deluxe Editor are still supported and being updated with security patches.
+
 | Version | Supported          |
 | ------- | ------------------ |
 | 22.01.1 (upcoming)   | :white_check_mark: |
