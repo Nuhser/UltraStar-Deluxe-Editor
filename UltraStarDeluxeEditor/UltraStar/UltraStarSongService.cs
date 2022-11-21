@@ -29,6 +29,230 @@ namespace UltraStarDeluxeEditor.UltraStar {
         private const string DEFAULT_CREATOR_STRING = "Edited with Nuhser's USD Song Editor";
 
         /// <summary>
+        ///     Loads a UltraStar song based on an already existing <see cref="UltraStarSong" /> object.
+        /// </summary>
+        /// <param name="song">The existing <see cref="UltraStarSong" /></param>
+        /// <returns>The reloaded song as an <see cref="UltraStarSong" /> object</returns>
+        public static UltraStarSong LoadSongFromFile(UltraStarSong song) {
+            return song != null ? LoadSongFromFile(song.FilePath) : null;
+        }
+
+        /// <summary>
+        ///     Loads a UltraStar song from an appropriate TXT-file and returns it.
+        /// </summary>
+        /// <param name="filePath">Absolute path of the song's TXT-file</param>
+        /// <returns>The song contained inside the file as an <see cref="UltraStarSong" /></returns>
+        public static UltraStarSong LoadSongFromFile(string filePath) {
+            var song = new UltraStarSong(filePath);
+
+            var writeToPlayer1Text = true;
+            var player1StringBuilder = new StringBuilder();
+            var player2StringBuilder = new StringBuilder();
+
+            using (var fileStream = new FileStream(filePath, FileMode.Open))
+            using (var streamReader = new StreamReader(fileStream)) {
+                string line;
+                while ((line = streamReader.ReadLine()) != null) {
+                    switch (line) {
+                        case "P1":
+                        case "E":
+                            continue;
+                        case "P2":
+                            writeToPlayer1Text = false;
+                            continue;
+                    }
+
+                    if (line.StartsWith("#")) {
+                        if (line.StartsWith(TITLE_KEY)) {
+                            song.Title = line.Replace(TITLE_KEY, "");
+                        }
+                        else if (line.StartsWith(ARTIST_KEY)) {
+                            song.Artist = line.Replace(ARTIST_KEY, "");
+                        }
+                        else if (line.StartsWith(GENRE_KEY)) {
+                            song.Genre = line.Replace(GENRE_KEY, "");
+                        }
+                        else if (line.StartsWith(YEAR_KEY)) {
+                            song.Year = line.Replace(YEAR_KEY, "");
+                        }
+                        else if (line.StartsWith(LANGUAGE_KEY)) {
+                            song.Language = line.Replace(LANGUAGE_KEY, "");
+                        }
+                        else if (line.StartsWith(EDITION_KEY)) {
+                            song.Edition = line.Replace(EDITION_KEY, "");
+                        }
+                        else if (line.StartsWith(BPM_KEY)) {
+                            song.Bpm = Math.Max(1,
+                                Convert.ToDecimal(line.Replace(BPM_KEY, ""), new CultureInfo("en-US")));
+                        }
+                        else if (line.StartsWith(GAP_KEY)) {
+                            song.Gap = Convert.ToDecimal(line.Replace(GAP_KEY, ""), new CultureInfo("en-US"));
+                        }
+                        else if (line.StartsWith(VIDEO_GAP_KEY)) {
+                            song.VideoGap =
+                                Convert.ToDecimal(line.Replace(VIDEO_GAP_KEY, ""), new CultureInfo("en-US"));
+                        }
+                        else if (line.StartsWith(DUET_SINGER_P1_KEY)) {
+                            song.DuetSingerP1 = line.Replace(DUET_SINGER_P1_KEY, "");
+                        }
+                        else if (line.StartsWith(DUET_SINGER_P2_KEY)) {
+                            song.DuetSingerP2 = line.Replace(DUET_SINGER_P2_KEY, "");
+                        }
+                        else if (line.StartsWith(MP3_KEY)) {
+                            song.Mp3 = line.Replace(MP3_KEY, "");
+                        }
+                        else if (line.StartsWith(COVER_KEY)) {
+                            song.Cover = line.Replace(COVER_KEY, "");
+                        }
+                        else if (line.StartsWith(VIDEO_KEY)) {
+                            song.Video = line.Replace(VIDEO_KEY, "");
+                        }
+                    }
+                    else {
+                        if (writeToPlayer1Text) {
+                            player1StringBuilder.AppendLine(line);
+                        }
+                        else {
+                            player2StringBuilder.AppendLine(line);
+                        }
+                    }
+                }
+            }
+
+            song.SongText = new Tuple<string, string>(player1StringBuilder.ToString().Trim(),
+                player2StringBuilder.ToString().Trim());
+
+            song.IsDuet = !string.IsNullOrEmpty(song.SongText.Item2);
+
+            return song;
+        }
+
+        /// <summary>
+        ///     Formats the information saved inside an <see cref="UltraStarSong" /> and saves it to the file specified the song's
+        ///     <see cref="UltraStarSong.FilePath" />. The text gets formatted so that UltraStar Deluxe can interpret the song (see
+        ///     <a href="https://wiki.usdb.eu/txt_files/format">here</a>).
+        /// </summary>
+        /// <param name="song">The <see cref="UltraStarSong" /> that should be saved.</param>
+        /// <returns>
+        ///     <c>true</c> if the song was saved successfully or wasn't dirty to begin with or <c>false</c> if the given song
+        ///     is <c>null</c> or has no <see cref="UltraStarSong.FilePath" />.
+        /// </returns>
+        /// <seealso cref="UltraStarSong.IsValid" />
+        public static bool SaveSongToFile(UltraStarSong song) {
+            if (song == null || !song.HasFilePath()) {
+                return false;
+            }
+
+            if (!song.IsDirty) {
+                return true;
+            }
+
+            // write song information to file
+            using (var fileStream = new FileStream(song.FilePath, FileMode.Create))
+            using (var streamWriter = new StreamWriter(fileStream)) {
+                if (song.HasTitle()) {
+                    streamWriter.WriteLine(TITLE_KEY + song.Title);
+                }
+
+                if (song.HasArtist()) {
+                    streamWriter.WriteLine(ARTIST_KEY + song.Artist);
+                }
+
+                if (!string.IsNullOrWhiteSpace(song.Genre)) {
+                    streamWriter.WriteLine(GENRE_KEY + song.Genre);
+                }
+
+                if (!string.IsNullOrWhiteSpace(song.Year)) {
+                    streamWriter.WriteLine(YEAR_KEY + song.Year);
+                }
+
+                if (!string.IsNullOrWhiteSpace(song.Language)) {
+                    streamWriter.WriteLine(LANGUAGE_KEY + song.Language);
+                }
+
+                if (!string.IsNullOrWhiteSpace(song.Edition)) {
+                    streamWriter.WriteLine(EDITION_KEY + song.Edition);
+                }
+
+                // add creator tag ;)
+                streamWriter.WriteLine(CREATOR_KEY + DEFAULT_CREATOR_STRING);
+
+                streamWriter.WriteLine(BPM_KEY + Convert.ToString(song.Bpm, new CultureInfo("en-US")));
+                streamWriter.WriteLine(GAP_KEY + Convert.ToString(song.Gap, new CultureInfo("en-US")));
+
+                if (song.VideoGap > 0) {
+                    streamWriter.WriteLine(VIDEO_GAP_KEY + Convert.ToString(song.VideoGap, new CultureInfo("en-US")));
+                }
+
+                if (song.IsDuet) {
+                    if (!string.IsNullOrWhiteSpace(song.DuetSingerP1)) {
+                        streamWriter.WriteLine(DUET_SINGER_P1_KEY + song.DuetSingerP1);
+                    }
+
+                    if (!string.IsNullOrWhiteSpace(song.DuetSingerP2)) {
+                        streamWriter.WriteLine(DUET_SINGER_P2_KEY + song.DuetSingerP2);
+                    }
+                }
+
+                if (song.HasMp3()) {
+                    streamWriter.WriteLine(MP3_KEY + song.Mp3);
+                }
+
+                if (song.HasCover()) {
+                    streamWriter.WriteLine(COVER_KEY + song.Cover);
+                }
+
+                if (song.HasVideo()) {
+                    streamWriter.WriteLine(VIDEO_KEY + song.Video);
+                }
+
+                if (song.IsDuet) {
+                    streamWriter.WriteLine("P1");
+                }
+
+                streamWriter.WriteLine(song.SongText.Item1.Trim());
+
+                if (song.IsDuet) {
+                    streamWriter.WriteLine("P2");
+                    streamWriter.WriteLine(song.SongText.Item2.Trim());
+                }
+
+                streamWriter.WriteLine("E");
+            }
+
+            // delete backups if there where any
+            DeleteBackups(song);
+
+            return true;
+        }
+
+        /// <summary>
+        ///     Exports a song and saves it to a TXT file. The song needs to be saved first since it's file is used for the export
+        ///     rather then the current state of the <see cref="UltraStarSong" /> object.
+        /// </summary>
+        /// <param name="song">The <see cref="UltraStarSong" /> you want to export.</param>
+        /// <param name="filePath">The absolute path of the file the export should be saved in.</param>
+        /// <param name="openAfterExport">Specifies if the exported file should be shown in the explorer after the export is done.</param>
+        /// <returns>
+        ///     <c>true</c> if the export was successful and <c>false</c> if <paramref name="song" /> is <c>null</c> or
+        ///     <paramref name="filePath" /> is <c>null</c>, empty or only white space.
+        /// </returns>
+        public static bool ExportSong(UltraStarSong song, string filePath, bool openAfterExport = true) {
+            if (song == null || string.IsNullOrWhiteSpace(filePath)) {
+                return false;
+            }
+
+            File.Copy(song.FilePath, filePath, true);
+
+            if (openAfterExport) {
+                var argument = "/e, /select, \"" + filePath + "\"";
+                Process.Start("explorer.exe", argument);
+            }
+
+            return true;
+        }
+
+        /// <summary>
         ///     Takes an <see cref="UltraStarSong" /> and an URL, downloads the image from the URL and sets it as the new cover of
         ///     the song.
         /// </summary>
@@ -230,230 +454,6 @@ namespace UltraStarDeluxeEditor.UltraStar {
         }
 
         /// <summary>
-        ///     Exports a song and saves it to a TXT file. The song needs to be saved first since it's file is used for the export
-        ///     rather then the current state of the <see cref="UltraStarSong" /> object.
-        /// </summary>
-        /// <param name="song">The <see cref="UltraStarSong" /> you want to export.</param>
-        /// <param name="filePath">The absolute path of the file the export should be saved in.</param>
-        /// <param name="openAfterExport">Specifies if the exported file should be shown in the explorer after the export is done.</param>
-        /// <returns>
-        ///     <c>true</c> if the export was successful and <c>false</c> if <paramref name="song" /> is <c>null</c> or
-        ///     <paramref name="filePath" /> is <c>null</c>, empty or only white space.
-        /// </returns>
-        public static bool ExportSong(UltraStarSong song, string filePath, bool openAfterExport = true) {
-            if (song == null || string.IsNullOrWhiteSpace(filePath)) {
-                return false;
-            }
-
-            File.Copy(song.FilePath, filePath, true);
-
-            if (openAfterExport) {
-                var argument = "/e, /select, \"" + filePath + "\"";
-                Process.Start("explorer.exe", argument);
-            }
-
-            return true;
-        }
-
-        /// <summary>
-        ///     Loads a UltraStar song based on an already existing <see cref="UltraStarSong" /> object.
-        /// </summary>
-        /// <param name="song">The existing <see cref="UltraStarSong" /></param>
-        /// <returns>The reloaded song as an <see cref="UltraStarSong" /> object</returns>
-        public static UltraStarSong LoadSongFromFile(UltraStarSong song) {
-            return song != null ? LoadSongFromFile(song.FilePath) : null;
-        }
-
-        /// <summary>
-        ///     Loads a UltraStar song from an appropriate TXT-file and returns it.
-        /// </summary>
-        /// <param name="filePath">Absolute path of the song's TXT-file</param>
-        /// <returns>The song contained inside the file as an <see cref="UltraStarSong" /></returns>
-        public static UltraStarSong LoadSongFromFile(string filePath) {
-            var song = new UltraStarSong(filePath);
-
-            var writeToPlayer1Text = true;
-            var player1StringBuilder = new StringBuilder();
-            var player2StringBuilder = new StringBuilder();
-
-            using (var fileStream = new FileStream(filePath, FileMode.Open))
-            using (var streamReader = new StreamReader(fileStream)) {
-                string line;
-                while ((line = streamReader.ReadLine()) != null) {
-                    switch (line) {
-                        case "P1":
-                        case "E":
-                            continue;
-                        case "P2":
-                            writeToPlayer1Text = false;
-                            continue;
-                    }
-
-                    if (line.StartsWith("#")) {
-                        if (line.StartsWith(TITLE_KEY)) {
-                            song.Title = line.Replace(TITLE_KEY, "");
-                        }
-                        else if (line.StartsWith(ARTIST_KEY)) {
-                            song.Artist = line.Replace(ARTIST_KEY, "");
-                        }
-                        else if (line.StartsWith(GENRE_KEY)) {
-                            song.Genre = line.Replace(GENRE_KEY, "");
-                        }
-                        else if (line.StartsWith(YEAR_KEY)) {
-                            song.Year = line.Replace(YEAR_KEY, "");
-                        }
-                        else if (line.StartsWith(LANGUAGE_KEY)) {
-                            song.Language = line.Replace(LANGUAGE_KEY, "");
-                        }
-                        else if (line.StartsWith(EDITION_KEY)) {
-                            song.Edition = line.Replace(EDITION_KEY, "");
-                        }
-                        else if (line.StartsWith(BPM_KEY)) {
-                            song.Bpm = Math.Max(1,
-                                Convert.ToDecimal(line.Replace(BPM_KEY, ""), new CultureInfo("en-US")));
-                        }
-                        else if (line.StartsWith(GAP_KEY)) {
-                            song.Gap = Convert.ToDecimal(line.Replace(GAP_KEY, ""), new CultureInfo("en-US"));
-                        }
-                        else if (line.StartsWith(VIDEO_GAP_KEY)) {
-                            song.VideoGap =
-                                Convert.ToDecimal(line.Replace(VIDEO_GAP_KEY, ""), new CultureInfo("en-US"));
-                        }
-                        else if (line.StartsWith(DUET_SINGER_P1_KEY)) {
-                            song.DuetSingerP1 = line.Replace(DUET_SINGER_P1_KEY, "");
-                        }
-                        else if (line.StartsWith(DUET_SINGER_P2_KEY)) {
-                            song.DuetSingerP2 = line.Replace(DUET_SINGER_P2_KEY, "");
-                        }
-                        else if (line.StartsWith(MP3_KEY)) {
-                            song.Mp3 = line.Replace(MP3_KEY, "");
-                        }
-                        else if (line.StartsWith(COVER_KEY)) {
-                            song.Cover = line.Replace(COVER_KEY, "");
-                        }
-                        else if (line.StartsWith(VIDEO_KEY)) {
-                            song.Video = line.Replace(VIDEO_KEY, "");
-                        }
-                    }
-                    else {
-                        if (writeToPlayer1Text) {
-                            player1StringBuilder.AppendLine(line);
-                        }
-                        else {
-                            player2StringBuilder.AppendLine(line);
-                        }
-                    }
-                }
-            }
-
-            song.SongText = new Tuple<string, string>(player1StringBuilder.ToString().Trim(),
-                player2StringBuilder.ToString().Trim());
-
-            song.IsDuet = !string.IsNullOrEmpty(song.SongText.Item2);
-
-            return song;
-        }
-
-        /// <summary>
-        ///     Formats the information saved inside an <see cref="UltraStarSong" /> and saves it to the file specified the song's
-        ///     <see cref="UltraStarSong.FilePath" />. The text gets formatted so that UltraStar Deluxe can interpret the song (see
-        ///     <a href="https://wiki.usdb.eu/txt_files/format">here</a>).
-        /// </summary>
-        /// <param name="song">The <see cref="UltraStarSong" /> that should be saved.</param>
-        /// <returns>
-        ///     <c>true</c> if the song was saved successfully or wasn't dirty to begin with or <c>false</c> if the given song
-        ///     is <c>null</c> or has no <see cref="UltraStarSong.FilePath" />.
-        /// </returns>
-        /// <seealso cref="UltraStarSong.IsValid" />
-        public static bool SaveSongToFile(UltraStarSong song) {
-            if (song == null || !song.HasFilePath()) {
-                return false;
-            }
-
-            if (!song.IsDirty) {
-                return true;
-            }
-
-            // write song information to file
-            using (var fileStream = new FileStream(song.FilePath, FileMode.Create))
-            using (var streamWriter = new StreamWriter(fileStream)) {
-                if (song.HasTitle()) {
-                    streamWriter.WriteLine(TITLE_KEY + song.Title);
-                }
-
-                if (song.HasArtist()) {
-                    streamWriter.WriteLine(ARTIST_KEY + song.Artist);
-                }
-
-                if (!string.IsNullOrWhiteSpace(song.Genre)) {
-                    streamWriter.WriteLine(GENRE_KEY + song.Genre);
-                }
-
-                if (!string.IsNullOrWhiteSpace(song.Year)) {
-                    streamWriter.WriteLine(YEAR_KEY + song.Year);
-                }
-
-                if (!string.IsNullOrWhiteSpace(song.Language)) {
-                    streamWriter.WriteLine(LANGUAGE_KEY + song.Language);
-                }
-
-                if (!string.IsNullOrWhiteSpace(song.Edition)) {
-                    streamWriter.WriteLine(EDITION_KEY + song.Edition);
-                }
-
-                // add creator tag ;)
-                streamWriter.WriteLine(CREATOR_KEY + DEFAULT_CREATOR_STRING);
-
-                streamWriter.WriteLine(BPM_KEY + Convert.ToString(song.Bpm, new CultureInfo("en-US")));
-                streamWriter.WriteLine(GAP_KEY + Convert.ToString(song.Gap, new CultureInfo("en-US")));
-
-                if (song.VideoGap > 0) {
-                    streamWriter.WriteLine(VIDEO_GAP_KEY + Convert.ToString(song.VideoGap, new CultureInfo("en-US")));
-                }
-
-                if (song.IsDuet) {
-                    if (!string.IsNullOrWhiteSpace(song.DuetSingerP1)) {
-                        streamWriter.WriteLine(DUET_SINGER_P1_KEY + song.DuetSingerP1);
-                    }
-
-                    if (!string.IsNullOrWhiteSpace(song.DuetSingerP2)) {
-                        streamWriter.WriteLine(DUET_SINGER_P2_KEY + song.DuetSingerP2);
-                    }
-                }
-
-                if (song.HasMp3()) {
-                    streamWriter.WriteLine(MP3_KEY + song.Mp3);
-                }
-
-                if (song.HasCover()) {
-                    streamWriter.WriteLine(COVER_KEY + song.Cover);
-                }
-
-                if (song.HasVideo()) {
-                    streamWriter.WriteLine(VIDEO_KEY + song.Video);
-                }
-
-                if (song.IsDuet) {
-                    streamWriter.WriteLine("P1");
-                }
-
-                streamWriter.WriteLine(song.SongText.Item1.Trim());
-
-                if (song.IsDuet) {
-                    streamWriter.WriteLine("P2");
-                    streamWriter.WriteLine(song.SongText.Item2.Trim());
-                }
-
-                streamWriter.WriteLine("E");
-            }
-
-            // delete backups if there where any
-            DeleteBackups(song);
-
-            return true;
-        }
-
-        /// <summary>
         ///     Opens the cover image of an <see cref="UltraStarSong" /> if it exists using the default program for that file type.
         /// </summary>
         /// <param name="song">The <see cref="UltraStarSong" /> that's cover you want to open.</param>
@@ -506,7 +506,7 @@ namespace UltraStarDeluxeEditor.UltraStar {
             }
         }
 
-        public static void CreateCoverBackup(UltraStarSong song) {
+        private static void CreateCoverBackup(UltraStarSong song) {
             if (song == null) {
                 return;
             }
@@ -515,7 +515,7 @@ namespace UltraStarDeluxeEditor.UltraStar {
             song.OldCover = song.GetCoverPath();
         }
 
-        public static void CreateMp3Backup(UltraStarSong song) {
+        private static void CreateMp3Backup(UltraStarSong song) {
             if (song == null) {
                 return;
             }
@@ -524,7 +524,7 @@ namespace UltraStarDeluxeEditor.UltraStar {
             song.OldMp3 = song.GetMp3Path();
         }
 
-        public static void CreateVideoBackup(UltraStarSong song) {
+        private static void CreateVideoBackup(UltraStarSong song) {
             if (song == null) {
                 return;
             }
@@ -575,7 +575,7 @@ namespace UltraStarDeluxeEditor.UltraStar {
             RestoreVideoBackup(song);
         }
 
-        public static void DeleteBackups(UltraStarSong song) {
+        private static void DeleteBackups(UltraStarSong song) {
             if (song == null || !song.HasBackups()) {
                 return;
             }
