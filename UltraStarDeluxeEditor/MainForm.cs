@@ -115,7 +115,17 @@ namespace UltraStarDeluxeEditor {
 
             songListView.Select();
             songListViewItem.EnsureVisible();
+            UpdateUi();
+        }
 
+        private void RemoveSongFromSongListView(ListViewItem songListViewItem) {
+            songListView.Items.Remove(songListViewItem);
+
+            foreach (ListViewItem item in songListView.Items) {
+                item.Selected = false;
+            }
+
+            songListView.Select();
             UpdateUi();
         }
 
@@ -214,6 +224,7 @@ namespace UltraStarDeluxeEditor {
             openSongTxtToolStripMenuItem.Enabled = songSelected;
             openDirectoryToolStripMenuItem.Enabled = songSelected;
             reloadSongToolStripMenuItem.Enabled = songSelected;
+            deleteSongToolStripMenuItem.Enabled = songSelected;
             coverToolStripMenuItem.Enabled = songSelected;
             openCoverToolStripMenuItem.Enabled = songSelected && _selectedSong.HasCover();
             chooseCoverImageToolStripMenuItem.Enabled = songSelected;
@@ -752,10 +763,28 @@ namespace UltraStarDeluxeEditor {
                     }
 
                     AddSongToSongListView(newSong);
-
-                    MessageBox.Show(string.Format(Resources.newSongSuccessMessage, newSong.Title, newSong.Artist),
-                        Resources.successCaption, MessageBoxButtons.OK);
                 }
+            }
+        }
+
+        private void deleteSongToolStripMenuItem_Click(object sender, EventArgs e) {
+            if (_selectedSong == null) {
+                return;
+            }
+
+            if (MessageBox.Show(
+                    string.Format(Resources.deleteSongMessage, _selectedSong.HasTitle() ? _selectedSong.Title : "---"),
+                    Resources.deleteSongCaption, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes) {
+                return;
+            }
+
+            UltraStarSongService.DeleteSong(_selectedSong);
+            RemoveSongFromSongListView(songListView.SelectedItems[0]);
+        }
+
+        private void songListView_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyData == Keys.Delete) {
+                deleteSongToolStripMenuItem_Click(sender, e);
             }
         }
     }

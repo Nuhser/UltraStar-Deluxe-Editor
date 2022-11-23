@@ -294,10 +294,13 @@ This will also delete the file from your drive.</value>
     <data name="newSongTitleOrArtistMissingErrorMessage" xml:space="preserve">
         <value>You need to enter a song title as well as an artist.</value>
     </data>
-    <data name="newSongSuccessMessage" xml:space="preserve">
-        <value>The song "{0}" by "{1}" was created successfully.</value>
-    </data>
     <data name="newSongErrorWhileCreationMessage" xml:space="preserve">
         <value>An unexpected error occured while trying to create the song "{0}" by "{1}" in the song directory "{2}".</value>
+    </data>
+    <data name="deleteSongCaption" xml:space="preserve">
+        <value>Delete Song</value>
+    </data>
+    <data name="deleteSongMessage" xml:space="preserve">
+        <value>Are you sure you want to delete the song "{0}" permanently? This cannot be undone!</value>
     </data>
 </root>

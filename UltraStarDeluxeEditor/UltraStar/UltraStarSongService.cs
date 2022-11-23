@@ -48,6 +48,24 @@ namespace UltraStarDeluxeEditor.UltraStar {
             return !SaveSongToFile(newSong) ? null : newSong;
         }
 
+        public static void DeleteSong(UltraStarSong song) {
+            if (song.HasCover()) {
+                File.Delete(song.GetCoverPath());
+            }
+
+            if (song.HasMp3()) {
+                File.Delete(song.GetMp3Path());
+            }
+
+            if (song.HasVideo()) {
+                File.Delete(song.GetVideoPath());
+            }
+
+            DeleteBackups(song);
+
+            File.Delete(song.FilePath);
+        }
+
         /// <summary>
         ///     Loads a UltraStar song based on an already existing <see cref="UltraStarSong" /> object.
         /// </summary>

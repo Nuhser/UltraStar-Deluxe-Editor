@@ -151,6 +151,24 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete Song.
+        /// </summary>
+        internal static string deleteSongCaption {
+            get {
+                return ResourceManager.GetString("deleteSongCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to delete the song &quot;{0}&quot; permanently? This cannot be undone!.
+        /// </summary>
+        internal static string deleteSongMessage {
+            get {
+                return ResourceManager.GetString("deleteSongMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         internal static string errorCaption {
@@ -283,15 +301,6 @@ namespace UltraStarDeluxeEditor.Properties {
         internal static string newSongErrorWhileCreationMessage {
             get {
                 return ResourceManager.GetString("newSongErrorWhileCreationMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The song &quot;{0}&quot; by &quot;{1}&quot; was created successfully..
-        /// </summary>
-        internal static string newSongSuccessMessage {
-            get {
-                return ResourceManager.GetString("newSongSuccessMessage", resourceCulture);
             }
         }
         

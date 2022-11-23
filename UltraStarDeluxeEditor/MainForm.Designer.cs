@@ -39,7 +39,9 @@ namespace UltraStarDeluxeEditor {
             this.songToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openSongTxtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.reloadSongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteSongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.coverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openCoverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -204,7 +206,7 @@ namespace UltraStarDeluxeEditor {
             // 
             // songToolStripMenuItem
             // 
-            this.songToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.openSongTxtToolStripMenuItem, this.openDirectoryToolStripMenuItem, this.reloadSongToolStripMenuItem, this.toolStripSeparator3, this.coverToolStripMenuItem, this.mp3ToolStripMenuItem, this.videoToolStripMenuItem, this.toolStripSeparator2, this.webSearchToolStripMenuItem });
+            this.songToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.openSongTxtToolStripMenuItem, this.openDirectoryToolStripMenuItem, this.toolStripSeparator4, this.reloadSongToolStripMenuItem, this.deleteSongToolStripMenuItem, this.toolStripSeparator3, this.coverToolStripMenuItem, this.mp3ToolStripMenuItem, this.videoToolStripMenuItem, this.toolStripSeparator2, this.webSearchToolStripMenuItem });
             this.songToolStripMenuItem.Name = "songToolStripMenuItem";
             this.songToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.songToolStripMenuItem.Text = "&Song";
@@ -225,6 +227,11 @@ namespace UltraStarDeluxeEditor {
             this.openDirectoryToolStripMenuItem.Text = "Open Directory";
             this.openDirectoryToolStripMenuItem.Click += new System.EventHandler(this.openDirectoryToolStripMenuItem_Click);
             // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(151, 6);
+            // 
             // reloadSongToolStripMenuItem
             // 
             this.reloadSongToolStripMenuItem.Enabled = false;
@@ -232,6 +239,14 @@ namespace UltraStarDeluxeEditor {
             this.reloadSongToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.reloadSongToolStripMenuItem.Text = "Reload Song";
             this.reloadSongToolStripMenuItem.Click += new System.EventHandler(this.reloadSongToolStripMenuItem_Click);
+            // 
+            // deleteSongToolStripMenuItem
+            // 
+            this.deleteSongToolStripMenuItem.Enabled = false;
+            this.deleteSongToolStripMenuItem.Name = "deleteSongToolStripMenuItem";
+            this.deleteSongToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.deleteSongToolStripMenuItem.Text = "Delete Song";
+            this.deleteSongToolStripMenuItem.Click += new System.EventHandler(this.deleteSongToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
@@ -422,6 +437,7 @@ namespace UltraStarDeluxeEditor {
             this.songListView.View = System.Windows.Forms.View.Details;
             this.songListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.songListView_ColumnClick);
             this.songListView.SelectedIndexChanged += new System.EventHandler(this.songListView_SelectedIndexChanged);
+            this.songListView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.songListView_KeyDown);
             // 
             // titleColumn
             // 
@@ -1105,6 +1121,10 @@ namespace UltraStarDeluxeEditor {
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+
+        private System.Windows.Forms.ToolStripMenuItem deleteSongToolStripMenuItem;
 
         private System.Windows.Forms.ToolStripMenuItem newSongToolStripMenuItem;
 
