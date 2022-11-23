@@ -278,6 +278,15 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You need to enter a song title as well as an artist..
+        /// </summary>
+        internal static string newSongTitleOrArtistMissingErrorMessage {
+            get {
+                return ResourceManager.GetString("newSongTitleOrArtistMissingErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Song text for player 1 missing.
         /// </summary>
         internal static string player1TextMissingWarningIcon {

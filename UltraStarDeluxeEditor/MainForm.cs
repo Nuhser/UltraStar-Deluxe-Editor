@@ -715,7 +715,15 @@ namespace UltraStarDeluxeEditor {
         }
 
         private void newSongToolStripMenuItem_Click(object sender, EventArgs e) {
-            throw new NotImplementedException();
+            using (var newSongForm = new NewSongToolForm()) {
+                if (newSongForm.ShowDialog() == DialogResult.OK) {
+                    var title = newSongForm.Title;
+                    var artist = newSongForm.Artist;
+                    var songDirectory = newSongForm.SongDirectory;
+
+                    Console.Write("Test");
+                }
+            }
         }
     }
 }

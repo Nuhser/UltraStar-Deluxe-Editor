@@ -187,4 +187,7 @@ Dies löscht beim nächsten Speichern ebenfalls die Musikdatei.</value>
         <value>Bist du sicher, dass du das Video löschen willst?
 Dies löscht beim nächsten Speichern ebenfalls die Videodatei.</value>
     </data>
+    <data name="newSongTitleOrArtistMissingErrorMessage" xml:space="preserve">
+        <value>Du musst einen Songtitel und einen Interpreten eingeben.</value>
+    </data>
 </root>

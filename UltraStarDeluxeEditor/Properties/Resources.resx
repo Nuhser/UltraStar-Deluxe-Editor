@@ -291,4 +291,7 @@ This will also delete the music file from your drive.</value>
         <value>Are you sure that you want to delete the video?
 This will also delete the file from your drive.</value>
     </data>
+    <data name="newSongTitleOrArtistMissingErrorMessage" xml:space="preserve">
+        <value>You need to enter a song title as well as an artist.</value>
+    </data>
 </root>

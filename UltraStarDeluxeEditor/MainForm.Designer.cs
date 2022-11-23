@@ -30,6 +30,7 @@ namespace UltraStarDeluxeEditor {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newSongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reloadSongsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,7 +68,7 @@ namespace UltraStarDeluxeEditor {
             this.artistColumn = new System.Windows.Forms.ColumnHeader();
             this.fileColumn = new System.Windows.Forms.ColumnHeader();
             this.titleTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.titleLabel = new System.Windows.Forms.Label();
             this.coverPictureBox = new System.Windows.Forms.PictureBox();
             this.artistTextBox = new System.Windows.Forms.TextBox();
             this.artistLabel = new System.Windows.Forms.Label();
@@ -119,7 +120,6 @@ namespace UltraStarDeluxeEditor {
             this.songText2MissingPictureBox = new System.Windows.Forms.PictureBox();
             this.player2TextBox = new System.Windows.Forms.TextBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.newSongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.coverPictureBox)).BeginInit();
             this.songInfoGroupBox.SuspendLayout();
@@ -156,6 +156,14 @@ namespace UltraStarDeluxeEditor {
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&File";
+            // 
+            // newSongToolStripMenuItem
+            // 
+            this.newSongToolStripMenuItem.Name = "newSongToolStripMenuItem";
+            this.newSongToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.newSongToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.newSongToolStripMenuItem.Text = "&New Song";
+            this.newSongToolStripMenuItem.Click += new System.EventHandler(this.newSongToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
@@ -439,15 +447,15 @@ namespace UltraStarDeluxeEditor {
             this.titleTextBox.TabIndex = 0;
             this.titleTextBox.TextChanged += new System.EventHandler(this.detailControl_ValueChanged);
             // 
-            // label1
+            // titleLabel
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label1.Location = new System.Drawing.Point(9, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 23);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Title";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.titleLabel.Location = new System.Drawing.Point(9, 24);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(85, 23);
+            this.titleLabel.TabIndex = 3;
+            this.titleLabel.Text = "Title";
+            this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // coverPictureBox
             // 
@@ -589,7 +597,7 @@ namespace UltraStarDeluxeEditor {
             this.songInfoGroupBox.Controls.Add(this.genreTextBox);
             this.songInfoGroupBox.Controls.Add(this.editionTextBox);
             this.songInfoGroupBox.Controls.Add(this.editionLabel);
-            this.songInfoGroupBox.Controls.Add(this.label1);
+            this.songInfoGroupBox.Controls.Add(this.titleLabel);
             this.songInfoGroupBox.Controls.Add(this.genreLabel);
             this.songInfoGroupBox.Controls.Add(this.artistLabel);
             this.songInfoGroupBox.Controls.Add(this.languageLabel);
@@ -1049,13 +1057,6 @@ namespace UltraStarDeluxeEditor {
             this.toolTip.ReshowDelay = 500;
             this.toolTip.ShowAlways = true;
             // 
-            // newSongToolStripMenuItem
-            // 
-            this.newSongToolStripMenuItem.Name = "newSongToolStripMenuItem";
-            this.newSongToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.newSongToolStripMenuItem.Text = "New Song";
-            this.newSongToolStripMenuItem.Click += new System.EventHandler(this.newSongToolStripMenuItem_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1235,7 +1236,7 @@ namespace UltraStarDeluxeEditor {
 
         private System.Windows.Forms.PictureBox coverPictureBox;
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label titleLabel;
 
         private System.Windows.Forms.ColumnHeader artistColumn;
         private System.Windows.Forms.ColumnHeader titleColumn;
