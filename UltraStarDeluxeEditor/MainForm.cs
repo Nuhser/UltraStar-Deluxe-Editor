@@ -14,9 +14,9 @@ namespace UltraStarDeluxeEditor {
     public partial class MainForm : Form {
         private const string FORM_TITLE = "UltraStar Deluxe Editor";
         private const string DEFAULT_IMAGE_LOCATION = "..\\..\\assets\\DefaultCover.jpg";
+        private readonly SongListViewSorter _songListViewSorter;
 
         private UltraStarSong _selectedSong;
-        private readonly SongListViewSorter _songListViewSorter;
 
         public MainForm() {
             InitializeComponent();
