@@ -76,6 +76,9 @@ namespace UltraStarDeluxeEditor {
                 if (!song.IsValid()) {
                     invalidSongs.Add(songFile);
                 }
+                else {
+                    songsFound++;
+                }
 
                 var songListViewItem = new SongListViewItem(song);
                 songListViewItem.SetInvalid(!song.IsValid());
@@ -84,8 +87,6 @@ namespace UltraStarDeluxeEditor {
                 songListViewItem.ToolTipText = songFile;
 
                 songListView.Items.Add(songListViewItem);
-
-                songsFound++;
             }
 
             UpdateUi();
@@ -96,6 +97,26 @@ namespace UltraStarDeluxeEditor {
                     : ""),
                 Resources.songListInitializationDoneCaption,
                 MessageBoxButtons.OK);
+        }
+
+        private void AddSongToSongListView(UltraStarSong song) {
+            foreach (ListViewItem item in songListView.Items) {
+                item.Selected = false;
+            }
+
+            var songListViewItem = new SongListViewItem(song);
+            songListViewItem.SetInvalid(!song.IsValid());
+            songListViewItem.SubItems.Add(song.Artist);
+            songListViewItem.SubItems.Add(song.GetSongFileName());
+            songListViewItem.ToolTipText = song.FilePath;
+            songListViewItem.Selected = true;
+
+            songListView.Items.Add(songListViewItem);
+
+            songListView.Select();
+            songListViewItem.EnsureVisible();
+
+            UpdateUi();
         }
 
         private void SetSongDetailUiEnabled(bool enabled) {
@@ -721,7 +742,19 @@ namespace UltraStarDeluxeEditor {
                     var artist = newSongForm.Artist;
                     var songDirectory = newSongForm.SongDirectory;
 
-                    Console.Write("Test");
+                    var newSong = UltraStarSongService.CreateNewSong(title, artist, songDirectory);
+                    if (newSong == null) {
+                        MessageBox.Show(
+                            string.Format(Resources.newSongErrorWhileCreationMessage, title, artist, songDirectory),
+                            Resources.errorCaption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        return;
+                    }
+
+                    AddSongToSongListView(newSong);
+
+                    MessageBox.Show(string.Format(Resources.newSongSuccessMessage, newSong.Title, newSong.Artist),
+                        Resources.successCaption, MessageBoxButtons.OK);
                 }
             }
         }

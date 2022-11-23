@@ -43,7 +43,9 @@ namespace UltraStarDeluxeEditor.UltraStar {
 
             filePath = filePath + (i > 0 ? Convert.ToString(i) : "") + ".txt";
 
-            return new UltraStarSong(filePath, title, artist);
+            var newSong = new UltraStarSong(filePath, title, artist);
+
+            return !SaveSongToFile(newSong) ? null : newSong;
         }
 
         /// <summary>
@@ -159,10 +161,6 @@ namespace UltraStarDeluxeEditor.UltraStar {
         public static bool SaveSongToFile(UltraStarSong song) {
             if (song == null || !song.HasFilePath()) {
                 return false;
-            }
-
-            if (!song.IsDirty) {
-                return true;
             }
 
             // write song information to file

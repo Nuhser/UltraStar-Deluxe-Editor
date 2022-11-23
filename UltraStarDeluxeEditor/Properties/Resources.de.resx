@@ -190,4 +190,10 @@ Dies löscht beim nächsten Speichern ebenfalls die Videodatei.</value>
     <data name="newSongTitleOrArtistMissingErrorMessage" xml:space="preserve">
         <value>Du musst einen Songtitel und einen Interpreten eingeben.</value>
     </data>
+    <data name="newSongSuccessMessage" xml:space="preserve">
+        <value>Der Song "{0}" von "{1}" wurde erfolgreich erstellt.</value>
+    </data>
+    <data name="newSongErrorWhileCreationMessage" xml:space="preserve">
+        <value>Ein unerwarteter Fehler ist während der Erstellung des Songs "{0}" von "{1}" im Ordner "{2}" aufgetreten.</value>
+    </data>
 </root>

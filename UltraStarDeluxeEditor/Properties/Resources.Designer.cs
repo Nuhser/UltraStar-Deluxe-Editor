@@ -278,6 +278,24 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to An unexpected error occured while trying to create the song &quot;{0}&quot; by &quot;{1}&quot; in the song directory &quot;{2}&quot;..
+        /// </summary>
+        internal static string newSongErrorWhileCreationMessage {
+            get {
+                return ResourceManager.GetString("newSongErrorWhileCreationMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The song &quot;{0}&quot; by &quot;{1}&quot; was created successfully..
+        /// </summary>
+        internal static string newSongSuccessMessage {
+            get {
+                return ResourceManager.GetString("newSongSuccessMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You need to enter a song title as well as an artist..
         /// </summary>
         internal static string newSongTitleOrArtistMissingErrorMessage {
