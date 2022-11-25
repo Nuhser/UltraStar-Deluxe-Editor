@@ -615,10 +615,7 @@ namespace UltraStarDeluxeEditor {
 
             if (openFileDialog.ShowDialog() == DialogResult.OK) {
                 if (UltraStarSongService.ChangeMp3FromFile(_selectedSong, openFileDialog.FileName)) {
-                    if (!_selectedSong.IsDirty) {
-                        ((SongListViewItem) songListView.SelectedItems[0]).SetDirty(true);
-                    }
-
+                    UpdateSongListItem(_selectedSong, true);
                     UpdateUi();
                 }
             }

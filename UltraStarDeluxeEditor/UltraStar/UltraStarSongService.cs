@@ -49,21 +49,23 @@ namespace UltraStarDeluxeEditor.UltraStar {
         }
 
         public static void DeleteSong(UltraStarSong song) {
-            if (song.HasCover()) {
+            if (song.HasCover() && Directory.Exists(Path.GetDirectoryName(song.GetCoverPath()))) {
                 File.Delete(song.GetCoverPath());
             }
 
-            if (song.HasMp3()) {
+            if (song.HasMp3() && Directory.Exists(Path.GetDirectoryName(song.GetMp3Path()))) {
                 File.Delete(song.GetMp3Path());
             }
 
-            if (song.HasVideo()) {
+            if (song.HasVideo() && Directory.Exists(Path.GetDirectoryName(song.GetVideoPath()))) {
                 File.Delete(song.GetVideoPath());
             }
 
             DeleteBackups(song);
-
-            File.Delete(song.FilePath);
+            
+            if (Directory.Exists(Path.GetDirectoryName(song.FilePath))) {
+                File.Delete(song.FilePath);
+            }
         }
 
         /// <summary>
@@ -276,6 +278,11 @@ namespace UltraStarDeluxeEditor.UltraStar {
                 return false;
             }
 
+            // export location is original location
+            if (song.FilePath == filePath) {
+                return true;
+            }
+
             File.Copy(song.FilePath, filePath, true);
 
             if (openAfterExport) {
@@ -327,9 +334,11 @@ namespace UltraStarDeluxeEditor.UltraStar {
                         Resources.coverDownloadErrorMessage,
                         Resources.coverDownloadErrorCaption, MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) !=
                     DialogResult.Retry) {
-                    if (song.HasCover() && keepBackup) {
-                        File.Move(song.GetCoverPath() + ".backup", song.GetCoverPath());
-                    }
+                    // if (song.HasCover() && File.Exists(song.GetCoverPath()) && keepBackup) {
+                    //     File.Move(song.GetCoverPath() + ".backup", song.GetCoverPath());
+                    // }
+                    
+                    RestoreCoverBackup(song);
 
                     return false;
                 }
@@ -369,7 +378,9 @@ namespace UltraStarDeluxeEditor.UltraStar {
             var newCoverLocation = song.GetSongDirectory() + "\\" + Path.GetFileNameWithoutExtension(song.FilePath) +
                                    Path.GetExtension(imageLocation);
 
-            File.Copy(imageLocation, newCoverLocation, true);
+            if (imageLocation != newCoverLocation) {
+                File.Copy(imageLocation, newCoverLocation, true);
+            }
 
             song.Cover = Path.GetFileName(newCoverLocation);
             return true;
@@ -394,7 +405,9 @@ namespace UltraStarDeluxeEditor.UltraStar {
             var newMp3Location = song.GetSongDirectory() + "\\" + Path.GetFileNameWithoutExtension(song.FilePath) +
                                  Path.GetExtension(mp3Location);
 
-            File.Copy(mp3Location, newMp3Location, true);
+            if (mp3Location != newMp3Location) {
+                File.Copy(mp3Location, newMp3Location, true);
+            }
 
             song.Mp3 = Path.GetFileName(newMp3Location);
             return true;
@@ -419,7 +432,9 @@ namespace UltraStarDeluxeEditor.UltraStar {
             var newVideoLocation = song.GetSongDirectory() + "\\" + Path.GetFileNameWithoutExtension(song.FilePath) +
                                    Path.GetExtension(videoLocation);
 
-            File.Copy(videoLocation, newVideoLocation, true);
+            if (videoLocation != newVideoLocation) {
+                File.Copy(videoLocation, newVideoLocation, true);
+            }
 
             song.Video = Path.GetFileName(newVideoLocation);
             return true;
@@ -545,7 +560,10 @@ namespace UltraStarDeluxeEditor.UltraStar {
                 return;
             }
 
-            File.Move(song.GetCoverPath(), song.GetCoverPath() + ".backup");
+            if (File.Exists(song.GetCoverPath())) {
+                File.Move(song.GetCoverPath(), song.GetCoverPath() + ".backup");
+            }
+
             song.OldCover = song.GetCoverPath();
         }
 
@@ -554,16 +572,22 @@ namespace UltraStarDeluxeEditor.UltraStar {
                 return;
             }
 
-            File.Move(song.GetMp3Path(), song.GetMp3Path() + ".backup");
+            if (File.Exists(song.GetMp3Path())) {
+                File.Move(song.GetMp3Path(), song.GetMp3Path() + ".backup");
+            }
+
             song.OldMp3 = song.GetMp3Path();
-        }
+            }
 
         private static void CreateVideoBackup(UltraStarSong song) {
             if (song == null) {
                 return;
             }
 
-            File.Move(song.GetVideoPath(), song.GetVideoPath() + ".backup");
+            if (File.Exists(song.GetVideoPath())) {
+                File.Move(song.GetVideoPath(), song.GetVideoPath() + ".backup");
+            }
+
             song.OldVideo = song.GetVideoPath();
         }
 
@@ -572,11 +596,13 @@ namespace UltraStarDeluxeEditor.UltraStar {
                 return;
             }
 
-            if (song.HasCover()) {
+            if (song.HasCover() && Directory.Exists(Path.GetDirectoryName(song.GetCoverPath()))) {
                 File.Delete(song.GetCoverPath());
             }
 
-            File.Move(song.OldCover + ".backup", song.OldCover);
+            if (File.Exists(song.OldCover + ".backup")) {
+                File.Move(song.OldCover + ".backup", song.OldCover);
+            }
         }
 
         public static void RestoreMp3Backup(UltraStarSong song) {
@@ -584,11 +610,13 @@ namespace UltraStarDeluxeEditor.UltraStar {
                 return;
             }
 
-            if (song.HasMp3()) {
+            if (song.HasMp3() && Directory.Exists(Path.GetDirectoryName(song.GetMp3Path()))) {
                 File.Delete(song.GetMp3Path());
             }
 
-            File.Move(song.OldMp3 + ".backup", song.OldMp3);
+            if (File.Exists(song.OldMp3 + ".backup")) {
+                File.Move(song.OldMp3 + ".backup", song.OldMp3);
+            }
         }
 
         public static void RestoreVideoBackup(UltraStarSong song) {
@@ -596,11 +624,13 @@ namespace UltraStarDeluxeEditor.UltraStar {
                 return;
             }
 
-            if (song.HasVideo()) {
+            if (song.HasVideo() && Directory.Exists(Path.GetDirectoryName(song.GetVideoPath()))) {
                 File.Delete(song.GetVideoPath());
             }
 
-            File.Move(song.OldVideo + ".backup", song.OldVideo);
+            if (File.Exists(song.OldVideo + ".backup")) {
+                File.Move(song.OldVideo + ".backup", song.OldVideo);
+            }
         }
 
         public static void RestoreAllBackups(UltraStarSong song) {
@@ -614,17 +644,17 @@ namespace UltraStarDeluxeEditor.UltraStar {
                 return;
             }
 
-            if (song.HasCoverBackup()) {
+            if (song.HasCoverBackup() && Directory.Exists(Path.GetDirectoryName(song.OldCover))) {
                 File.Delete(song.OldCover + ".backup");
                 song.OldCover = null;
             }
 
-            if (song.HasMp3Backup()) {
+            if (song.HasMp3Backup() && Directory.Exists(Path.GetDirectoryName(song.OldMp3))) {
                 File.Delete(song.OldMp3 + ".backup");
                 song.OldMp3 = null;
             }
 
-            if (song.HasVideoBackup()) {
+            if (song.HasVideoBackup() && Directory.Exists(Path.GetDirectoryName(song.OldVideo))) {
                 File.Delete(song.OldVideo + ".backup");
                 song.OldVideo = null;
             }
