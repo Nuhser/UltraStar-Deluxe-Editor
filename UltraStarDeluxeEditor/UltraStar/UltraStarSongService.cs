@@ -33,6 +33,13 @@ namespace UltraStarDeluxeEditor.UltraStar {
                 return null;
             }
 
+            var filePath = FindFilePathForNewSong(title, artist, songDirectory);
+            var newSong = new UltraStarSong(filePath, title, artist);
+
+            return !SaveSongToFile(newSong) ? null : newSong;
+        }
+
+        public static string FindFilePathForNewSong(string title, string artist, string songDirectory) {
             var filePath = Path.Combine(songDirectory,
                 artist.Replace(" ", "-").ToLower() + "-" + title.Replace(" ", "-").ToLower());
 
@@ -41,11 +48,7 @@ namespace UltraStarDeluxeEditor.UltraStar {
                 i++;
             }
 
-            filePath = filePath + (i > 0 ? Convert.ToString(i) : "") + ".txt";
-
-            var newSong = new UltraStarSong(filePath, title, artist);
-
-            return !SaveSongToFile(newSong) ? null : newSong;
+            return filePath + (i > 0 ? Convert.ToString(i) : "") + ".txt";
         }
 
         public static void DeleteSong(UltraStarSong song) {
@@ -62,7 +65,7 @@ namespace UltraStarDeluxeEditor.UltraStar {
             }
 
             DeleteBackups(song);
-            
+
             if (Directory.Exists(Path.GetDirectoryName(song.FilePath))) {
                 File.Delete(song.FilePath);
             }
@@ -334,10 +337,7 @@ namespace UltraStarDeluxeEditor.UltraStar {
                         Resources.coverDownloadErrorMessage,
                         Resources.coverDownloadErrorCaption, MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) !=
                     DialogResult.Retry) {
-                    // if (song.HasCover() && File.Exists(song.GetCoverPath()) && keepBackup) {
-                    //     File.Move(song.GetCoverPath() + ".backup", song.GetCoverPath());
-                    // }
-                    
+
                     RestoreCoverBackup(song);
 
                     return false;
@@ -577,7 +577,7 @@ namespace UltraStarDeluxeEditor.UltraStar {
             }
 
             song.OldMp3 = song.GetMp3Path();
-            }
+        }
 
         private static void CreateVideoBackup(UltraStarSong song) {
             if (song == null) {

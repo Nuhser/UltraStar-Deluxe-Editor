@@ -495,6 +495,15 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select TXT File.
+        /// </summary>
+        internal static string txtSelectFileCaption {
+            get {
+                return ResourceManager.GetString("txtSelectFileCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unsaved Changes.
         /// </summary>
         internal static string unsavedChangesCaption {

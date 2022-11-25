@@ -10,8 +10,14 @@ namespace UltraStarDeluxeEditor {
     public partial class NewSongToolForm : Form {
         private readonly Color TEXT_BOX_ERROR_COLOR = Color.FromArgb(255, 204, 204);
 
-        public NewSongToolForm() {
+        public NewSongToolForm() : this(null, null) {
+        }
+
+        public NewSongToolForm(string title, string artist) {
             InitializeComponent();
+
+            titleTextBox.Text = title ?? "";
+            artistTextBox.Text = artist ?? "";
 
             var songDirectories = ConfigService.GetSongDirectories();
             songDirectoryComboBox.DataSource = songDirectories.Where(Directory.Exists).ToList();

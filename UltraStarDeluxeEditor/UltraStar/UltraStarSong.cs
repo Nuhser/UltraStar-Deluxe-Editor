@@ -32,7 +32,7 @@ namespace UltraStarDeluxeEditor.UltraStar {
         public string OldCover { get; set; }
         public string OldMp3 { get; set; }
         public string OldVideo { get; set; }
-        public string FilePath { get; }
+        public string FilePath { get; set; }
         public string Title { get; set; }
         public string Artist { get; set; }
         public string Genre { get; set; }

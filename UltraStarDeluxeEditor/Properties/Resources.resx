@@ -303,4 +303,7 @@ This will also delete the file from your drive.</value>
     <data name="deleteSongMessage" xml:space="preserve">
         <value>Are you sure you want to delete the song "{0}" permanently? This cannot be undone!</value>
     </data>
+    <data name="txtSelectFileCaption" xml:space="preserve">
+        <value>Select TXT File</value>
+    </data>
 </root>

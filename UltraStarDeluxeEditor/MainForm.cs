@@ -627,10 +627,7 @@ namespace UltraStarDeluxeEditor {
                     MessageBoxIcon.Warning) ==
                 DialogResult.Yes) {
                 if (UltraStarSongService.DeleteMp3File(_selectedSong)) {
-                    if (!_selectedSong.IsDirty) {
-                        ((SongListViewItem) songListView.SelectedItems[0]).SetDirty(true);
-                    }
-
+                    UpdateSongListItem(_selectedSong, true);
                     UpdateUi();
                 }
                 else {
@@ -700,7 +697,37 @@ namespace UltraStarDeluxeEditor {
         }
 
         private void importSongTxtToolStripMenuItem_Click(object sender, EventArgs e) {
-            throw new NotImplementedException();
+            var openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+            openFileDialog.Filter = Resources.textFileFilter;
+            openFileDialog.Title = Resources.txtSelectFileCaption;
+
+            if (openFileDialog.ShowDialog() != DialogResult.OK) {
+                return;
+            }
+
+            var newSong = UltraStarSongService.LoadSongFromFile(openFileDialog.FileName);
+            var newSongForm = new NewSongToolForm(newSong.Title, newSong.Artist);
+
+            if (newSongForm.ShowDialog() != DialogResult.OK) {
+                return;
+            }
+
+            newSong.Title = newSongForm.Title;
+            newSong.Artist = newSongForm.Artist;
+            newSong.FilePath = UltraStarSongService.FindFilePathForNewSong(newSongForm.Title,
+                newSongForm.Artist, newSongForm.SongDirectory);
+
+            if (!UltraStarSongService.SaveSongToFile(newSong)) {
+                MessageBox.Show(
+                    string.Format(Resources.newSongErrorWhileCreationMessage, newSongForm.Title,
+                        newSongForm.Artist, newSongForm.SongDirectory), Resources.errorCaption,
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return;
+            }
+
+            AddSongToSongListView(newSong);
         }
 
         private void exportSongTxtToolStripMenuItem_Click(object sender, EventArgs e) {
