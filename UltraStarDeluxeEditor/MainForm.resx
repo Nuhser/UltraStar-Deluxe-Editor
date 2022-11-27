@@ -268,7 +268,7 @@
     <value>False</value>
   </data>
   <data name="openMp3ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="openMp3ToolStripMenuItem.Text" xml:space="preserve">
     <value>Open MP3</value>
@@ -277,10 +277,19 @@
     <value>False</value>
   </data>
   <data name="chooseMp3FileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="chooseMp3FileToolStripMenuItem.Text" xml:space="preserve">
     <value>Choose File</value>
+  </data>
+  <data name="deleteMp3ToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="deleteMp3ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="deleteMp3ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Delete</value>
   </data>
   <data name="mp3ToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -295,7 +304,7 @@
     <value>False</value>
   </data>
   <data name="openVideoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="openVideoToolStripMenuItem.Text" xml:space="preserve">
     <value>Open Video</value>
@@ -304,7 +313,7 @@
     <value>False</value>
   </data>
   <data name="chooseVideoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="chooseVideoToolStripMenuItem.Text" xml:space="preserve">
     <value>Choose File</value>
@@ -313,7 +322,7 @@
     <value>False</value>
   </data>
   <data name="deleteVideoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="deleteVideoToolStripMenuItem.Text" xml:space="preserve">
     <value>Delete</value>
@@ -3900,6 +3909,12 @@
   </data>
   <data name="&gt;&gt;toolTip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;deleteMp3ToolStripMenuItem.Name" xml:space="preserve">
+    <value>deleteMp3ToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;deleteMp3ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

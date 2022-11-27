@@ -233,6 +233,7 @@ namespace UltraStarDeluxeEditor {
             mp3ToolStripMenuItem.Enabled = songSelected;
             openMp3ToolStripMenuItem.Enabled = songSelected && _selectedSong.HasMp3();
             chooseMp3FileToolStripMenuItem.Enabled = songSelected;
+            deleteMp3ToolStripMenuItem.Enabled = songSelected && _selectedSong.HasMp3();
             videoToolStripMenuItem.Enabled = songSelected;
             openVideoToolStripMenuItem.Enabled = songSelected && _selectedSong.HasVideo();
             chooseVideoToolStripMenuItem.Enabled = songSelected;

@@ -133,6 +133,7 @@ namespace UltraStarDeluxeEditor {
             this.songText2MissingPictureBox = new System.Windows.Forms.PictureBox();
             this.player2TextBox = new System.Windows.Forms.TextBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.deleteMp3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenuStrip.SuspendLayout();
             this.songListViewContextMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.coverPictureBox)).BeginInit();
@@ -274,7 +275,7 @@ namespace UltraStarDeluxeEditor {
             // 
             // mp3ToolStripMenuItem
             // 
-            this.mp3ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.openMp3ToolStripMenuItem, this.chooseMp3FileToolStripMenuItem });
+            this.mp3ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.openMp3ToolStripMenuItem, this.chooseMp3FileToolStripMenuItem, this.deleteMp3ToolStripMenuItem });
             resources.ApplyResources(this.mp3ToolStripMenuItem, "mp3ToolStripMenuItem");
             this.mp3ToolStripMenuItem.Name = "mp3ToolStripMenuItem";
             // 
@@ -864,6 +865,12 @@ namespace UltraStarDeluxeEditor {
             this.toolTip.ReshowDelay = 500;
             this.toolTip.ShowAlways = true;
             // 
+            // deleteMp3ToolStripMenuItem
+            // 
+            resources.ApplyResources(this.deleteMp3ToolStripMenuItem, "deleteMp3ToolStripMenuItem");
+            this.deleteMp3ToolStripMenuItem.Name = "deleteMp3ToolStripMenuItem";
+            this.deleteMp3ToolStripMenuItem.Click += new System.EventHandler(this.mp3DeleteButton_Click);
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -909,6 +916,8 @@ namespace UltraStarDeluxeEditor {
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.ToolStripMenuItem deleteMp3ToolStripMenuItem;
 
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
 
