@@ -504,7 +504,7 @@ namespace UltraStarDeluxeEditor {
                             _selectedSong = song;
                             ((SongListViewItem) songListView.SelectedItems[0]).UltraStarSong = _selectedSong;
                             ((SongListViewItem) songListView.SelectedItems[0]).SetDirty(false);
-                            // ((SongListViewItem) songListView.SelectedItems[0]).SetInvalid(!_selectedSong.IsValid());
+                            songListView.SelectedItems[0].SubItems[2].Text = song.IsValid() ? "\u2714" : "\u274C";
                             saveToolStripMenuItem.Enabled = false;
                             UpdateFormTitle();
                             UpdateUi();
