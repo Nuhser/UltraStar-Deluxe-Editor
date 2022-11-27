@@ -465,6 +465,8 @@ namespace UltraStarDeluxeEditor {
                 ? ((SongListViewItem) songListView.SelectedItems[0]).UltraStarSong
                 : null;
 
+            songListView.ContextMenuStrip.Enabled = songListView.SelectedItems.Count > 0;
+
             UpdateUi();
         }
 

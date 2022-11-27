@@ -418,7 +418,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;mainMenuStrip.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="titleColumn.Text" xml:space="preserve">
     <value>Title</value>
@@ -444,6 +444,66 @@
   <data name="fileColumn.Width" type="System.Int32, mscorlib">
     <value>266</value>
   </data>
+  <metadata name="songListViewContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>229, 17</value>
+  </metadata>
+  <data name="openSongTxtContextMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="openSongTxtContextMenuItem.Text" xml:space="preserve">
+    <value>Open Raw TXT</value>
+  </data>
+  <data name="openDirectoryContextMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="openDirectoryContextMenuItem.Text" xml:space="preserve">
+    <value>Open Directory</value>
+  </data>
+  <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 6</value>
+  </data>
+  <data name="reloadSongContextMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="reloadSongContextMenuItem.Text" xml:space="preserve">
+    <value>Reload Song</value>
+  </data>
+  <data name="deleteSongContextMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="deleteSongContextMenuItem.Text" xml:space="preserve">
+    <value>Delete Song</value>
+  </data>
+  <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 6</value>
+  </data>
+  <data name="googleSearchContextMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 22</value>
+  </data>
+  <data name="googleSearchContextMenuItem.Text" xml:space="preserve">
+    <value>Search with Google</value>
+  </data>
+  <data name="discogsSearchContextMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 22</value>
+  </data>
+  <data name="discogsSearchContextMenuItem.Text" xml:space="preserve">
+    <value>Search on Discogs</value>
+  </data>
+  <data name="webSearchToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="webSearchToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Web Search</value>
+  </data>
+  <data name="songListViewContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 126</value>
+  </data>
+  <data name="&gt;&gt;songListViewContextMenuStrip.Name" xml:space="preserve">
+    <value>songListViewContextMenuStrip</value>
+  </data>
+  <data name="&gt;&gt;songListViewContextMenuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="songListView.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
@@ -466,7 +526,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;songListView.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="titleTextBox.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
@@ -1630,7 +1690,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;songInfoGroupBox.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="duetCheckBox.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
@@ -1957,7 +2017,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;songSettingsGroupBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="mp3MissingPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2482,7 +2542,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;songFilesGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="player1TextBox.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10pt</value>
@@ -2716,7 +2776,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;textTabControl.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>144, 17</value>
@@ -3780,6 +3840,60 @@
   </data>
   <data name="&gt;&gt;fileColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openSongTxtContextMenuItem.Name" xml:space="preserve">
+    <value>openSongTxtContextMenuItem</value>
+  </data>
+  <data name="&gt;&gt;openSongTxtContextMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openDirectoryContextMenuItem.Name" xml:space="preserve">
+    <value>openDirectoryContextMenuItem</value>
+  </data>
+  <data name="&gt;&gt;openDirectoryContextMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator6.Name" xml:space="preserve">
+    <value>toolStripSeparator6</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;reloadSongContextMenuItem.Name" xml:space="preserve">
+    <value>reloadSongContextMenuItem</value>
+  </data>
+  <data name="&gt;&gt;reloadSongContextMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;deleteSongContextMenuItem.Name" xml:space="preserve">
+    <value>deleteSongContextMenuItem</value>
+  </data>
+  <data name="&gt;&gt;deleteSongContextMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator5.Name" xml:space="preserve">
+    <value>toolStripSeparator5</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;webSearchToolStripMenuItem1.Name" xml:space="preserve">
+    <value>webSearchToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;webSearchToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;googleSearchContextMenuItem.Name" xml:space="preserve">
+    <value>googleSearchContextMenuItem</value>
+  </data>
+  <data name="&gt;&gt;googleSearchContextMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;discogsSearchContextMenuItem.Name" xml:space="preserve">
+    <value>discogsSearchContextMenuItem</value>
+  </data>
+  <data name="&gt;&gt;discogsSearchContextMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolTip.Name" xml:space="preserve">
     <value>toolTip</value>

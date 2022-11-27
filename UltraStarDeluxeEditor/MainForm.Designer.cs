@@ -70,6 +70,16 @@ namespace UltraStarDeluxeEditor {
             this.artistColumn = new System.Windows.Forms.ColumnHeader();
             this.playableColumn = new System.Windows.Forms.ColumnHeader();
             this.fileColumn = new System.Windows.Forms.ColumnHeader();
+            this.songListViewContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.openSongTxtContextMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openDirectoryContextMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.reloadSongContextMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteSongContextMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.webSearchToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.googleSearchContextMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.discogsSearchContextMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.titleTextBox = new System.Windows.Forms.TextBox();
             this.titleLabel = new System.Windows.Forms.Label();
             this.coverPictureBox = new System.Windows.Forms.PictureBox();
@@ -124,6 +134,7 @@ namespace UltraStarDeluxeEditor {
             this.player2TextBox = new System.Windows.Forms.TextBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.mainMenuStrip.SuspendLayout();
+            this.songListViewContextMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.coverPictureBox)).BeginInit();
             this.songInfoGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.artistMissingPictureBox)).BeginInit();
@@ -365,6 +376,7 @@ namespace UltraStarDeluxeEditor {
             // songListView
             // 
             this.songListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { this.titleColumn, this.artistColumn, this.playableColumn, this.fileColumn });
+            this.songListView.ContextMenuStrip = this.songListViewContextMenuStrip;
             resources.ApplyResources(this.songListView, "songListView");
             this.songListView.FullRowSelect = true;
             this.songListView.GridLines = true;
@@ -394,6 +406,64 @@ namespace UltraStarDeluxeEditor {
             // fileColumn
             // 
             resources.ApplyResources(this.fileColumn, "fileColumn");
+            // 
+            // songListViewContextMenuStrip
+            // 
+            this.songListViewContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.openSongTxtContextMenuItem, this.openDirectoryContextMenuItem, this.toolStripSeparator6, this.reloadSongContextMenuItem, this.deleteSongContextMenuItem, this.toolStripSeparator5, this.webSearchToolStripMenuItem1 });
+            this.songListViewContextMenuStrip.Name = "songListViewContextMenuStrip";
+            resources.ApplyResources(this.songListViewContextMenuStrip, "songListViewContextMenuStrip");
+            // 
+            // openSongTxtContextMenuItem
+            // 
+            this.openSongTxtContextMenuItem.Name = "openSongTxtContextMenuItem";
+            resources.ApplyResources(this.openSongTxtContextMenuItem, "openSongTxtContextMenuItem");
+            this.openSongTxtContextMenuItem.Click += new System.EventHandler(this.openSongTxtToolStripMenuItem_Click);
+            // 
+            // openDirectoryContextMenuItem
+            // 
+            this.openDirectoryContextMenuItem.Name = "openDirectoryContextMenuItem";
+            resources.ApplyResources(this.openDirectoryContextMenuItem, "openDirectoryContextMenuItem");
+            this.openDirectoryContextMenuItem.Click += new System.EventHandler(this.openDirectoryToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
+            // 
+            // reloadSongContextMenuItem
+            // 
+            this.reloadSongContextMenuItem.Name = "reloadSongContextMenuItem";
+            resources.ApplyResources(this.reloadSongContextMenuItem, "reloadSongContextMenuItem");
+            this.reloadSongContextMenuItem.Click += new System.EventHandler(this.reloadSongToolStripMenuItem_Click);
+            // 
+            // deleteSongContextMenuItem
+            // 
+            this.deleteSongContextMenuItem.Name = "deleteSongContextMenuItem";
+            resources.ApplyResources(this.deleteSongContextMenuItem, "deleteSongContextMenuItem");
+            this.deleteSongContextMenuItem.Click += new System.EventHandler(this.deleteSongToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
+            // 
+            // webSearchToolStripMenuItem1
+            // 
+            this.webSearchToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.googleSearchContextMenuItem, this.discogsSearchContextMenuItem });
+            this.webSearchToolStripMenuItem1.Name = "webSearchToolStripMenuItem1";
+            resources.ApplyResources(this.webSearchToolStripMenuItem1, "webSearchToolStripMenuItem1");
+            // 
+            // googleSearchContextMenuItem
+            // 
+            this.googleSearchContextMenuItem.Name = "googleSearchContextMenuItem";
+            resources.ApplyResources(this.googleSearchContextMenuItem, "googleSearchContextMenuItem");
+            this.googleSearchContextMenuItem.Click += new System.EventHandler(this.googleSearchToolStripMenuItem_Click);
+            // 
+            // discogsSearchContextMenuItem
+            // 
+            this.discogsSearchContextMenuItem.Name = "discogsSearchContextMenuItem";
+            resources.ApplyResources(this.discogsSearchContextMenuItem, "discogsSearchContextMenuItem");
+            this.discogsSearchContextMenuItem.Click += new System.EventHandler(this.discogsSearchToolStripMenuItem_Click);
             // 
             // titleTextBox
             // 
@@ -813,6 +883,7 @@ namespace UltraStarDeluxeEditor {
             this.Shown += new System.EventHandler(this.MainForm_Shown);
             this.mainMenuStrip.ResumeLayout(false);
             this.mainMenuStrip.PerformLayout();
+            this.songListViewContextMenuStrip.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize) (this.coverPictureBox)).EndInit();
             this.songInfoGroupBox.ResumeLayout(false);
             this.songInfoGroupBox.PerformLayout();
@@ -838,6 +909,21 @@ namespace UltraStarDeluxeEditor {
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripMenuItem webSearchToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem googleSearchContextMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem discogsSearchContextMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openSongTxtContextMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openDirectoryContextMenuItem;
+
+        private System.Windows.Forms.ToolStripMenuItem deleteSongContextMenuItem;
+
+        private System.Windows.Forms.ToolStripMenuItem reloadSongContextMenuItem;
+
+        private System.Windows.Forms.ContextMenuStrip songListViewContextMenuStrip;
 
         private System.Windows.Forms.ColumnHeader playableColumn;
 
