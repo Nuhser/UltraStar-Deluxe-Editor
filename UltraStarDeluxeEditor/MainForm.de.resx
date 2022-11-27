@@ -1974,4 +1974,7 @@
     <data name="yearLabel.Text" xml:space="preserve">
         <value>Jahr</value>
     </data>
+    <data name="playableColumn.Text" xml:space="preserve">
+        <value>Spielbar</value>
+    </data>
 </root>

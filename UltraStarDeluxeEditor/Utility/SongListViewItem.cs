@@ -19,10 +19,5 @@ namespace UltraStarDeluxeEditor.Utility {
                     ? Font.Style | FontStyle.Bold | FontStyle.Italic
                     : Font.Style & ~FontStyle.Bold & ~FontStyle.Italic);
         }
-
-        public void SetInvalid(bool isInvalid) {
-            Font = new Font(Font.FontFamily, Font.Size,
-                isInvalid ? Font.Style | FontStyle.Strikeout : Font.Style & ~FontStyle.Strikeout);
-        }
     }
 }

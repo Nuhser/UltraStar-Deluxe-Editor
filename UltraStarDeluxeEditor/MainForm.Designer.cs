@@ -68,6 +68,7 @@ namespace UltraStarDeluxeEditor {
             this.songListView = new System.Windows.Forms.ListView();
             this.titleColumn = new System.Windows.Forms.ColumnHeader();
             this.artistColumn = new System.Windows.Forms.ColumnHeader();
+            this.playableColumn = new System.Windows.Forms.ColumnHeader();
             this.fileColumn = new System.Windows.Forms.ColumnHeader();
             this.titleTextBox = new System.Windows.Forms.TextBox();
             this.titleLabel = new System.Windows.Forms.Label();
@@ -363,7 +364,7 @@ namespace UltraStarDeluxeEditor {
             // 
             // songListView
             // 
-            this.songListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { this.titleColumn, this.artistColumn, this.fileColumn });
+            this.songListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { this.titleColumn, this.artistColumn, this.playableColumn, this.fileColumn });
             resources.ApplyResources(this.songListView, "songListView");
             this.songListView.FullRowSelect = true;
             this.songListView.GridLines = true;
@@ -385,6 +386,10 @@ namespace UltraStarDeluxeEditor {
             // artistColumn
             // 
             resources.ApplyResources(this.artistColumn, "artistColumn");
+            // 
+            // playableColumn
+            // 
+            resources.ApplyResources(this.playableColumn, "playableColumn");
             // 
             // fileColumn
             // 
@@ -833,6 +838,8 @@ namespace UltraStarDeluxeEditor {
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.ColumnHeader playableColumn;
 
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
 

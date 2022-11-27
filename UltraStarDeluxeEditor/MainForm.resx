@@ -432,6 +432,12 @@
   <data name="artistColumn.Width" type="System.Int32, mscorlib">
     <value>216</value>
   </data>
+  <data name="playableColumn.Text" xml:space="preserve">
+    <value>Playable</value>
+  </data>
+  <data name="playableColumn.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
   <data name="fileColumn.Text" xml:space="preserve">
     <value>File</value>
   </data>
@@ -3761,6 +3767,12 @@
     <value>artistColumn</value>
   </data>
   <data name="&gt;&gt;artistColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;playableColumn.Name" xml:space="preserve">
+    <value>playableColumn</value>
+  </data>
+  <data name="&gt;&gt;playableColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;fileColumn.Name" xml:space="preserve">

@@ -81,8 +81,8 @@ namespace UltraStarDeluxeEditor {
                 }
 
                 var songListViewItem = new SongListViewItem(song);
-                songListViewItem.SetInvalid(!song.IsValid());
                 songListViewItem.SubItems.Add(song.Artist);
+                songListViewItem.SubItems.Add(song.IsValid() ? "\u2714" : "\u274C");
                 songListViewItem.SubItems.Add(song.GetSongFileName());
                 songListViewItem.ToolTipText = songFile;
 
@@ -105,8 +105,8 @@ namespace UltraStarDeluxeEditor {
             }
 
             var songListViewItem = new SongListViewItem(song);
-            songListViewItem.SetInvalid(!song.IsValid());
             songListViewItem.SubItems.Add(song.Artist);
+            songListViewItem.SubItems.Add(song.IsValid() ? "\u2714" : "\u274C");
             songListViewItem.SubItems.Add(song.GetSongFileName());
             songListViewItem.ToolTipText = song.FilePath;
             songListViewItem.Selected = true;
@@ -264,10 +264,10 @@ namespace UltraStarDeluxeEditor {
 
             songListViewItem.Text = song.Title;
             songListViewItem.SubItems[1].Text = song.Artist;
-            songListViewItem.SubItems[2].Text = song.GetSongFileName();
+            songListViewItem.SubItems[2].Text = song.IsValid() ? "\u2714" : "\u274C";
+            songListViewItem.SubItems[3].Text = song.GetSongFileName();
             songListViewItem.ToolTipText = song.FilePath;
 
-            songListViewItem.SetInvalid(!song.IsValid());
             songListViewItem.SetDirty(setDirty);
         }
 
@@ -501,7 +501,7 @@ namespace UltraStarDeluxeEditor {
                             _selectedSong = song;
                             ((SongListViewItem) songListView.SelectedItems[0]).UltraStarSong = _selectedSong;
                             ((SongListViewItem) songListView.SelectedItems[0]).SetDirty(false);
-                            ((SongListViewItem) songListView.SelectedItems[0]).SetInvalid(!_selectedSong.IsValid());
+                            // ((SongListViewItem) songListView.SelectedItems[0]).SetInvalid(!_selectedSong.IsValid());
                             saveToolStripMenuItem.Enabled = false;
                             UpdateFormTitle();
                             UpdateUi();
