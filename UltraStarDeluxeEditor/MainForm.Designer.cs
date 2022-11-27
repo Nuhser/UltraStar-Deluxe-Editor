@@ -146,292 +146,231 @@ namespace UltraStarDeluxeEditor {
             // 
             this.mainMenuStrip.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.fileToolStripMenuItem, this.songToolStripMenuItem, this.toolsToolStripMenuItem });
-            this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.mainMenuStrip, "mainMenuStrip");
             this.mainMenuStrip.Name = "mainMenuStrip";
-            this.mainMenuStrip.Size = new System.Drawing.Size(1445, 24);
-            this.mainMenuStrip.TabIndex = 0;
-            this.mainMenuStrip.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.newSongToolStripMenuItem, this.saveToolStripMenuItem, this.saveAllToolStripMenuItem, this.reloadSongsToolStripMenuItem, this.toolStripSeparator1, this.closeToolStripMenuItem });
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "&File";
+            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             // 
             // newSongToolStripMenuItem
             // 
             this.newSongToolStripMenuItem.Name = "newSongToolStripMenuItem";
-            this.newSongToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newSongToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.newSongToolStripMenuItem.Text = "&New Song";
+            resources.ApplyResources(this.newSongToolStripMenuItem, "newSongToolStripMenuItem");
             this.newSongToolStripMenuItem.Click += new System.EventHandler(this.newSongToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
-            this.saveToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.saveToolStripMenuItem, "saveToolStripMenuItem");
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.saveToolStripMenuItem.Text = "&Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // saveAllToolStripMenuItem
             // 
-            this.saveAllToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.saveAllToolStripMenuItem, "saveAllToolStripMenuItem");
             this.saveAllToolStripMenuItem.Name = "saveAllToolStripMenuItem";
-            this.saveAllToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys) (((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) | System.Windows.Forms.Keys.S)));
-            this.saveAllToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.saveAllToolStripMenuItem.Text = "Save &All";
             this.saveAllToolStripMenuItem.Click += new System.EventHandler(this.saveAllToolStripMenuItem_Click);
             // 
             // reloadSongsToolStripMenuItem
             // 
             this.reloadSongsToolStripMenuItem.Name = "reloadSongsToolStripMenuItem";
-            this.reloadSongsToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.reloadSongsToolStripMenuItem.Text = "&Reload All Songs";
+            resources.ApplyResources(this.reloadSongsToolStripMenuItem, "reloadSongsToolStripMenuItem");
             this.reloadSongsToolStripMenuItem.Click += new System.EventHandler(this.reloadSongsToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(184, 6);
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.closeToolStripMenuItem.Text = "&Close";
+            resources.ApplyResources(this.closeToolStripMenuItem, "closeToolStripMenuItem");
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
             // songToolStripMenuItem
             // 
             this.songToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.openSongTxtToolStripMenuItem, this.openDirectoryToolStripMenuItem, this.toolStripSeparator4, this.reloadSongToolStripMenuItem, this.deleteSongToolStripMenuItem, this.toolStripSeparator3, this.coverToolStripMenuItem, this.mp3ToolStripMenuItem, this.videoToolStripMenuItem, this.toolStripSeparator2, this.webSearchToolStripMenuItem });
             this.songToolStripMenuItem.Name = "songToolStripMenuItem";
-            this.songToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
-            this.songToolStripMenuItem.Text = "&Song";
+            resources.ApplyResources(this.songToolStripMenuItem, "songToolStripMenuItem");
             // 
             // openSongTxtToolStripMenuItem
             // 
-            this.openSongTxtToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.openSongTxtToolStripMenuItem, "openSongTxtToolStripMenuItem");
             this.openSongTxtToolStripMenuItem.Name = "openSongTxtToolStripMenuItem";
-            this.openSongTxtToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.openSongTxtToolStripMenuItem.Text = "Open Raw TXT";
             this.openSongTxtToolStripMenuItem.Click += new System.EventHandler(this.openSongTxtToolStripMenuItem_Click);
             // 
             // openDirectoryToolStripMenuItem
             // 
-            this.openDirectoryToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.openDirectoryToolStripMenuItem, "openDirectoryToolStripMenuItem");
             this.openDirectoryToolStripMenuItem.Name = "openDirectoryToolStripMenuItem";
-            this.openDirectoryToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.openDirectoryToolStripMenuItem.Text = "Open Directory";
             this.openDirectoryToolStripMenuItem.Click += new System.EventHandler(this.openDirectoryToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(151, 6);
+            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
             // 
             // reloadSongToolStripMenuItem
             // 
-            this.reloadSongToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.reloadSongToolStripMenuItem, "reloadSongToolStripMenuItem");
             this.reloadSongToolStripMenuItem.Name = "reloadSongToolStripMenuItem";
-            this.reloadSongToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.reloadSongToolStripMenuItem.Text = "Reload Song";
             this.reloadSongToolStripMenuItem.Click += new System.EventHandler(this.reloadSongToolStripMenuItem_Click);
             // 
             // deleteSongToolStripMenuItem
             // 
-            this.deleteSongToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.deleteSongToolStripMenuItem, "deleteSongToolStripMenuItem");
             this.deleteSongToolStripMenuItem.Name = "deleteSongToolStripMenuItem";
-            this.deleteSongToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.deleteSongToolStripMenuItem.Text = "Delete Song";
             this.deleteSongToolStripMenuItem.Click += new System.EventHandler(this.deleteSongToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(151, 6);
+            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
             // 
             // coverToolStripMenuItem
             // 
             this.coverToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.openCoverToolStripMenuItem, this.chooseCoverImageToolStripMenuItem, this.downloadCoverFromURLToolStripMenuItem, this.deleteCoverToolStripMenuItem });
-            this.coverToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.coverToolStripMenuItem, "coverToolStripMenuItem");
             this.coverToolStripMenuItem.Name = "coverToolStripMenuItem";
-            this.coverToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.coverToolStripMenuItem.Text = "Cover";
             // 
             // openCoverToolStripMenuItem
             // 
-            this.openCoverToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.openCoverToolStripMenuItem, "openCoverToolStripMenuItem");
             this.openCoverToolStripMenuItem.Name = "openCoverToolStripMenuItem";
-            this.openCoverToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.openCoverToolStripMenuItem.Text = "Open Image";
             this.openCoverToolStripMenuItem.Click += new System.EventHandler(this.coverPictureBox_DoubleClick);
             // 
             // chooseCoverImageToolStripMenuItem
             // 
-            this.chooseCoverImageToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.chooseCoverImageToolStripMenuItem, "chooseCoverImageToolStripMenuItem");
             this.chooseCoverImageToolStripMenuItem.Name = "chooseCoverImageToolStripMenuItem";
-            this.chooseCoverImageToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.chooseCoverImageToolStripMenuItem.Text = "Choose File";
             this.chooseCoverImageToolStripMenuItem.Click += new System.EventHandler(this.coverEditButton_Click);
             // 
             // downloadCoverFromURLToolStripMenuItem
             // 
-            this.downloadCoverFromURLToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.downloadCoverFromURLToolStripMenuItem, "downloadCoverFromURLToolStripMenuItem");
             this.downloadCoverFromURLToolStripMenuItem.Name = "downloadCoverFromURLToolStripMenuItem";
-            this.downloadCoverFromURLToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.downloadCoverFromURLToolStripMenuItem.Text = "Download from URL";
             this.downloadCoverFromURLToolStripMenuItem.Click += new System.EventHandler(this.coverDownloadButton_Click);
             // 
             // deleteCoverToolStripMenuItem
             // 
-            this.deleteCoverToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.deleteCoverToolStripMenuItem, "deleteCoverToolStripMenuItem");
             this.deleteCoverToolStripMenuItem.Name = "deleteCoverToolStripMenuItem";
-            this.deleteCoverToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.deleteCoverToolStripMenuItem.Text = "Delete";
             this.deleteCoverToolStripMenuItem.Click += new System.EventHandler(this.coverDeleteButton_Click);
             // 
             // mp3ToolStripMenuItem
             // 
             this.mp3ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.openMp3ToolStripMenuItem, this.chooseMp3FileToolStripMenuItem });
-            this.mp3ToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.mp3ToolStripMenuItem, "mp3ToolStripMenuItem");
             this.mp3ToolStripMenuItem.Name = "mp3ToolStripMenuItem";
-            this.mp3ToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.mp3ToolStripMenuItem.Text = "MP3";
             // 
             // openMp3ToolStripMenuItem
             // 
-            this.openMp3ToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.openMp3ToolStripMenuItem, "openMp3ToolStripMenuItem");
             this.openMp3ToolStripMenuItem.Name = "openMp3ToolStripMenuItem";
-            this.openMp3ToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
-            this.openMp3ToolStripMenuItem.Text = "Open MP3";
             this.openMp3ToolStripMenuItem.Click += new System.EventHandler(this.mp3PlayButton_Click);
             // 
             // chooseMp3FileToolStripMenuItem
             // 
-            this.chooseMp3FileToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.chooseMp3FileToolStripMenuItem, "chooseMp3FileToolStripMenuItem");
             this.chooseMp3FileToolStripMenuItem.Name = "chooseMp3FileToolStripMenuItem";
-            this.chooseMp3FileToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
-            this.chooseMp3FileToolStripMenuItem.Text = "Choose File";
             this.chooseMp3FileToolStripMenuItem.Click += new System.EventHandler(this.mp3EditButton_Click);
             // 
             // videoToolStripMenuItem
             // 
             this.videoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.openVideoToolStripMenuItem, this.chooseVideoToolStripMenuItem, this.deleteVideoToolStripMenuItem });
-            this.videoToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.videoToolStripMenuItem, "videoToolStripMenuItem");
             this.videoToolStripMenuItem.Name = "videoToolStripMenuItem";
-            this.videoToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.videoToolStripMenuItem.Text = "Video";
             // 
             // openVideoToolStripMenuItem
             // 
-            this.openVideoToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.openVideoToolStripMenuItem, "openVideoToolStripMenuItem");
             this.openVideoToolStripMenuItem.Name = "openVideoToolStripMenuItem";
-            this.openVideoToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.openVideoToolStripMenuItem.Text = "Open Video";
             this.openVideoToolStripMenuItem.Click += new System.EventHandler(this.videoPlayButton_Click);
             // 
             // chooseVideoToolStripMenuItem
             // 
-            this.chooseVideoToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.chooseVideoToolStripMenuItem, "chooseVideoToolStripMenuItem");
             this.chooseVideoToolStripMenuItem.Name = "chooseVideoToolStripMenuItem";
-            this.chooseVideoToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.chooseVideoToolStripMenuItem.Text = "Choose File";
             this.chooseVideoToolStripMenuItem.Click += new System.EventHandler(this.videoEditButton_Click);
             // 
             // deleteVideoToolStripMenuItem
             // 
-            this.deleteVideoToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.deleteVideoToolStripMenuItem, "deleteVideoToolStripMenuItem");
             this.deleteVideoToolStripMenuItem.Name = "deleteVideoToolStripMenuItem";
-            this.deleteVideoToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.deleteVideoToolStripMenuItem.Text = "Delete";
             this.deleteVideoToolStripMenuItem.Click += new System.EventHandler(this.videoDeleteButton_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(151, 6);
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             // 
             // webSearchToolStripMenuItem
             // 
             this.webSearchToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.googleSearchToolStripMenuItem, this.discogsSearchToolStripMenuItem });
-            this.webSearchToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.webSearchToolStripMenuItem, "webSearchToolStripMenuItem");
             this.webSearchToolStripMenuItem.Name = "webSearchToolStripMenuItem";
-            this.webSearchToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.webSearchToolStripMenuItem.Text = "Web Search";
             // 
             // googleSearchToolStripMenuItem
             // 
             this.googleSearchToolStripMenuItem.Name = "googleSearchToolStripMenuItem";
-            this.googleSearchToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.googleSearchToolStripMenuItem.Text = "Search with Google";
+            resources.ApplyResources(this.googleSearchToolStripMenuItem, "googleSearchToolStripMenuItem");
             this.googleSearchToolStripMenuItem.Click += new System.EventHandler(this.googleSearchToolStripMenuItem_Click);
             // 
             // discogsSearchToolStripMenuItem
             // 
             this.discogsSearchToolStripMenuItem.Name = "discogsSearchToolStripMenuItem";
-            this.discogsSearchToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.discogsSearchToolStripMenuItem.Text = "Search on Discogs";
+            resources.ApplyResources(this.discogsSearchToolStripMenuItem, "discogsSearchToolStripMenuItem");
             this.discogsSearchToolStripMenuItem.Click += new System.EventHandler(this.discogsSearchToolStripMenuItem_Click);
             // 
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.startUltraStarDeluxeToolStripMenuItem, this.databasesToolStripMenuItem, this.importSongTxtToolStripMenuItem, this.exportSongTxtToolStripMenuItem });
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
-            this.toolsToolStripMenuItem.Text = "&Tools";
+            resources.ApplyResources(this.toolsToolStripMenuItem, "toolsToolStripMenuItem");
             // 
             // startUltraStarDeluxeToolStripMenuItem
             // 
             this.startUltraStarDeluxeToolStripMenuItem.Name = "startUltraStarDeluxeToolStripMenuItem";
-            this.startUltraStarDeluxeToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.startUltraStarDeluxeToolStripMenuItem.Text = "Start UltraStar Deluxe";
+            resources.ApplyResources(this.startUltraStarDeluxeToolStripMenuItem, "startUltraStarDeluxeToolStripMenuItem");
             this.startUltraStarDeluxeToolStripMenuItem.Click += new System.EventHandler(this.startUltraStarDeluxeToolStripMenuItem_Click);
             // 
             // databasesToolStripMenuItem
             // 
             this.databasesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.openUsdbAnimuxDeToolStripMenuItem });
             this.databasesToolStripMenuItem.Name = "databasesToolStripMenuItem";
-            this.databasesToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.databasesToolStripMenuItem.Text = "Databases";
+            resources.ApplyResources(this.databasesToolStripMenuItem, "databasesToolStripMenuItem");
             // 
             // openUsdbAnimuxDeToolStripMenuItem
             // 
             this.openUsdbAnimuxDeToolStripMenuItem.Name = "openUsdbAnimuxDeToolStripMenuItem";
-            this.openUsdbAnimuxDeToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.openUsdbAnimuxDeToolStripMenuItem.Text = "Open usdb.animux.de";
+            resources.ApplyResources(this.openUsdbAnimuxDeToolStripMenuItem, "openUsdbAnimuxDeToolStripMenuItem");
             this.openUsdbAnimuxDeToolStripMenuItem.Click += new System.EventHandler(this.openUsdbAnimuxDeToolStripMenuItem_Click);
             // 
             // importSongTxtToolStripMenuItem
             // 
             this.importSongTxtToolStripMenuItem.Name = "importSongTxtToolStripMenuItem";
-            this.importSongTxtToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.importSongTxtToolStripMenuItem.Text = "Import Song-TXT";
+            resources.ApplyResources(this.importSongTxtToolStripMenuItem, "importSongTxtToolStripMenuItem");
             this.importSongTxtToolStripMenuItem.Click += new System.EventHandler(this.importSongTxtToolStripMenuItem_Click);
             // 
             // exportSongTxtToolStripMenuItem
             // 
-            this.exportSongTxtToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.exportSongTxtToolStripMenuItem, "exportSongTxtToolStripMenuItem");
             this.exportSongTxtToolStripMenuItem.Name = "exportSongTxtToolStripMenuItem";
-            this.exportSongTxtToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.exportSongTxtToolStripMenuItem.Text = "Export Song-TXT";
             this.exportSongTxtToolStripMenuItem.Click += new System.EventHandler(this.exportSongTxtToolStripMenuItem_Click);
             // 
             // songListView
             // 
             this.songListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { this.titleColumn, this.artistColumn, this.fileColumn });
-            this.songListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            resources.ApplyResources(this.songListView, "songListView");
             this.songListView.FullRowSelect = true;
             this.songListView.GridLines = true;
-            this.songListView.Location = new System.Drawing.Point(12, 27);
             this.songListView.MultiSelect = false;
             this.songListView.Name = "songListView";
             this.songListView.ShowItemToolTips = true;
-            this.songListView.Size = new System.Drawing.Size(691, 849);
             this.songListView.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.songListView.TabIndex = 1;
             this.songListView.TabStop = false;
             this.songListView.UseCompatibleStateImageBehavior = false;
             this.songListView.View = System.Windows.Forms.View.Details;
@@ -441,162 +380,101 @@ namespace UltraStarDeluxeEditor {
             // 
             // titleColumn
             // 
-            this.titleColumn.Text = "Title";
-            this.titleColumn.Width = 259;
+            resources.ApplyResources(this.titleColumn, "titleColumn");
             // 
             // artistColumn
             // 
-            this.artistColumn.Text = "Artist";
-            this.artistColumn.Width = 216;
+            resources.ApplyResources(this.artistColumn, "artistColumn");
             // 
             // fileColumn
             // 
-            this.fileColumn.Text = "File";
-            this.fileColumn.Width = 266;
+            resources.ApplyResources(this.fileColumn, "fileColumn");
             // 
             // titleTextBox
             // 
-            this.titleTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.titleTextBox.Location = new System.Drawing.Point(100, 22);
+            resources.ApplyResources(this.titleTextBox, "titleTextBox");
             this.titleTextBox.Name = "titleTextBox";
-            this.titleTextBox.Size = new System.Drawing.Size(452, 26);
-            this.titleTextBox.TabIndex = 0;
             this.titleTextBox.TextChanged += new System.EventHandler(this.detailControl_ValueChanged);
             // 
             // titleLabel
             // 
-            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.titleLabel.Location = new System.Drawing.Point(9, 24);
+            resources.ApplyResources(this.titleLabel, "titleLabel");
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(85, 23);
-            this.titleLabel.TabIndex = 3;
-            this.titleLabel.Text = "Title";
-            this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // coverPictureBox
             // 
             this.coverPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.coverPictureBox.Image = ((System.Drawing.Image) (resources.GetObject("coverPictureBox.Image")));
-            this.coverPictureBox.InitialImage = null;
-            this.coverPictureBox.Location = new System.Drawing.Point(568, 22);
+            resources.ApplyResources(this.coverPictureBox, "coverPictureBox");
             this.coverPictureBox.Name = "coverPictureBox";
-            this.coverPictureBox.Size = new System.Drawing.Size(150, 150);
-            this.coverPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.coverPictureBox.TabIndex = 4;
             this.coverPictureBox.TabStop = false;
             this.coverPictureBox.DoubleClick += new System.EventHandler(this.coverPictureBox_DoubleClick);
             // 
             // artistTextBox
             // 
-            this.artistTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.artistTextBox.Location = new System.Drawing.Point(100, 56);
+            resources.ApplyResources(this.artistTextBox, "artistTextBox");
             this.artistTextBox.Name = "artistTextBox";
-            this.artistTextBox.Size = new System.Drawing.Size(452, 26);
-            this.artistTextBox.TabIndex = 1;
             this.artistTextBox.TextChanged += new System.EventHandler(this.detailControl_ValueChanged);
             // 
             // artistLabel
             // 
-            this.artistLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.artistLabel.Location = new System.Drawing.Point(9, 58);
+            resources.ApplyResources(this.artistLabel, "artistLabel");
             this.artistLabel.Name = "artistLabel";
-            this.artistLabel.Size = new System.Drawing.Size(85, 23);
-            this.artistLabel.TabIndex = 3;
-            this.artistLabel.Text = "Artist";
-            this.artistLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // coverDeleteButton
             // 
-            this.coverDeleteButton.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("coverDeleteButton.BackgroundImage")));
-            this.coverDeleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            resources.ApplyResources(this.coverDeleteButton, "coverDeleteButton");
             this.coverDeleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.coverDeleteButton.Location = new System.Drawing.Point(686, 180);
             this.coverDeleteButton.Name = "coverDeleteButton";
-            this.coverDeleteButton.Size = new System.Drawing.Size(32, 32);
-            this.coverDeleteButton.TabIndex = 16;
             this.coverDeleteButton.TabStop = false;
             this.coverDeleteButton.UseVisualStyleBackColor = true;
             this.coverDeleteButton.Click += new System.EventHandler(this.coverDeleteButton_Click);
             // 
             // coverEditButton
             // 
-            this.coverEditButton.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("coverEditButton.BackgroundImage")));
-            this.coverEditButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            resources.ApplyResources(this.coverEditButton, "coverEditButton");
             this.coverEditButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.coverEditButton.Location = new System.Drawing.Point(648, 180);
             this.coverEditButton.Name = "coverEditButton";
-            this.coverEditButton.Size = new System.Drawing.Size(32, 32);
-            this.coverEditButton.TabIndex = 15;
             this.coverEditButton.TabStop = false;
             this.coverEditButton.UseVisualStyleBackColor = true;
             this.coverEditButton.Click += new System.EventHandler(this.coverEditButton_Click);
             // 
             // yearLabel
             // 
-            this.yearLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.yearLabel.Location = new System.Drawing.Point(9, 91);
+            resources.ApplyResources(this.yearLabel, "yearLabel");
             this.yearLabel.Name = "yearLabel";
-            this.yearLabel.Size = new System.Drawing.Size(85, 23);
-            this.yearLabel.TabIndex = 3;
-            this.yearLabel.Text = "Year";
-            this.yearLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // languageTextBox
             // 
-            this.languageTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.languageTextBox.Location = new System.Drawing.Point(100, 120);
+            resources.ApplyResources(this.languageTextBox, "languageTextBox");
             this.languageTextBox.Name = "languageTextBox";
-            this.languageTextBox.Size = new System.Drawing.Size(452, 26);
-            this.languageTextBox.TabIndex = 3;
             this.languageTextBox.TextChanged += new System.EventHandler(this.detailControl_ValueChanged);
             // 
             // languageLabel
             // 
-            this.languageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.languageLabel.Location = new System.Drawing.Point(9, 123);
+            resources.ApplyResources(this.languageLabel, "languageLabel");
             this.languageLabel.Name = "languageLabel";
-            this.languageLabel.Size = new System.Drawing.Size(85, 23);
-            this.languageLabel.TabIndex = 3;
-            this.languageLabel.Text = "Language";
-            this.languageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // genreTextBox
             // 
-            this.genreTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.genreTextBox.Location = new System.Drawing.Point(100, 152);
+            resources.ApplyResources(this.genreTextBox, "genreTextBox");
             this.genreTextBox.Name = "genreTextBox";
-            this.genreTextBox.Size = new System.Drawing.Size(452, 26);
-            this.genreTextBox.TabIndex = 4;
             this.genreTextBox.TextChanged += new System.EventHandler(this.detailControl_ValueChanged);
             // 
             // genreLabel
             // 
-            this.genreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.genreLabel.Location = new System.Drawing.Point(9, 155);
+            resources.ApplyResources(this.genreLabel, "genreLabel");
             this.genreLabel.Name = "genreLabel";
-            this.genreLabel.Size = new System.Drawing.Size(85, 23);
-            this.genreLabel.TabIndex = 3;
-            this.genreLabel.Text = "Genre";
-            this.genreLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // editionTextBox
             // 
-            this.editionTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.editionTextBox.Location = new System.Drawing.Point(100, 184);
+            resources.ApplyResources(this.editionTextBox, "editionTextBox");
             this.editionTextBox.Name = "editionTextBox";
-            this.editionTextBox.Size = new System.Drawing.Size(452, 26);
-            this.editionTextBox.TabIndex = 5;
             this.editionTextBox.TextChanged += new System.EventHandler(this.detailControl_ValueChanged);
             // 
             // editionLabel
             // 
-            this.editionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.editionLabel.Location = new System.Drawing.Point(9, 186);
+            resources.ApplyResources(this.editionLabel, "editionLabel");
             this.editionLabel.Name = "editionLabel";
-            this.editionLabel.Size = new System.Drawing.Size(85, 23);
-            this.editionLabel.TabIndex = 3;
-            this.editionLabel.Text = "Edition";
-            this.editionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // songInfoGroupBox
             // 
@@ -618,56 +496,35 @@ namespace UltraStarDeluxeEditor {
             this.songInfoGroupBox.Controls.Add(this.artistLabel);
             this.songInfoGroupBox.Controls.Add(this.languageLabel);
             this.songInfoGroupBox.Controls.Add(this.yearLabel);
-            this.songInfoGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.songInfoGroupBox.Location = new System.Drawing.Point(709, 27);
+            resources.ApplyResources(this.songInfoGroupBox, "songInfoGroupBox");
             this.songInfoGroupBox.Name = "songInfoGroupBox";
-            this.songInfoGroupBox.Size = new System.Drawing.Size(724, 218);
-            this.songInfoGroupBox.TabIndex = 6;
             this.songInfoGroupBox.TabStop = false;
-            this.songInfoGroupBox.Text = "Song Info";
             // 
             // artistMissingPictureBox
             // 
-            this.artistMissingPictureBox.Image = ((System.Drawing.Image) (resources.GetObject("artistMissingPictureBox.Image")));
-            this.artistMissingPictureBox.Location = new System.Drawing.Point(6, 56);
+            resources.ApplyResources(this.artistMissingPictureBox, "artistMissingPictureBox");
             this.artistMissingPictureBox.Name = "artistMissingPictureBox";
-            this.artistMissingPictureBox.Size = new System.Drawing.Size(26, 26);
-            this.artistMissingPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.artistMissingPictureBox.TabIndex = 6;
             this.artistMissingPictureBox.TabStop = false;
-            this.artistMissingPictureBox.Visible = false;
             // 
             // titleMissingPictureBox
             // 
-            this.titleMissingPictureBox.Image = ((System.Drawing.Image) (resources.GetObject("titleMissingPictureBox.Image")));
-            this.titleMissingPictureBox.Location = new System.Drawing.Point(6, 22);
+            resources.ApplyResources(this.titleMissingPictureBox, "titleMissingPictureBox");
             this.titleMissingPictureBox.Name = "titleMissingPictureBox";
-            this.titleMissingPictureBox.Size = new System.Drawing.Size(26, 26);
-            this.titleMissingPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.titleMissingPictureBox.TabIndex = 6;
             this.titleMissingPictureBox.TabStop = false;
-            this.titleMissingPictureBox.Visible = false;
             // 
             // coverDownloadButton
             // 
-            this.coverDownloadButton.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("coverDownloadButton.BackgroundImage")));
-            this.coverDownloadButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            resources.ApplyResources(this.coverDownloadButton, "coverDownloadButton");
             this.coverDownloadButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.coverDownloadButton.Location = new System.Drawing.Point(610, 180);
             this.coverDownloadButton.Name = "coverDownloadButton";
-            this.coverDownloadButton.Size = new System.Drawing.Size(32, 32);
-            this.coverDownloadButton.TabIndex = 14;
             this.coverDownloadButton.TabStop = false;
             this.coverDownloadButton.UseVisualStyleBackColor = true;
             this.coverDownloadButton.Click += new System.EventHandler(this.coverDownloadButton_Click);
             // 
             // yearTextBox
             // 
-            this.yearTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.yearTextBox.Location = new System.Drawing.Point(100, 88);
+            resources.ApplyResources(this.yearTextBox, "yearTextBox");
             this.yearTextBox.Name = "yearTextBox";
-            this.yearTextBox.Size = new System.Drawing.Size(452, 26);
-            this.yearTextBox.TabIndex = 2;
             this.yearTextBox.TextChanged += new System.EventHandler(this.detailControl_ValueChanged);
             // 
             // songSettingsGroupBox
@@ -683,131 +540,82 @@ namespace UltraStarDeluxeEditor {
             this.songSettingsGroupBox.Controls.Add(this.duetSinger2Label);
             this.songSettingsGroupBox.Controls.Add(this.gapNumericUpDown);
             this.songSettingsGroupBox.Controls.Add(this.duetSinger1Label);
-            this.songSettingsGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.songSettingsGroupBox.Location = new System.Drawing.Point(709, 251);
+            resources.ApplyResources(this.songSettingsGroupBox, "songSettingsGroupBox");
             this.songSettingsGroupBox.Name = "songSettingsGroupBox";
-            this.songSettingsGroupBox.Size = new System.Drawing.Size(724, 121);
-            this.songSettingsGroupBox.TabIndex = 7;
             this.songSettingsGroupBox.TabStop = false;
-            this.songSettingsGroupBox.Text = "Song Settings";
             // 
             // duetCheckBox
             // 
-            this.duetCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.duetCheckBox.Location = new System.Drawing.Point(9, 54);
+            resources.ApplyResources(this.duetCheckBox, "duetCheckBox");
             this.duetCheckBox.Name = "duetCheckBox";
-            this.duetCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.duetCheckBox.Size = new System.Drawing.Size(104, 24);
-            this.duetCheckBox.TabIndex = 9;
-            this.duetCheckBox.Text = "Is Duet";
             this.duetCheckBox.UseVisualStyleBackColor = true;
             this.duetCheckBox.CheckedChanged += new System.EventHandler(this.duetCheckBox_CheckedChanged);
             // 
             // videoGapLabel
             // 
-            this.videoGapLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.videoGapLabel.Location = new System.Drawing.Point(519, 23);
+            resources.ApplyResources(this.videoGapLabel, "videoGapLabel");
             this.videoGapLabel.Name = "videoGapLabel";
-            this.videoGapLabel.Size = new System.Drawing.Size(85, 23);
-            this.videoGapLabel.TabIndex = 3;
-            this.videoGapLabel.Text = "Video Gap";
-            this.videoGapLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // bpmLabel
             // 
-            this.bpmLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.bpmLabel.Location = new System.Drawing.Point(241, 23);
+            resources.ApplyResources(this.bpmLabel, "bpmLabel");
             this.bpmLabel.Name = "bpmLabel";
-            this.bpmLabel.Size = new System.Drawing.Size(85, 23);
-            this.bpmLabel.TabIndex = 3;
-            this.bpmLabel.Text = "BPM";
-            this.bpmLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // gapLabel
             // 
-            this.gapLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.gapLabel.Location = new System.Drawing.Point(9, 23);
+            resources.ApplyResources(this.gapLabel, "gapLabel");
             this.gapLabel.Name = "gapLabel";
-            this.gapLabel.Size = new System.Drawing.Size(85, 23);
-            this.gapLabel.TabIndex = 3;
-            this.gapLabel.Text = "Gap";
-            this.gapLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // duetSinger2TextBox
             // 
-            this.duetSinger2TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.duetSinger2TextBox.Location = new System.Drawing.Point(266, 86);
+            resources.ApplyResources(this.duetSinger2TextBox, "duetSinger2TextBox");
             this.duetSinger2TextBox.Name = "duetSinger2TextBox";
-            this.duetSinger2TextBox.Size = new System.Drawing.Size(452, 26);
-            this.duetSinger2TextBox.TabIndex = 11;
             this.duetSinger2TextBox.TextChanged += new System.EventHandler(this.detailControl_ValueChanged);
             // 
             // duetSinger1TextBox
             // 
-            this.duetSinger1TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.duetSinger1TextBox.Location = new System.Drawing.Point(266, 54);
+            resources.ApplyResources(this.duetSinger1TextBox, "duetSinger1TextBox");
             this.duetSinger1TextBox.Name = "duetSinger1TextBox";
-            this.duetSinger1TextBox.Size = new System.Drawing.Size(452, 26);
-            this.duetSinger1TextBox.TabIndex = 10;
             this.duetSinger1TextBox.TextChanged += new System.EventHandler(this.detailControl_ValueChanged);
             // 
             // videoGapNumericUpDown
             // 
             this.videoGapNumericUpDown.DecimalPlaces = 2;
-            this.videoGapNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            resources.ApplyResources(this.videoGapNumericUpDown, "videoGapNumericUpDown");
             this.videoGapNumericUpDown.Increment = new decimal(new int[] { 5, 0, 0, 65536 });
-            this.videoGapNumericUpDown.Location = new System.Drawing.Point(610, 22);
             this.videoGapNumericUpDown.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             this.videoGapNumericUpDown.Name = "videoGapNumericUpDown";
-            this.videoGapNumericUpDown.Size = new System.Drawing.Size(108, 26);
-            this.videoGapNumericUpDown.TabIndex = 8;
             this.videoGapNumericUpDown.ValueChanged += new System.EventHandler(this.detailControl_ValueChanged);
             // 
             // bpmNumericUpDown
             // 
             this.bpmNumericUpDown.DecimalPlaces = 2;
-            this.bpmNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            resources.ApplyResources(this.bpmNumericUpDown, "bpmNumericUpDown");
             this.bpmNumericUpDown.Increment = new decimal(new int[] { 5, 0, 0, 65536 });
-            this.bpmNumericUpDown.Location = new System.Drawing.Point(332, 22);
             this.bpmNumericUpDown.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             this.bpmNumericUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             this.bpmNumericUpDown.Name = "bpmNumericUpDown";
-            this.bpmNumericUpDown.Size = new System.Drawing.Size(108, 26);
-            this.bpmNumericUpDown.TabIndex = 7;
             this.bpmNumericUpDown.Value = new decimal(new int[] { 1, 0, 0, 0 });
             this.bpmNumericUpDown.ValueChanged += new System.EventHandler(this.detailControl_ValueChanged);
             // 
             // duetSinger2Label
             // 
-            this.duetSinger2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.duetSinger2Label.Location = new System.Drawing.Point(150, 88);
+            resources.ApplyResources(this.duetSinger2Label, "duetSinger2Label");
             this.duetSinger2Label.Name = "duetSinger2Label";
-            this.duetSinger2Label.Size = new System.Drawing.Size(110, 23);
-            this.duetSinger2Label.TabIndex = 3;
-            this.duetSinger2Label.Text = "Duet Singer 2";
-            this.duetSinger2Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // gapNumericUpDown
             // 
             this.gapNumericUpDown.DecimalPlaces = 2;
-            this.gapNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            resources.ApplyResources(this.gapNumericUpDown, "gapNumericUpDown");
             this.gapNumericUpDown.Increment = new decimal(new int[] { 5, 0, 0, 65536 });
-            this.gapNumericUpDown.Location = new System.Drawing.Point(100, 22);
             this.gapNumericUpDown.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             this.gapNumericUpDown.Name = "gapNumericUpDown";
-            this.gapNumericUpDown.Size = new System.Drawing.Size(108, 26);
-            this.gapNumericUpDown.TabIndex = 6;
             this.gapNumericUpDown.ValueChanged += new System.EventHandler(this.detailControl_ValueChanged);
             // 
             // duetSinger1Label
             // 
-            this.duetSinger1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.duetSinger1Label.Location = new System.Drawing.Point(150, 54);
+            resources.ApplyResources(this.duetSinger1Label, "duetSinger1Label");
             this.duetSinger1Label.Name = "duetSinger1Label";
-            this.duetSinger1Label.Size = new System.Drawing.Size(110, 23);
-            this.duetSinger1Label.TabIndex = 3;
-            this.duetSinger1Label.Text = "Duet Singer 1";
-            this.duetSinger1Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // songFilesGroupBox
             // 
@@ -824,175 +632,111 @@ namespace UltraStarDeluxeEditor {
             this.songFilesGroupBox.Controls.Add(this.videoDeleteButton);
             this.songFilesGroupBox.Controls.Add(this.videoLabel);
             this.songFilesGroupBox.Controls.Add(this.mp3Label);
-            this.songFilesGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.songFilesGroupBox.Location = new System.Drawing.Point(709, 378);
+            resources.ApplyResources(this.songFilesGroupBox, "songFilesGroupBox");
             this.songFilesGroupBox.Name = "songFilesGroupBox";
-            this.songFilesGroupBox.Size = new System.Drawing.Size(724, 100);
-            this.songFilesGroupBox.TabIndex = 8;
             this.songFilesGroupBox.TabStop = false;
-            this.songFilesGroupBox.Text = "Song Files";
             // 
             // mp3MissingPictureBox
             // 
-            this.mp3MissingPictureBox.Image = ((System.Drawing.Image) (resources.GetObject("mp3MissingPictureBox.Image")));
-            this.mp3MissingPictureBox.Location = new System.Drawing.Point(6, 24);
+            resources.ApplyResources(this.mp3MissingPictureBox, "mp3MissingPictureBox");
             this.mp3MissingPictureBox.Name = "mp3MissingPictureBox";
-            this.mp3MissingPictureBox.Size = new System.Drawing.Size(26, 26);
-            this.mp3MissingPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.mp3MissingPictureBox.TabIndex = 7;
             this.mp3MissingPictureBox.TabStop = false;
-            this.mp3MissingPictureBox.Visible = false;
             // 
             // videoNotFoundPictureBox
             // 
-            this.videoNotFoundPictureBox.Image = ((System.Drawing.Image) (resources.GetObject("videoNotFoundPictureBox.Image")));
-            this.videoNotFoundPictureBox.Location = new System.Drawing.Point(6, 62);
+            resources.ApplyResources(this.videoNotFoundPictureBox, "videoNotFoundPictureBox");
             this.videoNotFoundPictureBox.Name = "videoNotFoundPictureBox";
-            this.videoNotFoundPictureBox.Size = new System.Drawing.Size(26, 26);
-            this.videoNotFoundPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.videoNotFoundPictureBox.TabIndex = 6;
             this.videoNotFoundPictureBox.TabStop = false;
-            this.videoNotFoundPictureBox.Visible = false;
             // 
             // mp3NotFoundPictureBox
             // 
-            this.mp3NotFoundPictureBox.Image = ((System.Drawing.Image) (resources.GetObject("mp3NotFoundPictureBox.Image")));
-            this.mp3NotFoundPictureBox.Location = new System.Drawing.Point(6, 24);
+            resources.ApplyResources(this.mp3NotFoundPictureBox, "mp3NotFoundPictureBox");
             this.mp3NotFoundPictureBox.Name = "mp3NotFoundPictureBox";
-            this.mp3NotFoundPictureBox.Size = new System.Drawing.Size(26, 26);
-            this.mp3NotFoundPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.mp3NotFoundPictureBox.TabIndex = 6;
             this.mp3NotFoundPictureBox.TabStop = false;
-            this.mp3NotFoundPictureBox.Visible = false;
             // 
             // videoTextBox
             // 
-            this.videoTextBox.Enabled = false;
-            this.videoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.videoTextBox.Location = new System.Drawing.Point(100, 62);
+            resources.ApplyResources(this.videoTextBox, "videoTextBox");
             this.videoTextBox.Name = "videoTextBox";
-            this.videoTextBox.Size = new System.Drawing.Size(504, 26);
-            this.videoTextBox.TabIndex = 0;
             this.videoTextBox.TextChanged += new System.EventHandler(this.detailControl_ValueChanged);
             // 
             // mp3TextBox
             // 
-            this.mp3TextBox.Enabled = false;
-            this.mp3TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.mp3TextBox.Location = new System.Drawing.Point(100, 24);
+            resources.ApplyResources(this.mp3TextBox, "mp3TextBox");
             this.mp3TextBox.Name = "mp3TextBox";
-            this.mp3TextBox.Size = new System.Drawing.Size(504, 26);
-            this.mp3TextBox.TabIndex = 0;
             this.mp3TextBox.TextChanged += new System.EventHandler(this.detailControl_ValueChanged);
             // 
             // videoEditButton
             // 
-            this.videoEditButton.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("videoEditButton.BackgroundImage")));
-            this.videoEditButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            resources.ApplyResources(this.videoEditButton, "videoEditButton");
             this.videoEditButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.videoEditButton.Location = new System.Drawing.Point(648, 58);
             this.videoEditButton.Name = "videoEditButton";
-            this.videoEditButton.Size = new System.Drawing.Size(32, 32);
-            this.videoEditButton.TabIndex = 5;
             this.videoEditButton.TabStop = false;
             this.videoEditButton.UseVisualStyleBackColor = true;
             this.videoEditButton.Click += new System.EventHandler(this.videoEditButton_Click);
             // 
             // videoPlayButton
             // 
-            this.videoPlayButton.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("videoPlayButton.BackgroundImage")));
-            this.videoPlayButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            resources.ApplyResources(this.videoPlayButton, "videoPlayButton");
             this.videoPlayButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.videoPlayButton.Location = new System.Drawing.Point(610, 58);
             this.videoPlayButton.Name = "videoPlayButton";
-            this.videoPlayButton.Size = new System.Drawing.Size(32, 32);
-            this.videoPlayButton.TabIndex = 5;
             this.videoPlayButton.TabStop = false;
             this.videoPlayButton.UseVisualStyleBackColor = true;
             this.videoPlayButton.Click += new System.EventHandler(this.videoPlayButton_Click);
             // 
             // mp3PlayButton
             // 
-            this.mp3PlayButton.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("mp3PlayButton.BackgroundImage")));
-            this.mp3PlayButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            resources.ApplyResources(this.mp3PlayButton, "mp3PlayButton");
             this.mp3PlayButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mp3PlayButton.Location = new System.Drawing.Point(610, 20);
             this.mp3PlayButton.Name = "mp3PlayButton";
-            this.mp3PlayButton.Size = new System.Drawing.Size(32, 32);
-            this.mp3PlayButton.TabIndex = 5;
             this.mp3PlayButton.TabStop = false;
             this.mp3PlayButton.UseVisualStyleBackColor = true;
             this.mp3PlayButton.Click += new System.EventHandler(this.mp3PlayButton_Click);
             // 
             // mp3EditButton
             // 
-            this.mp3EditButton.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("mp3EditButton.BackgroundImage")));
-            this.mp3EditButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            resources.ApplyResources(this.mp3EditButton, "mp3EditButton");
             this.mp3EditButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mp3EditButton.Location = new System.Drawing.Point(648, 20);
             this.mp3EditButton.Name = "mp3EditButton";
-            this.mp3EditButton.Size = new System.Drawing.Size(32, 32);
-            this.mp3EditButton.TabIndex = 5;
             this.mp3EditButton.TabStop = false;
             this.mp3EditButton.UseVisualStyleBackColor = true;
             this.mp3EditButton.Click += new System.EventHandler(this.mp3EditButton_Click);
             // 
             // mp3DeleteButton
             // 
-            this.mp3DeleteButton.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("mp3DeleteButton.BackgroundImage")));
-            this.mp3DeleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            resources.ApplyResources(this.mp3DeleteButton, "mp3DeleteButton");
             this.mp3DeleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mp3DeleteButton.Location = new System.Drawing.Point(686, 20);
             this.mp3DeleteButton.Name = "mp3DeleteButton";
-            this.mp3DeleteButton.Size = new System.Drawing.Size(32, 32);
-            this.mp3DeleteButton.TabIndex = 5;
             this.mp3DeleteButton.TabStop = false;
             this.mp3DeleteButton.UseVisualStyleBackColor = true;
             this.mp3DeleteButton.Click += new System.EventHandler(this.mp3DeleteButton_Click);
             // 
             // videoDeleteButton
             // 
-            this.videoDeleteButton.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("videoDeleteButton.BackgroundImage")));
-            this.videoDeleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            resources.ApplyResources(this.videoDeleteButton, "videoDeleteButton");
             this.videoDeleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.videoDeleteButton.Location = new System.Drawing.Point(686, 58);
             this.videoDeleteButton.Name = "videoDeleteButton";
-            this.videoDeleteButton.Size = new System.Drawing.Size(32, 32);
-            this.videoDeleteButton.TabIndex = 5;
             this.videoDeleteButton.TabStop = false;
             this.videoDeleteButton.UseVisualStyleBackColor = true;
             this.videoDeleteButton.Click += new System.EventHandler(this.videoDeleteButton_Click);
             // 
             // videoLabel
             // 
-            this.videoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.videoLabel.Location = new System.Drawing.Point(40, 64);
+            resources.ApplyResources(this.videoLabel, "videoLabel");
             this.videoLabel.Name = "videoLabel";
-            this.videoLabel.Size = new System.Drawing.Size(54, 23);
-            this.videoLabel.TabIndex = 3;
-            this.videoLabel.Text = "Video";
-            this.videoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // mp3Label
             // 
-            this.mp3Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.mp3Label.Location = new System.Drawing.Point(40, 26);
+            resources.ApplyResources(this.mp3Label, "mp3Label");
             this.mp3Label.Name = "mp3Label";
-            this.mp3Label.Size = new System.Drawing.Size(54, 23);
-            this.mp3Label.TabIndex = 3;
-            this.mp3Label.Text = "MP3";
-            this.mp3Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // textTabControl
             // 
             this.textTabControl.Controls.Add(this.player1TextTab);
             this.textTabControl.Controls.Add(this.player2TextTab);
-            this.textTabControl.Enabled = false;
-            this.textTabControl.Location = new System.Drawing.Point(709, 484);
+            resources.ApplyResources(this.textTabControl, "textTabControl");
             this.textTabControl.Name = "textTabControl";
             this.textTabControl.SelectedIndex = 0;
-            this.textTabControl.Size = new System.Drawing.Size(718, 392);
-            this.textTabControl.TabIndex = 9;
             this.textTabControl.TabStop = false;
             this.textTabControl.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.textTabControl_Selecting);
             // 
@@ -1000,70 +744,42 @@ namespace UltraStarDeluxeEditor {
             // 
             this.player1TextTab.Controls.Add(this.player1TextBox);
             this.player1TextTab.Controls.Add(this.songText1MissingPictureBox);
-            this.player1TextTab.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.player1TextTab, "player1TextTab");
             this.player1TextTab.Name = "player1TextTab";
-            this.player1TextTab.Padding = new System.Windows.Forms.Padding(3);
-            this.player1TextTab.Size = new System.Drawing.Size(710, 366);
-            this.player1TextTab.TabIndex = 0;
-            this.player1TextTab.Text = "Player 1";
             this.player1TextTab.UseVisualStyleBackColor = true;
             // 
             // player1TextBox
             // 
-            this.player1TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.player1TextBox.Location = new System.Drawing.Point(6, 6);
-            this.player1TextBox.Multiline = true;
+            resources.ApplyResources(this.player1TextBox, "player1TextBox");
             this.player1TextBox.Name = "player1TextBox";
-            this.player1TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.player1TextBox.Size = new System.Drawing.Size(698, 354);
-            this.player1TextBox.TabIndex = 12;
             this.player1TextBox.TextChanged += new System.EventHandler(this.detailControl_ValueChanged);
             // 
             // songText1MissingPictureBox
             // 
             this.songText1MissingPictureBox.BackColor = System.Drawing.SystemColors.Window;
-            this.songText1MissingPictureBox.Image = ((System.Drawing.Image) (resources.GetObject("songText1MissingPictureBox.Image")));
-            this.songText1MissingPictureBox.Location = new System.Drawing.Point(8, 332);
+            resources.ApplyResources(this.songText1MissingPictureBox, "songText1MissingPictureBox");
             this.songText1MissingPictureBox.Name = "songText1MissingPictureBox";
-            this.songText1MissingPictureBox.Size = new System.Drawing.Size(26, 26);
-            this.songText1MissingPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.songText1MissingPictureBox.TabIndex = 6;
             this.songText1MissingPictureBox.TabStop = false;
-            this.songText1MissingPictureBox.Visible = false;
             // 
             // player2TextTab
             // 
             this.player2TextTab.Controls.Add(this.songText2MissingPictureBox);
             this.player2TextTab.Controls.Add(this.player2TextBox);
-            this.player2TextTab.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.player2TextTab, "player2TextTab");
             this.player2TextTab.Name = "player2TextTab";
-            this.player2TextTab.Padding = new System.Windows.Forms.Padding(3);
-            this.player2TextTab.Size = new System.Drawing.Size(710, 366);
-            this.player2TextTab.TabIndex = 1;
-            this.player2TextTab.Text = "Player 2";
             this.player2TextTab.UseVisualStyleBackColor = true;
             // 
             // songText2MissingPictureBox
             // 
             this.songText2MissingPictureBox.BackColor = System.Drawing.SystemColors.Window;
-            this.songText2MissingPictureBox.Image = ((System.Drawing.Image) (resources.GetObject("songText2MissingPictureBox.Image")));
-            this.songText2MissingPictureBox.Location = new System.Drawing.Point(8, 332);
+            resources.ApplyResources(this.songText2MissingPictureBox, "songText2MissingPictureBox");
             this.songText2MissingPictureBox.Name = "songText2MissingPictureBox";
-            this.songText2MissingPictureBox.Size = new System.Drawing.Size(26, 26);
-            this.songText2MissingPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.songText2MissingPictureBox.TabIndex = 6;
             this.songText2MissingPictureBox.TabStop = false;
-            this.songText2MissingPictureBox.Visible = false;
             // 
             // player2TextBox
             // 
-            this.player2TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.player2TextBox.Location = new System.Drawing.Point(6, 6);
-            this.player2TextBox.Multiline = true;
+            resources.ApplyResources(this.player2TextBox, "player2TextBox");
             this.player2TextBox.Name = "player2TextBox";
-            this.player2TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.player2TextBox.Size = new System.Drawing.Size(698, 354);
-            this.player2TextBox.TabIndex = 13;
             this.player2TextBox.TextChanged += new System.EventHandler(this.detailControl_ValueChanged);
             // 
             // toolTip
@@ -1075,9 +791,8 @@ namespace UltraStarDeluxeEditor {
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1445, 888);
             this.Controls.Add(this.textTabControl);
             this.Controls.Add(this.songFilesGroupBox);
             this.Controls.Add(this.songSettingsGroupBox);
@@ -1085,12 +800,9 @@ namespace UltraStarDeluxeEditor {
             this.Controls.Add(this.songListView);
             this.Controls.Add(this.mainMenuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mainMenuStrip;
             this.MaximizeBox = false;
             this.Name = "MainForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "UltraStar Deluxe Editor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Shown += new System.EventHandler(this.MainForm_Shown);

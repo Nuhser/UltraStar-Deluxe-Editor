@@ -120,7 +120,402 @@
   <metadata name="mainMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="newSongToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+N</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="newSongToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 22</value>
+  </data>
+  <data name="newSongToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;New Song</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="saveToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="saveToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+S</value>
+  </data>
+  <data name="saveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 22</value>
+  </data>
+  <data name="saveToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Save</value>
+  </data>
+  <data name="saveAllToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="saveAllToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+Shift+S</value>
+  </data>
+  <data name="saveAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 22</value>
+  </data>
+  <data name="saveAllToolStripMenuItem.Text" xml:space="preserve">
+    <value>Save &amp;All</value>
+  </data>
+  <data name="reloadSongsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 22</value>
+  </data>
+  <data name="reloadSongsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Reload All Songs</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 6</value>
+  </data>
+  <data name="closeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 22</value>
+  </data>
+  <data name="closeToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Close</value>
+  </data>
+  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;File</value>
+  </data>
+  <data name="openSongTxtToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="openSongTxtToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="openSongTxtToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open Raw TXT</value>
+  </data>
+  <data name="openDirectoryToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="openDirectoryToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="openDirectoryToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open Directory</value>
+  </data>
+  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 6</value>
+  </data>
+  <data name="reloadSongToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="reloadSongToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="reloadSongToolStripMenuItem.Text" xml:space="preserve">
+    <value>Reload Song</value>
+  </data>
+  <data name="deleteSongToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="deleteSongToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="deleteSongToolStripMenuItem.Text" xml:space="preserve">
+    <value>Delete Song</value>
+  </data>
+  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 6</value>
+  </data>
+  <data name="openCoverToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="openCoverToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 22</value>
+  </data>
+  <data name="openCoverToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open Image</value>
+  </data>
+  <data name="chooseCoverImageToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="chooseCoverImageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 22</value>
+  </data>
+  <data name="chooseCoverImageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Choose File</value>
+  </data>
+  <data name="downloadCoverFromURLToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="downloadCoverFromURLToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 22</value>
+  </data>
+  <data name="downloadCoverFromURLToolStripMenuItem.Text" xml:space="preserve">
+    <value>Download from URL</value>
+  </data>
+  <data name="deleteCoverToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="deleteCoverToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 22</value>
+  </data>
+  <data name="deleteCoverToolStripMenuItem.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="coverToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="coverToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="coverToolStripMenuItem.Text" xml:space="preserve">
+    <value>Cover</value>
+  </data>
+  <data name="openMp3ToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="openMp3ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 22</value>
+  </data>
+  <data name="openMp3ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open MP3</value>
+  </data>
+  <data name="chooseMp3FileToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="chooseMp3FileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 22</value>
+  </data>
+  <data name="chooseMp3FileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Choose File</value>
+  </data>
+  <data name="mp3ToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="mp3ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="mp3ToolStripMenuItem.Text" xml:space="preserve">
+    <value>MP3</value>
+  </data>
+  <data name="openVideoToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="openVideoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 22</value>
+  </data>
+  <data name="openVideoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open Video</value>
+  </data>
+  <data name="chooseVideoToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="chooseVideoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 22</value>
+  </data>
+  <data name="chooseVideoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Choose File</value>
+  </data>
+  <data name="deleteVideoToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="deleteVideoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 22</value>
+  </data>
+  <data name="deleteVideoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="videoToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="videoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="videoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 6</value>
+  </data>
+  <data name="googleSearchToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 22</value>
+  </data>
+  <data name="googleSearchToolStripMenuItem.Text" xml:space="preserve">
+    <value>Search with Google</value>
+  </data>
+  <data name="discogsSearchToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 22</value>
+  </data>
+  <data name="discogsSearchToolStripMenuItem.Text" xml:space="preserve">
+    <value>Search on Discogs</value>
+  </data>
+  <data name="webSearchToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="webSearchToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="webSearchToolStripMenuItem.Text" xml:space="preserve">
+    <value>Web Search</value>
+  </data>
+  <data name="songToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 20</value>
+  </data>
+  <data name="songToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Song</value>
+  </data>
+  <data name="startUltraStarDeluxeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 22</value>
+  </data>
+  <data name="startUltraStarDeluxeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Start UltraStar Deluxe</value>
+  </data>
+  <data name="openUsdbAnimuxDeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 22</value>
+  </data>
+  <data name="openUsdbAnimuxDeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open usdb.animux.de</value>
+  </data>
+  <data name="databasesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 22</value>
+  </data>
+  <data name="databasesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Databases</value>
+  </data>
+  <data name="importSongTxtToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 22</value>
+  </data>
+  <data name="importSongTxtToolStripMenuItem.Text" xml:space="preserve">
+    <value>Import Song-TXT</value>
+  </data>
+  <data name="exportSongTxtToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="exportSongTxtToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 22</value>
+  </data>
+  <data name="exportSongTxtToolStripMenuItem.Text" xml:space="preserve">
+    <value>Export Song-TXT</value>
+  </data>
+  <data name="toolsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 20</value>
+  </data>
+  <data name="toolsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Tools</value>
+  </data>
+  <data name="mainMenuStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="mainMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1445, 24</value>
+  </data>
+  <data name="mainMenuStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="mainMenuStrip.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;mainMenuStrip.Name" xml:space="preserve">
+    <value>mainMenuStrip</value>
+  </data>
+  <data name="&gt;&gt;mainMenuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mainMenuStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;mainMenuStrip.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="titleColumn.Text" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="titleColumn.Width" type="System.Int32, mscorlib">
+    <value>259</value>
+  </data>
+  <data name="artistColumn.Text" xml:space="preserve">
+    <value>Artist</value>
+  </data>
+  <data name="artistColumn.Width" type="System.Int32, mscorlib">
+    <value>216</value>
+  </data>
+  <data name="fileColumn.Text" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="fileColumn.Width" type="System.Int32, mscorlib">
+    <value>266</value>
+  </data>
+  <data name="songListView.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="songListView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 27</value>
+  </data>
+  <data name="songListView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>691, 849</value>
+  </data>
+  <data name="songListView.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;songListView.Name" xml:space="preserve">
+    <value>songListView</value>
+  </data>
+  <data name="&gt;&gt;songListView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;songListView.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;songListView.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="titleTextBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="titleTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 22</value>
+  </data>
+  <data name="titleTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>452, 26</value>
+  </data>
+  <data name="titleTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;titleTextBox.Name" xml:space="preserve">
+    <value>titleTextBox</value>
+  </data>
+  <data name="&gt;&gt;titleTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;titleTextBox.Parent" xml:space="preserve">
+    <value>songInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;titleTextBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="titleLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="titleLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 24</value>
+  </data>
+  <data name="titleLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 23</value>
+  </data>
+  <data name="titleLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="titleLabel.Text" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="titleLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;titleLabel.Name" xml:space="preserve">
+    <value>titleLabel</value>
+  </data>
+  <data name="&gt;&gt;titleLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;titleLabel.Parent" xml:space="preserve">
+    <value>songInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;titleLabel.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
   <data name="coverPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         /9j/4AAQSkZJRgABAgEAAAAAAAD/7gAOQWRvYmUAZAAAAAAB/9sAQwABAQEBAQEBAQEBAQEBAQEBAQEB
@@ -685,6 +1080,87 @@
         tAAMSTgBiVXdYaw0ldaSzS2ts0y6S4ky65axjbmFznOdC8Na1oeS5ziQAACSTQL/2Q==
 </value>
   </data>
+  <data name="coverPictureBox.InitialImage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="coverPictureBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>568, 22</value>
+  </data>
+  <data name="coverPictureBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 150</value>
+  </data>
+  <data name="coverPictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="coverPictureBox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;coverPictureBox.Name" xml:space="preserve">
+    <value>coverPictureBox</value>
+  </data>
+  <data name="&gt;&gt;coverPictureBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;coverPictureBox.Parent" xml:space="preserve">
+    <value>songInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;coverPictureBox.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="artistTextBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="artistTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 56</value>
+  </data>
+  <data name="artistTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>452, 26</value>
+  </data>
+  <data name="artistTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;artistTextBox.Name" xml:space="preserve">
+    <value>artistTextBox</value>
+  </data>
+  <data name="&gt;&gt;artistTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;artistTextBox.Parent" xml:space="preserve">
+    <value>songInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;artistTextBox.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="artistLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="artistLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 58</value>
+  </data>
+  <data name="artistLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 23</value>
+  </data>
+  <data name="artistLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="artistLabel.Text" xml:space="preserve">
+    <value>Artist</value>
+  </data>
+  <data name="artistLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;artistLabel.Name" xml:space="preserve">
+    <value>artistLabel</value>
+  </data>
+  <data name="&gt;&gt;artistLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;artistLabel.Parent" xml:space="preserve">
+    <value>songInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;artistLabel.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
   <data name="coverDeleteButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAlxJREFUaEPt
@@ -701,6 +1177,30 @@
         Y5PB02cAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="coverDeleteButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="coverDeleteButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>686, 180</value>
+  </data>
+  <data name="coverDeleteButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 32</value>
+  </data>
+  <data name="coverDeleteButton.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;coverDeleteButton.Name" xml:space="preserve">
+    <value>coverDeleteButton</value>
+  </data>
+  <data name="&gt;&gt;coverDeleteButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;coverDeleteButton.Parent" xml:space="preserve">
+    <value>songInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;coverDeleteButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="coverEditButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAoNJREFUaEPt
@@ -716,6 +1216,222 @@
         94vJZPIS29lsdm80Gr12QWG3221lgzkqx3w+f1HuthH9DmGb4EsfJ4FlipfPM/+v1+vnsqkVMwCohes4
         8z/gN1zuYofU4LuQq6JdALyGNfZ//GHRRbi47tPxypXeKYp/NeVxorKiOngAAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="coverEditButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="coverEditButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>648, 180</value>
+  </data>
+  <data name="coverEditButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 32</value>
+  </data>
+  <data name="coverEditButton.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;coverEditButton.Name" xml:space="preserve">
+    <value>coverEditButton</value>
+  </data>
+  <data name="&gt;&gt;coverEditButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;coverEditButton.Parent" xml:space="preserve">
+    <value>songInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;coverEditButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="yearLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="yearLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 91</value>
+  </data>
+  <data name="yearLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 23</value>
+  </data>
+  <data name="yearLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="yearLabel.Text" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="yearLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;yearLabel.Name" xml:space="preserve">
+    <value>yearLabel</value>
+  </data>
+  <data name="&gt;&gt;yearLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;yearLabel.Parent" xml:space="preserve">
+    <value>songInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;yearLabel.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="languageTextBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="languageTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 120</value>
+  </data>
+  <data name="languageTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>452, 26</value>
+  </data>
+  <data name="languageTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;languageTextBox.Name" xml:space="preserve">
+    <value>languageTextBox</value>
+  </data>
+  <data name="&gt;&gt;languageTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;languageTextBox.Parent" xml:space="preserve">
+    <value>songInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;languageTextBox.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="languageLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="languageLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 123</value>
+  </data>
+  <data name="languageLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 23</value>
+  </data>
+  <data name="languageLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="languageLabel.Text" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="languageLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;languageLabel.Name" xml:space="preserve">
+    <value>languageLabel</value>
+  </data>
+  <data name="&gt;&gt;languageLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;languageLabel.Parent" xml:space="preserve">
+    <value>songInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;languageLabel.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="genreTextBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="genreTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 152</value>
+  </data>
+  <data name="genreTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>452, 26</value>
+  </data>
+  <data name="genreTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;genreTextBox.Name" xml:space="preserve">
+    <value>genreTextBox</value>
+  </data>
+  <data name="&gt;&gt;genreTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;genreTextBox.Parent" xml:space="preserve">
+    <value>songInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;genreTextBox.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="genreLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="genreLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 155</value>
+  </data>
+  <data name="genreLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 23</value>
+  </data>
+  <data name="genreLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="genreLabel.Text" xml:space="preserve">
+    <value>Genre</value>
+  </data>
+  <data name="genreLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;genreLabel.Name" xml:space="preserve">
+    <value>genreLabel</value>
+  </data>
+  <data name="&gt;&gt;genreLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;genreLabel.Parent" xml:space="preserve">
+    <value>songInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;genreLabel.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="editionTextBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="editionTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 184</value>
+  </data>
+  <data name="editionTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>452, 26</value>
+  </data>
+  <data name="editionTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;editionTextBox.Name" xml:space="preserve">
+    <value>editionTextBox</value>
+  </data>
+  <data name="&gt;&gt;editionTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;editionTextBox.Parent" xml:space="preserve">
+    <value>songInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;editionTextBox.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="editionLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="editionLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 186</value>
+  </data>
+  <data name="editionLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 23</value>
+  </data>
+  <data name="editionLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="editionLabel.Text" xml:space="preserve">
+    <value>Edition</value>
+  </data>
+  <data name="editionLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;editionLabel.Name" xml:space="preserve">
+    <value>editionLabel</value>
+  </data>
+  <data name="&gt;&gt;editionLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;editionLabel.Parent" xml:space="preserve">
+    <value>songInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;editionLabel.ZOrder" xml:space="preserve">
+    <value>12</value>
   </data>
   <data name="artistMissingPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -738,6 +1454,33 @@
         nhe2BOBHIbbP7QDldop3ilQ9UXUIEsDRl8UuRCHsUVT0H5esZrp6wmeVAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="artistMissingPictureBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 56</value>
+  </data>
+  <data name="artistMissingPictureBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="artistMissingPictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="artistMissingPictureBox.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="artistMissingPictureBox.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;artistMissingPictureBox.Name" xml:space="preserve">
+    <value>artistMissingPictureBox</value>
+  </data>
+  <data name="&gt;&gt;artistMissingPictureBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;artistMissingPictureBox.Parent" xml:space="preserve">
+    <value>songInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;artistMissingPictureBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="titleMissingPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAA61JREFUaEPt
@@ -758,6 +1501,33 @@
         +mdplI2P9cvJv840WcQFxP3piaPyczo4Wgyx85gYtg/vhyzyQogjFET8QGQhYUcSAjoM/b4WFCT8oKNV
         nhe2BOBHIbbP7QDldop3ilQ9UXUIEsDRl8UuRCHsUVT0H5esZrp6wmeVAAAAAElFTkSuQmCC
 </value>
+  </data>
+  <data name="titleMissingPictureBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 22</value>
+  </data>
+  <data name="titleMissingPictureBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="titleMissingPictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="titleMissingPictureBox.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="titleMissingPictureBox.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;titleMissingPictureBox.Name" xml:space="preserve">
+    <value>titleMissingPictureBox</value>
+  </data>
+  <data name="&gt;&gt;titleMissingPictureBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;titleMissingPictureBox.Parent" xml:space="preserve">
+    <value>songInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;titleMissingPictureBox.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="coverDownloadButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -781,6 +1551,408 @@
         6wHcNdFEW+EAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="coverDownloadButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="coverDownloadButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>610, 180</value>
+  </data>
+  <data name="coverDownloadButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 32</value>
+  </data>
+  <data name="coverDownloadButton.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;coverDownloadButton.Name" xml:space="preserve">
+    <value>coverDownloadButton</value>
+  </data>
+  <data name="&gt;&gt;coverDownloadButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;coverDownloadButton.Parent" xml:space="preserve">
+    <value>songInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;coverDownloadButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="yearTextBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="yearTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 88</value>
+  </data>
+  <data name="yearTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>452, 26</value>
+  </data>
+  <data name="yearTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;yearTextBox.Name" xml:space="preserve">
+    <value>yearTextBox</value>
+  </data>
+  <data name="&gt;&gt;yearTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;yearTextBox.Parent" xml:space="preserve">
+    <value>songInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;yearTextBox.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="songInfoGroupBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt</value>
+  </data>
+  <data name="songInfoGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>709, 27</value>
+  </data>
+  <data name="songInfoGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>724, 218</value>
+  </data>
+  <data name="songInfoGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="songInfoGroupBox.Text" xml:space="preserve">
+    <value>Song Info</value>
+  </data>
+  <data name="&gt;&gt;songInfoGroupBox.Name" xml:space="preserve">
+    <value>songInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;songInfoGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;songInfoGroupBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;songInfoGroupBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="duetCheckBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="duetCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 54</value>
+  </data>
+  <data name="duetCheckBox.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Yes</value>
+  </data>
+  <data name="duetCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 24</value>
+  </data>
+  <data name="duetCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="duetCheckBox.Text" xml:space="preserve">
+    <value>Is Duet</value>
+  </data>
+  <data name="&gt;&gt;duetCheckBox.Name" xml:space="preserve">
+    <value>duetCheckBox</value>
+  </data>
+  <data name="&gt;&gt;duetCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;duetCheckBox.Parent" xml:space="preserve">
+    <value>songSettingsGroupBox</value>
+  </data>
+  <data name="&gt;&gt;duetCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="videoGapLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="videoGapLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>519, 23</value>
+  </data>
+  <data name="videoGapLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 23</value>
+  </data>
+  <data name="videoGapLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="videoGapLabel.Text" xml:space="preserve">
+    <value>Video Gap</value>
+  </data>
+  <data name="videoGapLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;videoGapLabel.Name" xml:space="preserve">
+    <value>videoGapLabel</value>
+  </data>
+  <data name="&gt;&gt;videoGapLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;videoGapLabel.Parent" xml:space="preserve">
+    <value>songSettingsGroupBox</value>
+  </data>
+  <data name="&gt;&gt;videoGapLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="bpmLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="bpmLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>241, 23</value>
+  </data>
+  <data name="bpmLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 23</value>
+  </data>
+  <data name="bpmLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="bpmLabel.Text" xml:space="preserve">
+    <value>BPM</value>
+  </data>
+  <data name="bpmLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;bpmLabel.Name" xml:space="preserve">
+    <value>bpmLabel</value>
+  </data>
+  <data name="&gt;&gt;bpmLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bpmLabel.Parent" xml:space="preserve">
+    <value>songSettingsGroupBox</value>
+  </data>
+  <data name="&gt;&gt;bpmLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="gapLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="gapLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 23</value>
+  </data>
+  <data name="gapLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 23</value>
+  </data>
+  <data name="gapLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="gapLabel.Text" xml:space="preserve">
+    <value>Gap</value>
+  </data>
+  <data name="gapLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;gapLabel.Name" xml:space="preserve">
+    <value>gapLabel</value>
+  </data>
+  <data name="&gt;&gt;gapLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gapLabel.Parent" xml:space="preserve">
+    <value>songSettingsGroupBox</value>
+  </data>
+  <data name="&gt;&gt;gapLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="duetSinger2TextBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="duetSinger2TextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>266, 86</value>
+  </data>
+  <data name="duetSinger2TextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>452, 26</value>
+  </data>
+  <data name="duetSinger2TextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;duetSinger2TextBox.Name" xml:space="preserve">
+    <value>duetSinger2TextBox</value>
+  </data>
+  <data name="&gt;&gt;duetSinger2TextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;duetSinger2TextBox.Parent" xml:space="preserve">
+    <value>songSettingsGroupBox</value>
+  </data>
+  <data name="&gt;&gt;duetSinger2TextBox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="duetSinger1TextBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="duetSinger1TextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>266, 54</value>
+  </data>
+  <data name="duetSinger1TextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>452, 26</value>
+  </data>
+  <data name="duetSinger1TextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;duetSinger1TextBox.Name" xml:space="preserve">
+    <value>duetSinger1TextBox</value>
+  </data>
+  <data name="&gt;&gt;duetSinger1TextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;duetSinger1TextBox.Parent" xml:space="preserve">
+    <value>songSettingsGroupBox</value>
+  </data>
+  <data name="&gt;&gt;duetSinger1TextBox.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="videoGapNumericUpDown.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="videoGapNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>610, 22</value>
+  </data>
+  <data name="videoGapNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 26</value>
+  </data>
+  <data name="videoGapNumericUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;videoGapNumericUpDown.Name" xml:space="preserve">
+    <value>videoGapNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;videoGapNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;videoGapNumericUpDown.Parent" xml:space="preserve">
+    <value>songSettingsGroupBox</value>
+  </data>
+  <data name="&gt;&gt;videoGapNumericUpDown.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="bpmNumericUpDown.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="bpmNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>332, 22</value>
+  </data>
+  <data name="bpmNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 26</value>
+  </data>
+  <data name="bpmNumericUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;bpmNumericUpDown.Name" xml:space="preserve">
+    <value>bpmNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;bpmNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bpmNumericUpDown.Parent" xml:space="preserve">
+    <value>songSettingsGroupBox</value>
+  </data>
+  <data name="&gt;&gt;bpmNumericUpDown.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="duetSinger2Label.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="duetSinger2Label.Location" type="System.Drawing.Point, System.Drawing">
+    <value>150, 88</value>
+  </data>
+  <data name="duetSinger2Label.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 23</value>
+  </data>
+  <data name="duetSinger2Label.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="duetSinger2Label.Text" xml:space="preserve">
+    <value>Duet Singer 2</value>
+  </data>
+  <data name="duetSinger2Label.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;duetSinger2Label.Name" xml:space="preserve">
+    <value>duetSinger2Label</value>
+  </data>
+  <data name="&gt;&gt;duetSinger2Label.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;duetSinger2Label.Parent" xml:space="preserve">
+    <value>songSettingsGroupBox</value>
+  </data>
+  <data name="&gt;&gt;duetSinger2Label.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="gapNumericUpDown.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="gapNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 22</value>
+  </data>
+  <data name="gapNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 26</value>
+  </data>
+  <data name="gapNumericUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;gapNumericUpDown.Name" xml:space="preserve">
+    <value>gapNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;gapNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gapNumericUpDown.Parent" xml:space="preserve">
+    <value>songSettingsGroupBox</value>
+  </data>
+  <data name="&gt;&gt;gapNumericUpDown.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="duetSinger1Label.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="duetSinger1Label.Location" type="System.Drawing.Point, System.Drawing">
+    <value>150, 54</value>
+  </data>
+  <data name="duetSinger1Label.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 23</value>
+  </data>
+  <data name="duetSinger1Label.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="duetSinger1Label.Text" xml:space="preserve">
+    <value>Duet Singer 1</value>
+  </data>
+  <data name="duetSinger1Label.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;duetSinger1Label.Name" xml:space="preserve">
+    <value>duetSinger1Label</value>
+  </data>
+  <data name="&gt;&gt;duetSinger1Label.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;duetSinger1Label.Parent" xml:space="preserve">
+    <value>songSettingsGroupBox</value>
+  </data>
+  <data name="&gt;&gt;duetSinger1Label.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="songSettingsGroupBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt</value>
+  </data>
+  <data name="songSettingsGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>709, 251</value>
+  </data>
+  <data name="songSettingsGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>724, 121</value>
+  </data>
+  <data name="songSettingsGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="songSettingsGroupBox.Text" xml:space="preserve">
+    <value>Song Settings</value>
+  </data>
+  <data name="&gt;&gt;songSettingsGroupBox.Name" xml:space="preserve">
+    <value>songSettingsGroupBox</value>
+  </data>
+  <data name="&gt;&gt;songSettingsGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;songSettingsGroupBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;songSettingsGroupBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="mp3MissingPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAA61JREFUaEPt
@@ -801,6 +1973,33 @@
         +mdplI2P9cvJv840WcQFxP3piaPyczo4Wgyx85gYtg/vhyzyQogjFET8QGQhYUcSAjoM/b4WFCT8oKNV
         nhe2BOBHIbbP7QDldop3ilQ9UXUIEsDRl8UuRCHsUVT0H5esZrp6wmeVAAAAAElFTkSuQmCC
 </value>
+  </data>
+  <data name="mp3MissingPictureBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 24</value>
+  </data>
+  <data name="mp3MissingPictureBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="mp3MissingPictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="mp3MissingPictureBox.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="mp3MissingPictureBox.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;mp3MissingPictureBox.Name" xml:space="preserve">
+    <value>mp3MissingPictureBox</value>
+  </data>
+  <data name="&gt;&gt;mp3MissingPictureBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mp3MissingPictureBox.Parent" xml:space="preserve">
+    <value>songFilesGroupBox</value>
+  </data>
+  <data name="&gt;&gt;mp3MissingPictureBox.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="videoNotFoundPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -823,6 +2022,33 @@
         nhe2BOBHIbbP7QDldop3ilQ9UXUIEsDRl8UuRCHsUVT0H5esZrp6wmeVAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="videoNotFoundPictureBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 62</value>
+  </data>
+  <data name="videoNotFoundPictureBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="videoNotFoundPictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="videoNotFoundPictureBox.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="videoNotFoundPictureBox.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;videoNotFoundPictureBox.Name" xml:space="preserve">
+    <value>videoNotFoundPictureBox</value>
+  </data>
+  <data name="&gt;&gt;videoNotFoundPictureBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;videoNotFoundPictureBox.Parent" xml:space="preserve">
+    <value>songFilesGroupBox</value>
+  </data>
+  <data name="&gt;&gt;videoNotFoundPictureBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="mp3NotFoundPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAA61JREFUaEPt
@@ -844,6 +2070,87 @@
         nhe2BOBHIbbP7QDldop3ilQ9UXUIEsDRl8UuRCHsUVT0H5esZrp6wmeVAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="mp3NotFoundPictureBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 24</value>
+  </data>
+  <data name="mp3NotFoundPictureBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="mp3NotFoundPictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="mp3NotFoundPictureBox.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="mp3NotFoundPictureBox.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;mp3NotFoundPictureBox.Name" xml:space="preserve">
+    <value>mp3NotFoundPictureBox</value>
+  </data>
+  <data name="&gt;&gt;mp3NotFoundPictureBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mp3NotFoundPictureBox.Parent" xml:space="preserve">
+    <value>songFilesGroupBox</value>
+  </data>
+  <data name="&gt;&gt;mp3NotFoundPictureBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="videoTextBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="videoTextBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="videoTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 62</value>
+  </data>
+  <data name="videoTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>504, 26</value>
+  </data>
+  <data name="videoTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;videoTextBox.Name" xml:space="preserve">
+    <value>videoTextBox</value>
+  </data>
+  <data name="&gt;&gt;videoTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;videoTextBox.Parent" xml:space="preserve">
+    <value>songFilesGroupBox</value>
+  </data>
+  <data name="&gt;&gt;videoTextBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="mp3TextBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="mp3TextBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="mp3TextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 24</value>
+  </data>
+  <data name="mp3TextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>504, 26</value>
+  </data>
+  <data name="mp3TextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;mp3TextBox.Name" xml:space="preserve">
+    <value>mp3TextBox</value>
+  </data>
+  <data name="&gt;&gt;mp3TextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mp3TextBox.Parent" xml:space="preserve">
+    <value>songFilesGroupBox</value>
+  </data>
+  <data name="&gt;&gt;mp3TextBox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="videoEditButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAoNJREFUaEPt
@@ -859,6 +2166,30 @@
         94vJZPIS29lsdm80Gr12QWG3221lgzkqx3w+f1HuthH9DmGb4EsfJ4FlipfPM/+v1+vnsqkVMwCohes4
         8z/gN1zuYofU4LuQq6JdALyGNfZ//GHRRbi47tPxypXeKYp/NeVxorKiOngAAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="videoEditButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="videoEditButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>648, 58</value>
+  </data>
+  <data name="videoEditButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 32</value>
+  </data>
+  <data name="videoEditButton.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;videoEditButton.Name" xml:space="preserve">
+    <value>videoEditButton</value>
+  </data>
+  <data name="&gt;&gt;videoEditButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;videoEditButton.Parent" xml:space="preserve">
+    <value>songFilesGroupBox</value>
+  </data>
+  <data name="&gt;&gt;videoEditButton.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="videoPlayButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -876,6 +2207,30 @@
         vEqM1uVt5F/ditxZJTYV4fKC46SDe/nfZLji3FqdV+JR6avX+w1vEYeaQaFv5QAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="videoPlayButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="videoPlayButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>610, 58</value>
+  </data>
+  <data name="videoPlayButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 32</value>
+  </data>
+  <data name="videoPlayButton.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;videoPlayButton.Name" xml:space="preserve">
+    <value>videoPlayButton</value>
+  </data>
+  <data name="&gt;&gt;videoPlayButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;videoPlayButton.Parent" xml:space="preserve">
+    <value>songFilesGroupBox</value>
+  </data>
+  <data name="&gt;&gt;videoPlayButton.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <data name="mp3PlayButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAoVJREFUaEPt
@@ -891,6 +2246,30 @@
         qRIHg8E+uJxNp9NH2vbm8/ktAT5hH63X6/vaENy812KxePhnN4jKAP4KPhqN7P++y1EqsYn8D008lAiQ
         vEqM1uVt5F/ditxZJTYV4fKC46SDe/nfZLji3FqdV+JR6avX+w1vEYeaQaFv5QAAAABJRU5ErkJggg==
 </value>
+  </data>
+  <data name="mp3PlayButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="mp3PlayButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>610, 20</value>
+  </data>
+  <data name="mp3PlayButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 32</value>
+  </data>
+  <data name="mp3PlayButton.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;mp3PlayButton.Name" xml:space="preserve">
+    <value>mp3PlayButton</value>
+  </data>
+  <data name="&gt;&gt;mp3PlayButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mp3PlayButton.Parent" xml:space="preserve">
+    <value>songFilesGroupBox</value>
+  </data>
+  <data name="&gt;&gt;mp3PlayButton.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="mp3EditButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -908,6 +2287,30 @@
         8z/gN1zuYofU4LuQq6JdALyGNfZ//GHRRbi47tPxypXeKYp/NeVxorKiOngAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="mp3EditButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="mp3EditButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>648, 20</value>
+  </data>
+  <data name="mp3EditButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 32</value>
+  </data>
+  <data name="mp3EditButton.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;mp3EditButton.Name" xml:space="preserve">
+    <value>mp3EditButton</value>
+  </data>
+  <data name="&gt;&gt;mp3EditButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mp3EditButton.Parent" xml:space="preserve">
+    <value>songFilesGroupBox</value>
+  </data>
+  <data name="&gt;&gt;mp3EditButton.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
   <data name="mp3DeleteButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAlxJREFUaEPt
@@ -924,6 +2327,30 @@
         Y5PB02cAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="mp3DeleteButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="mp3DeleteButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>686, 20</value>
+  </data>
+  <data name="mp3DeleteButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 32</value>
+  </data>
+  <data name="mp3DeleteButton.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;mp3DeleteButton.Name" xml:space="preserve">
+    <value>mp3DeleteButton</value>
+  </data>
+  <data name="&gt;&gt;mp3DeleteButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mp3DeleteButton.Parent" xml:space="preserve">
+    <value>songFilesGroupBox</value>
+  </data>
+  <data name="&gt;&gt;mp3DeleteButton.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
   <data name="videoDeleteButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAlxJREFUaEPt
@@ -939,6 +2366,147 @@
         IItzH9ChZUJiIwhfRG5/WOkvRpjDTOAXcA2L1Ey/PoOrRvqjdhFCpvkXfNz+8Tzzk8p6xPhPRNEnyf1t
         Y5PB02cAAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="videoDeleteButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="videoDeleteButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>686, 58</value>
+  </data>
+  <data name="videoDeleteButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 32</value>
+  </data>
+  <data name="videoDeleteButton.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;videoDeleteButton.Name" xml:space="preserve">
+    <value>videoDeleteButton</value>
+  </data>
+  <data name="&gt;&gt;videoDeleteButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;videoDeleteButton.Parent" xml:space="preserve">
+    <value>songFilesGroupBox</value>
+  </data>
+  <data name="&gt;&gt;videoDeleteButton.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="videoLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="videoLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 64</value>
+  </data>
+  <data name="videoLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 23</value>
+  </data>
+  <data name="videoLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="videoLabel.Text" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="videoLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;videoLabel.Name" xml:space="preserve">
+    <value>videoLabel</value>
+  </data>
+  <data name="&gt;&gt;videoLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;videoLabel.Parent" xml:space="preserve">
+    <value>songFilesGroupBox</value>
+  </data>
+  <data name="&gt;&gt;videoLabel.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="mp3Label.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="mp3Label.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 26</value>
+  </data>
+  <data name="mp3Label.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 23</value>
+  </data>
+  <data name="mp3Label.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="mp3Label.Text" xml:space="preserve">
+    <value>MP3</value>
+  </data>
+  <data name="mp3Label.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;mp3Label.Name" xml:space="preserve">
+    <value>mp3Label</value>
+  </data>
+  <data name="&gt;&gt;mp3Label.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mp3Label.Parent" xml:space="preserve">
+    <value>songFilesGroupBox</value>
+  </data>
+  <data name="&gt;&gt;mp3Label.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="songFilesGroupBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt</value>
+  </data>
+  <data name="songFilesGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>709, 378</value>
+  </data>
+  <data name="songFilesGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>724, 100</value>
+  </data>
+  <data name="songFilesGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="songFilesGroupBox.Text" xml:space="preserve">
+    <value>Song Files</value>
+  </data>
+  <data name="&gt;&gt;songFilesGroupBox.Name" xml:space="preserve">
+    <value>songFilesGroupBox</value>
+  </data>
+  <data name="&gt;&gt;songFilesGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;songFilesGroupBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;songFilesGroupBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="player1TextBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt</value>
+  </data>
+  <data name="player1TextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="player1TextBox.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="player1TextBox.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="player1TextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>698, 354</value>
+  </data>
+  <data name="player1TextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;player1TextBox.Name" xml:space="preserve">
+    <value>player1TextBox</value>
+  </data>
+  <data name="&gt;&gt;player1TextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;player1TextBox.Parent" xml:space="preserve">
+    <value>player1TextTab</value>
+  </data>
+  <data name="&gt;&gt;player1TextBox.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="songText1MissingPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -961,6 +2529,60 @@
         nhe2BOBHIbbP7QDldop3ilQ9UXUIEsDRl8UuRCHsUVT0H5esZrp6wmeVAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="songText1MissingPictureBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 332</value>
+  </data>
+  <data name="songText1MissingPictureBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="songText1MissingPictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="songText1MissingPictureBox.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="songText1MissingPictureBox.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;songText1MissingPictureBox.Name" xml:space="preserve">
+    <value>songText1MissingPictureBox</value>
+  </data>
+  <data name="&gt;&gt;songText1MissingPictureBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;songText1MissingPictureBox.Parent" xml:space="preserve">
+    <value>player1TextTab</value>
+  </data>
+  <data name="&gt;&gt;songText1MissingPictureBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="player1TextTab.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="player1TextTab.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="player1TextTab.Size" type="System.Drawing.Size, System.Drawing">
+    <value>710, 366</value>
+  </data>
+  <data name="player1TextTab.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="player1TextTab.Text" xml:space="preserve">
+    <value>Player 1</value>
+  </data>
+  <data name="&gt;&gt;player1TextTab.Name" xml:space="preserve">
+    <value>player1TextTab</value>
+  </data>
+  <data name="&gt;&gt;player1TextTab.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;player1TextTab.Parent" xml:space="preserve">
+    <value>textTabControl</value>
+  </data>
+  <data name="&gt;&gt;player1TextTab.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="songText2MissingPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAA61JREFUaEPt
@@ -982,9 +2604,126 @@
         nhe2BOBHIbbP7QDldop3ilQ9UXUIEsDRl8UuRCHsUVT0H5esZrp6wmeVAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="songText2MissingPictureBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 332</value>
+  </data>
+  <data name="songText2MissingPictureBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="songText2MissingPictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="songText2MissingPictureBox.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="songText2MissingPictureBox.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;songText2MissingPictureBox.Name" xml:space="preserve">
+    <value>songText2MissingPictureBox</value>
+  </data>
+  <data name="&gt;&gt;songText2MissingPictureBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;songText2MissingPictureBox.Parent" xml:space="preserve">
+    <value>player2TextTab</value>
+  </data>
+  <data name="&gt;&gt;songText2MissingPictureBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="player2TextBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt</value>
+  </data>
+  <data name="player2TextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="player2TextBox.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="player2TextBox.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="player2TextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>698, 354</value>
+  </data>
+  <data name="player2TextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;player2TextBox.Name" xml:space="preserve">
+    <value>player2TextBox</value>
+  </data>
+  <data name="&gt;&gt;player2TextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;player2TextBox.Parent" xml:space="preserve">
+    <value>player2TextTab</value>
+  </data>
+  <data name="&gt;&gt;player2TextBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="player2TextTab.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="player2TextTab.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="player2TextTab.Size" type="System.Drawing.Size, System.Drawing">
+    <value>710, 366</value>
+  </data>
+  <data name="player2TextTab.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="player2TextTab.Text" xml:space="preserve">
+    <value>Player 2</value>
+  </data>
+  <data name="&gt;&gt;player2TextTab.Name" xml:space="preserve">
+    <value>player2TextTab</value>
+  </data>
+  <data name="&gt;&gt;player2TextTab.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;player2TextTab.Parent" xml:space="preserve">
+    <value>textTabControl</value>
+  </data>
+  <data name="&gt;&gt;player2TextTab.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="textTabControl.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="textTabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>709, 484</value>
+  </data>
+  <data name="textTabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>718, 392</value>
+  </data>
+  <data name="textTabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;textTabControl.Name" xml:space="preserve">
+    <value>textTabControl</value>
+  </data>
+  <data name="&gt;&gt;textTabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textTabControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textTabControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>144, 17</value>
   </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1445, 888</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAAAAAAAEAIACPuwAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAEAAAABAAgGAAAAXHKoZgAAAAFv
@@ -1789,5 +3528,257 @@
         lrWsZS1rWcta1rKWtaxlLWtZy1rWspa1rGUta1nLWtaylrWsZS1rWcta1rKWtaxlLWtZy1rWspa1rGUt
         a1nLWtaylrWsZS1r/c+s/weyshQREAPy+AAAAABJRU5ErkJggg==
 </value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>UltraStar Deluxe Editor</value>
+  </data>
+  <data name="&gt;&gt;fileToolStripMenuItem.Name" xml:space="preserve">
+    <value>fileToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;fileToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;newSongToolStripMenuItem.Name" xml:space="preserve">
+    <value>newSongToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;newSongToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;saveToolStripMenuItem.Name" xml:space="preserve">
+    <value>saveToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;saveToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;saveAllToolStripMenuItem.Name" xml:space="preserve">
+    <value>saveAllToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;saveAllToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;reloadSongsToolStripMenuItem.Name" xml:space="preserve">
+    <value>reloadSongsToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;reloadSongsToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
+    <value>toolStripSeparator1</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;closeToolStripMenuItem.Name" xml:space="preserve">
+    <value>closeToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;closeToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;songToolStripMenuItem.Name" xml:space="preserve">
+    <value>songToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;songToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openSongTxtToolStripMenuItem.Name" xml:space="preserve">
+    <value>openSongTxtToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;openSongTxtToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openDirectoryToolStripMenuItem.Name" xml:space="preserve">
+    <value>openDirectoryToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;openDirectoryToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
+    <value>toolStripSeparator4</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;reloadSongToolStripMenuItem.Name" xml:space="preserve">
+    <value>reloadSongToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;reloadSongToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;deleteSongToolStripMenuItem.Name" xml:space="preserve">
+    <value>deleteSongToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;deleteSongToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator3.Name" xml:space="preserve">
+    <value>toolStripSeparator3</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;coverToolStripMenuItem.Name" xml:space="preserve">
+    <value>coverToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;coverToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openCoverToolStripMenuItem.Name" xml:space="preserve">
+    <value>openCoverToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;openCoverToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chooseCoverImageToolStripMenuItem.Name" xml:space="preserve">
+    <value>chooseCoverImageToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;chooseCoverImageToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;downloadCoverFromURLToolStripMenuItem.Name" xml:space="preserve">
+    <value>downloadCoverFromURLToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;downloadCoverFromURLToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;deleteCoverToolStripMenuItem.Name" xml:space="preserve">
+    <value>deleteCoverToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;deleteCoverToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mp3ToolStripMenuItem.Name" xml:space="preserve">
+    <value>mp3ToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;mp3ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openMp3ToolStripMenuItem.Name" xml:space="preserve">
+    <value>openMp3ToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;openMp3ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chooseMp3FileToolStripMenuItem.Name" xml:space="preserve">
+    <value>chooseMp3FileToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;chooseMp3FileToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;videoToolStripMenuItem.Name" xml:space="preserve">
+    <value>videoToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;videoToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openVideoToolStripMenuItem.Name" xml:space="preserve">
+    <value>openVideoToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;openVideoToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chooseVideoToolStripMenuItem.Name" xml:space="preserve">
+    <value>chooseVideoToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;chooseVideoToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;deleteVideoToolStripMenuItem.Name" xml:space="preserve">
+    <value>deleteVideoToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;deleteVideoToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
+    <value>toolStripSeparator2</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;webSearchToolStripMenuItem.Name" xml:space="preserve">
+    <value>webSearchToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;webSearchToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;googleSearchToolStripMenuItem.Name" xml:space="preserve">
+    <value>googleSearchToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;googleSearchToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;discogsSearchToolStripMenuItem.Name" xml:space="preserve">
+    <value>discogsSearchToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;discogsSearchToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolsToolStripMenuItem.Name" xml:space="preserve">
+    <value>toolsToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;toolsToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;startUltraStarDeluxeToolStripMenuItem.Name" xml:space="preserve">
+    <value>startUltraStarDeluxeToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;startUltraStarDeluxeToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;databasesToolStripMenuItem.Name" xml:space="preserve">
+    <value>databasesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;databasesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openUsdbAnimuxDeToolStripMenuItem.Name" xml:space="preserve">
+    <value>openUsdbAnimuxDeToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;openUsdbAnimuxDeToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;importSongTxtToolStripMenuItem.Name" xml:space="preserve">
+    <value>importSongTxtToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;importSongTxtToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;exportSongTxtToolStripMenuItem.Name" xml:space="preserve">
+    <value>exportSongTxtToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;exportSongTxtToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;titleColumn.Name" xml:space="preserve">
+    <value>titleColumn</value>
+  </data>
+  <data name="&gt;&gt;titleColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;artistColumn.Name" xml:space="preserve">
+    <value>artistColumn</value>
+  </data>
+  <data name="&gt;&gt;artistColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fileColumn.Name" xml:space="preserve">
+    <value>fileColumn</value>
+  </data>
+  <data name="&gt;&gt;fileColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolTip.Name" xml:space="preserve">
+    <value>toolTip</value>
+  </data>
+  <data name="&gt;&gt;toolTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>MainForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
