@@ -60,6 +60,29 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About UltraStar Deluxe Editor.
+        /// </summary>
+        internal static string aboutCaption {
+            get {
+                return ResourceManager.GetString("aboutCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You are currently using UltraStar Deluxe Editor version {0}.
+        ///
+        ///This program was created by Nuhser (https:/github.com/Nuhser). You can contact me under mail@nuhser.com.
+        ///As stated in the license document on GitHub, I am not liable for any damage caused by this program to your computer, UltraStar songs, or anything else. If you use this editor, you do so at your own risk and must expect possible errors and other problems.
+        ///
+        ///I&apos;m in no way associated with the makers of UltraStar Deluxe. I&apos;m simply a user of t [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string aboutMessage {
+            get {
+                return ResourceManager.GetString("aboutMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Artist missing.
         /// </summary>
         internal static string artistMissingWarningIcon {

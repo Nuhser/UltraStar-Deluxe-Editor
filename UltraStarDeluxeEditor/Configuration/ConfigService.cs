@@ -11,6 +11,7 @@ using UltraStarDeluxeEditor.Utility;
 namespace UltraStarDeluxeEditor.Configuration {
     public static class ConfigService {
         private const string CONFIG_PATH = ".\\config.xml";
+        public static readonly string VERSION = "22.01.1";
 
         private static Config _config;
         public static Config Config => _config ?? (_config = DeserializeConfig());

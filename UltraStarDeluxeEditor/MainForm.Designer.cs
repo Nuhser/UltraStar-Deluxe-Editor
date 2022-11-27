@@ -51,6 +51,7 @@ namespace UltraStarDeluxeEditor {
             this.mp3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openMp3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chooseMp3FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteMp3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.videoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openVideoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chooseVideoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,6 +66,12 @@ namespace UltraStarDeluxeEditor {
             this.openUsdbAnimuxDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importSongTxtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportSongTxtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wikiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.forumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.releasesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportBugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.songListView = new System.Windows.Forms.ListView();
             this.titleColumn = new System.Windows.Forms.ColumnHeader();
             this.artistColumn = new System.Windows.Forms.ColumnHeader();
@@ -133,7 +140,6 @@ namespace UltraStarDeluxeEditor {
             this.songText2MissingPictureBox = new System.Windows.Forms.PictureBox();
             this.player2TextBox = new System.Windows.Forms.TextBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.deleteMp3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenuStrip.SuspendLayout();
             this.songListViewContextMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.coverPictureBox)).BeginInit();
@@ -158,7 +164,7 @@ namespace UltraStarDeluxeEditor {
             // mainMenuStrip
             // 
             this.mainMenuStrip.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.fileToolStripMenuItem, this.songToolStripMenuItem, this.toolsToolStripMenuItem });
+            this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.fileToolStripMenuItem, this.songToolStripMenuItem, this.toolsToolStripMenuItem, this.helpToolStripMenuItem });
             resources.ApplyResources(this.mainMenuStrip, "mainMenuStrip");
             this.mainMenuStrip.Name = "mainMenuStrip";
             // 
@@ -291,6 +297,12 @@ namespace UltraStarDeluxeEditor {
             this.chooseMp3FileToolStripMenuItem.Name = "chooseMp3FileToolStripMenuItem";
             this.chooseMp3FileToolStripMenuItem.Click += new System.EventHandler(this.mp3EditButton_Click);
             // 
+            // deleteMp3ToolStripMenuItem
+            // 
+            resources.ApplyResources(this.deleteMp3ToolStripMenuItem, "deleteMp3ToolStripMenuItem");
+            this.deleteMp3ToolStripMenuItem.Name = "deleteMp3ToolStripMenuItem";
+            this.deleteMp3ToolStripMenuItem.Click += new System.EventHandler(this.mp3DeleteButton_Click);
+            // 
             // videoToolStripMenuItem
             // 
             this.videoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.openVideoToolStripMenuItem, this.chooseVideoToolStripMenuItem, this.deleteVideoToolStripMenuItem });
@@ -373,6 +385,42 @@ namespace UltraStarDeluxeEditor {
             resources.ApplyResources(this.exportSongTxtToolStripMenuItem, "exportSongTxtToolStripMenuItem");
             this.exportSongTxtToolStripMenuItem.Name = "exportSongTxtToolStripMenuItem";
             this.exportSongTxtToolStripMenuItem.Click += new System.EventHandler(this.exportSongTxtToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.wikiToolStripMenuItem, this.forumToolStripMenuItem, this.releasesToolStripMenuItem, this.aboutToolStripMenuItem, this.reportBugToolStripMenuItem });
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
+            // 
+            // wikiToolStripMenuItem
+            // 
+            this.wikiToolStripMenuItem.Name = "wikiToolStripMenuItem";
+            resources.ApplyResources(this.wikiToolStripMenuItem, "wikiToolStripMenuItem");
+            this.wikiToolStripMenuItem.Click += new System.EventHandler(this.wikiToolStripMenuItem_Click);
+            // 
+            // forumToolStripMenuItem
+            // 
+            this.forumToolStripMenuItem.Name = "forumToolStripMenuItem";
+            resources.ApplyResources(this.forumToolStripMenuItem, "forumToolStripMenuItem");
+            this.forumToolStripMenuItem.Click += new System.EventHandler(this.forumToolStripMenuItem_Click);
+            // 
+            // releasesToolStripMenuItem
+            // 
+            this.releasesToolStripMenuItem.Name = "releasesToolStripMenuItem";
+            resources.ApplyResources(this.releasesToolStripMenuItem, "releasesToolStripMenuItem");
+            this.releasesToolStripMenuItem.Click += new System.EventHandler(this.releasesToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // reportBugToolStripMenuItem
+            // 
+            this.reportBugToolStripMenuItem.Name = "reportBugToolStripMenuItem";
+            resources.ApplyResources(this.reportBugToolStripMenuItem, "reportBugToolStripMenuItem");
+            this.reportBugToolStripMenuItem.Click += new System.EventHandler(this.reportBugToolStripMenuItem_Click);
             // 
             // songListView
             // 
@@ -865,12 +913,6 @@ namespace UltraStarDeluxeEditor {
             this.toolTip.ReshowDelay = 500;
             this.toolTip.ShowAlways = true;
             // 
-            // deleteMp3ToolStripMenuItem
-            // 
-            resources.ApplyResources(this.deleteMp3ToolStripMenuItem, "deleteMp3ToolStripMenuItem");
-            this.deleteMp3ToolStripMenuItem.Name = "deleteMp3ToolStripMenuItem";
-            this.deleteMp3ToolStripMenuItem.Click += new System.EventHandler(this.mp3DeleteButton_Click);
-            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -916,6 +958,16 @@ namespace UltraStarDeluxeEditor {
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.ToolStripMenuItem reportBugToolStripMenuItem;
+
+        private System.Windows.Forms.ToolStripMenuItem releasesToolStripMenuItem;
+
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem wikiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem forumToolStripMenuItem;
+
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
 
         private System.Windows.Forms.ToolStripMenuItem deleteMp3ToolStripMenuItem;
 

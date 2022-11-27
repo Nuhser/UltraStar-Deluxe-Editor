@@ -814,5 +814,27 @@ namespace UltraStarDeluxeEditor {
                 deleteSongToolStripMenuItem_Click(sender, e);
             }
         }
+
+        private void wikiToolStripMenuItem_Click(object sender, EventArgs e) {
+            Process.Start(@"https://github.com/Nuhser/UltraStar-Deluxe-Editor/wiki");
+        }
+
+        private void forumToolStripMenuItem_Click(object sender, EventArgs e) {
+            Process.Start(@"https://github.com/Nuhser/UltraStar-Deluxe-Editor/discussions");
+        }
+
+        private void releasesToolStripMenuItem_Click(object sender, EventArgs e) {
+            Process.Start(@"https://github.com/Nuhser/UltraStar-Deluxe-Editor/releases");
+        }
+
+        private void reportBugToolStripMenuItem_Click(object sender, EventArgs e) {
+            Process.Start(@"https://github.com/Nuhser/UltraStar-Deluxe-Editor/issues");
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {
+            MessageBox.Show(
+                string.Format(Resources.aboutMessage, ConfigService.VERSION),
+                Resources.aboutCaption, MessageBoxButtons.OK);
+        }
     }
 }

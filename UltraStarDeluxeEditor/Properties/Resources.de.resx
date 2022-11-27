@@ -202,4 +202,15 @@ Dies löscht beim nächsten Speichern ebenfalls die Videodatei.</value>
     <data name="txtSelectFileCaption" xml:space="preserve">
         <value>TXT-Datei wählen</value>
     </data>
+    <data name="aboutCaption" xml:space="preserve">
+        <value>Über UltraStar Deluxe Editor</value>
+    </data>
+    <data name="aboutMessage" xml:space="preserve">
+        <value>Du benutzt aktuell UltraStar Deluxe Editor Version {0}.
+
+Dieses Programm wurde von Nuhser (https://github.com/Nuhser) entwickelt. Du kannst mich über mail@nuhser.com kontaktieren.
+Wie in dem Lizenz-Dokument auf GitHub beschrieben, übernehme ich keinerlei Haftung für Schäden, welche von diesem Programm an deinem Computer, deinen UltraStar-Songs oder irgendetwas anderem verursacht wurden. Wenn du diesen Editor verwendet, tust du das auf dein eigenes Risiko und nimmst potenzielle Bugs und andere Probleme in Kauf.
+
+Ich stehe in keiner Verbindung zu den Machern von UltraStar Deluxe. Ich bin lediglich ein Benutzer ihres Spiels, welcher die Erstellung und Verwaltung von SOngs für das Spiel für sich selbst und andere komfortabler machen wollte. Du kannst dir ihr Spiel hier anschauen: https://usdx.eu/</value>
+    </data>
 </root>
