@@ -19,6 +19,9 @@ A clear and concise description of what the bug is.
 ## Expected Behavior
 A clear and concise description of what you expected to happen.
 
+## Possible Solution
+A possible way to solve the problem described above.
+
 ## Screenshots
 If applicable, add screenshots to help explain your problem.
 
