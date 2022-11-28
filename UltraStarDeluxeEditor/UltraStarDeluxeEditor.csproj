@@ -117,7 +117,9 @@
       </COMReference>
     </ItemGroup>
     <ItemGroup>
-      <Content Include="assets\DefaultCover.jpg" />
+      <None Include="Assets\DefaultCover.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
