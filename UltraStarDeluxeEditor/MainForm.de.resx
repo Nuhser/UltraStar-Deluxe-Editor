@@ -1825,37 +1825,37 @@
         <value>BPM</value>
     </data>
     <data name="chooseCoverImageToolStripMenuItem.Text" xml:space="preserve">
-        <value>Datei wählen</value>
+        <value>&amp;Datei wählen</value>
     </data>
     <data name="chooseMp3FileToolStripMenuItem.Text" xml:space="preserve">
-        <value>Datei wählen</value>
+        <value>&amp;Datei wählen</value>
     </data>
     <data name="chooseVideoToolStripMenuItem.Text" xml:space="preserve">
-        <value>Datei wählen</value>
+        <value>&amp;Datei wählen</value>
     </data>
     <data name="closeToolStripMenuItem.Text" xml:space="preserve">
         <value>&amp;Beenden</value>
     </data>
     <data name="coverToolStripMenuItem.Text" xml:space="preserve">
-        <value>Cover</value>
+        <value>&amp;Cover</value>
     </data>
     <data name="databasesToolStripMenuItem.Text" xml:space="preserve">
-        <value>Datenbanken</value>
+        <value>&amp;Datenbanken</value>
     </data>
     <data name="deleteCoverToolStripMenuItem.Text" xml:space="preserve">
-        <value>Löschen</value>
+        <value>&amp;Löschen</value>
     </data>
     <data name="deleteSongToolStripMenuItem.Text" xml:space="preserve">
-        <value>Song löschen</value>
+        <value>Song &amp;löschen</value>
     </data>
     <data name="deleteVideoToolStripMenuItem.Text" xml:space="preserve">
-        <value>Löschen</value>
+        <value>&amp;Löschen</value>
     </data>
     <data name="discogsSearchToolStripMenuItem.Text" xml:space="preserve">
-        <value>Auf Discogs suchen</value>
+        <value>Auf &amp;Discogs suchen...</value>
     </data>
     <data name="downloadCoverFromURLToolStripMenuItem.Text" xml:space="preserve">
-        <value>Von URL herunterladen</value>
+        <value>Von &amp;URL herunterladen</value>
     </data>
     <data name="duetCheckBox.Text" xml:space="preserve">
         <value>Ist Duett</value>
@@ -1870,7 +1870,7 @@
         <value>Edition</value>
     </data>
     <data name="exportSongTxtToolStripMenuItem.Text" xml:space="preserve">
-        <value>Song-TXT exportieren</value>
+        <value>Song-TXT &amp;exportieren</value>
     </data>
     <data name="fileColumn.Text" xml:space="preserve">
         <value>Datei</value>
@@ -1882,10 +1882,10 @@
         <value>Genre</value>
     </data>
     <data name="googleSearchToolStripMenuItem.Text" xml:space="preserve">
-        <value>Mit Google suchen</value>
+        <value>Mit &amp;Google suchen...</value>
     </data>
     <data name="importSongTxtToolStripMenuItem.Text" xml:space="preserve">
-        <value>Song-TXT importieren</value>
+        <value>Song-TXT &amp;importieren</value>
     </data>
     <data name="languageLabel.Text" xml:space="preserve">
         <value>Sprache</value>
@@ -1894,28 +1894,28 @@
         <value>MP3</value>
     </data>
     <data name="mp3ToolStripMenuItem.Text" xml:space="preserve">
-        <value>MP3</value>
+        <value>&amp;MP3</value>
     </data>
     <data name="newSongToolStripMenuItem.Text" xml:space="preserve">
         <value>&amp;Neuer Song</value>
     </data>
     <data name="openCoverToolStripMenuItem.Text" xml:space="preserve">
-        <value>Bild öffnen</value>
+        <value>&amp;Bild öffnen</value>
     </data>
     <data name="openDirectoryToolStripMenuItem.Text" xml:space="preserve">
-        <value>Ordner öffnen</value>
+        <value>&amp;Ordner öffnen</value>
     </data>
     <data name="openMp3ToolStripMenuItem.Text" xml:space="preserve">
-        <value>MP3 öffnen</value>
+        <value>&amp;MP3 öffnen</value>
     </data>
     <data name="openSongTxtToolStripMenuItem.Text" xml:space="preserve">
-        <value>Original TXT öffnen</value>
+        <value>Original &amp;TXT öffnen</value>
     </data>
     <data name="openUsdbAnimuxDeToolStripMenuItem.Text" xml:space="preserve">
-        <value>usdb.animux.de öffnen</value>
+        <value>&amp;usdb.animux.de öffnen...</value>
     </data>
     <data name="openVideoToolStripMenuItem.Text" xml:space="preserve">
-        <value>Video öffnen</value>
+        <value>&amp;Video öffnen</value>
     </data>
     <data name="player1TextTab.Text" xml:space="preserve">
         <value>Spieler 1</value>
@@ -1924,10 +1924,10 @@
         <value>Spieler 2</value>
     </data>
     <data name="reloadSongsToolStripMenuItem.Text" xml:space="preserve">
-        <value>Alle Songs neuladen</value>
+        <value>Alle Songs neu &amp;laden</value>
     </data>
     <data name="reloadSongToolStripMenuItem.Text" xml:space="preserve">
-        <value>Song neuladen</value>
+        <value>Song neu &amp;laden</value>
     </data>
     <data name="saveAllToolStripMenuItem.Text" xml:space="preserve">
         <value>&amp;Alles speichern</value>
@@ -1948,7 +1948,7 @@
         <value>&amp;Song</value>
     </data>
     <data name="startUltraStarDeluxeToolStripMenuItem.Text" xml:space="preserve">
-        <value>UltraStar Deluxe starten</value>
+        <value>&amp;UltraStar Deluxe starten...</value>
     </data>
     <data name="titleColumn.Text" xml:space="preserve">
         <value>Titel</value>
@@ -1966,15 +1966,60 @@
         <value>Video</value>
     </data>
     <data name="videoToolStripMenuItem.Text" xml:space="preserve">
-        <value>Video</value>
+        <value>&amp;Video</value>
     </data>
     <data name="webSearchToolStripMenuItem.Text" xml:space="preserve">
-        <value>Web-Suche</value>
+        <value>&amp;Web-Suche</value>
     </data>
     <data name="yearLabel.Text" xml:space="preserve">
         <value>Jahr</value>
     </data>
     <data name="playableColumn.Text" xml:space="preserve">
         <value>Spielbar</value>
+    </data>
+    <data name="$this.Text" xml:space="preserve">
+        <value>UltraStar Deluxe Editor</value>
+    </data>
+    <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
+        <value>&amp;Info</value>
+    </data>
+    <data name="deleteMp3ToolStripMenuItem.Text" xml:space="preserve">
+        <value>&amp;Löschen</value>
+    </data>
+    <data name="deleteSongContextMenuItem.Text" xml:space="preserve">
+        <value>Song löschen</value>
+    </data>
+    <data name="discogsSearchContextMenuItem.Text" xml:space="preserve">
+        <value>Auf Discogs suchen...</value>
+    </data>
+    <data name="forumToolStripMenuItem.Text" xml:space="preserve">
+        <value>&amp;Forum...</value>
+    </data>
+    <data name="googleSearchContextMenuItem.Text" xml:space="preserve">
+        <value>Mit Google suchen...</value>
+    </data>
+    <data name="helpToolStripMenuItem.Text" xml:space="preserve">
+        <value>&amp;Hilfe</value>
+    </data>
+    <data name="openDirectoryContextMenuItem.Text" xml:space="preserve">
+        <value>Ordner öffnen</value>
+    </data>
+    <data name="openSongTxtContextMenuItem.Text" xml:space="preserve">
+        <value>Original TXT öffnen</value>
+    </data>
+    <data name="releasesToolStripMenuItem.Text" xml:space="preserve">
+        <value>&amp;Releases...</value>
+    </data>
+    <data name="reloadSongContextMenuItem.Text" xml:space="preserve">
+        <value>Song neu laden</value>
+    </data>
+    <data name="reportBugToolStripMenuItem.Text" xml:space="preserve">
+        <value>&amp;Bug melden...</value>
+    </data>
+    <data name="webSearchToolStripMenuItem1.Text" xml:space="preserve">
+        <value>Web-Suche</value>
+    </data>
+    <data name="wikiToolStripMenuItem.Text" xml:space="preserve">
+        <value>&amp;Wiki...</value>
     </data>
 </root>

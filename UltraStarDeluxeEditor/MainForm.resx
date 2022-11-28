@@ -535,14 +535,14 @@
         <value>176, 22</value>
     </data>
     <data name="googleSearchContextMenuItem.Text" xml:space="preserve">
-    <value>Search with Google</value>
-  </data>
+        <value>Search with Google...</value>
+    </data>
     <data name="discogsSearchContextMenuItem.Size" type="System.Drawing.Size, System.Drawing">
         <value>176, 22</value>
     </data>
     <data name="discogsSearchContextMenuItem.Text" xml:space="preserve">
-    <value>Search on Discogs</value>
-  </data>
+        <value>Search on Discogs...</value>
+    </data>
     <data name="webSearchToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
         <value>154, 22</value>
     </data>
