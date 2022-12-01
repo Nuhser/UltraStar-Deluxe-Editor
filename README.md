@@ -8,7 +8,7 @@ Thanks to the list view on the left side of the editor which shows every song lo
 
 ----
 
-This program was created by [Nuhser](https:/github.com/Nuhser). You can contact me at [mail@nuhser.com](mailto:mail@nuhser.com?subject=UltraStar Deluxe Editor).
+This program was created by [Nuhser](https:/github.com/Nuhser). You can contact me at mail@nuhser.com.
 As stated in the [license document](https://github.com/Nuhser/UltraStar-Deluxe-Editor/blob/master/LICENSE.md), I am not liable for **any** damage caused by this program to your computer, UltraStar songs, or anything else. If you use this editor, you do so **at your own risk** and must expect possible errors and other problems.
 
 I'm in no way associated with the makers of UltraStar Deluxe. I'm simply a user of their game who wanted to make the experience of creating and managing songs for the game better for himself and others.
