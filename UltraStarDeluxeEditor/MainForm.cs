@@ -14,6 +14,7 @@ namespace UltraStarDeluxeEditor {
     public partial class MainForm : Form {
         private const string FORM_TITLE = "UltraStar Deluxe Editor";
         private const string DEFAULT_IMAGE_LOCATION = "Assets/DefaultCover.jpg";
+
         private readonly SongListViewSorter _songListViewSorter;
 
         private UltraStarSong _selectedSong;
@@ -49,11 +50,22 @@ namespace UltraStarDeluxeEditor {
             SetSongDetailUiEnabled(false);
         }
 
+        /// <summary>
+        ///     Checks if any of the songs from the song list view ist dirty.
+        /// </summary>
+        /// <returns><c>true</c> if at least one song is dirty and <c>false</c> otherwise.</returns>
         private bool IsDirty() {
             return songListView.Items.Cast<SongListViewItem>()
                 .Any(songListViewItem => songListViewItem.UltraStarSong.IsDirty);
         }
 
+        /// <summary>
+        ///     Initializes the song list view by first restoring any existing media backups and then clearing the list view and
+        ///     populating it with all the .txt-files from the song directories. Refreshes the UI afterwards.<br />
+        ///     Shows a message with the number of playable and unplayable songs found when done.<br />
+        ///     <b>This deletes any unsaved changes from the songs.</b>
+        /// </summary>
+        /// <seealso cref="reloadSongsToolStripMenuItem_Click" />
         private void InitSongListView() {
             // restore backups if there are dirty songs
             if (IsDirty()) {
@@ -99,6 +111,10 @@ namespace UltraStarDeluxeEditor {
                 MessageBoxButtons.OK);
         }
 
+        /// <summary>
+        ///     This method adds a given <see cref="UltraStarSong" /> to the song list view, selects it and updates the UI.
+        /// </summary>
+        /// <param name="song">The <see cref="UltraStarSong" /> you want to add.</param>
         private void AddSongToSongListView(UltraStarSong song) {
             foreach (ListViewItem item in songListView.Items) {
                 item.Selected = false;
@@ -118,6 +134,10 @@ namespace UltraStarDeluxeEditor {
             UpdateUi();
         }
 
+        /// <summary>
+        ///     This method removes a given item from the song list view.
+        /// </summary>
+        /// <param name="songListViewItem">The <see cref="ListViewItem" /> you want to remove.</param>
         private void RemoveSongFromSongListView(ListViewItem songListViewItem) {
             songListView.Items.Remove(songListViewItem);
 
@@ -129,6 +149,11 @@ namespace UltraStarDeluxeEditor {
             UpdateUi();
         }
 
+        /// <summary>
+        ///     Enables or disables the three <see cref="GroupBox" /> objects and the <see cref="TabControl" /> on the right side
+        ///     of the <see cref="MainForm" />.
+        /// </summary>
+        /// <param name="enabled">Defines if the controls should be enabled or disabled.</param>
         private void SetSongDetailUiEnabled(bool enabled) {
             songInfoGroupBox.Enabled = enabled;
             songSettingsGroupBox.Enabled = enabled;
@@ -136,6 +161,12 @@ namespace UltraStarDeluxeEditor {
             textTabControl.Enabled = enabled;
         }
 
+        /// <summary>
+        ///     This method either shows the properties of the currently selected song or resets the values of the controls on the
+        ///     right side of the editor depending on if <see cref="_selectedSong" /> holds a value or is <c>null</c>. Furthermore,
+        ///     it enables or disables multiple buttons and menu items depending on the same condition as well as the media files
+        ///     assigned to the song.
+        /// </summary>
         private void UpdateUi() {
             var songSelected = _selectedSong != null;
 
@@ -245,12 +276,26 @@ namespace UltraStarDeluxeEditor {
             SetSongDetailUiEnabled(songSelected);
         }
 
+        /// <summary>
+        ///     This method adds a asterisk to the end end of the forms title and enables the menu item for saving all dirty songs
+        ///     if at least one song is dirty. Otherwise it resets the title and disables the menu item.
+        /// </summary>
+        /// <seealso cref="IsDirty" />
         private void UpdateFormTitle() {
             var isDirty = IsDirty();
             Text = FORM_TITLE + (isDirty ? " *" : "");
             saveAllToolStripMenuItem.Enabled = isDirty;
         }
 
+        /// <summary>
+        ///     This method takes an <see cref="UltraStarSong" />, searches for its corresponding <see cref="SongListViewItem" />
+        ///     and updates its
+        ///     title, artist, playability and file name in the song list view. It will also change if the song is shown as dirty
+        ///     or not.
+        /// </summary>
+        /// <param name="song">The song you want to update.</param>
+        /// <param name="setDirty">Whether the song should be shown as dirty or not.</param>
+        /// <seealso cref="UpdateSongListItem(UltraStarDeluxeEditor.Utility.SongListViewItem,bool)" />
         private void UpdateSongListItem(UltraStarSong song, bool setDirty) {
             foreach (SongListViewItem listViewItem in songListView.Items) {
                 if (listViewItem.UltraStarSong == song) {
@@ -260,6 +305,13 @@ namespace UltraStarDeluxeEditor {
             }
         }
 
+        /// <summary>
+        ///     This method takes a <see cref="SongListViewItem" /> and updates its title, artist, playability and file name in the
+        ///     song list view. It will also change if the song is shown as dirty or not.
+        /// </summary>
+        /// <param name="songListViewItem">The song list view item you want to update.</param>
+        /// <param name="setDirty">Whether the song should be shown as dirty or not.</param>
+        /// <seealso cref="UpdateSongListItem(UltraStarDeluxeEditor.UltraStar.UltraStarSong,bool)" />
         private void UpdateSongListItem(SongListViewItem songListViewItem, bool setDirty) {
             var song = songListViewItem.UltraStarSong;
 
@@ -272,6 +324,10 @@ namespace UltraStarDeluxeEditor {
             songListViewItem.SetDirty(setDirty);
         }
 
+        /// <summary>
+        ///     This method takes the property values from the control objects and copies them to a given song.
+        /// </summary>
+        /// <param name="song">The <see cref="UltraStarSong" /> you want to update with the UI.</param>
         private void WriteDetailUiToSong(UltraStarSong song) {
             song.Title = titleTextBox.Text;
             song.Artist = artistTextBox.Text;
@@ -297,13 +353,14 @@ namespace UltraStarDeluxeEditor {
             song.SongText = new Tuple<string, string>(player1TextBox.Text.Trim(), player2TextBox.Text.Trim());
         }
 
-        private void SaveSongFile(UltraStarSong song, bool updateUi = true) {
+        /// <summary>
+        ///     This method takes a song, saves it.
+        /// </summary>
+        /// <param name="song">The <see cref="UltraStarSong" /> you want to save.</param>
+        /// <seealso cref="UltraStarSongService.SaveSongToFile" />
+        private void SaveSongFile(UltraStarSong song) {
             if (UltraStarSongService.SaveSongToFile(song)) {
                 UpdateSongListItem(song, false);
-
-                if (updateUi) {
-                    UpdateUi();
-                }
             }
             else {
                 MessageBox.Show(
@@ -313,6 +370,11 @@ namespace UltraStarDeluxeEditor {
             }
         }
 
+        /// <summary>
+        ///     Saves the selected song from the song list view and updates the UI afterwards.<br />
+        ///     Shows a warning if the song isn't playable at the moment.
+        /// </summary>
+        /// <seealso cref="UltraStarSongService.SaveSongToFile" />
         private void SaveSelectedSongFile() {
             if (_selectedSong != null && !_selectedSong.IsValid() &&
                 MessageBox.Show(Resources.songNotPlayableMessage, Resources.songNotPlayableCaption,
@@ -321,8 +383,14 @@ namespace UltraStarDeluxeEditor {
             }
 
             SaveSongFile(_selectedSong);
+            UpdateUi();
         }
 
+        /// <summary>
+        ///     Saves all dirty songs from the song list view and updates the UI afterwards.<br />
+        ///     Shows a warning if at least one of the songs isn't playable.
+        /// </summary>
+        /// <seealso cref="UltraStarSongService.SaveSongToFile" />
         private void SaveAllSongFiles() {
             if (songListView.Items.Cast<SongListViewItem>().Any(item => !item.UltraStarSong.IsValid()) &&
                 MessageBox.Show(
@@ -333,7 +401,7 @@ namespace UltraStarDeluxeEditor {
 
             foreach (SongListViewItem listViewItem in songListView.Items) {
                 if (listViewItem.UltraStarSong.IsDirty) {
-                    SaveSongFile(listViewItem.UltraStarSong, false);
+                    SaveSongFile(listViewItem.UltraStarSong);
                 }
             }
 
