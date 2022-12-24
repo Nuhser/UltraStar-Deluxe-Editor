@@ -92,6 +92,15 @@ namespace UltraStarDeluxeEditor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Audio Files|*.mp3;*.m4a;*.wav;*.acc;*.ogg.
+        /// </summary>
+        internal static string audioFileFilter {
+            get {
+                return ResourceManager.GetString("audioFileFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Are you sure that you want to delete the cover image?
         ///This will also delete the image file from your drive..
         /// </summary>

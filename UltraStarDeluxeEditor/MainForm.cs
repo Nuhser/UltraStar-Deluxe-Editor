@@ -681,7 +681,7 @@ namespace UltraStarDeluxeEditor {
         private void mp3EditButton_Click(object sender, EventArgs e) {
             var openFileDialog = new OpenFileDialog();
             openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
-            openFileDialog.Filter = @"MP3|*.mp3";
+            openFileDialog.Filter = Resources.audioFileFilter;
             openFileDialog.Title = Resources.mp3SelectFileCaption;
 
             if (openFileDialog.ShowDialog() == DialogResult.OK) {

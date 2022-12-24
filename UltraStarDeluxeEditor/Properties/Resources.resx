@@ -318,4 +318,7 @@ You can checkout their game on https://usdx.eu/.</value>
     <data name="aboutCaption" xml:space="preserve">
         <value>About UltraStar Deluxe Editor</value>
     </data>
+    <data name="audioFileFilter" xml:space="preserve">
+        <value>Audio Files|*.mp3;*.m4a;*.wav;*.acc;*.ogg</value>
+    </data>
 </root>

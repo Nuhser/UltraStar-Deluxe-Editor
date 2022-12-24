@@ -213,4 +213,7 @@ Wie in dem Lizenz-Dokument auf GitHub beschrieben, übernehme ich keinerlei Haft
 
 Ich stehe in keiner Verbindung zu den Machern von UltraStar Deluxe. Ich bin lediglich ein Benutzer ihres Spiels, welcher die Erstellung und Verwaltung von SOngs für das Spiel für sich selbst und andere komfortabler machen wollte. Du kannst dir ihr Spiel hier anschauen: https://usdx.eu/</value>
     </data>
+    <data name="audioFileFilter" xml:space="preserve">
+        <value>Audio Dateien|*.mp3;*.m4a;*.wav;*.acc;*.ogg</value>
+    </data>
 </root>
